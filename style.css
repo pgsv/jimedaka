@@ -1,0 +1,415 @@
+@charset "UTF-8";
+/*
+Theme Name : MyTemplate
+*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック体', YuGothic, 'Hiragino Sans','ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  margin: 50px auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap main {
+  padding: 0 20px;
+}
+
+.sect_title {
+  text-align: center;
+}
+
+/*ロゴの大きさを調整*/
+#logo img {
+  max-width: 50%;
+  color: #ffffff;
+}
+
+#menu {
+  position: absolute;
+  left: -50vw;
+}
+
+.open {
+  position: absolute;
+}
+
+.front_sldr {
+  width: 70vw;
+  margin-left: auto;
+}
+
+.drawer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  height: 70px;
+  padding: 0 1em;
+}
+
+.nav-category {
+  background-color: #ffffff;
+  display: none;
+  position: absolute;
+  width: 100vw;
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.nav-menu {
+  margin: auto;
+  text-align: center;
+}
+
+.nav-menu ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-menu ul li {
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.nav-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  position: absolute;
+  right: 10px;
+}
+
+.nav-icon ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-icon ul li {
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+.nav-icon ul li:hover {
+  opacity: 0.5;
+}
+
+.nav-icon ul li img {
+  width: 30px;
+  height: auto;
+}
+
+.nav-icon ul li div {
+  font-size: 10px;
+}
+
+input[type="checkbox"]:checked ~ .nav-category {
+  display: block;
+  -webkit-transform: translateX(0vw);
+          transform: translateX(0vw);
+}
+
+.toggle {
+  display: block;
+  position: absolute;
+  min-width: 100px;
+  max-width: 150px;
+  width: 30%;
+  height: 42px;
+  cursor: pointer;
+  z-index: 3;
+  right: 0px;
+  background-color: #ffffff;
+  /* 2番目と3番目のspanを45度に */
+}
+
+.toggle span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  right: 15px;
+  border-bottom: solid 4px #333;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  /*変化の速度を指定*/
+}
+
+.toggle span:nth-child(1) {
+  top: 5px;
+}
+
+.toggle span:nth-child(2) {
+  top: 18px;
+}
+
+.toggle span:nth-child(3) {
+  top: 32px;
+}
+
+.toggle.active span:nth-child(1) {
+  top: 18px;
+  /* 1番目のspanをマイナス45度に */
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.toggle.active span:nth-child(2),
+.toggle.active span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+/*----------------------------------ここからPCモニターの記述-----------*/
+@media screen and (min-width: 600px) {
+  /*ロゴの大きさを調整*/
+  #logo img {
+    max-width: 250px;
+  }
+  nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .toggle {
+    display: none;
+  }
+  .icon_humburger {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 56px 40px 20px;
+  position: relative;
+}
+
+footer ul li {
+  text-align: left;
+}
+
+.footer_top {
+  position: absolute;
+  left: 40px;
+}
+
+.footer_nav {
+  position: relative;
+  display: inline-block;
+  margin-right: 700px;
+}
+
+.copyright {
+  font-size: 10px;
+}
+
+.share ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+aside {
+  width: 35%;
+  padding: 20px;
+}
+
+aside strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+aside ul li {
+  margin-left: 12px;
+}
+
+aside ul li img {
+  width: 150px;
+}
+
+.news-list {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.news-list h4 {
+  margin-left: 10px;
+}
+
+.news-list ul {
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: .9em;
+}
+
+.news-list ul li a {
+  margin-left: 10px;
+}
+
+.product-items ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+.product-items ul li {
+  width: calc($per_width - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.product ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+.product ul li {
+  width: calc($per_width - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.prod-cat-name h4 {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.prod-titl {
+  padding: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+
+.prod-price {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.cart-btn {
+  width: 120px;
+  text-align: center;
+  background-color: royalblue;
+  margin: auto;
+}
+
+.cart-btn a {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 600px) {
+  .product-items ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    margin-bottom: 70px;
+  }
+  .product-items ul li {
+    width: calc($per_width - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+.share li {
+  float: left;
+  margin: 0;
+  margin-top: 15px;
+  padding: 7px;
+}
+
+.share li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.share li i {
+  font-size: 1.4em;
+}
