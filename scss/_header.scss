@@ -1,92 +1,92 @@
 nav {
-    // width: 100%;
-    // height: 70px;
-    // position: relative;
-    // background: #F6F6F6;
+  // width: 100%;
+  // height: 70px;
+  // position: relative;
+  // background: #F6F6F6;
 }
 
 .fas {
-    // color: #ffffff;
+  // color: #ffffff;
 }
 /*ロゴの大きさを調整*/
 #logo img {
-    max-width:50%;
-    color: #ffffff;
+  max-width: 50%;
+  color: #ffffff;
 }
 #menu {
-    position: absolute;
-    left: -50vw;
+  position: absolute;
+  left: -50vw;
 }
 .open {
-    position: absolute;
+  position: absolute;
 }
 .front_sldr {
-    width: 70vw;
-    margin-left: auto;
-    // margin-top: 40px;
+  width: 70vw;
+  margin-left: auto;
+  // margin-top: 40px;
 }
-.drawer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    height: 70px;
-    padding: 0 1em;
+.drawer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 70px;
+  padding: 0 1em;
 }
 .nav-category {
-    background-color: #ffffff;
-    display: none;
-    position: absolute;
-    width: 100vw;
-    transform: translateX(100vw);
-    transition: 0.3s;
+  background-color: #ffffff;
+  display: none;
+  position: absolute;
+  width: 100vw;
+  transform: translateX(100vw);
+  transition: 0.3s;
 }
 .nav-menu {
-    // display: flex;
-    // align-items: center;
-    // height: 70px;
-    // padding: 0 1em;
-    margin: auto;
-    text-align: center;
-    ul {
-        display: flex;
-        li {
-            margin-top: 30px;
-            padding: 10px;
-            font-size: 17px;
-        }
+  // display: flex;
+  // align-items: center;
+  // height: 70px;
+  // padding: 0 1em;
+  margin: auto;
+  text-align: center;
+  ul {
+    display: flex;
+    li {
+      margin-top: 30px;
+      padding: 10px;
+      font-size: 17px;
     }
+  }
 }
 .nav-icon {
+  display: flex;
+  margin-top: 30px;
+  position: absolute;
+  right: 10px;
+  ul {
     display: flex;
-    margin-top: 30px;
-    position: absolute;
-    right: 10px;
-    ul {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        li {
-            &:hover {
-                opacity: 0.5;
-            }
-            padding: 0 0.5rem;
-            text-align: center;
-            img {
-                width: 30px;
-                height: auto;
-            }
-            div {
-                font-size: 10px;
-            }
-        }
+    margin: 0;
+    padding: 0;
+    li {
+      &:hover {
+        opacity: 0.5;
+      }
+      padding: 0 0.5rem;
+      text-align: center;
+      img {
+        width: 30px;
+        height: auto;
+      }
+      div {
+        font-size: 10px;
+      }
     }
+  }
 }
 input[type="checkbox"]:checked ~ .nav-category {
-    // right: 0px;
-    display: block;
-    transform: translateX(0vw);
+  // right: 0px;
+  display: block;
+  transform: translateX(0vw);
 }
 // input[type="checkbox"]:checked ~ .back {
 //     position: absolute;
@@ -95,85 +95,84 @@ input[type="checkbox"]:checked ~ .nav-category {
 //     background: rgba(0, 0, 0, 0.8);
 // }
 .toggle {
+  display: block;
+  position: absolute;
+  min-width: 100px;
+  max-width: 150px;
+  width: 30%;
+  height: 42px;
+  cursor: pointer;
+  z-index: 3;
+  right: 0px;
+  // bottom: 0;
+  background-color: #ffffff;
+  span {
     display: block;
     position: absolute;
-    min-width: 100px;
-    max-width: 150px;
-    width: 30%;
-    height: 42px;
-    cursor: pointer;
-    z-index: 3;
-    right: 0px;
-    // bottom: 0;
-    background-color: #ffffff;
-    span {
-        display: block;
-        position: absolute;
-        width: 50px;
-        right: 15px;
-        border-bottom: solid 4px #333;
-        transition: 0.2s ease-in-out;			/*変化の速度を指定*/
-     
-        &:nth-child(1) {
-            top:5px;
-        }
-        &:nth-child(2) {
-            top: 18px;
-        }
-        &:nth-child(3) {
-            top: 32px;
-        }
+    width: 50px;
+    right: 15px;
+    border-bottom: solid 4px #333;
+    transition: 0.2s ease-in-out; /*変化の速度を指定*/
+
+    &:nth-child(1) {
+      top: 5px;
     }
-    &.active span:nth-child(1) {
-        top: 18px;
+    &:nth-child(2) {
+      top: 18px;
+    }
+    &:nth-child(3) {
+      top: 32px;
+    }
+  }
+  &.active span:nth-child(1) {
+    top: 18px;
     /* 1番目のspanをマイナス45度に */
-        transform: rotate(-45deg);
-    }
-     
-    /* 2番目と3番目のspanを45度に */
-    &.active span:nth-child(2),
-    &.active span:nth-child(3) {
-        top: 18px;
-        transform: rotate(45deg);
-    }
+    transform: rotate(-45deg);
+  }
+
+  /* 2番目と3番目のspanを45度に */
+  &.active span:nth-child(2),
+  &.active span:nth-child(3) {
+    top: 18px;
+    transform: rotate(45deg);
+  }
 }
 
 /*----------------------------------ここからPCモニターの記述-----------*/
 @media screen and (min-width: 600px) {
- 
-    /*ロゴの大きさを調整*/
-    #logo img{
-        max-width:250px;
-    }	    
-    nav {
-        display: flex;
-    }
-    .toggle {
-        display: none;
-    }
-    .icon_humburger {
-        display: none;
-    }
-    // .cp_navi{
-    // width: 100%;
-    // font-size:0.9em;
-    // background-color: transparent;
-    // margin:0 10px;
-    // -webkit-transform: translateX(0);
-    // transform: translateX(0);
-    // }
-    // .cp_navi ul{
-    //  height: 70px;
-    //  display: flex;
-    //  flex-wrap: wrap;
-    //  justify-content: flex-end;
-    //  align-items: center;
-    // }
-    // .cp_navi ul li a{
-    //  padding: 0 1em;
-    //  border-bottom: none;
-    // }
-    // .cp_navi ul li a:hover{
-    // background-color:transparent;
-    // }
+  /*ロゴの大きさを調整*/
+  #logo img {
+    max-width: 250px;
+  }
+  nav {
+    display: flex;
+  }
+  .toggle {
+    display: none;
+  }
+  .icon_humburger {
+    display: none;
+  }
+  // .cp_navi{
+  // width: 100%;
+  // font-size:0.9em;
+  // background-color: transparent;
+  // margin:0 10px;
+  // -webkit-transform: translateX(0);
+  // transform: translateX(0);
+  // }
+  // .cp_navi ul{
+  //  height: 70px;
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //  justify-content: flex-end;
+  //  align-items: center;
+  // }
+  // .cp_navi ul li a{
+  //  padding: 0 1em;
+  //  border-bottom: none;
+  // }
+  // .cp_navi ul li a:hover{
+  // background-color:transparent;
+  // }
 }

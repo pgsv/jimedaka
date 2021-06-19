@@ -1,17 +1,17 @@
 .news-list {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    h4 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  h4 {
+    margin-left: 10px;
+  }
+  ul {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 0.9em;
+    li {
+      a {
         margin-left: 10px;
+      }
     }
-    ul {
-        margin-top: 5px;
-        margin-left: 10px;
-        font-size: .9em;
-        li {
-            a {
-                margin-left: 10px;
-            }
-        }
-    }
+  }
 }
