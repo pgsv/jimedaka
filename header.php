@@ -51,22 +51,22 @@
             <div class="nav-icon">
                 <ul>
                     <li><a href="#">
-                            <img src="<?php bloginfo('template_url'); ?>/images/icon_search.png"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_search.png"
                                 alt="search">
                         </a></li>
                     <li><a
                             href="<?php echo home_url(); ?>/my-account/">
-                            <img src="<?php bloginfo('template_url'); ?>/images/icon_account.png"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_account.png"
                                 alt="account">
                             <div>アカウント</div>
                         </a></li>
                     <li><a href="<?php echo home_url(); ?>/cart/">
-                            <img src="<?php bloginfo('template_url'); ?>/images/icon_cart.png"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_cart.png"
                                 alt="cart">
                             <div>カート</div>
                         </a></li>
                     <li class="icon_humburger"><a href="#"><label for="menu">
-                                <img src="<?php bloginfo('template_url'); ?>/images/icon_humburger.png"
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_humburger.png"
                                     alt="humburger">
                             </label></a></li>
                 </ul>
