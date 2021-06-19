@@ -8,6 +8,7 @@ $args = array(
 );
 $categories = get_categories($args);
 ?>
+
 <aside>
     <strong>メダカ</strong>
     <ul>

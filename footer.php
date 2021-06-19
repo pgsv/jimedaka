@@ -8,7 +8,7 @@
                 <li><a href="#">プライバシーポリシー</a></li>
             </ul>
         </nav>
-        <?php get_template_part('sns'); ?>
+        <?php get_template_part('template_parts/sns'); ?>
         <div class="copyright">Copyright © 株式会社AMENA Co.,Ltd. All Rights Reserved.</div>
     </footer>
     <?php wp_footer(); ?>

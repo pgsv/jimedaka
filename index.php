@@ -4,9 +4,9 @@
     <main>
         <div class="front_sldr"><?php echo do_shortcode('[smartslider3 slider=4]'); ?>
         </div>
-        <?php include('newslist.php'); ?>
+        <?php include('template-parts/newslist.php'); ?>
         <section class="">
-            <?php include('product-items.php'); ?>
+            <?php include('template-parts/product-items.php'); ?>
         </section>
     </main>
 </div>
