@@ -1,1 +1,1 @@
-<?php include('category-list.php'); ?>
+<?php include('category-list.php');

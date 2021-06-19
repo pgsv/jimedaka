@@ -1,17 +1,17 @@
 <?php
 $args = array(
-	'type'                     => 'post',
-	'parent'                   => 51,
-	'orderby'                  => 'name',
-	'order'                    => 'ASC',
-	'taxonomy'                 => 'product_cat',
-); 
+    'type'                     => 'post',
+    'parent'                   => 51,
+    'orderby'                  => 'name',
+    'order'                    => 'ASC',
+    'taxonomy'                 => 'product_cat',
+);
 
-$categories = get_categories( $args );
+$categories = get_categories($args);
 
 // $query = new WP_Query( $args );
 // if($query->have_posts()) : while($query->have_posts()): $query->the_post();
-foreach( $categories as $category) :
+foreach ($categories as $category) :
     echo "カテゴリ： " . $category->name;
     echo "<br/>";
 endforeach;
@@ -26,4 +26,3 @@ endforeach;
 //     break;
 //   }
 // endforeach;
-?>
