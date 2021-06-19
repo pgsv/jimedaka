@@ -30,16 +30,7 @@
 </head>
 
 <body>
-    <?php //wp_nav_menu(array(
-                    // 'theme_location'    => 'header',
-                    // 'container_class'   => 'nav-menu',
-                    // 'container_id'      => 'nav-header',
-                    // 'items_wrap'        => '<ul>%3$s</ul>'
-                    //));
- ?>
     <header>
-        <!-- <label for="menu" class="open">🍔</label> -->
-        <!-- <label for="menu" class="close">×</label> -->
         <nav>
             <input id="menu" type="checkbox" />
             <label for="menu" class="back"></label>
@@ -60,33 +51,26 @@
             <div class="nav-icon">
                 <ul>
                     <li><a href="#">
-                            <!-- <i class="fas fa-search fa-2x"></i> -->
                             <img src="<?php bloginfo('template_url'); ?>/images/icon_search.png"
                                 alt="search">
                         </a></li>
                     <li><a
                             href="<?php echo home_url(); ?>/my-account/">
-                            <!-- <i class="fas fa-user fa-2x"></i> -->
                             <img src="<?php bloginfo('template_url'); ?>/images/icon_account.png"
                                 alt="account">
                             <div>アカウント</div>
                         </a></li>
                     <li><a href="<?php echo home_url(); ?>/cart/">
-                            <!-- <i class="fas fa-shopping-cart fa-2x"></i> -->
                             <img src="<?php bloginfo('template_url'); ?>/images/icon_cart.png"
                                 alt="cart">
                             <div>カート</div>
                         </a></li>
-                    <!-- <li><a href="#"><label for="menu"><i class="fas fa-bars fa-2x"></i></label></a></li> -->
                     <li class="icon_humburger"><a href="#"><label for="menu">
                                 <img src="<?php bloginfo('template_url'); ?>/images/icon_humburger.png"
                                     alt="humburger">
                             </label></a></li>
                 </ul>
             </div>
-
-            <!-- <input type="search" name="search" placeholder="キーワードを入力">
-            <input type="submit" name="submit" value="検索"> -->
             <div class="nav-category">
                 <ul>
                     <li><a href="#">Ａ</a></li>

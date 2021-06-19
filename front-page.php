@@ -7,7 +7,6 @@
         <?php include('newslist.php'); ?>
         <section class="">
             <?php include('product-items.php'); ?>
-            <?php //include('test.php');?>
         </section>
     </main>
 </div>
