@@ -1,0 +1,10 @@
+@mixin sm() {
+  @media screen and (max-width: $sm-bp) {
+    @content;
+  }
+}
+@mixin md() {
+  @media screen and (max-width: $md-bp) {
+    @content;
+  }
+}
