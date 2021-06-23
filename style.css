@@ -1,20 +1,20 @@
-@charset "UTF-8";
 /*
 Theme Name : MyTemplate
 */
 body {
   margin: 0;
   padding: 0;
-  font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-family: "kyokasho";
+  color: #333333;
 }
 
 a {
   text-decoration: none;
-  color: #333;
+  color: #333333;
 }
 
 a:hover {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 ul {
@@ -57,36 +57,16 @@ h4 {
   text-align: center;
 }
 
-/*ロゴの大きさを調整*/
-#logo img {
-  max-width: 50%;
-  color: #ffffff;
+@font-face {
+  font-family: "kyokasho";
+  src: url("./assets/font/kyokasho.ttc") format("opentype");
 }
 
-#menu {
-  position: absolute;
-  left: -50vw;
-}
-
-.open {
-  position: absolute;
-}
-
-.front_sldr {
-  width: 70vw;
-  margin-left: auto;
-}
-
-.drawer {
+header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -95,152 +75,137 @@ h4 {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
-  height: 70px;
-  padding: 0 1em;
+  padding: 0 5%;
+  height: 80px;
+  border-bottom: solid 1px #e5e5e5;
 }
 
-.nav-category {
-  background-color: #ffffff;
-  display: none;
-  position: absolute;
-  width: 100vw;
-  -webkit-transform: translateX(100vw);
-          transform: translateX(100vw);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+header .separation {
+  width: 3px;
+  height: 44px;
 }
 
-.nav-menu {
-  margin: auto;
-  text-align: center;
-}
-
-.nav-menu ul {
+.header-head {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
-.nav-menu ul li {
-  margin-top: 30px;
-  padding: 10px;
-  font-size: 17px;
-}
-
-.nav-icon {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 30px;
-  position: absolute;
-  right: 10px;
-}
-
-.nav-icon ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-icon ul li {
-  padding: 0 0.5rem;
-  text-align: center;
-}
-
-.nav-icon ul li:hover {
-  opacity: 0.5;
-}
-
-.nav-icon ul li img {
-  width: 30px;
+.header-head-logo {
+  width: 46px;
   height: auto;
 }
 
-.nav-icon ul li div {
+.header-head-campany {
+  font-size: 24px;
+  -webkit-text-stroke-width: 1px;
+  margin-left: 6px;
+}
+
+.header-body ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-body ul li {
+  font-size: 18px;
+  margin-left: 16px;
+  -webkit-text-stroke-width: 0.5px;
+}
+
+.header-foot {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-foot-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 8px;
+}
+
+.header-foot-item .item-img {
+  width: 18px;
+  height: 18px;
+}
+
+.header-foot-item .item-text {
   font-size: 10px;
 }
 
-input[type="checkbox"]:checked ~ .nav-category {
-  display: block;
-  -webkit-transform: translateX(0vw);
-          transform: translateX(0vw);
+.header-foot-searchForm {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e5e5e5;
+  padding-left: 18px;
+  margin-right: 16px;
+  height: 38px;
+  width: 265px;
+  overflow: hidden;
 }
 
-.toggle {
-  display: block;
-  position: absolute;
-  min-width: 100px;
-  max-width: 150px;
-  width: 30%;
-  height: 42px;
+.header-foot-searchForm input[type="text"] {
+  border: none;
+  color: #b5b5b5;
+  font-family: "kyokasho";
+  font-size: 14px;
+  padding: 0;
+  width: 200px;
+}
+
+.header-foot-searchForm input[type="text"]:focus {
+  outline: 0;
+  color: #333333;
+}
+
+.header-foot-searchForm input[type="submit"] {
   cursor: pointer;
-  z-index: 3;
-  right: 0px;
-  background-color: #ffffff;
-  /* 2番目と3番目のspanを45度に */
+  font-family: FontAwesome;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 0;
+  width: calc(265px - 200px);
+  height: 38px;
+  background: #ffffff;
+  color: #333333;
 }
 
-.toggle span {
-  display: block;
-  position: absolute;
-  width: 50px;
-  right: 15px;
-  border-bottom: solid 4px #333;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  /*変化の速度を指定*/
-}
-
-.toggle span:nth-child(1) {
-  top: 5px;
-}
-
-.toggle span:nth-child(2) {
-  top: 18px;
-}
-
-.toggle span:nth-child(3) {
-  top: 32px;
-}
-
-.toggle.active span:nth-child(1) {
-  top: 18px;
-  /* 1番目のspanをマイナス45度に */
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.toggle.active span:nth-child(2),
-.toggle.active span:nth-child(3) {
-  top: 18px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-/*----------------------------------ここからPCモニターの記述-----------*/
-@media screen and (min-width: 600px) {
-  /*ロゴの大きさを調整*/
-  #logo img {
-    max-width: 250px;
-  }
-  nav {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .toggle {
-    display: none;
-  }
-  .icon_humburger {
-    display: none;
-  }
+.header-foot-searchForm input[type="submit"]:hover {
+  opacity: 0.8;
 }
 
 footer {
