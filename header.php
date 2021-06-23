@@ -8,6 +8,7 @@
     <link rel="stylesheet"
         href="<?php echo get_template_directory_uri(); ?>/style.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <?php wp_head(); ?>
     <script>
         jQuery(function() {
