@@ -19,7 +19,7 @@
   }
 }
 
-.product-items {
+.products {
   @include products();
 }
 // .products & {
@@ -55,7 +55,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .product-items {
+  .products {
     @include products(25%);
   }
 }

@@ -1,4 +1,4 @@
-<div class="news-list">
+<div class="news">
   <h4>お知らせ</h4>
   <ul>
     <?php if (have_posts()): while (have_posts()):the_post(); ?>

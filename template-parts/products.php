@@ -12,7 +12,7 @@ $categories = get_categories($args);
 <div class="sect_title">
   <h2>商品一覧</h2>
 </div>
-<div class="product-items">
+<div class="products">
   <?php foreach ($categories as $cat): ?>
   <?php
     $args = array(
