@@ -263,26 +263,26 @@ aside ul li img {
   width: 150px;
 }
 
-.news-list {
+.news {
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
-.news-list h4 {
+.news h4 {
   margin-left: 10px;
 }
 
-.news-list ul {
+.news ul {
   margin-top: 5px;
   margin-left: 10px;
   font-size: 0.9em;
 }
 
-.news-list ul li a {
+.news ul li a {
   margin-left: 10px;
 }
 
-.product-items ul {
+.products ul {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -293,7 +293,7 @@ aside ul li img {
   margin-bottom: 70px;
 }
 
-.product-items ul li {
+.products ul li {
   width: calc($per_width - 20px);
   padding: 10px;
   margin-bottom: 15px;
@@ -328,7 +328,7 @@ aside ul li img {
 }
 
 @media screen and (min-width: 600px) {
-  .product-items ul {
+  .products ul {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -338,7 +338,7 @@ aside ul li img {
             flex-wrap: wrap;
     margin-bottom: 70px;
   }
-  .product-items ul li {
+  .products ul li {
     width: calc($per_width - 20px);
     padding: 10px;
     margin-bottom: 15px;
