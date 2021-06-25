@@ -35,13 +35,15 @@
                 alt="サインアウト">
             <div class="item-text">ログイン</div>
         </a>
-        <a href="#" class="header-foot-item">
+        <a href="<?php echo home_url(); ?>/my-account"
+            class="header-foot-item">
             <img class="item-img"
                 src="<?php echo get_template_directory_uri(); ?>/assets/img/user.svg"
                 alt="マイページ">
             <div class="item-text">マイページ</div>
         </a>
-        <a href="#" class="header-foot-item">
+        <a href="<?php echo home_url(); ?>/cart"
+            class="header-foot-item">
             <img class="item-img"
                 src="<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg"
                 alt="カート">
