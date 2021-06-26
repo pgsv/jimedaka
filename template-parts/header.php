@@ -31,7 +31,7 @@
         </form>
         <a href="#" class="header-foot-item">
             <img class="item-img"
-                src="<?php echo get_template_directory_uri(); ?>/assets/img/signout.svg"
+                src="<?php echo get_template_directory_uri(); ?>/assets/img/login.svg"
                 alt="サインアウト">
             <div class="item-text">ログイン</div>
         </a>
