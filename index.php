@@ -5,29 +5,19 @@
         <div class="front_sldr"><?php echo do_shortcode('[smartslider3 slider=4]'); ?>
         </div>
         <?php include('template-parts/news.php'); ?>
-
-        <?php
-            function clog($data) {
-            echo '<script>';
-            echo 'console.log('. json_encode($data) .')';
-            echo '</script>';}
-        ?>
-        <?php 
-            $page = get_page_by_path('custom-field');
-            $id = $page->ID;
-            $field_medaka = get_field_object('medaka', $id);    
-            // echo $field_medaka;
-        ?>
-
-        <img src="<?php echo $field_medaka['value']['guid']; ?>" />
-
-        <?php
-            $page = get_page_by_path('custom-field');
-            $id = $page->ID;
-            $field_desc = get_field_object('description', $id);
-            echo $field_desc['value'];
-        ?>
-        <?php clog( $field_medaka); ?>
+        <div class="products">
+            <ul>
+                <?php for ($i = 1; $i <= 3; $i++) { ?>
+                <li>
+                    <?php
+                    $field_medaka = get_custom_field('medaka_'.$i, 'custom-field');
+                    $field_desc = get_custom_field('description_'.$i, 'custom-field');
+                    the_product_html($field_medaka['value']->ID);
+                    echo $field_desc['value'];?>
+                </li>
+                <?php } ?>
+            </ul>
+        </div>
         <section class="">
             <?php include('template-parts/products.php'); ?>
         </section>

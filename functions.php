@@ -57,7 +57,41 @@ function post_has_archive($args, $post_type)
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
+/**
+ * カスタムフィールドを取得
+ */
+function get_custom_field($field_name, $page_slug)
+{
+    $page = get_page_by_path($page_slug);
+    $id = $page->ID;
+    return get_field_object($field_name, $id);
+}
 
+
+function the_product_html($product_id)
+{
+    ?>
+<a class="prod-link"
+    href="<?php echo get_permalink($product_id); ?>">
+    <div class="prod-img"><img
+            src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
+            alt="<?php echo $product->slug ?>"></div>
+
+    <div class="prod-titl"><?php echo get_the_title($product_id); ?>
+    </div>
+    <?php
+    $price = get_post_meta($product_id, '_price', true);
+    $taxRate = 1.1;
+    $taxPrice = $price * $taxRate;
+    if (! empty($taxPrice)) {
+        $formatprice = number_format($taxPrice);
+    } else {
+        $formatprice = 0;
+    } ?>
+    <div class="prod-price">￥<?php echo $formatprice; ?>円（税込）</div>
+</a>
+<?php
+}
 
 /**
 * 開発用デバッグを表示
@@ -71,3 +105,10 @@ function debug_print()
   // echo "[get_stylesheet_directory_uri] = " . get_stylesheet_directory_uri();
 }
 add_action('wp_head', 'debug_print');
+
+function clog($data)
+{
+    echo '<script>';
+    echo 'console.log('. json_encode($data) .')';
+    echo '</script>';
+}

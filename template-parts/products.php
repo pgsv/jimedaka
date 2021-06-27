@@ -30,29 +30,7 @@ $categories = get_categories($args);
   <ul>
     <?php foreach ($products as $product): ?>
     <?php setup_postdata($product); ?>
-    <li>
-      <a class="prod-link"
-        href="<?php echo get_permalink($product->id); ?>">
-        <div class="prod-img"><img
-            src="<?php echo get_the_post_thumbnail_url($product->id, 'medium'); ?>"
-            alt="<?php echo $product->slug ?>"></div>
-
-        <div class="prod-titl"><?php echo $product->name; ?>
-        </div>
-        <?php
-            $price = get_post_meta($product->id, '_price', true);
-            $taxRate = 1.1;
-            $taxPrice = $price * $taxRate;
-            if (! empty($taxPrice)) {
-                $formatprice = number_format($taxPrice);
-            } else {
-                $formatprice = 0;
-            }
-            ?>
-        <div class="prod-price">￥<?php echo $formatprice; ?>円（税込）
-        </div>
-      </a>
-
+    <li><?php the_product_html($product->id); ?>
     </li>
     <?php endforeach; ?>
   </ul>
