@@ -5,6 +5,7 @@
         <div class="front_sldr"><?php echo do_shortcode('[smartslider3 slider=4]'); ?>
         </div>
         <?php include('template-parts/news.php'); ?>
+        <h2>当店一押しのメダカ</h2>
         <div class="products">
             <ul>
                 <?php for ($i = 1; $i <= 3; $i++) { ?>
@@ -18,8 +19,9 @@
                 <?php } ?>
             </ul>
         </div>
+        <h2>メダカの飼育環境について</h2>
         <section class="">
-            <?php include('template-parts/products.php'); ?>
+            <?php //include('template-parts/products.php');?>
         </section>
     </main>
 </div>
