@@ -15,12 +15,13 @@
         <ul>
             <li><a href="<?php echo home_url(); ?>">ホーム</a></li>
             <li><a
-                    href="<?php echo home_url(); ?>/product-list">メダカ一覧</a>
+                    href="<?php echo home_url(); ?>/products">メダカ一覧</a>
             </li>
             <li><a
                     href="<?php echo home_url(); ?>/contact">お問い合わせ</a>
             </li>
-            <li><a href="">ご利用案内</a></li>
+            <li><a href="<?php echo home_url(); ?>/guide">ご利用案内</a>
+            </li>
         </ul>
     </nav>
 
