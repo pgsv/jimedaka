@@ -58,6 +58,39 @@ function post_has_archive($args, $post_type)
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 /**
+ * メダカのカテゴリーリストを取得
+ */
+function get_medaka_categories()
+{
+    $args = array(
+        'type'        => 'post',
+        'parent'      => 51,        // 親：medakaカテゴリ(51)
+        'orderby'     => 'name',
+        'order'       => 'ASC',
+        'taxonomy'    => 'product_cat',
+    );
+    return get_categories($args);
+}
+
+/**
+ * WooCommerceのサムネ画像を取得
+ */
+function get_wc_thumb_url($term_id)
+{
+    $thumb_id = get_woocommerce_term_meta($term_id, 'thumbnail_id', true);
+    return wp_get_attachment_thumb_url($thumb_id);
+}
+
+/**
+ * メダカカテゴリーのURLを取得
+ */
+function get_medaka_cat_url($cat_slug)
+{
+    return  home_url()."/products/#".$cat_slug;
+}
+
+
+/**
  * カスタムフィールドを取得
  */
 function get_custom_field($field_name, $page_slug)
