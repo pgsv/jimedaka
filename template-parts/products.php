@@ -9,9 +9,9 @@ $args = array(
 $categories = get_categories($args);
 ?>
 
-<div class="sect_title">
+<!-- <div class="sect_title">
   <h2>商品一覧</h2>
-</div>
+</div> -->
 <div class="products">
   <?php foreach ($categories as $cat): ?>
   <?php
@@ -30,7 +30,7 @@ $categories = get_categories($args);
   <ul>
     <?php foreach ($products as $product): ?>
     <?php setup_postdata($product); ?>
-    <li><?php the_product_html($product->id); ?>
+    <li><?php the_product_html($product->ID); ?>
     </li>
     <?php endforeach; ?>
   </ul>

@@ -67,7 +67,9 @@ function get_custom_field($field_name, $page_slug)
     return get_field_object($field_name, $id);
 }
 
-
+/**
+ * 商品リンクのHTMLを表示
+ */
 function the_product_html($product_id)
 {
     ?>
@@ -106,6 +108,9 @@ function debug_print()
 }
 add_action('wp_head', 'debug_print');
 
+/**
+ * コンソールログ表示
+ */
 function clog($data)
 {
     echo '<script>';
