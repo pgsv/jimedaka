@@ -15,7 +15,8 @@ $categories = get_categories($args);
         <?php foreach ($categories as $cat): ?>
         <?php $cat_thumb_id = get_woocommerce_term_meta($cat->term_id, 'thumbnail_id', true); ?>
         <?php $cat_thumb_url = wp_get_attachment_thumb_url($cat_thumb_id); ?>
-        <li><a href="#<?php echo $cat->slug; ?>">
+        <li><a
+                href="<?php echo home_url(); ?>/products/#<?php echo $cat->slug; ?>">
                 <img src="<?php echo $cat_thumb_url; ?>"
                     alt="<?php echo $cat->name ?>">
                 <?php echo $cat->name; ?>
