@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <div class="wrap">
-    <?php get_sidebar(); ?>
     <main>
         <div class="top">
             <div class="top-left">
@@ -28,9 +27,6 @@
             </ul>
         </div>
         <h2>メダカの飼育環境について</h2>
-        <section class="">
-            <?php //include('template-parts/products.php');?>
-        </section>
     </main>
 </div>
 <?php get_footer();

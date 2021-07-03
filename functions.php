@@ -88,13 +88,12 @@ function get_wc_thumb_url($term_id)
 function the_product_html($product_id)
 {
     ?>
-<a class="prod-link"
-    href="<?php echo get_permalink($product_id); ?>">
-    <div class="prod-img"><img
+<a class="prodLink" href="<?php echo get_permalink($product_id); ?>">
+    <div class="prodImg"><img
             src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
             alt="<?php echo $product->slug ?>"></div>
 
-    <div class="prod-titl"><?php echo get_the_title($product_id); ?>
+    <div class="prodTitl"><?php echo get_the_title($product_id); ?>
     </div>
     <?php
     $price = get_post_meta($product_id, '_price', true);
@@ -105,7 +104,7 @@ function the_product_html($product_id)
     } else {
         $formatprice = 0;
     } ?>
-    <div class="prod-price">￥<?php echo $formatprice; ?>円（税込）</div>
+    <div class="prodPrice">￥<?php echo $formatprice; ?>円（税込）</div>
 </a>
 <?php
 }
