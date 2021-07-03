@@ -1,17 +1,4 @@
-<?php
-$args = array(
-    'type'        => 'post',
-    'parent'      => 51,        // 親：medakaカテゴリ(51)
-    'orderby'     => 'name',
-    'order'       => 'ASC',
-    'taxonomy'    => 'product_cat',
-);
-$categories = get_categories($args);
-?>
-
-<!-- <div class="sect_title">
-  <h2>商品一覧</h2>
-</div> -->
+<?php $categories = get_medaka_categories(); ?>
 <div class="products">
   <?php foreach ($categories as $cat): ?>
   <?php

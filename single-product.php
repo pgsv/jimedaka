@@ -7,7 +7,7 @@
   <p><?php the_content(); ?>
   </p>
   <?php the_post_thumbnail('thumbnail'); ?>
-  <div class="cart-btn"><a
+  <div class="cartBtn"><a
       href="?add-to-cart= <?php the_ID(); ?> ">カートに追加</a></div>
   <?php endwhile; endif; ?>
 </main>

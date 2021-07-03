@@ -462,26 +462,26 @@ aside ul li img {
   margin-left: 10px;
 }
 
-.prod-titl {
+.prodTitl {
   padding: 3px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.4em;
 }
 
-.prod-price {
+.prodPrice {
   font-size: 15px;
   margin-bottom: 16px;
 }
 
-.cart-btn {
+.cartBtn {
   width: 120px;
   text-align: center;
   background-color: royalblue;
   margin: auto;
 }
 
-.cart-btn a {
+.cartBtn a {
   color: #ffffff;
 }
 
