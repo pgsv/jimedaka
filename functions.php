@@ -1,4 +1,34 @@
 <?php
+// locate_template('functions_admin.php', true);
+// require_once dirname(__FILE__) . '/functions_admin.php';
+// include('C:\Users\user\Local Sites\medakashopping\app\public\wp-content\themes\mytemplate\functions\functions_debug.php');
+// include(get_template_directory().'/functions/functions_products.php');
+// include(get_template_directory().'/functions/functions_woocomerce.php');
+
+/**
+ * 投稿ラベルを「お知らせ」に変更
+ */
+function post_has_archive($args, $post_type)
+{
+    if ('post' == $post_type) {
+        $args['rewrite'] = true;
+        $args['has_archive'] = 'news';
+        $args['label'] = 'お知らせ';
+    }
+    return $args;
+}
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
+/**
+ * カスタムフィールドを取得
+ */
+function get_custom_field($field_name, $page_slug)
+{
+    $page = get_page_by_path($page_slug);
+    $id = $page->ID;
+    return get_field_object($field_name, $id);
+}
+
 
 /**
  * WooCommerceの連携を有効化
@@ -42,30 +72,15 @@ function template_redirect_callback()
     }
 }
 
-
 /**
- * 投稿ラベルを「お知らせ」に変更
+ * WooCommerceのサムネ画像を取得
  */
-function post_has_archive($args, $post_type)
+function get_wc_thumb_url($term_id)
 {
-    if ('post' == $post_type) {
-        $args['rewrite'] = true;
-        $args['has_archive'] = 'news';
-        $args['label'] = 'お知らせ';
-    }
-    return $args;
+    $thumb_id = get_woocommerce_term_meta($term_id, 'thumbnail_id', true);
+    return wp_get_attachment_thumb_url($thumb_id);
 }
-add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
-/**
- * カスタムフィールドを取得
- */
-function get_custom_field($field_name, $page_slug)
-{
-    $page = get_page_by_path($page_slug);
-    $id = $page->ID;
-    return get_field_object($field_name, $id);
-}
 
 /**
  * 商品リンクのHTMLを表示
@@ -94,6 +109,30 @@ function the_product_html($product_id)
 </a>
 <?php
 }
+
+/**
+ * メダカカテゴリーのURLを取得
+ */
+function get_medaka_cat_url($cat_slug)
+{
+    return  home_url()."/products/#".$cat_slug;
+}
+
+/**
+ * メダカのカテゴリーリストを取得
+ */
+function get_medaka_categories()
+{
+    $args = array(
+        'type'        => 'post',
+        'parent'      => 51,        // 親：medakaカテゴリ(51)
+        'orderby'     => 'name',
+        'order'       => 'ASC',
+        'taxonomy'    => 'product_cat',
+    );
+    return get_categories($args);
+}
+
 
 /**
 * 開発用デバッグを表示

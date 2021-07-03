@@ -215,19 +215,23 @@ footer {
   position: relative;
 }
 
-footer ul li {
+footer .footer-nav-menu, footer .footer-nav-medaka, footer .footer-nav li {
   text-align: left;
 }
 
-.footer_top {
-  position: absolute;
-  left: 40px;
+footer .footer-nav-menu {
+  margin-left: 50vw;
 }
 
-.footer_nav {
-  position: relative;
-  display: inline-block;
-  margin-right: 700px;
+footer .footer-nav-medaka {
+  margin-left: 100px;
+}
+
+.footer-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .copyright {
@@ -294,7 +298,7 @@ aside ul li img {
 }
 
 .products ul li {
-  width: calc($per_width - 20px);
+  width: calc(50% - 20px);
   padding: 10px;
   margin-bottom: 15px;
 }
@@ -339,7 +343,7 @@ aside ul li img {
     margin-bottom: 70px;
   }
   .products ul li {
-    width: calc($per_width - 20px);
+    width: calc(25% - 20px);
     padding: 10px;
     margin-bottom: 15px;
   }
