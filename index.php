@@ -2,11 +2,19 @@
 <div class="wrap">
     <?php get_sidebar(); ?>
     <main>
-        <div class="front_sldr"><?php echo do_shortcode('[smartslider3 slider=4]'); ?>
+        <div class="top">
+            <div class="top-left">
+                <?php include("template-parts/categories.php"); ?>
+            </div>
+            <div class="top-right">
+                <div class="top-right-slider"><?php echo do_shortcode('[smartslider3 slider=4]'); ?>
+                </div>
+                <div class="top-right-news"><?php include('template-parts/news.php'); ?>
+                </div>
+            </div>
         </div>
-        <?php include('template-parts/news.php'); ?>
         <h2>当店一押しのメダカ</h2>
-        <div class="products">
+        <div class="prod-pickup">
             <ul>
                 <?php for ($i = 1; $i <= 3; $i++) { ?>
                 <li>
