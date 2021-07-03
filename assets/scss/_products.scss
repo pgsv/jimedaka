@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     margin-bottom: 70px;
     li {
-      width: calc($per_width - 20px);
+      width: calc(#{$per_width} - 20px);
       padding: 10px;
       margin-bottom: 15px;
       a {

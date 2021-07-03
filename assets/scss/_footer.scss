@@ -3,21 +3,33 @@ footer {
   text-align: center;
   padding: 56px 40px 20px;
   position: relative;
-  ul {
-    li {
+  .footer-nav {
+    &-menu, &-medaka, li {
       text-align: left;
+    }
+    &-menu, &-medaka {
+      // position: absolute;
+    }
+    &-menu {
+      margin-left: 50vw;
+    } 
+    &-medaka {
+      margin-left: 100px;
     }
   }
 }
-.footer_top {
-  position: absolute;
-  left: 40px;
+.footer-nav {
+  display: flex;
 }
-.footer_nav {
-  position: relative;
-  display: inline-block;
-  margin-right: 700px;
-}
+// .footer_top {
+//   position: absolute;
+//   left: 40px;
+// }
+// .footer_nav {
+//   position: relative;
+//   display: inline-block;
+//   margin-right: 700px;
+// }
 .copyright {
   font-size: 10px;
 }
