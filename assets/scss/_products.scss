@@ -19,7 +19,7 @@
   }
 }
 
-.products {
+.products, .prod-pickup {
   @include products();
 }
 // .products & {
@@ -55,7 +55,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .products {
+  .products, .prod-pickup {
     @include products(25%);
   }
 }
