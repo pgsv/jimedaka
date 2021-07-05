@@ -1,41 +1,98 @@
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 56px 40px 20px;
-  position: relative;
-  .footer-nav {
-    &-menu, &-medaka, li {
-      text-align: left;
+.footer {
+  background-color: #222;
+  padding: 34px 8%;
+
+  &-body {
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+      display: flex;
+      -webkit-text-stroke-width: 0.5px;
+      .footerLogo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-image {
+          width: 50px;
+        }
+        &-text {
+          -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+          color: $white;
+          font-size: 24px;
+          margin-top: 4px;
+        }
+      }
+      .catchphrase {
+        color: $white;
+        padding-top: 21px;
+        padding-left: 24px;
+        &-body {
+          font-size: 24px;
+          line-height: 28px;
+          margin-bottom: 16px;
+        }
+        &-foot {
+          font-size: 16px;
+        }
+      }
     }
-    &-menu, &-medaka {
-      // position: absolute;
-    }
-    &-menu {
-      margin-left: 50vw;
-    } 
-    &-medaka {
-      margin-left: 100px;
+
+    &-right {
+      color: $white;
+      display: flex;
+      text-align: end;
+
+      .footerNav {
+        &:first-child {
+          margin-right: 100px;
+        }
+        &-head {
+          font-size: 20px;
+          margin-bottom: 28px;
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-stroke-color: $white;
+        }
+        &-body {
+          position: relative;
+          .footerSeparation {
+            position: absolute;
+            width: 3px;
+            height: calc(120%);
+            right: -16px;
+            top: -4px;
+          }
+          li {
+            margin-bottom: 16px;
+            a {
+              font-size: 16px;
+              color: $grey-b;
+              -webkit-text-stroke-width: 0.5px;
+            }
+          }
+        }
+      }
     }
   }
-}
-.footer-nav {
-  display: flex;
-}
-// .footer_top {
-//   position: absolute;
-//   left: 40px;
-// }
-// .footer_nav {
-//   position: relative;
-//   display: inline-block;
-//   margin-right: 700px;
-// }
-.copyright {
-  font-size: 10px;
-}
-.share {
-  ul {
+
+  &-foot {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    .share {
+      display: flex;
+      margin-bottom: 10px;
+      li {
+        margin-left: 10px;
+        &:first-child {
+          margin-left: none;
+        }
+      }
+    }
+    .copyright {
+      color: $white;
+      font-size: 10px;
+    }
   }
 }
