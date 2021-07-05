@@ -2,11 +2,12 @@
 Theme Name : MyTemplate
 */
 @charset "UTF-8";
+@import "reset";
 @import "variable";
 @import "mixins";
 @import "common";
-@import "reset";
 @import "loadfont";
 @import "header";
 @import "footer";
+@import "./pages/home";
 @import "products";
