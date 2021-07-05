@@ -1,0 +1,130 @@
+.top {
+  background-color: $black;
+  padding: 16px 4%;
+  &-categories {
+    display: flex;
+    color: $white;
+    &-head {
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      margin-right: 20px;
+      margin-left: 16px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      position: relative;
+      display: inline-block;
+      .separation {
+        position: absolute;
+        top: 0;
+        right: -8px;
+        width: 3px;
+        height: 180px;
+      }
+    }
+    &-body {
+      li {
+        margin-bottom: 10px;
+        position: relative;
+        transition: 0.3s;
+        transform: translate(0, 0);
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: rgb(228, 148, 0);
+          top: 0;
+          right: 0px;
+          width: 4px;
+          height: 100%;
+          transition: 0.3s;
+        }
+
+        &:hover::before {
+          right: -4px;
+          transition: 0.3s;
+        }
+        &:hover {
+          transition: 0.3s;
+          transform: translate(-4px, 0);
+        }
+
+        .categoryItem {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          transition: 0.3s;
+          &:hover {
+            transition: 0.3s;
+            opacity: 0.9;
+          }
+          &-image {
+            border-radius: 4px 0 0 4px;
+            width: 280px;
+            height: 70px;
+            background-position: center;
+            background-size: cover;
+          }
+          &-text {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            color: $black;
+            -webkit-text-stroke-width: 0.5px;
+            font-size: 16px;
+            z-index: 2;
+            border-radius: 100px;
+            background-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.75);
+          }
+        }
+      }
+    }
+  }
+
+  &-right {
+    padding-left: 20px;
+    &-slider {
+      width: 100%;
+    }
+
+    .news {
+      overflow: scroll;
+      width: 100%;
+      &-head {
+        color: $white;
+        -webkit-text-stroke-width: 0.5px;
+        font-size: 24px;
+        margin: 20px 0;
+      }
+      &-body {
+        position: relative;
+        width: 100%;
+        dl {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          overflow: scroll;
+          width: 100%;
+          dt {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 18px;
+            a {
+              display: block;
+              color: $white;
+              font-size: 14px;
+              width: 300%;
+            }
+          }
+        }
+        .separation {
+          position: absolute;
+          height: 100%;
+          top: 0;
+          left: 4px;
+          width: 4px;
+          height: 120%;
+        }
+      }
+    }
+  }
+}
