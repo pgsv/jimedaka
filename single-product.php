@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <main>
-  <p>single-product</p>
   <?php if (have_posts()): while (have_posts()):the_post(); ?>
   <?php the_post_thumbnail('thumbnail'); ?>
   <p><?php the_title(); ?>
