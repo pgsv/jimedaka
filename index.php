@@ -31,7 +31,7 @@
         </div>
 
         <div class="top-right">
-            <div class="top-right-slider"><?php echo do_shortcode(' [smartslider3 slider="5"] '); ?>
+            <div class="top-right-slider"><?php echo do_shortcode(' [smartslider3 slider="4"] '); ?>
             </div>
             <div class="news">
                 <div class="news-head">お知らせ</div>
@@ -72,5 +72,4 @@
     </div>
     <h2>メダカの飼育環境について</h2>
 </main>
-
 <?php get_footer();
