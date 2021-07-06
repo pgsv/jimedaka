@@ -1,5 +1,5 @@
 .top {
-  background-color: $black;
+  background-image: url("./assets/img/washi.jpg");
   padding: 16px 4%;
   &-categories {
     display: flex;
@@ -9,15 +9,16 @@
       writing-mode: vertical-rl;
       margin-right: 20px;
       margin-left: 16px;
-      font-size: 20px;
+      font-size: 16px;
       letter-spacing: 2px;
       position: relative;
       display: inline-block;
+      margin-top: 12px;
       .separation {
         position: absolute;
         top: 0;
         right: -8px;
-        width: 3px;
+        width: 2px;
         height: 180px;
       }
     }
@@ -30,21 +31,22 @@
         &::before {
           content: "";
           position: absolute;
-          background-color: rgb(228, 148, 0);
+          background-color: white;
           top: 0;
           right: 0px;
-          width: 4px;
+          width: 0px;
           height: 100%;
           transition: 0.3s;
         }
 
         &:hover::before {
-          right: -4px;
+          right: -2px;
+          width: 2px;
           transition: 0.3s;
         }
         &:hover {
           transition: 0.3s;
-          transform: translate(-4px, 0);
+          transform: translate(-2px, 0);
         }
 
         .categoryItem {
@@ -52,12 +54,12 @@
           display: block;
           overflow: hidden;
           transition: 0.3s;
+          opacity: 0.8;
           &:hover {
             transition: 0.3s;
-            opacity: 0.9;
+            opacity: 1;
           }
           &-image {
-            border-radius: 4px 0 0 4px;
             width: 280px;
             height: 70px;
             background-position: center;
@@ -65,8 +67,10 @@
           }
           &-text {
             position: absolute;
+            top: 50%;
             right: 20px;
-            bottom: 20px;
+            transform: translate(0, -50%);
+
             color: $black;
             -webkit-text-stroke-width: 0.5px;
             font-size: 16px;
@@ -87,7 +91,6 @@
     }
 
     .news {
-      overflow: scroll;
       width: 100%;
       &-head {
         color: $white;
@@ -96,6 +99,7 @@
         margin: 20px 0;
       }
       &-body {
+        overflow: scroll;
         position: relative;
         width: 100%;
         dl {
@@ -110,7 +114,7 @@
             margin-bottom: 18px;
             a {
               display: block;
-              color: $white;
+              color: $grey-b;
               font-size: 14px;
               width: 300%;
             }
@@ -121,7 +125,7 @@
           height: 100%;
           top: 0;
           left: 4px;
-          width: 4px;
+          width: 3px;
           height: 120%;
         }
       }

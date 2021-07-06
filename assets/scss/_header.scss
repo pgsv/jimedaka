@@ -5,9 +5,17 @@ header {
   padding: 0 5%;
   height: 80px;
   border-bottom: solid 1px $grey_e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: $white;
+  width: 100%;
+  box-sizing: border-box;
   .separation {
     width: 3px;
-    height: 44px;
+    height: 50px;
+    padding-top: 10px;
   }
 }
 
@@ -32,7 +40,7 @@ header {
     li {
       font-size: 18px;
       margin-left: 16px;
-      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-width: 0.3px;
     }
   }
 }
@@ -51,6 +59,8 @@ header {
     }
     .item-text {
       font-size: 10px;
+      margin-top: 4px;
+      // display: none;
     }
   }
   &-searchForm {
