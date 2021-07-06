@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<p>page-my-account</p>
 <main>
   <?php if (have_posts()): while (have_posts()):the_post(); ?>
   <h1><?php the_title(); ?>

@@ -92,22 +92,88 @@ function the_product_html($product_id)
     <div class="prodImg"><img
             src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
             alt="<?php echo $product->slug ?>"></div>
-
     <div class="prodTitl"><?php echo get_the_title($product_id); ?>
     </div>
-    <?php
+    <?php clog($product_id); ?>
+    <div class="prodPrice">￥<?php echo get_product_taxPrice($product_id); ?>円（税込）</div>
+</a>
+<?php
+}
+
+/**
+ * 商品価格を取得
+ */
+function get_product_taxPrice($product_id)
+{
     $price = get_post_meta($product_id, '_price', true);
     $taxRate = 1.1;
     $taxPrice = $price * $taxRate;
     if (! empty($taxPrice)) {
-        $formatprice = number_format($taxPrice);
+        return number_format($taxPrice);
     } else {
-        $formatprice = 0;
+        return 0;
+    }
+}
+
+
+add_action('woocommerce_after_add_to_cart_quantity', 'ts_quantity_plus_sign');
+
+function ts_quantity_plus_sign()
+{
+    echo '<button type="button" class="plus" >+</button>';
+}
+add_action('woocommerce_before_add_to_cart_quantity', 'ts_quantity_minus_sign');
+
+function ts_quantity_minus_sign()
+{
+    echo '<button type="button" class="minus" >-</button>';
+}
+add_action('wp_footer', 'ts_quantity_plus_minus');
+
+function ts_quantity_plus_minus()
+{
+    // To run this on the single product page
+    if (! is_product()) {
+        return;
     } ?>
-    <div class="prodPrice">￥<?php echo $formatprice; ?>円（税込）</div>
-</a>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+        $('form.cart').on('click', 'button.plus, button.minus', function() {
+
+            // Get current quantity values
+            var qty = $(this).closest('form.cart').find('.qty');
+            var val = parseFloat(qty.val());
+            var max = parseFloat(qty.attr('max'));
+            var min = parseFloat(qty.attr('min'));
+            var step = parseFloat(qty.attr('step'));
+
+            // Change the value if plus or minus
+            if ($(this).is('.plus')) {
+                if (max && (max <= val)) {
+                    qty.val(max);
+                } else {
+                    qty.val(val + step);
+                }
+            } else {
+                if (min && (min >= val)) {
+                    qty.val(min);
+                } else if (val > 1) {
+                    qty.val(val - step);
+                }
+            }
+        });
+    });
+</script>
 <?php
 }
+
+
+
+
+
+
 
 /**
  * メダカカテゴリーのURLを取得
