@@ -1,9 +1,4 @@
 <?php
-// locate_template('functions_admin.php', true);
-// require_once dirname(__FILE__) . '/functions_admin.php';
-// include('C:\Users\user\Local Sites\medakashopping\app\public\wp-content\themes\mytemplate\functions\functions_debug.php');
-// include(get_template_directory().'/functions/functions_products.php');
-// include(get_template_directory().'/functions/functions_woocomerce.php');
 
 /**
  * 投稿ラベルを「お知らせ」に変更
@@ -62,17 +57,31 @@ add_filter('woocommerce_account_menu_items', function ($menus) {
         'orders'             => '購入履歴',
         'edit-address'       => '住所',
         'edit-account'       => 'お客様情報',
+        'payment-methods'    => '決済方法',
         'customer-logout'    => 'ログアウト',
     );
     return $menus;
 });
 
-
-
-
-
-
-
+/**
+ * ページタイトルの変更
+ */
+function my_the_title($title, $id)
+{
+    if (is_wc_endpoint_url('orders') && in_the_loop()) {
+        $title = '購入履歴';
+    } elseif (is_wc_endpoint_url('edit-account') && in_the_loop()) {
+        $title = 'お客様情報';
+    } elseif (is_wc_endpoint_url('edit-address') && in_the_loop()) {
+        $title = '住所';
+    } elseif (is_wc_endpoint_url('payment-methods') && in_the_loop()) {
+        $title = '決済方法';
+    } elseif (is_wc_endpoint_url('lost-password') && in_the_loop()) {
+        $title = 'パスワードをお忘れの方';
+    }
+    return $title;
+}
+add_filter('the_title', 'my_the_title', 20, 2);
 
 
 
@@ -130,65 +139,6 @@ function get_product_taxPrice($product_id)
         return 0;
     }
 }
-
-
-add_action('woocommerce_after_add_to_cart_quantity', 'ts_quantity_plus_sign');
-
-function ts_quantity_plus_sign()
-{
-    echo '<button type="button" class="plus" >+</button>';
-}
-add_action('woocommerce_before_add_to_cart_quantity', 'ts_quantity_minus_sign');
-
-function ts_quantity_minus_sign()
-{
-    echo '<button type="button" class="minus" >-</button>';
-}
-add_action('wp_footer', 'ts_quantity_plus_minus');
-
-function ts_quantity_plus_minus()
-{
-    // To run this on the single product page
-    if (! is_product()) {
-        return;
-    } ?>
-
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-
-        $('form.cart').on('click', 'button.plus, button.minus', function() {
-
-            // Get current quantity values
-            var qty = $(this).closest('form.cart').find('.qty');
-            var val = parseFloat(qty.val());
-            var max = parseFloat(qty.attr('max'));
-            var min = parseFloat(qty.attr('min'));
-            var step = parseFloat(qty.attr('step'));
-
-            // Change the value if plus or minus
-            if ($(this).is('.plus')) {
-                if (max && (max <= val)) {
-                    qty.val(max);
-                } else {
-                    qty.val(val + step);
-                }
-            } else {
-                if (min && (min >= val)) {
-                    qty.val(min);
-                } else if (val > 1) {
-                    qty.val(val - step);
-                }
-            }
-        });
-    });
-</script>
-<?php
-}
-
-
-
-
-
 
 
 /**
