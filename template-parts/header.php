@@ -49,6 +49,8 @@
                 src="<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg"
                 alt="カート">
             <div class="item-text">カート</div>
+            <div class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?>
+            </div>
         </a>
     </div>
 
