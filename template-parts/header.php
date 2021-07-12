@@ -30,18 +30,21 @@
             <input type="text" size="25" placeholder="キーワードを入力">
             <input type="submit" value="&#xf002">
         </form>
-        <a href="#" class="header-foot-item">
-            <img class="item-img"
-                src="<?php echo get_template_directory_uri(); ?>/assets/img/login.svg"
-                alt="サインアウト">
-            <div class="item-text">ログイン</div>
-        </a>
         <a href="<?php echo home_url(); ?>/my-account"
             class="header-foot-item">
+            <?php if (is_user_logged_in()) : ?>
+            <!-- ログイン状態 -->
             <img class="item-img"
                 src="<?php echo get_template_directory_uri(); ?>/assets/img/user.svg"
                 alt="マイページ">
             <div class="item-text">マイページ</div>
+            <?php else : ?>
+            <!-- ログアウト状態 -->
+            <img class="item-img"
+                src="<?php echo get_template_directory_uri(); ?>/assets/img/login.svg"
+                alt="サインアウト">
+            <div class="item-text">ログイン</div>
+            <?php endif; ?>
         </a>
         <a href="<?php echo home_url(); ?>/cart"
             class="header-foot-item">
