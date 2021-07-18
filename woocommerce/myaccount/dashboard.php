@@ -21,21 +21,20 @@ if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>
-<div>
-	<div><a
+<ul class="myAccount-contents-links">
+	<li><a
 			href="<?php echo esc_url(wc_get_endpoint_url('orders')); ?>">購入履歴</a>
-	</div>
-	<div><a
+	</li>
+	<li><a
 			href="<?php echo esc_url(wc_get_endpoint_url('edit-address')); ?>">住所</a>
-	</div>
-	<div><a
+	</li>
+	<li><a
 			href="<?php echo esc_url(wc_get_endpoint_url('edit-account')); ?>">お客様情報</a>
-	</div>
-	<div><a
+	</li>
+	<li><a
 			href="<?php echo esc_url(wc_get_endpoint_url('payment-methods')); ?>">決済方法</a>
-	</div>
-</div>
-
+	</li>
+</ul>
 <?php
 /**
 * My Account dashboard.

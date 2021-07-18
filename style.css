@@ -1022,7 +1022,7 @@ main {
   padding: 15px;
 }
 
-.myAccount {
+.myAccount-contents > .woocommerce {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1039,4 +1039,32 @@ main {
   font-size: 1.3rem;
   border-bottom: 1px solid #C4C4C4;
   padding: 16px 0px;
+}
+
+.myAccount-contents-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 50%;
+  margin: 43px;
+}
+
+.myAccount-contents-links li {
+  font-size: 1.8em;
+  width: 220px;
+  height: 100px;
+  margin: 10px;
+  border: 1px solid #3333;
+}
+
+.myAccount-contents-links li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 30px;
 }

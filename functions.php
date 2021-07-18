@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 /**
  * 投稿ラベルを「お知らせ」に変更
@@ -188,8 +187,8 @@ function clog($data)
     echo 'console.log('. json_encode($data) .')';
     echo '</script>';
 }
-=======
-include_once(get_template_directory() . '/functions/functions_admin.php');
-include_once(get_template_directory() . '/functions/functions_debug.php');
-include_once(get_template_directory() . '/functions/functions_woocommerce.php');
->>>>>>> 61827fd (マイページのリンク追加、スタイル更新、functions分割)
+
+
+// include_once(get_template_directory() . '/functions/functions-admin.php');
+// include_once(get_template_directory() . '/functions/functions-debug.php');
+// include_once(get_template_directory() . '/functions/functions-woocommerce.php');
