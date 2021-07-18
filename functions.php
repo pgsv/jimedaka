@@ -88,14 +88,14 @@ function get_wc_thumb_url($term_id)
 function the_product_html($product_id)
 {
     ?>
-<a class="prodLink" href="<?php echo get_permalink($product_id); ?>">
+<a class="recommend-head"
+    href="<?php echo get_permalink($product_id); ?>">
     <div class="prodImg"><img
             src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
             alt="<?php echo $product->slug ?>"></div>
     <div class="prodTitl"><?php echo get_the_title($product_id); ?>
     </div>
-    <?php clog($product_id); ?>
-    <div class="prodPrice">￥<?php echo get_product_taxPrice($product_id); ?>円（税込）</div>
+    <div class="prodPrice">￥<?php echo get_product_taxPrice($product_id); ?>円&#040税込)</div>
 </a>
 <?php
 }
@@ -103,13 +103,25 @@ function the_product_html($product_id)
 /**
  * 商品価格を取得
  */
+$num_to_kanji_dict = ['〇','一','二','三','四','五','六','七','八','九'];
+function num_to_kanji($num)
+{
+    global $num_to_kanji_dict;
+    if ($num != ',') {
+        return $num_to_kanji_dict[(int) $num];
+    } else {
+        return '，';
+    }
+}
+
 function get_product_taxPrice($product_id)
 {
     $price = get_post_meta($product_id, '_price', true);
     $taxRate = 1.1;
     $taxPrice = $price * $taxRate;
     if (! empty($taxPrice)) {
-        return number_format($taxPrice);
+        $format_price = str_split(number_format($taxPrice));
+        return implode(array_map('num_to_kanji', $format_price));
     } else {
         return 0;
     }
