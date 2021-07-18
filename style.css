@@ -236,7 +236,8 @@ header {
 
 header .separation {
   width: 3px;
-  height: 44px;
+  height: 50px;
+  padding-top: 10px;
 }
 
 .header-head {
@@ -270,9 +271,9 @@ header .separation {
 }
 
 .header-body ul li {
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 16px;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 0.6px;
 }
 
 .header-foot {
@@ -310,6 +311,8 @@ header .separation {
 
 .header-foot-item .item-text {
   font-size: 10px;
+  margin-top: 4px;
+  display: none;
 }
 
 .header-foot-searchForm {
@@ -511,7 +514,7 @@ header .separation {
 }
 
 .top {
-  background-color: #333333;
+  background-image: url("./assets/img/washi.jpg");
   padding: 16px 4%;
 }
 
@@ -529,17 +532,18 @@ header .separation {
           writing-mode: vertical-rl;
   margin-right: 20px;
   margin-left: 16px;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 2px;
   position: relative;
   display: inline-block;
+  margin-top: 12px;
 }
 
 .top-categories-head .separation {
   position: absolute;
   top: 0;
   right: -8px;
-  width: 3px;
+  width: 2px;
   height: 180px;
 }
 
@@ -555,17 +559,18 @@ header .separation {
 .top-categories-body li::before {
   content: "";
   position: absolute;
-  background-color: #e49400;
+  background-color: white;
   top: 0;
   right: 0px;
-  width: 4px;
+  width: 0px;
   height: 100%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .top-categories-body li:hover::before {
-  right: -4px;
+  right: -2px;
+  width: 2px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -573,8 +578,8 @@ header .separation {
 .top-categories-body li:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transform: translate(-4px, 0);
-          transform: translate(-4px, 0);
+  -webkit-transform: translate(-2px, 0);
+          transform: translate(-2px, 0);
 }
 
 .top-categories-body li .categoryItem {
@@ -583,16 +588,16 @@ header .separation {
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  opacity: 0.8;
 }
 
 .top-categories-body li .categoryItem:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .top-categories-body li .categoryItem-image {
-  border-radius: 4px 0 0 4px;
   width: 280px;
   height: 70px;
   background-position: center;
@@ -601,8 +606,10 @@ header .separation {
 
 .top-categories-body li .categoryItem-text {
   position: absolute;
+  top: 50%;
   right: 20px;
-  bottom: 20px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   color: #333333;
   -webkit-text-stroke-width: 0.5px;
   font-size: 16px;
@@ -622,7 +629,6 @@ header .separation {
 }
 
 .top-right .news {
-  overflow: scroll;
   width: 100%;
 }
 
@@ -634,6 +640,7 @@ header .separation {
 }
 
 .top-right .news-body {
+  overflow: scroll;
   position: relative;
   width: 100%;
 }
@@ -663,7 +670,7 @@ header .separation {
 
 .top-right .news-body dl dt a {
   display: block;
-  color: #ffffff;
+  color: #b5b5b5;
   font-size: 14px;
   width: 300%;
 }
@@ -673,7 +680,7 @@ header .separation {
   height: 100%;
   top: 0;
   left: 4px;
-  width: 4px;
+  width: 3px;
   height: 120%;
 }
 

@@ -7,9 +7,9 @@
         <div class="header-head-campany">じめだか</div>
     </a>
 
-    <img class="separation"
+    <!-- <img class="separation"
         src="<?php echo get_template_directory_uri(); ?>/assets/img/separation.svg"
-        alt="区切り">
+    alt="区切り"> -->
 
     <nav class="header-body">
         <ul>
