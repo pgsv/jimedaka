@@ -87,6 +87,56 @@
             <?php } ?>
         </div>
     </div>
+    <div class="deliveryflow">
+        <div class="deliveryflow-left">
+            <img class='deliveryflow-left-img'
+                src='<?php echo get_template_directory_uri(); ?>/assets/img/deliveryflow.jpg'
+                alt='カートページ画面の映ったスマsートフォン'>
+        </div>
+        <div class="deliveryflow-right">
+            <div class="deliveryflow-right-head">
+                お届けまでの手順
+            </div>
+            <div class="deliveryflowItem">
+                <div class="deliveryflowItem-wrapper">
+                    <div class="deliveryflowItem-wrapper-title">
+                        一、カートに入れる
+                    </div>
+                    <div class="deliveryflowItem-wrapper-desc">
+                        購入される商品をカートに<br>入れます。
+                    </div>
+                </div>
+                <img class='deliveryflowItem-img cart'
+                    src='<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg'
+                    alt='カート'>
+            </div>
+            <div class="deliveryflowItem">
+                <div class="deliveryflowItem-wrapper">
+                    <div class="deliveryflowItem-wrapper-title">
+                        二、商品購入の確定
+                    </div>
+                    <div class="deliveryflowItem-wrapper-desc">
+                        オンライン決済で商品の購入<br>の確定します。
+                    </div>
+                </div>
+                <img class='deliveryflowItem-img order'
+                    src='<?php echo get_template_directory_uri(); ?>/assets/img/order.svg'
+                    alt='注文'>
+            </div>
+            <div class="deliveryflowItem">
+                <div class="deliveryflowItem-wrapper">
+                    <div class="deliveryflowItem-wrapper-title">
+                        三、商品の配送
+                    </div>
+                    <div class="deliveryflowItem-wrapper-desc">
+                        購入後、２〜3日ほどで<br>商品が届きます。
+                    </div>
+                </div>
+                <img class='deliveryflowItem-img track'
+                    src='<?php echo get_template_directory_uri(); ?>/assets/img/truck.svg'
+                    alt='トラック'>
+            </div>
+        </div>
     </div>
 </main>
 <?php get_footer();
