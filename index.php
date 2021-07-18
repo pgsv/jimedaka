@@ -29,7 +29,6 @@
                     type=""></object>
             </div>
         </div>
-
         <div class="top-right">
             <div class="top-right-slider"><?php echo do_shortcode(' [smartslider3 slider="4"] '); ?>
             </div>
@@ -55,21 +54,39 @@
             </div>
         </div>
     </div>
-
-    <h2>当店一押しのメダカ</h2>
-    <div class="prod-pickup">
-        <ul>
+    <div class="recommend">
+        <div class="recommend-head">注目のメダカ</div>
+        <div class="recommend-body">
             <?php for ($i = 1; $i <= 3; $i++) { ?>
-            <li>
+            <div class="recommendItem">
                 <?php
                     $field_medaka = get_custom_field('medaka_'.$i, 'custom-field');
                     $field_desc = get_custom_field('description_'.$i, 'custom-field');
-                    the_product_html($field_medaka['value']->ID);
-                    echo $field_desc['value'];?>
-            </li>
+                    $product_id = $field_medaka['value']->ID
+                    ?>
+                <a class="recommendItem-head"
+                    href="<?php echo get_permalink($product_id); ?>">
+                    <img class="recommendItem-head-img"
+                        src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
+                        alt="<?php echo $product->slug ?>">
+                    <span class="recommendItem-head-label">当店一番人気</span>
+                </a>
+                <div class="recommendItem-body">
+                    <div class="recommendItem-body-name">
+                        <?php echo get_the_title($product_id); ?>
+                    </div>
+                    <div class="recommendItem-body-price">
+                        <?php echo get_product_taxPrice($product_id); ?>円<span
+                            class="light_red">（税込）</span>
+                    </div>
+                    <div class="recommendItem-body-desc">
+                        <?php echo $field_desc['value']; ?>
+                    </div>
+                </div>
+            </div>
             <?php } ?>
-        </ul>
+        </div>
     </div>
-    <h2>メダカの飼育環境について</h2>
+    </div>
 </main>
 <?php get_footer();

@@ -1,3 +1,6 @@
+main {
+  margin-top: 80px;
+}
 .top {
   background-image: url("./assets/img/washi.jpg");
   padding: 16px 4%;
@@ -86,6 +89,7 @@
 
   &-right {
     padding-left: 20px;
+    width: 100%;
     &-slider {
       width: 100%;
     }
