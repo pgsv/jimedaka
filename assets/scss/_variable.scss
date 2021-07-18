@@ -18,3 +18,7 @@ $light_red: #cc2926; //警告に使用
 $dark_beige: #b4aa98; //top-borderのみに使用
 $beige: #bda366; //アクセントになるフォントに使用
 $light_beige: #f7f3ec; //背景に使用
+
+.light_red {
+  color: $light_red;
+}
