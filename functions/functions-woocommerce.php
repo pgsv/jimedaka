@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WooCommerceの連携を有効化
  */
@@ -28,7 +29,6 @@ add_filter('woocommerce_account_menu_items', function ($menus) {
 
     // メニュー情報を変更
     $menus = array(
-        'dashboard'          => 'マイページ',
         'orders'             => '購入履歴',
         'edit-address'       => '住所',
         'edit-account'       => 'お客様情報',
@@ -67,143 +67,3 @@ function get_wc_thumb_url($term_id)
     $thumb_id = get_woocommerce_term_meta($term_id, 'thumbnail_id', true);
     return wp_get_attachment_thumb_url($thumb_id);
 }
-
-
-/**
- * 商品リンクのHTMLを表示
- */
-function the_product_html($product_id)
-{
-    ?>
-<a class="prodLink" href="<?php echo get_permalink($product_id); ?>">
-    <div class="prodImg"><img
-            src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
-            alt="<?php echo $product->slug ?>"></div>
-    <div class="prodTitl"><?php echo get_the_title($product_id); ?>
-    </div>
-    <?php clog($product_id); ?>
-    <div class="prodPrice">￥<?php echo get_product_taxPrice($product_id); ?>円（税込）</div>
-</a>
-<?php
-}
-
-/**
- * 商品価格を取得
- */
-function get_product_taxPrice($product_id)
-{
-    $price = get_post_meta($product_id, '_price', true);
-    $taxRate = 1.1;
-    $taxPrice = $price * $taxRate;
-    if (! empty($taxPrice)) {
-        return number_format($taxPrice);
-    } else {
-        return 0;
-    }
-}
-
-
-/**
- * メダカカテゴリーのURLを取得
- */
-function get_medaka_cat_url($cat_slug)
-{
-    return  home_url()."/products/#".$cat_slug;
-}
-
-/**
- * メダカのカテゴリーリストを取得
- */
-function get_medaka_categories()
-{
-    $args = array(
-        'type'        => 'post',
-        'parent'      => 51,        // 親：medakaカテゴリ(51)
-        'orderby'     => 'name',
-        'order'       => 'ASC',
-        'taxonomy'    => 'product_cat',
-    );
-    return get_categories($args);
-}
-
-function wc_my_account_top()
-{
-    echo 'wc_my_account_top';
-}
-add_filter('woocommerce_my_account', 'wc_my_account_top', 100);
-
-
-
-
-
-
-// Account Edit Adresses: Remove and reorder addresses fields
-add_filter('woocommerce_default_address_fields', 'custom_default_address_fields', 10, 1);
-function custom_default_address_fields($fields)
-{
-    // Only on account pages
-    if (! is_account_page()) {
-        return $fields;
-    }
-    // echo '--------------------------------------- $fields ------------------------------';
-    // var_dump($fields);
-    // echo 'custom_default_address_fields';
-    ## ---- 1.  Remove 'address_2' field ---- ##
-
-    unset($fields['address_2']);
-
-    ## ---- 2.  Sort Address fields ---- ##
-
-    // Set the order (sorting fields) in the array below
-    $sorted_fields = array('first_name','last_name','company','address_1','country','postcode','city','state');
-
-    $new_fields = array();
-    $priority = 0;
-
-    // Reordering billing and shipping fields
-    foreach ($sorted_fields as $key_field) {
-        $priority += 10;
-
-        if ($key_field == 'company') {
-            $priority += 20;
-        } // keep space for email and phone fields
-
-        $new_fields[$key_field] = $fields[$key_field];
-        $new_fields[$key_field]['priority'] = $priority;
-    }
-    // echo '--------------------------------------- $new_fields ------------------------------';
-    // var_dump($new_fields);
-    return $new_fields;
-}
-
-// Account Edit Adresses: Reorder billing email and phone fields
-add_filter('woocommerce_billing_fields', 'custom_billing_fields', 20, 1);
-function custom_billing_fields($fields)
-{
-    // Only on account pages
-    if (! is_account_page()) {
-        return $fields;
-    }
-
-    ## ---- 2.  Sort billing email and phone fields ---- ##
-
-    $fields['billing_email']['priority'] = 30;
-    $fields['billing_email']['class'] = array('form-row-first');
-    $fields['billing_phone']['priority'] = 40;
-    $fields['billing_phone']['class'] = array('form-row-last');
-
-    return $fields;
-}
-
-// Account Displayed Addresses : Remove 'address_2'
-add_filter('woocommerce_my_account_my_address_formatted_address', 'my_account_address_formatted_addresses', 20, 3);
-function my_account_address_formatted_addresses($address, $customer_id, $address_type)
-{
-    // echo 'my_account_address_formatted_addresses';
-    unset($address['address_2']); // remove Address 2
-
-    return $address;
-}
-
-// remove the filter
-remove_filter('woocommerce_default_address_fields', 'filter_woocommerce_default_address_fields', 10, 1);
