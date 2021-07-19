@@ -4,13 +4,13 @@
     <div class="products">
         <?php foreach ($categories as $cat): ?>
         <?php
-    $args = array(
-      'post_type'   => 'product',
-      'order'       => 'ASC',
-      'product_cat' => $cat->slug
-    );
-    $products = get_posts($args);
-    ?>
+            $args = array(
+            'post_type'   => 'product',
+            'order'       => 'ASC',
+            'product_cat' => $cat->slug
+            );
+            $products = get_posts($args);
+        ?>
         <?php if ($products): // 該当する投稿があったら?>
         <span id="<?php echo $cat->slug; ?>" class="prod-cat-name">
             <h4><?php echo $cat->name; ?>
