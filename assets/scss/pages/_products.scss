@@ -1,0 +1,121 @@
+.products {
+  display: flex;
+  margin-top: $header_height;
+
+  &-aside {
+    width: 235px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: $grey-f;
+    color: $black;
+    z-index: 2;
+
+    .productsItem {
+      padding: 32px 28px;
+      margin-bottom: 8px;
+      background-color: white;
+      border-bottom: 1px solid $grey-e;
+      border-top: 1px solid $grey-e;
+    }
+
+    &-all,
+    &-recommend {
+      font-size: 18px;
+      display: block;
+      -webkit-text-stroke-width: 0.5px;
+    }
+
+    .productsCart {
+      &-head {
+        font-size: 18px;
+        border: solid 1px $grey-b;
+        border-radius: 4px 4px 0 0;
+        padding: 14px 16px;
+        -webkit-text-stroke-width: 0.5px;
+      }
+      &-body {
+        font-size: 12px;
+        border: solid 1px $grey-b;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+        padding: 24px 14px;
+        line-height: 16px;
+        color: $dark_beige;
+      }
+      &-foot {
+        margin-top: 12px;
+      }
+    }
+    .productsSort {
+      &-head {
+        font-size: 18px;
+        -webkit-text-stroke-width: 0.5px;
+        margin-bottom: 36px;
+      }
+      ul li {
+        margin-bottom: 16px;
+        .productsSOrt-body-link {
+          font-size: 14px;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-list {
+    padding: 30px 70px;
+    background-color: $grey-f;
+
+    &-img {
+      width: 100%;
+      padding-top: 71.59%;
+      display: flex;
+      align-items: flex-end;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 50%;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 1%,
+          rgba(0, 0, 0, 0.7) 97%
+        );
+      }
+    }
+    &-category {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 0 100px 100px 0;
+      -webkit-text-stroke-width: 0.5px;
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+    &-wrapper {
+      width: 100%;
+      margin-top: auto;
+      color: $white;
+      z-index: 2;
+      padding: 14px 24px;
+    }
+    &-name,
+    &-price {
+      text-align: end;
+      white-space: nowrap;
+    }
+    &-price {
+      font-size: 12px;
+      padding-bottom: 8px;
+    }
+    &-name {
+      font-size: 16px;
+    }
+  }
+}

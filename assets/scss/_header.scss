@@ -3,15 +3,16 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  height: 80px;
+  height: $header_height;
   border-bottom: solid 1px $grey_e;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   background-color: $white;
   width: 100%;
   box-sizing: border-box;
+
   .separation {
     width: 3px;
     height: 50px;
@@ -24,13 +25,14 @@ header {
   align-items: center;
   cursor: pointer;
   &-logo {
-    width: 46px;
+    width: 38px;
     height: auto;
   }
   &-campany {
     font-size: 24px;
     -webkit-text-stroke-width: 1px;
     margin-left: 6px;
+    height: 22px;
   }
 }
 
@@ -103,7 +105,7 @@ header {
   }
 }
 
-.cart-count{
+.cart-count {
   position: absolute;
   top: 56px;
   right: 72px;
@@ -117,5 +119,4 @@ header {
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
-
 }
