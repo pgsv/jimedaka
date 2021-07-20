@@ -4,7 +4,10 @@
         <img class="header-head-logo"
             src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg"
             alt="ロゴ">
-        <div class="header-head-campany">じめだか</div>
+        <img class='header-head-campany'
+            src='<?php echo get_template_directory_uri(); ?>/assets/img/company_text.png'
+            alt='会社名'>
+        <!-- <div class="header-head-campany">じめだか</div> -->
     </a>
 
     <!-- <img class="separation"
