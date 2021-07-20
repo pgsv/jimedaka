@@ -5,6 +5,8 @@ Theme Name : MyTemplate
 @import "reset";
 @import "variable";
 @import "mixins";
+@import "lib/bass";
+@import "./components/btn";
 @import "common";
 @import "loadfont";
 @import "header";

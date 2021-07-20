@@ -1,0 +1,10 @@
+.btn_stroke_beige {
+  border: solid 1px $beige;
+  padding: 16px 32px;
+  color: $beige;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
