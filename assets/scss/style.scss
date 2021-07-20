@@ -2,17 +2,17 @@
 Theme Name : MyTemplate
 */
 @charset "UTF-8";
-@import "reset";
-@import "variable";
-@import "mixins";
+@import "lib/reset";
+@import "lib/variable";
+@import "lib/mixins";
+@import "lib/loadfont";
 @import "lib/bass";
 @import "./components/btn";
 @import "common";
-@import "loadfont";
 @import "header";
 @import "footer";
-@import "./home/top";
-@import "./home/recommend";
-@import "./home/deliveryflow";
-@import "myaccount";
+@import "pages/home/top";
+@import "pages/home/recommend";
+@import "pages/home/deliveryflow";
 @import "pages/products";
+@import "pages/myaccount";

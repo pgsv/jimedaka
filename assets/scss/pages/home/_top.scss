@@ -1,9 +1,7 @@
-main {
-  margin-top: 80px;
-}
 .top {
   background-image: url("./assets/img/washi.jpg");
   padding: 16px 4%;
+  margin-top: $header_height;
   &-categories {
     display: flex;
     color: $white;
