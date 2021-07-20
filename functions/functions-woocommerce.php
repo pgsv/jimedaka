@@ -67,3 +67,13 @@ function get_wc_thumb_url($term_id)
     $thumb_id = get_woocommerce_term_meta($term_id, 'thumbnail_id', true);
     return wp_get_attachment_thumb_url($thumb_id);
 }
+
+
+
+function misha_remove_fields($fields)
+{
+    echo 'misha_remove_fields';
+    unset($fields[ 'address_2' ]);
+    return $fields;
+}
+add_filter('woocommerce_default_address_fields', 'misha_remove_fields');
