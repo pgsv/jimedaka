@@ -1,0 +1,47 @@
+form p label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+form.wpcf7-form {
+  p:nth-last-of-type(2) label {
+    align-items: flex-start;
+    .label {
+      padding-top: 12px;
+    }
+  }
+  input[type="submit"] {
+    @include black-fill-btn(50%);
+    margin-left: auto;
+  }
+}
+
+.label {
+  white-space: nowrap;
+  width: 240px;
+  font-size: 16px;
+}
+
+span.wpcf7-form-control-wrap {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+textarea.wpcf7-form-control,
+input.wpcf7-form-control {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fafafa;
+  height: 56px;
+  outline: none;
+  border: solid 1px #ddd;
+  padding: 24px 24px;
+  font-size: 16px;
+  color: $black;
+}
+
+textarea.wpcf7-form-control {
+  height: auto;
+}
