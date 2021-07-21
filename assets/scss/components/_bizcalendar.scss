@@ -1,0 +1,57 @@
+.contactCalender {
+  #biz_calendar {
+    max-width: 500px;
+    padding-left: 32px;
+    font-family: "kyokasho";
+    font-size: 18px;
+    color: $black;
+
+    position: relative;
+    &::before {
+      position: absolute;
+      right: 0;
+      top: 6px;
+      content: "営業日";
+      font-size: 26px;
+    }
+
+    & > p:nth-last-of-type(1) {
+      display: none;
+    }
+    p {
+      text-align: center;
+    }
+    p span.boxholiday {
+      background-color: #f5e4e4;
+    }
+
+    .bizcal {
+      height: 300px;
+      border: none;
+
+      .calmonth {
+        font-size: 26px;
+        font-weight: normal;
+      }
+      th {
+        background-color: white;
+        color: #888;
+      }
+      th:first-child {
+        color: #b21e23;
+      }
+      th:nth-last-of-type(1) {
+        color: $black;
+      }
+
+      .calbtn {
+        display: none;
+      }
+
+      .holiday {
+        background-color: #f5e4e4;
+        color: #b21e23;
+      }
+    }
+  }
+}
