@@ -1,7 +1,8 @@
 .btn_stroke_beige {
   border: solid 1px $beige;
-  padding: 16px 32px;
+  padding: 12px 32px;
   color: $beige;
+  -webkit-text-stroke-width: 0.5px;
   display: flex;
   flex-direction: row;
   align-items: center;

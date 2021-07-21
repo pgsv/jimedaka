@@ -10,7 +10,7 @@
     z-index: 2;
 
     .productsItem {
-      padding: 32px 28px;
+      padding: 26px 24px;
       margin-bottom: 8px;
       background-color: white;
       border-bottom: 1px solid $grey-e;
@@ -19,14 +19,14 @@
 
     &-all,
     &-recommend {
-      font-size: 18px;
+      font-size: 16px;
       display: block;
       -webkit-text-stroke-width: 0.5px;
     }
 
     .productsCart {
       &-head {
-        font-size: 18px;
+        font-size: 16px;
         border: solid 1px $grey-b;
         border-radius: 4px 4px 0 0;
         padding: 14px 16px;
@@ -47,13 +47,13 @@
     }
     .productsSort {
       &-head {
-        font-size: 18px;
+        font-size: 16px;
         -webkit-text-stroke-width: 0.5px;
         margin-bottom: 36px;
       }
       ul li {
         margin-bottom: 16px;
-        .productsSOrt-body-link {
+        .productsSort-body-link {
           font-size: 14px;
           display: block;
         }
