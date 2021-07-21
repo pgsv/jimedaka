@@ -35,7 +35,6 @@ function the_product_html($product_id)
             alt="<?php echo $product->slug ?>"></div>
     <div class="prodTitl"><?php echo get_the_title($product_id); ?>
     </div>
-    <?php clog($product_id); ?>
     <div class="prodPrice">￥<?php echo get_product_taxPrice($product_id); ?>円（税込）</div>
 </a>
 <?php
