@@ -51,11 +51,17 @@
         <!-- </a> -->
         <a href="<?php echo home_url(); ?>/cart"
             class="header-foot-item">
-            <img class="item-img"
+            <!-- <img class="item-img"
                 src="<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg"
-                alt="カート">
-            <div class="item-text">カート</div>
-            <div class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?>
+            alt="カート">
+            <div class="item-text">カート</div> -->
+            <div class="headerCart">
+                <img class="headerCart-img"
+                    src='<?php echo get_template_directory_uri(); ?>/assets/img/cart-btn.svg'
+                    alt='カート'>
+                <div class="headerCart-alert">
+                    <?php echo WC()->cart->get_cart_contents_count(); ?>
+                </div>
             </div>
         </a>
     </div>
