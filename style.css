@@ -2530,7 +2530,7 @@ header .separation {
 .contact-wrapper {
   background-color: white;
   border-top: solid 6px #b4aa98;
-  padding: 5% 5%;
+  padding: 64px 8%;
 }
 
 .contact-wrapper-head {
@@ -2555,4 +2555,63 @@ header .separation {
   font-size: 14px;
   line-height: 1.64;
   letter-spacing: 1.6px;
+}
+
+.guide {
+  margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
+}
+
+.guide-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 64px 8%;
+}
+
+.guide-head {
+  font-size: 32px;
+  margin-bottom: 64px;
+  -webkit-text-stroke-width: 0.5px;
+}
+
+.guide-subHead {
+  font-size: 24px;
+  margin-bottom: 44px;
+}
+
+.guide-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 26px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.guide-list-head {
+  white-space: nowrap;
+  width: 300px;
+  font-size: 18px;
+}
+
+.guide-list-body {
+  width: 100%;
+  line-height: 26px;
+  font-size: 16px;
+}
+
+.guide-list::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+}
+
+.guide-list:last-of-type::before {
+  display: none;
 }
