@@ -1,0 +1,33 @@
+// カレンダーのスタイルは
+// components>_bizcalendar.scssを参照
+
+.contact {
+  margin-top: $header_height;
+  background-color: $light_beige;
+  padding: 36px 8%;
+
+  &-wrapper {
+    background-color: white;
+    border-top: solid 6px $dark_beige;
+    padding: 5% 5%;
+    &-head {
+      display: flex;
+      margin-bottom: 48px;
+      .contactInfo {
+        &-head {
+          font-size: 32px;
+          margin-bottom: 64px;
+        }
+        &-body {
+          font-size: 26px;
+          margin-bottom: 32px;
+        }
+        &-foot {
+          font-size: 14px;
+          line-height: 1.64;
+          letter-spacing: 1.6px;
+        }
+      }
+    }
+  }
+}
