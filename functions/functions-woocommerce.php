@@ -70,10 +70,28 @@ function get_wc_thumb_url($term_id)
 
 
 
-function misha_remove_fields($fields)
+// function misha_remove_fields($fields)
+// {
+//     echo 'misha_remove_fields';
+//     unset($fields[ 'address_2' ]);
+//     return $fields;
+// }
+// add_filter('woocommerce_default_address_fields', 'misha_remove_fields');
+
+/**
+ * 翻訳テキストを変更
+ */
+function my_gettext($translated_text, $text, $domain)
 {
-    echo 'misha_remove_fields';
-    unset($fields[ 'address_2' ]);
-    return $fields;
+    if ($translated_text =='お買い物カゴを更新' && $domain == 'woocommerce') {
+        $translated_text = 'カートを更新';
+    }
+    if ($translated_text =='お買い物カゴの合計' && $domain == 'woocommerce') {
+        $translated_text = 'ご請求金額';
+    }
+    if ($translated_text =='お支払いへ進む' && $domain == 'woocommerce') {
+        $translated_text = '購入手続きへ進む';
+    }
+    return $translated_text;
 }
-add_filter('woocommerce_default_address_fields', 'misha_remove_fields');
+add_filter('gettext', 'my_gettext', 10, 3);
