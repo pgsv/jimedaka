@@ -57,16 +57,16 @@ function num_to_kanji($num)
 function get_product_taxPrice($product_id, $convert_kanji=true)
 {
     $price = get_post_meta($product_id, '_price', true);
-    $taxRate = 1.1;
-    $taxPrice = $price * $taxRate;
-    if ($convert_kanji) {
-        if (! empty($taxPrice)) {
+    if (! empty($price)) {
+        $taxRate = 1.1;
+        $taxPrice = $price * $taxRate;
+        if ($convert_kanji) {
             $format_price = str_split(number_format($taxPrice));
             return implode(array_map('num_to_kanji', $format_price));
         } else {
-            return 0;
+            return number_format($taxPrice);
         }
     } else {
-        return number_format($taxPrice);
+        return 0;
     }
 }
