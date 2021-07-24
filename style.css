@@ -1388,12 +1388,13 @@ form.wpcf7-form input[type="submit"] {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #333333;
-  color: #ffffff;
   font-family: "kyokasho";
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
   margin-left: auto;
 }
 
@@ -1431,6 +1432,28 @@ input.wpcf7-form-control {
 
 textarea.wpcf7-form-control {
   height: auto;
+}
+
+.numberInput {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.numberInput-label {
+  font-size: 18px;
+  margin-right: 14px;
+  white-space: nowrap;
+}
+
+.numberInput input[type="number"].input-text {
+  padding: 16px 20px;
+  font-size: 14px;
 }
 
 .contactCalender #biz_calendar {
@@ -2532,6 +2555,146 @@ header .separation {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.singleProduct-wrapper {
+  padding: 80px 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.singleProduct-left {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 48px;
+}
+
+.singleProduct-left-img {
+  width: 100%;
+  padding-top: 100%;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.singleProduct-left-img:hover {
+  opacity: 0.8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.singleProduct-left-subImg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.singleProduct-left-subImg li {
+  margin-top: 28px;
+  width: 20%;
+  margin-right: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.singleProduct-left-subImg li:hover {
+  opacity: 0.8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.singleProduct-left-subImg li div {
+  width: 100%;
+  padding-top: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+
+.singleProduct-right-head {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.singleProduct-right-price {
+  font-size: 24px;
+  margin-bottom: 26px;
+}
+
+.singleProduct-right-price .red {
+  font-size: 20px;
+}
+
+.singleProduct-right-desc {
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: auto;
+}
+
+.singleProduct-right .singleProductForm {
+  margin-top: 36px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.singleProduct-right .singleProductForm-submitBtn {
+  margin-left: 50px;
+  width: 100%;
+  height: 64px !important;
+  font-size: 18px;
+  padding: 12px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "kyokasho";
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: #8b1c2a;
+  color: #ffffff;
+  border: none;
+}
+
+.singleProduct-right .singleProductForm-submitBtn:hover {
+  opacity: 0.8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .contact {

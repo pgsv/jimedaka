@@ -10,7 +10,7 @@
   white-space: nowrap;
 }
 
-@mixin black-fill-btn($width: 100%, $height: 64px, $fontSize: 18px) {
+@mixin btn($width: 100%, $height: 64px, $fontSize: 18px) {
   width: $width;
   height: $height !important;
   font-size: $fontSize;
@@ -18,8 +18,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $black;
-  color: $white;
   font-family: "kyokasho";
   cursor: pointer;
   transition: 0.2s;
@@ -27,4 +25,18 @@
     opacity: 0.8;
     transition: 0.2s;
   }
+}
+
+@mixin black-fill-btn($width: 100%, $height: 64px, $fontSize: 18px) {
+  @include btn($width, $height, $fontSize);
+  background-color: $black;
+  color: $white;
+  border: none;
+}
+
+@mixin red-fill-btn($width: 100%, $height: 64px, $fontSize: 18px) {
+  @include btn($width, $height, $fontSize);
+  background-color: $red;
+  color: $white;
+  border: none;
 }
