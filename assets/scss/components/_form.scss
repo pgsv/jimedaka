@@ -1,3 +1,4 @@
+// woocomerceで生成されたフォームのスタイル
 form p label {
   width: 100%;
   display: flex;
@@ -44,4 +45,21 @@ input.wpcf7-form-control {
 
 textarea.wpcf7-form-control {
   height: auto;
+}
+//-------------------------------------------
+
+//woocomerceで生成された
+// <input type="number"></input>のスタイル
+.numberInput {
+  display: flex;
+  align-items: center;
+  &-label {
+    font-size: 18px;
+    margin-right: 14px;
+    white-space: nowrap;
+  }
+  input[type="number"].input-text {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
 }
