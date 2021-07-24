@@ -1,4 +1,76 @@
 .singleProduct {
   margin-top: $header_height;
   display: flex;
+  &-wrapper {
+    padding: 80px 50px;
+    display: flex;
+  }
+  &-left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 48px;
+    &-img {
+      width: 100%;
+      padding-top: 100%;
+      background-position: center center;
+      background-size: cover;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        opacity: 0.8;
+        transition: 0.2s;
+      }
+    }
+    &-subImg {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      li {
+        margin-top: 28px;
+        width: 20%;
+        margin-right: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          opacity: 0.8;
+          transition: 0.2s;
+        }
+      }
+      li div {
+        width: 100%;
+        padding-top: 100%;
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+  }
+  &-right {
+    &-head {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    &-price {
+      font-size: 24px;
+      .red {
+        font-size: 20px;
+      }
+      margin-bottom: 26px;
+    }
+    &-desc {
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: auto;
+    }
+
+    .singleProductForm {
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      &-submitBtn {
+        margin-left: 50px;
+        @include red-fill-btn();
+      }
+    }
+  }
 }
