@@ -26,13 +26,27 @@
             <div class="productsSort-head">
                 並び替え
             </div>
+            <?php $url_str = get_pagenum_link(1); ?>    
             <div class="productsSort-body">
                 <ul>
-                    <li><a class="productsSort-body-link" href="#">カテゴリ順</a></li>
-                    <li><a class="productsSort-body-link" href="#">人気順</a></li>
-                    <li><a class="productsSort-body-link" href="#">安い順</a></li>
-                    <li><a class="productsSort-body-link" href="#">高い順</a></li>
-                    <li><a class="productsSort-body-link" href="#">飼育しやすい順</a></li>
+                    <li>
+                        <form name="formSort" method="get" action="<?php echo $url_str ?>" >
+                            <input type="hidden" name="sort" value="category">
+                            <a class="productsSort-body-link" href="javascript:formSort[0].submit()">カテゴリー順</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="formSort" method="get" action="<?php echo $url_str ?>" >
+                            <input type="hidden" name="sort" value="cheap">
+                            <a class="productsSort-body-link" href="javascript:formSort[1].submit()">安い順</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="formSort" method="get" action="<?php echo $url_str ?>" >
+                            <input type="hidden" name="sort" value="expensive">
+                            <a class="productsSort-body-link" href="javascript:formSort[2].submit()">高い順</a>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
