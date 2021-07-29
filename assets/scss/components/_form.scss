@@ -63,3 +63,17 @@ textarea.wpcf7-form-control {
     font-size: 14px;
   }
 }
+
+@mixin input_type_number {
+  &-label {
+    font-size: 18px;
+    margin-right: 14px;
+    white-space: nowrap;
+  }
+  input[type="number"].input-text {
+    padding: 16px 20px;
+    font-size: 14px;
+    background-color: $light_beige;
+    border: solid 1px $grey-7;
+  }
+}

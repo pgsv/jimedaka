@@ -33,6 +33,12 @@
   color: $white;
   border: none;
 }
+@mixin black-stroke-btn($width: 100%, $height: 64px, $fontSize: 18px) {
+  @include btn($width, $height, $fontSize);
+  background-color: transparent;
+  color: $black;
+  border: solid 1px $black;
+}
 
 @mixin red-fill-btn($width: 100%, $height: 64px, $fontSize: 18px) {
   @include btn($width, $height, $fontSize);
