@@ -121,7 +121,11 @@ function the_product_html($product_id)
 
 function the_product_link_html($product_id)
 {
-    $product_data = wc_get_product($product_id)->get_data();
+    $wc_product = wc_get_product($product_id);
+    if (!$wc_product) {
+        return;
+    }
+    $product_data = $wc_product->get_data();
     $category_id = $product_data['category_ids'][0];
     $product_cat = get_term_by('id', $category_id, 'product_cat'); ?>
 <a href="<?php echo get_permalink($product_id); ?>">
@@ -181,3 +185,17 @@ function get_product_taxPrice($product_id, $convert_kanji=true)
         return 0;
     }
 }
+
+/**
+ * 検索条件を追加
+ */
+function my_posts_search($search, $wp_query)
+{
+    // クエリを修正する条件
+    if ($wp_query->is_main_query() && is_search() &&  !is_admin()) {
+        // 検索結果に対して投稿ページのみとする条件を追加
+        $search .= " AND post_type = 'product' ";
+    }
+    return $search;
+}
+add_filter('posts_search', 'my_posts_search', 99, 2);
