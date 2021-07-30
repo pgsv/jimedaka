@@ -5,12 +5,12 @@
   <main class="singleProduct-wrapper">
     <div class="singleProduct-left col-4">
       <?php if (have_posts()): while (have_posts()):the_post(); ?>
-      <?php $product = wc_get_product(get_the_ID()); ?>
+      <?php $_product = wc_get_product(get_the_ID()); ?>
       <div class="singleProduct-left-img"
-        style="background-image: url('<?php echo wp_get_attachment_thumb_url($product->image_id); ?>')">
+        style="background-image: url('<?php echo wp_get_attachment_thumb_url($_product->image_id); ?>')">
       </div>
       <ul class="singleProduct-left-subImg">
-        <?php foreach ($product->gallery_image_ids as $galleyId):
+        <?php foreach ($_product->gallery_image_ids as $galleyId):
         $galleryThumbUrl = wp_get_attachment_thumb_url($galleyId); ?>
         <li>
           <div
@@ -35,14 +35,14 @@
       </div>
 
       <?php
-    if (! $product->is_purchasable()) {
+    if (! $_product->is_purchasable()) {
         return;
     }
-    echo wc_get_stock_html($product); // WPCS: XSS ok.
-    if ($product->is_in_stock()) : ?>
+    echo wc_get_stock_html($_product); // WPCS: XSS ok.
+    if ($_product->is_in_stock()) : ?>
       <?php do_action('woocommerce_before_add_to_cart_form'); ?>
       <form class="singleProductForm"
-        action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
+        action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $_product->get_permalink())); ?>"
         method="post" enctype='multipart/form-data'>
         <?php do_action('woocommerce_before_add_to_cart_button'); ?>
         <div class="numberInput">
@@ -51,9 +51,9 @@
           do_action('woocommerce_before_add_to_cart_quantity');
           woocommerce_quantity_input(
               [
-                  'min_value'   => apply_filters('woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product),
-                  'max_value'   => apply_filters('woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product),
-                  'input_value' => isset($_POST['quantity']) ? wc_stock_amount(wp_unslash($_POST['quantity'])) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
+                  'min_value'   => apply_filters('woocommerce_quantity_input_min', $_product->get_min_purchase_quantity(), $_product),
+                  'max_value'   => apply_filters('woocommerce_quantity_input_max', $_product->get_max_purchase_quantity(), $_product),
+                  'input_value' => isset($_POST['quantity']) ? wc_stock_amount(wp_unslash($_POST['quantity'])) : $_product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
               ]
           );
 
@@ -61,7 +61,7 @@
         ?>
         </div>
         <button class="singleProductForm-submitBtn" type="submit" name="add-to-cart"
-          value="<?php echo esc_attr($product->get_id()); ?>"
+          value="<?php echo esc_attr($_product->get_id()); ?>"
           class="single_add_to_cart_button button alt">カートに入れる</button>
         <?php do_action('woocommerce_after_add_to_cart_button'); ?>
       </form>

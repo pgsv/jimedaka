@@ -95,3 +95,15 @@ function my_gettext($translated_text, $text, $domain)
     return $translated_text;
 }
 add_filter('gettext', 'my_gettext', 10, 3);
+
+/**
+ * カートページの送料表記を非表示
+ */
+function disable_shipping_calc_on_cart($show_shipping)
+{
+    if (is_cart()) {
+        return false;
+    }
+    return $show_shipping;
+}
+add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);

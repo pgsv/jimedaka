@@ -29,10 +29,8 @@
     </nav>
 
     <div class="header-foot">
-        <form method="get" action="#" class="header-foot-searchForm">
-            <input type="text" size="25" placeholder="キーワードを入力">
-            <input type="submit" value="&#xf002">
-        </form>
+        <?php get_search_form(); ?>
+
         <!-- <a href="<?php echo home_url(); ?>/my-account"
         class="header-foot-item"> -->
         <?php //if (is_user_logged_in()) :?>

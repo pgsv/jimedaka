@@ -2792,6 +2792,11 @@ header .separation {
   display: none;
 }
 
+.searchResult {
+  padding: 16px 4%;
+  margin-top: 80px;
+}
+
 .cart {
   margin-top: 80px;
   background-color: #f7f3ec;
