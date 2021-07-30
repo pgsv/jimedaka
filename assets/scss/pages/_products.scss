@@ -4,8 +4,9 @@
 
   &-aside {
     width: 235px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: $grey-f;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-right: solid 3px rgba(#b4aa98, 0.5);
+    background-color: $light_beige;
     color: $black;
     z-index: 2;
 
@@ -63,7 +64,7 @@
 
   &-list {
     padding: 30px 70px;
-    background-color: $grey-f;
+    background-color: $light_beige;
 
     &-img {
       width: 100%;
@@ -73,6 +74,7 @@
       background-position: center;
       background-size: cover;
       position: relative;
+      opacity: 0.9;
 
       &::after {
         position: absolute;
