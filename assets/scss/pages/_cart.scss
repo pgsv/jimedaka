@@ -1,0 +1,165 @@
+.cart {
+  margin-top: $header_height;
+  background-color: $light_beige;
+  padding: 46px 8%;
+
+  &-head {
+    display: flex;
+    align-items: center;
+    &-title {
+      font-size: 32px;
+      margin-right: auto;
+    }
+    &-link {
+      font-size: 12px;
+      color: $grey-7;
+      a {
+        color: $grey-7;
+      }
+    }
+  }
+
+  table.woocommerce-cart-form__contents {
+    width: 100%;
+    margin-top: 52px;
+
+    tr th {
+      text-align: start;
+      font-size: 18px;
+      border-bottom: solid 1px $grey-b;
+      padding-bottom: 12px;
+    }
+    tr th.product-name {
+    }
+
+    tr td {
+      vertical-align: middle;
+      border-bottom: solid 1px $grey-b;
+      padding: 16px 0;
+    }
+    tr td:last-of-type {
+      border-bottom: none;
+    }
+    tr {
+      td.product-remove {
+      }
+      td.product-thumbnail {
+        width: 170px;
+      }
+      td.product-name {
+        font-size: 18px;
+        -webkit-text-stroke-width: 0.2px;
+        .product-desc {
+          max-width: 240px;
+          max-height: 64px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 13px;
+          color: $grey-7;
+          padding-top: 12px;
+          line-height: 22px;
+          position: relative;
+          padding-right: 10px;
+          &::after {
+            content: "...";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+      td.product-price {
+        font-size: 18px;
+        -webkit-text-stroke-width: 0.2px;
+        &::before {
+          content: "1匹";
+          padding-right: 8px;
+        }
+        &::after {
+          content: "(税込)";
+          display: block;
+
+          padding-top: 8px;
+        }
+      }
+      td.product-quantity {
+        @include input_type_number;
+      }
+      td.product-subtotal {
+        font-size: 18px;
+        -webkit-text-stroke-width: 0.2px;
+        width: 140px;
+        color: $red;
+      }
+      td.actions {
+        padding-bottom: 0;
+        button {
+          margin-left: auto;
+          margin-right: auto;
+          @include black-stroke-btn(160px, 42px, 14px);
+          &[aria-disabled="true"] {
+            color: $grey-b;
+            border: solid 1px $grey-b;
+            cursor: default;
+          }
+        }
+      }
+    }
+
+    img {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  .cart_totals {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .wc-proceed-to-checkout {
+      width: 300px;
+      margin-top: 52px;
+      padding-bottom: 100px;
+      a {
+        @include red-fill-btn(100%, 42px);
+      }
+    }
+    table {
+      width: 400px;
+      border-top: solid 1px $grey-7;
+
+      td,
+      th {
+        padding-top: 16px;
+      }
+      .woocommerce-Price-amount {
+        color: $red;
+      }
+      .cart-subtotal {
+        font-size: 16px;
+        display: none;
+      }
+      .order-total {
+        font-size: 20px;
+      }
+      td {
+        text-align: end;
+      }
+    }
+  }
+  .woocommerce-message {
+    padding: 20px;
+    background: #fff;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
+  }
+  .restore-item {
+    color: $red;
+    text-decoration: underline;
+  }
+}
