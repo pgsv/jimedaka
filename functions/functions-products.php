@@ -1,32 +1,5 @@
 <?php
 
-/**
- * 指定条件でソートされた商品リストを取得
- */
-function get_sorted_product_ids()
-{
-    $args = [
-        // 'posts_per_page'   => 5,
-        // 'category'         => '63',
-        // 'category_name'    => '',
-        // 'orderby'          => 'date',
-        // 'order'            => 'DESC',
-        // 'post_type'        => 'product',
-        // 'post_status'      => 'publish',
-        'post_type' => 'product',
-        'numberposts' => -1,
-        // 'parent'      => 51,
-        // 'taxonomy'  => 'product_cat',
-        'orderby'           => 'meta_value_num',
-        'order'             => 'desc',
-        'meta_key'          => '_price',
-        'post_status'       => 'publish',
-        'fields'            => 'ids',
-    ];
-    return  get_posts($args);
-}
-
-
 function get_product_ids_by_cat()
 {
     $categories = get_medaka_categories();

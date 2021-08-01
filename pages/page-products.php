@@ -10,17 +10,19 @@
         $sortset = (string) filter_input(INPUT_GET, 'sort');
     }
     ?>
-    <?php switch ($sortset) :
-    case ('category'): ?>
-        <?php $product_ids = get_product_ids_by_cat(); ?>
-        <?php break; ?>
-    <?php case ('cheap'): ?>
-        <?php $product_ids = get_product_ids_by_price('asc'); ?>
-        <?php break; ?>
-    <?php case ('expensive'): ?>
-        <?php $product_ids = get_product_ids_by_price('desc'); ?>
-        <?php break; ?>
-    <?php endswitch; ?>
+    <?php
+    switch ($sortset) :
+        case ('category'):
+            $product_ids = get_product_ids_by_cat();
+            break;
+        case ('cheap'):
+            $product_ids = get_product_ids_by_price('asc');
+            break;
+        case ('expensive'):
+            $product_ids = get_product_ids_by_price('desc');
+            break;
+    endswitch;
+    ?>
     
     <main class="products-list">
         <ul class="clearfix">

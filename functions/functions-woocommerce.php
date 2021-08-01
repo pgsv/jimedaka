@@ -92,6 +92,9 @@ function my_gettext($translated_text, $text, $domain)
     if ($translated_text =='お支払いへ進む' && $domain == 'woocommerce') {
         $translated_text = '購入手続きへ進む';
     }
+    if ($translated_text =='注文する' && $domain == 'woocommerce') {
+        $translated_text = '注文を確定する';
+    }
     return $translated_text;
 }
 add_filter('gettext', 'my_gettext', 10, 3);
