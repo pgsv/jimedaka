@@ -13,10 +13,11 @@ $item = [
 <footer class="footer">
     <div class="footer-body">
         <div class="footer-body-left">
-            <a class="footerLogo" href="<?php home_url(); ?>">
+            <a class="footerLogo"
+                href="<?php esc_url(home_url()); ?>">
                 <img class="footerLogo-image"
-                    src='<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg'
-                    alt='logo'>
+                    src="<?php echo esc_url(get_template_directory_uri().'/assets/img/logo.svg'); ?>"
+                    alt="logo">
                 <div class="footerLogo-text">じめだか</div>
             </a>
             <div class="catchphrase">
@@ -35,13 +36,13 @@ $item = [
                     <?php foreach ($item as $key => $value): ?>
                     <li>
                         <a
-                            href="<?php echo home_url() . '/' . $key; ?>">
+                            href="<?php echo esc_url(home_url() . '/' . $key); ?>">
                             <?php echo $value; ?>
                         </a>
                     </li>
                     <?php endforeach; ?>
                     <object class="footerSeparation"
-                        data='<?php echo get_template_directory_uri(); ?>/assets/img/separationBC.svg'
+                        data="<?php echo esc_url(get_template_directory_uri().'/assets/img/separationBC.svg'); ?>"
                         type="image/svg+xml"></object>
                 </ul>
 
@@ -52,10 +53,10 @@ $item = [
                     <?php foreach ($categories as $cat): ?>
                     <?php $cat_thumb_url = get_wc_thumb_url($cat->term_id); ?>
                     <li><a
-                            href="<?php echo get_medaka_cat_url($cat->slug); ?>"><?php echo $cat->name; ?></a></li>
+                            href="<?php echo esc_url(get_medaka_cat_url($cat->slug)); ?>"><?php echo $cat->name; ?></a></li>
                     <?php endforeach; ?>
                     <object class="footerSeparation"
-                        data='<?php echo get_template_directory_uri(); ?>/assets/img/separationBC.svg'
+                        data="<?php echo esc_url(get_template_directory_uri().'/assets/img/separationBC.svg'); ?>"
                         type="image/svg+xml"></object>
                 </ul>
 
