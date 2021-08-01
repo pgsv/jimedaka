@@ -11,7 +11,7 @@
     </a>
 
     <!-- <img class="separation"
-        src="<?php echo get_template_directory_uri(); ?>/assets/img/separation.svg"
+        src="<?php //echo get_template_directory_uri();?>/assets/img/separation.svg"
     alt="区切り"> -->
 
     <nav class="header-body">
