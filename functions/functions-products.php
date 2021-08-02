@@ -70,7 +70,7 @@ function get_medaka_categories()
  */
 function get_medaka_cat_url($cat_slug)
 {
-    return  home_url().'/products/#'.$cat_slug;
+    return  esc_url(home_url().'/products/#'.$cat_slug);
 }
 
 /**
