@@ -2953,10 +2953,20 @@ header .separation {
   transition: 0.2s;
 }
 
+.cart table.woocommerce-cart-form__contents tr td.actions button .reloadImg {
+  width: 12px;
+  height: 12px;
+  margin-left: 6px;
+}
+
 .cart table.woocommerce-cart-form__contents tr td.actions button[aria-disabled="true"] {
   color: #b5b5b5;
   border: solid 1px #b5b5b5;
   cursor: default;
+}
+
+.cart table.woocommerce-cart-form__contents tr td.actions button[aria-disabled="true"] .reloadImg {
+  opacity: 0.2;
 }
 
 .cart table.woocommerce-cart-form__contents img {

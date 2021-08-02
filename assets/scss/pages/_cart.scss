@@ -97,10 +97,18 @@
           margin-left: auto;
           margin-right: auto;
           @include black-stroke-btn(160px, 42px, 14px);
+          .reloadImg {
+            width: 12px;
+            height: 12px;
+            margin-left: 6px;
+          }
           &[aria-disabled="true"] {
             color: $grey-b;
             border: solid 1px $grey-b;
             cursor: default;
+            .reloadImg {
+              opacity: 0.2;
+            }
           }
         }
       }
