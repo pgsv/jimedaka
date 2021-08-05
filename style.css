@@ -3076,3 +3076,200 @@ header .separation {
   color: #8b1c2a;
   text-decoration: underline;
 }
+
+.purchase {
+  margin-top: 80px;
+  background-color: #fafafa;
+  width: 100%;
+  padding: 64px 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.purchase .purchaseWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.purchase-head {
+  font-size: 32px;
+  margin-bottom: 32px;
+  margin-right: auto;
+}
+
+.purchase-foot {
+  font-size: 16px;
+  padding-top: 12px;
+  color: #767676;
+}
+
+.purchase-foot a {
+  color: #767676;
+}
+
+.purchase-foot .right_arrow {
+  padding: 0 6px;
+  font-size: 12px;
+}
+
+.purchase .col-1 {
+  width: 100%;
+}
+
+.purchase form.checkout {
+  width: 100%;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.customFormWrapper {
+  padding: 40px 10%;
+}
+
+.customFormWrapper-title {
+  padding: 40px 0;
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+.customFormWrapper abbr.required {
+  display: none;
+}
+
+.customFormWrapper #billing_country_field {
+  display: none;
+}
+
+.customForm {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.customForm:nth-last-child(2), .customForm:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.customForm:nth-last-child(2) {
+  padding-bottom: 0px;
+}
+
+.customForm-head {
+  width: 30%;
+  max-width: 300px;
+  font-size: 20px;
+  padding-top: 36px;
+  position: relative;
+}
+
+.customForm-head::after {
+  content: "必須";
+  position: absolute;
+  top: 26px;
+  right: 12px;
+  font-size: 16px;
+  padding: 10px 10px;
+  color: #ffffff;
+  background-color: #cc2926;
+}
+
+.customForm-body {
+  width: calc(100%);
+}
+
+.customForm .flex-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.customForm .flex-row p:first-of-type {
+  margin-right: 10px;
+}
+
+.customForm .flex-col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.customForm .flex-col p:first-of-type {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.customForm label {
+  margin-bottom: 6px;
+}
+
+.customForm input {
+  padding: 14px 20px;
+  border: solid 1px #e5e5e5;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+#billing_kana_first_name_field {
+  margin-bottom: 0;
+}
+
+.address .customForm-body > div {
+  margin-bottom: 20px;
+}
+
+.address .customForm-body > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.address .customForm-body > p {
+  margin-bottom: 20px;
+}
+
+.select2-container .select2-selection--single {
+  height: 48px !important;
+}
+
+.select2-container--default
+.select2-selection--single
+.select2-selection__rendered {
+  line-height: 48px !important;
+}
+
+.select2-container--default
+.select2-selection--single
+.select2-selection__arrow {
+  height: 48px !important;
+  width: 48px !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 22px !important;
+}
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 0 !important;
+}
