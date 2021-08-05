@@ -2037,6 +2037,10 @@ header .separation {
   width: 100%;
 }
 
+.top-right .news-body::-webkit-scrollbar {
+  display: none;
+}
+
 .top-right .news-body dl {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2052,6 +2056,10 @@ header .separation {
           flex-wrap: nowrap;
   overflow: scroll;
   width: 100%;
+}
+
+.top-right .news-body dl::-webkit-scrollbar {
+  display: none;
 }
 
 .top-right .news-body dl dt {
@@ -2315,7 +2323,7 @@ header .separation {
   width: 58px;
 }
 
-.deliveryflow-right .deliveryflowItem .cart {
+.deliveryflow-right .deliveryflowItem-cart {
   width: 46px;
 }
 

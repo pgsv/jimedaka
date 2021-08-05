@@ -104,12 +104,18 @@
         overflow: scroll;
         position: relative;
         width: 100%;
+        &::-webkit-scrollbar {
+          display:none;
+        }
         dl {
           display: flex;
           flex-direction: column;
           flex-wrap: nowrap;
           overflow: scroll;
           width: 100%;
+          &::-webkit-scrollbar {
+            display:none;
+          }
           dt {
             width: 100%;
             padding-left: 20px;
