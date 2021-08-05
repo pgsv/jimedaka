@@ -110,3 +110,43 @@ function disable_shipping_calc_on_cart($show_shipping)
     return $show_shipping;
 }
 add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);
+
+// woocomerceの注文フォームのplaceholder, class名の変更と
+// 必要な入力フォーム（名前のフリガナ）の追加
+function custom_override_checkout_fields($fields)
+{
+    //placeholder, class名の変更
+    $fields['billing']['billing_first_name']['placeholder'] = '山田';
+    $fields['billing']['billing_first_name']['class'] = ['col', 'col-6'];
+    $fields['billing']['billing_last_name']['placeholder'] = '太郎';
+    $fields['billing']['billing_last_name']['class'] = ['col', 'col-6'];
+    $fields['billing']['billing_company']['placeholder'] = '株式会社ジメダカ';
+    $fields['billing']['billing_address_1']['placeholder'] = '2-3-11';
+    $fields['billing']['billing_address_2']['placeholder'] = 'アパート名、棟名、部屋番号など（オプション）';
+    $fields['billing']['billing_address_2']['required'] = false;
+    $fields['billing']['billing_city']['placeholder'] = '東京都錦町';
+    $fields['billing']['billing_postcode']['placeholder'] = '123-4567';
+    $fields['billing']['billing_postcode']['class'] = ['col', 'col-6'];
+    $fields['billing']['billing_country']['placeholder'] = '日本';
+    $fields['billing']['billing_state']['placeholder'] = '東京都';
+    $fields['billing']['billing_state']['class'] = ['col', 'col-6'];
+    $fields['billing']['billing_email']['placeholder'] = 'tarou@gmail.com';
+    $fields['billing']['billing_phone']['placeholder'] = '000-000-0000';
+
+    //入力フォームの追加
+    $fields['billing']['billing_kana_first_name'] = [
+    'label'     => __('セイ', 'woocommerce'),
+    'placeholder'   => _x('ヤマダ', 'placeholder', 'woocommerce'),
+    'required'  => true,
+    'class'     => ['col', 'col-6'],
+    'clear'     => true];
+    $fields['billing']['billing_kana_last_name'] = [
+    'label'     => __('ナマエ', 'woocommerce'),
+    'placeholder'   => _x('タロウ', 'placeholder', 'woocommerce'),
+    'required'  => true,
+    'class'     => ['col', 'col-6'],
+    'clear'     => true];
+
+    return $fields;
+}
+add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields', 12);
