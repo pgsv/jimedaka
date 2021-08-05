@@ -2037,6 +2037,10 @@ header .separation {
   width: 100%;
 }
 
+.top-right .news-body::-webkit-scrollbar {
+  display: none;
+}
+
 .top-right .news-body dl {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2052,6 +2056,10 @@ header .separation {
           flex-wrap: nowrap;
   overflow: scroll;
   width: 100%;
+}
+
+.top-right .news-body dl::-webkit-scrollbar {
+  display: none;
 }
 
 .top-right .news-body dl dt {
@@ -2315,7 +2323,7 @@ header .separation {
   width: 58px;
 }
 
-.deliveryflow-right .deliveryflowItem .cart {
+.deliveryflow-right .deliveryflowItem-cart {
   width: 46px;
 }
 
@@ -3075,6 +3083,30 @@ header .separation {
 .cart .restore-item {
   color: #8b1c2a;
   text-decoration: underline;
+}
+
+.singleNews {
+  margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
+}
+
+.singleNews-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 64px 8%;
+}
+
+.singleNews-title {
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+.singleNews-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
 }
 
 .purchase {

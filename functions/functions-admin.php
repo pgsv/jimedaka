@@ -22,3 +22,13 @@ function get_custom_field($field_name, $page_slug)
     $id = $page->ID;
     return get_field_object($field_name, $id);
 }
+
+function add_user_script()
+{
+    wp_enqueue_script(
+        'main-script', // スクリプトを登録、削除するための名前を設定する
+        get_template_directory_uri().'/assets/js/main.js', // jsファイルの場所を指定する
+        array('jquery') // jQueryなどのスクリプト名を指定する
+    );
+}
+add_action('wp_enqueue_scripts', 'add_user_script');

@@ -106,7 +106,7 @@
                         購入される商品をカートに<br>入れます。
                     </div>
                 </div>
-                <img class='deliveryflowItem-img cart'
+                <img class='deliveryflowItem-img deliveryflowItem-cart'
                     src='<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg'
                     alt='カート'>
             </div>
