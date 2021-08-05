@@ -3087,4 +3087,24 @@ header .separation {
 
 .singleNews {
   margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
+}
+
+.singleNews-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 64px 8%;
+}
+
+.singleNews-title {
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+.singleNews-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
 }
