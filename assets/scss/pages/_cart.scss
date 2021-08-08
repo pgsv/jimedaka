@@ -83,7 +83,7 @@
         }
       }
       td.product-quantity {
-        @include input_type_number;
+        @include type_of_number_input($light_beige);
       }
       td.product-subtotal {
         font-size: 18px;
