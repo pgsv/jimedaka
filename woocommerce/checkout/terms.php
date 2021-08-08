@@ -10,8 +10,9 @@ defined('ABSPATH') || exit;
 
 if (apply_filters('woocommerce_checkout_show_terms', true) && function_exists('wc_terms_and_conditions_checkbox_enabled')) {
     do_action('woocommerce_checkout_before_terms_and_conditions'); ?>
-	<div class="woocommerce-terms-and-conditions-wrapper">
-		<?php
+
+<div class="woocommerce-terms-and-conditions-wrapper">
+	<?php
         /**
          * Terms and conditions hook used to inject content.
          *
@@ -20,18 +21,22 @@ if (apply_filters('woocommerce_checkout_show_terms', true) && function_exists('w
          * @hooked wc_terms_and_conditions_page_content() Shows t&c page content. Priority 30.
          */
         do_action('woocommerce_checkout_terms_and_conditions'); ?>
+	<p class="confirmation_request">
+		※『注文を確定する』ボタンをクリックすると、この画面に表示されている内容で注文が確定しますのでご注意ください。注文内容を変更したい場合は、ブラウザの戻るボタンにてショッピングカート画面にお戻りください。</p>
+	<?php if (wc_terms_and_conditions_checkbox_enabled()) : ?>
+	<p class="form-row validate-required">
+		<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
+			<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox"
+				name="terms" <?php checked(apply_filters('woocommerce_terms_is_checked_default', isset($_POST['terms'])), true); // WPCS: input var ok, csrf ok.?>
+			id="terms" />
+			<span class="woocommerce-terms-and-conditions-checkbox-text"><?php wc_terms_and_conditions_checkbox_text(); ?></span>&nbsp;<span
+				class="required">*</span>
+		</label>
+		<input type="hidden" name="terms-field" value="1" />
+	</p>
+	<?php endif; ?>
+</div>
 
-		<?php if (wc_terms_and_conditions_checkbox_enabled()) : ?>
-			<p class="form-row validate-required">
-				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms" <?php checked(apply_filters('woocommerce_terms_is_checked_default', isset($_POST['terms'])), true); // WPCS: input var ok, csrf ok.?> id="terms" />
-					<span class="woocommerce-terms-and-conditions-checkbox-text"><?php wc_terms_and_conditions_checkbox_text(); ?></span>&nbsp;<span class="required">*</span>
-				</label>
-				<input type="hidden" name="terms-field" value="1" />
-			</p>
-		<?php endif; ?>
-	</div>
-	<p>※『注文を確定する』ボタンをクリックすると、この画面に表示されている内容で注文が確定しますのでご注意ください。注文内容を変更したい場合は、ブラウザの戻るボタンにてショッピングカート画面にお戻りください。</p>
-	<?php
+<?php
     do_action('woocommerce_checkout_after_terms_and_conditions');
 }

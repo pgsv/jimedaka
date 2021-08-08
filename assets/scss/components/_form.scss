@@ -1,4 +1,190 @@
-// woocomerceで生成されたフォームのスタイル
+@mixin type_of_text_input {
+  label {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    padding: 14px 20px;
+    border: solid 1px $grey-e;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@mixin type_of_number_input($bg: white) {
+  display: flex;
+  align-items: center;
+  &-label {
+    font-size: 18px;
+    margin-right: 14px;
+    white-space: nowrap;
+  }
+  input[type="number"] {
+    padding: 16px 20px;
+    font-size: 14px;
+    background-color: $bg;
+    border: solid 1px $grey-7;
+  }
+}
+
+@mixin type_of_checkbox_input {
+  input,
+  span {
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      transition: 0.2s;
+      opacity: 0.5;
+    }
+  }
+  input {
+    display: none;
+  }
+  span {
+    padding-left: 40px;
+    padding-top: 6px;
+    position: relative;
+    margin-right: 20px;
+  }
+  span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #999;
+  }
+  input:checked + span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: 9px;
+    width: 10px;
+    height: 20px;
+    transform: rotate(40deg);
+    border-bottom: 4px solid $light_red;
+    border-right: 4px solid $light_red;
+  }
+}
+
+@mixin type_of_textarea_input {
+  label {
+    font-size: 20px;
+    margin-bottom: 6px;
+    width: 30%;
+    max-width: 300px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 20px;
+    @include optional_label();
+  }
+  span {
+    width: 70%;
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      height: 180px;
+      padding: 14px 20px;
+      border: solid 1px $grey-e;
+    }
+  }
+}
+
+//都道府県のセレクトフォーム
+@mixin custom_type_of_select_input {
+  .select2-container .select2-selection--single {
+    height: 48px !important;
+  }
+  .select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    line-height: 48px !important;
+  }
+  .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    height: 48px !important;
+    width: 48px !important;
+  }
+  .select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 22px !important;
+  }
+  .select2-container--default .select2-selection--single {
+    border: 1px solid $grey-e !important;
+    border-radius: 0 !important;
+  }
+}
+
+//配達希望日時のセレクトフォーム
+@mixin type_of_select_input {
+  label {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+  select {
+    padding: 14px 20px;
+    border: solid 1px $grey-e;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &::after {
+    pointer-events: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4.5px solid $grey-7;
+    content: "";
+    position: absolute;
+    right: 20px;
+    bottom: 21px;
+    width: 0;
+  }
+}
+
+//必須ラベル
+@mixin absolute_label {
+  &::after {
+    content: "必須";
+    position: absolute;
+    top: 26px;
+    right: 12px;
+    font-size: 16px;
+    padding: 10px 10px;
+    color: $white;
+    background-color: $light_red;
+  }
+}
+
+//任意ラベル
+@mixin optional_label {
+  &::after {
+    content: "任意";
+    position: absolute;
+    top: 26px;
+    right: 12px;
+    font-size: 16px;
+    padding: 10px 10px;
+    color: $white;
+    background-color: $green;
+  }
+}
+
+// <--wordpress from-->
+// お問い合わせフォームのレイアウト
 form p label {
   width: 100%;
   display: flex;
@@ -45,35 +231,4 @@ input.wpcf7-form-control {
 
 textarea.wpcf7-form-control {
   height: auto;
-}
-//-------------------------------------------
-
-//woocomerceで生成された
-// <input type="number"></input>のスタイル
-.numberInput {
-  display: flex;
-  align-items: center;
-  &-label {
-    font-size: 18px;
-    margin-right: 14px;
-    white-space: nowrap;
-  }
-  input[type="number"].input-text {
-    padding: 16px 20px;
-    font-size: 14px;
-  }
-}
-
-@mixin input_type_number {
-  &-label {
-    font-size: 18px;
-    margin-right: 14px;
-    white-space: nowrap;
-  }
-  input[type="number"].input-text {
-    padding: 16px 20px;
-    font-size: 14px;
-    background-color: $light_beige;
-    border: solid 1px $grey-7;
-  }
 }
