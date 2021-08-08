@@ -3305,3 +3305,111 @@ header .separation {
   border: 1px solid #e5e5e5 !important;
   border-radius: 0 !important;
 }
+
+.privacy {
+  font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
+}
+
+.privacy-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 64px 8%;
+}
+
+.privacy-title {
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+.privacy-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
+}
+
+.privacy-contents h4 {
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+
+.privacy-contents p {
+  padding-left: 8px;
+}
+
+.privacy-contents ol {
+  margin-top: 30px;
+}
+
+.privacy-contents ol li {
+  list-style: decimal;
+}
+
+.privacy-contents ul {
+  margin-top: 30px;
+}
+
+.privacy-contents ul li {
+  list-style: disc;
+}
+
+.privacy-contents li {
+  margin-left: 50px;
+}
+
+.terms {
+  font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
+}
+
+.terms-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 64px 8%;
+}
+
+.terms-title {
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+.terms-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
+}
+
+.terms-contents h2 {
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+
+.terms-contents p {
+  padding-left: 8px;
+}
+
+.terms-contents ol {
+  margin-top: 30px;
+}
+
+.terms-contents ol li {
+  list-style: decimal;
+}
+
+.terms-contents ul {
+  margin-top: 30px;
+}
+
+.terms-contents ul li {
+  list-style: disc;
+}
+
+.terms-contents li {
+  margin-left: 50px;
+}

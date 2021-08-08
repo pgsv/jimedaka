@@ -7,7 +7,7 @@
       <?php if (have_posts()): while (have_posts()):the_post(); ?>
       <?php $_product = wc_get_product(get_the_ID()); ?>
       <div class="singleProduct-left-img"
-        style="background-image: url('<?php echo wp_get_attachment_thumb_url($_product->image_id); ?>')">
+        style="background-image: url('<?php echo wp_get_attachment_thumb_url($_product->image_id, 'thumbnail');?>')">
       </div>
       <ul class="singleProduct-left-subImg">
         <?php foreach ($_product->gallery_image_ids as $galleyId):
