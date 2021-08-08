@@ -3866,3 +3866,44 @@ header .separation {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
+.thankyou-head,
+.thankyou h2 {
+  padding: 40px 0;
+  padding-top: 40px;
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.thankyou-body li {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.thankyou-body-title {
+  width: 140px;
+}
+
+.thankyou-body-title::before {
+  content: "・";
+}
+
+.thankyou .account_info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.thankyou .account_info strong {
+  margin-bottom: 20px;
+}
