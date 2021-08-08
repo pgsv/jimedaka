@@ -1,0 +1,45 @@
+.shipping_order {
+  padding-top: 20px;
+  h3 {
+    width: 30%;
+    max-width: 300px;
+    font-size: 20px;
+    padding-top: 36px;
+    position: relative;
+    font-weight: normal;
+    @include optional_label();
+  }
+  &-date {
+    display: flex;
+    p {
+      width: 35%;
+      position: relative;
+      @include type_of_select_input();
+    }
+    #order_delivery_date_field {
+      margin-right: 10px;
+    }
+  }
+  &-comment {
+    margin-top: 40px;
+    .optional {
+      display: none;
+    }
+    #order_comments_field {
+      box-sizing: border-box;
+      display: flex;
+      @include type_of_textarea_input();
+    }
+  }
+}
+
+#ship-to-different-address {
+  @include type_of_checkbox_input();
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border-bottom: dotted 1px $grey-7;
+}
+
+.shippingForm .address {
+  margin-bottom: 40px;
+}

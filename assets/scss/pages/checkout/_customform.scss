@@ -1,0 +1,70 @@
+.customFormWrapper {
+  padding: 40px 10%;
+  padding-bottom: 0;
+  &-title {
+    padding: 40px 0;
+    padding-top: 20px;
+    font-size: 24px;
+  }
+  abbr.required,
+  #billing_country_field,
+  #shipping_country_field {
+    display: none;
+  }
+}
+
+.customForm {
+  display: flex;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  @include type_of_text_input();
+  @include custom_type_of_select_input();
+  &:nth-last-child(2),
+  &:nth-last-child(1) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  &-head {
+    width: 30%;
+    max-width: 300px;
+    font-size: 20px;
+    padding-top: 36px;
+    position: relative;
+    @include absolute_label();
+  }
+  &-body {
+    width: calc(100%);
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    p:first-of-type {
+      margin-right: 10px;
+    }
+  }
+
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    p:first-of-type {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.address .customForm-body > div {
+  margin-bottom: 20px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.address .customForm-body > p {
+  margin-bottom: 20px;
+}
+
+#billing_kana_first_name_field {
+  margin-bottom: 0;
+}
