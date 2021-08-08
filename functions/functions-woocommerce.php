@@ -147,6 +147,36 @@ function custom_override_checkout_fields($fields)
     'class'     => ['col', 'col-6'],
     'clear'     => true];
 
+    $fields['shipping']['shipping_first_name']['placeholder'] = '山田';
+    $fields['shipping']['shipping_first_name']['class'] = ['col', 'col-6'];
+    $fields['shipping']['shipping_last_name']['placeholder'] = '太郎';
+    $fields['shipping']['shipping_last_name']['class'] = ['col', 'col-6'];
+    $fields['shipping']['shipping_address_1']['placeholder'] = '2-3-11';
+    $fields['shipping']['shipping_address_2']['placeholder'] = 'アパート名、棟名、部屋番号など（オプション）';
+    $fields['shipping']['shipping_address_2']['required'] = false;
+    $fields['shipping']['shipping_city']['placeholder'] = '東京都錦町';
+    $fields['shipping']['shipping_postcode']['placeholder'] = '123-4567';
+    $fields['shipping']['shipping_postcode']['class'] = ['col', 'col-6'];
+    $fields['shipping']['shipping_country']['placeholder'] = '日本';
+    $fields['shipping']['shipping_state']['placeholder'] = '東京都';
+    $fields['shipping']['shipping_state']['class'] = ['col', 'col-6'];
+    $fields['shipping']['shipping_email']['placeholder'] = 'tarou@gmail.com';
+
+    //入力フォームの追加
+    $fields['shipping']['shipping_kana_first_name'] = [
+    'label'     => __('セイ', 'woocommerce'),
+    'placeholder'   => _x('ヤマダ', 'placeholder', 'woocommerce'),
+    'required'  => true,
+    'class'     => ['col', 'col-6'],
+    'clear'     => true];
+    $fields['shipping']['shipping_kana_last_name'] = [
+    'label'     => __('ナマエ', 'woocommerce'),
+    'placeholder'   => _x('タロウ', 'placeholder', 'woocommerce'),
+    'required'  => true,
+    'class'     => ['col', 'col-6'],
+    'clear'     => true];
+
+
     return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields', 12);
