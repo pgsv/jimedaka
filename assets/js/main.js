@@ -27,7 +27,7 @@ jQuery(function($) {
         // ハッシュ値を取得して URI デコードする
         var decodedHash = decodeURI(this.hash);
         // ハッシュの確認
-        console.log(decodedHash);
+        // console.log(decodedHash);
         //リンク先が#か空だったらhtmlに
         var hash = decodedHash == "#" || decodedHash == "" ? 'html' : decodedHash;
         //スクロール実行
