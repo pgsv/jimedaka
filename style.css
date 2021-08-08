@@ -1434,28 +1434,6 @@ textarea.wpcf7-form-control {
   height: auto;
 }
 
-.numberInput {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.numberInput-label {
-  font-size: 18px;
-  margin-right: 14px;
-  white-space: nowrap;
-}
-
-.numberInput input[type="number"].input-text {
-  padding: 16px 20px;
-  font-size: 14px;
-}
-
 .contactCalender #biz_calendar {
   max-width: 500px;
   padding-left: 32px;
@@ -2705,6 +2683,30 @@ header .separation {
   transition: 0.2s;
 }
 
+.numberInput {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.numberInput-label {
+  font-size: 18px;
+  margin-right: 14px;
+  white-space: nowrap;
+}
+
+.numberInput input[type="number"] {
+  padding: 16px 20px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: solid 1px #767676;
+}
+
 .contact {
   margin-top: 80px;
   background-color: #f7f3ec;
@@ -2903,13 +2905,24 @@ header .separation {
   padding-top: 8px;
 }
 
+.cart table.woocommerce-cart-form__contents tr td.product-quantity {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .cart table.woocommerce-cart-form__contents tr td.product-quantity-label {
   font-size: 18px;
   margin-right: 14px;
   white-space: nowrap;
 }
 
-.cart table.woocommerce-cart-form__contents tr td.product-quantity input[type="number"].input-text {
+.cart table.woocommerce-cart-form__contents tr td.product-quantity input[type="number"] {
   padding: 16px 20px;
   font-size: 14px;
   background-color: #f7f3ec;
@@ -3109,203 +3122,6 @@ header .separation {
   line-height: 200%;
 }
 
-.purchase {
-  margin-top: 80px;
-  background-color: #fafafa;
-  width: 100%;
-  padding: 64px 10%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.purchase .purchaseWrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.purchase-head {
-  font-size: 32px;
-  margin-bottom: 32px;
-  margin-right: auto;
-}
-
-.purchase-foot {
-  font-size: 16px;
-  padding-top: 12px;
-  color: #767676;
-}
-
-.purchase-foot a {
-  color: #767676;
-}
-
-.purchase-foot .right_arrow {
-  padding: 0 6px;
-  font-size: 12px;
-}
-
-.purchase .col-1 {
-  width: 100%;
-}
-
-.purchase form.checkout {
-  width: 100%;
-  background-color: white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.customFormWrapper {
-  padding: 40px 10%;
-}
-
-.customFormWrapper-title {
-  padding: 40px 0;
-  padding-top: 20px;
-  font-size: 24px;
-}
-
-.customFormWrapper abbr.required {
-  display: none;
-}
-
-.customFormWrapper #billing_country_field {
-  display: none;
-}
-
-.customForm {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-}
-
-.customForm:nth-last-child(2), .customForm:nth-last-child(1) {
-  border-bottom: none;
-}
-
-.customForm:nth-last-child(2) {
-  padding-bottom: 0px;
-}
-
-.customForm-head {
-  width: 30%;
-  max-width: 300px;
-  font-size: 20px;
-  padding-top: 36px;
-  position: relative;
-}
-
-.customForm-head::after {
-  content: "必須";
-  position: absolute;
-  top: 26px;
-  right: 12px;
-  font-size: 16px;
-  padding: 10px 10px;
-  color: #ffffff;
-  background-color: #cc2926;
-}
-
-.customForm-body {
-  width: calc(100%);
-}
-
-.customForm .flex-row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-}
-
-.customForm .flex-row p:first-of-type {
-  margin-right: 10px;
-}
-
-.customForm .flex-col {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-}
-
-.customForm .flex-col p:first-of-type {
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
-.customForm label {
-  margin-bottom: 6px;
-}
-
-.customForm input {
-  padding: 14px 20px;
-  border: solid 1px #e5e5e5;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-}
-
-#billing_kana_first_name_field {
-  margin-bottom: 0;
-}
-
-.address .customForm-body > div {
-  margin-bottom: 20px;
-}
-
-.address .customForm-body > div:last-of-type {
-  margin-bottom: 0;
-}
-
-.address .customForm-body > p {
-  margin-bottom: 20px;
-}
-
-.select2-container .select2-selection--single {
-  height: 48px !important;
-}
-
-.select2-container--default
-.select2-selection--single
-.select2-selection__rendered {
-  line-height: 48px !important;
-}
-
-.select2-container--default
-.select2-selection--single
-.select2-selection__arrow {
-  height: 48px !important;
-  width: 48px !important;
-}
-
-.select2-container .select2-selection--single .select2-selection__rendered {
-  padding-left: 22px !important;
-}
-
-.select2-container--default .select2-selection--single {
-  border: 1px solid #e5e5e5 !important;
-  border-radius: 0 !important;
-}
-
 .privacy {
   font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   margin-top: 80px;
@@ -3412,4 +3228,399 @@ header .separation {
 
 .terms-contents li {
   margin-left: 50px;
+}
+
+.purchase {
+  margin-top: 80px;
+  background-color: #fafafa;
+  width: 100%;
+  padding: 64px 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.purchase .purchaseWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.purchase-head {
+  font-size: 32px;
+  margin-bottom: 32px;
+  margin-right: auto;
+}
+
+.purchase-foot {
+  font-size: 16px;
+  padding-top: 12px;
+  color: #767676;
+}
+
+.purchase-foot a {
+  color: #767676;
+}
+
+.purchase-foot .right_arrow {
+  padding: 0 6px;
+  font-size: 12px;
+}
+
+.purchase .col-1,
+.purchase .col-2 {
+  width: 100%;
+}
+
+.purchase form.checkout {
+  width: 100%;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.customFormWrapper {
+  padding: 40px 10%;
+  padding-bottom: 0;
+}
+
+.customFormWrapper-title {
+  padding: 40px 0;
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+.customFormWrapper abbr.required,
+.customFormWrapper #billing_country_field,
+.customFormWrapper #shipping_country_field {
+  display: none;
+}
+
+.customForm {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.customForm label {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.customForm input[type="text"],
+.customForm input[type="tel"],
+.customForm input[type="email"] {
+  padding: 14px 20px;
+  border: solid 1px #e5e5e5;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.customForm .select2-container .select2-selection--single {
+  height: 48px !important;
+}
+
+.customForm .select2-container--default
+.select2-selection--single
+.select2-selection__rendered {
+  line-height: 48px !important;
+}
+
+.customForm .select2-container--default
+.select2-selection--single
+.select2-selection__arrow {
+  height: 48px !important;
+  width: 48px !important;
+}
+
+.customForm .select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 22px !important;
+}
+
+.customForm .select2-container--default .select2-selection--single {
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 0 !important;
+}
+
+.customForm:nth-last-child(2), .customForm:nth-last-child(1) {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.customForm-head {
+  width: 30%;
+  max-width: 300px;
+  font-size: 20px;
+  padding-top: 36px;
+  position: relative;
+}
+
+.customForm-head::after {
+  content: "必須";
+  position: absolute;
+  top: 26px;
+  right: 12px;
+  font-size: 16px;
+  padding: 10px 10px;
+  color: #ffffff;
+  background-color: #cc2926;
+}
+
+.customForm-body {
+  width: calc(100%);
+}
+
+.customForm .flex-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.customForm .flex-row p:first-of-type {
+  margin-right: 10px;
+}
+
+.customForm .flex-col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.customForm .flex-col p:first-of-type {
+  margin-bottom: 10px;
+}
+
+.address .customForm-body > div {
+  margin-bottom: 20px;
+}
+
+.address .customForm-body > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.address .customForm-body > p {
+  margin-bottom: 20px;
+}
+
+#billing_kana_first_name_field {
+  margin-bottom: 0;
+}
+
+.shipping_order {
+  padding-top: 20px;
+}
+
+.shipping_order h3 {
+  width: 30%;
+  max-width: 300px;
+  font-size: 20px;
+  padding-top: 36px;
+  position: relative;
+  font-weight: normal;
+}
+
+.shipping_order h3::after {
+  content: "任意";
+  position: absolute;
+  top: 26px;
+  right: 12px;
+  font-size: 16px;
+  padding: 10px 10px;
+  color: #ffffff;
+  background-color: #8dba12;
+}
+
+.shipping_order-date {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shipping_order-date p {
+  width: 35%;
+  position: relative;
+}
+
+.shipping_order-date p label {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.shipping_order-date p select {
+  padding: 14px 20px;
+  border: solid 1px #e5e5e5;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.shipping_order-date p select:hover {
+  opacity: 0.8;
+}
+
+.shipping_order-date p::after {
+  pointer-events: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4.5px solid #767676;
+  content: "";
+  position: absolute;
+  right: 20px;
+  bottom: 21px;
+  width: 0;
+}
+
+.shipping_order-date #order_delivery_date_field {
+  margin-right: 10px;
+}
+
+.shipping_order-comment {
+  margin-top: 40px;
+}
+
+.shipping_order-comment .optional {
+  display: none;
+}
+
+.shipping_order-comment #order_comments_field {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shipping_order-comment #order_comments_field label {
+  font-size: 20px;
+  margin-bottom: 6px;
+  width: 30%;
+  max-width: 300px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 20px;
+}
+
+.shipping_order-comment #order_comments_field label::after {
+  content: "任意";
+  position: absolute;
+  top: 26px;
+  right: 12px;
+  font-size: 16px;
+  padding: 10px 10px;
+  color: #ffffff;
+  background-color: #8dba12;
+}
+
+.shipping_order-comment #order_comments_field span {
+  width: 70%;
+}
+
+.shipping_order-comment #order_comments_field span textarea {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 180px;
+  padding: 14px 20px;
+  border: solid 1px #e5e5e5;
+}
+
+#ship-to-different-address {
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border-bottom: dotted 1px #767676;
+}
+
+#ship-to-different-address input,
+#ship-to-different-address span {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#ship-to-different-address input:hover,
+#ship-to-different-address span:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+#ship-to-different-address input {
+  display: none;
+}
+
+#ship-to-different-address span {
+  padding-left: 40px;
+  padding-top: 6px;
+  position: relative;
+  margin-right: 20px;
+}
+
+#ship-to-different-address span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #999;
+}
+
+#ship-to-different-address input:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 9px;
+  width: 10px;
+  height: 20px;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  border-bottom: 4px solid #cc2926;
+  border-right: 4px solid #cc2926;
+}
+
+.shippingForm .address {
+  margin-bottom: 40px;
+}
+
+#order_review_heading {
+  padding: 40px 0;
+  padding-top: 40px;
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: normal;
 }

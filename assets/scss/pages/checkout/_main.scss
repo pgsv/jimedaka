@@ -1,0 +1,38 @@
+.purchase {
+  margin-top: $header_height;
+  background-color: $grey-f;
+  width: 100%;
+  padding: 64px 10%;
+  box-sizing: border-box;
+
+  .purchaseWrapper {
+    display: flex;
+  }
+  &-head {
+    font-size: 32px;
+    margin-bottom: 32px;
+    margin-right: auto;
+  }
+  &-foot {
+    font-size: 16px;
+    padding-top: 12px;
+    color: $grey-7;
+    a {
+      color: $grey-7;
+    }
+    .right_arrow {
+      padding: 0 6px;
+      font-size: 12px;
+    }
+  }
+
+  .col-1,
+  .col-2 {
+    width: 100%;
+  }
+  form.checkout {
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+  }
+}

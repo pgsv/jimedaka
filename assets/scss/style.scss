@@ -24,6 +24,9 @@ Theme Name : MyTemplate
 @import "pages/search";
 @import "pages/cart";
 @import "pages/single";
-@import "pages/checkout";
 @import "pages/privacy";
 @import "pages/terms";
+@import "pages/checkout/main";
+@import "pages/checkout/customform";
+@import "pages/checkout/shipping";
+@import "pages/checkout/order_review";
