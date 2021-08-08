@@ -1,4 +1,3 @@
-<?php clog('ok') ?>
 <aside class="products-aside">
     <div class="products-aside-cart">
         <div class="productsCart productsItem">

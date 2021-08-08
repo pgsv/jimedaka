@@ -21,8 +21,7 @@ defined('ABSPATH') || exit;
 <div class="woocommerce-billing-fields">
 
 	<?php do_action('woocommerce_before_checkout_billing_form', $checkout); ?>
-	<?php $fields = $checkout->get_checkout_fields('billing');
-    clog($fields);?>
+	<?php $fields = $checkout->get_checkout_fields('billing');  ?>
 
 	<div class="customFormWrapper">
 		<div class="customFormWrapper-title">お客様情報の入力</div>
