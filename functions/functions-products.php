@@ -34,6 +34,28 @@ function get_product_ids_by_price($order)
     return get_posts($args);
 }
 
+function get_product_ids_between_price($min_price, $max_price)
+{
+    $args = [
+    'post_type'     => 'product',
+    'numberposts'   => -1,
+    'orderby'       => 'meta_value_num',
+    'order'         => 'asc',
+    'post_status'   => 'publish',
+    'fields'        => 'ids',
+    'meta_query'	=> array(
+        'relation'		=> 'AND',
+        array(
+            'key'		=> '_price',
+            'value'		=> array( $min_price, $max_price ),
+            'type'		=> 'numeric',
+            'compare'	=> 'BETWEEN',
+        )
+    )
+    ];
+    return get_posts($args);
+}
+
 function get_star_rating()
 {
     global $woocommerce, $product;
@@ -144,18 +166,13 @@ function num_to_kanji($num)
 
 function get_product_taxPrice($product_id, $convert_kanji=true)
 {
-    $price = get_post_meta($product_id, '_price', true);
-    if (! empty($price)) {
-        $taxRate = 1.1;
-        $taxPrice = $price * $taxRate;
-        if ($convert_kanji) {
-            $format_price = str_split(number_format($taxPrice));
-            return implode(array_map('num_to_kanji', $format_price));
-        } else {
-            return number_format($taxPrice);
-        }
+    $_product = wc_get_product($product_id);
+    $taxPrice = wc_get_price_including_tax($_product);
+    if ($convert_kanji) {
+        $format_price = str_split(number_format($taxPrice));
+        return implode(array_map('num_to_kanji', $format_price));
     } else {
-        return 0;
+        return number_format($taxPrice);
     }
 }
 
