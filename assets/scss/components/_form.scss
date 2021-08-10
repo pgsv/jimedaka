@@ -16,8 +16,6 @@
 }
 
 @mixin type_of_number_input($bg: white) {
-  display: flex;
-  align-items: center;
   &-label {
     font-size: 18px;
     margin-right: 14px;
