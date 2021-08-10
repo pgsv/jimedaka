@@ -21,7 +21,6 @@
       </ul>
     </div>
 
-
     <div class="singleProduct-right col-8">
       <h1 class="singleProduct-right-head">
         <?php the_title(); ?>
@@ -38,28 +37,31 @@
     if (! $_product->is_purchasable()) {
         return;
     }
-    echo wc_get_stock_html($_product); // WPCS: XSS ok.
+    // 在庫の表示
+    // echo wc_get_stock_html($_product); // WPCS: XSS ok.
     if ($_product->is_in_stock()) : ?>
       <?php do_action('woocommerce_before_add_to_cart_form'); ?>
       <form class="singleProductForm"
         action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $_product->get_permalink())); ?>"
         method="post" enctype='multipart/form-data'>
         <?php do_action('woocommerce_before_add_to_cart_button'); ?>
+        <?php if ($_product->is_sold_individually()): ?>
         <div class="numberInput">
           <div class="numberInput-label">数量</div>
           <?php
-          do_action('woocommerce_before_add_to_cart_quantity');
-          woocommerce_quantity_input(
-              [
-                  'min_value'   => apply_filters('woocommerce_quantity_input_min', $_product->get_min_purchase_quantity(), $_product),
-                  'max_value'   => apply_filters('woocommerce_quantity_input_max', $_product->get_max_purchase_quantity(), $_product),
-                  'input_value' => isset($_POST['quantity']) ? wc_stock_amount(wp_unslash($_POST['quantity'])) : $_product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
-              ]
-          );
+            do_action('woocommerce_before_add_to_cart_quantity');
+            woocommerce_quantity_input(
+                [
+                    'min_value'   => apply_filters('woocommerce_quantity_input_min', $_product->get_min_purchase_quantity(), $_product),
+                    'max_value'   => apply_filters('woocommerce_quantity_input_max', $_product->get_max_purchase_quantity(), $_product),
+                    'input_value' => isset($_POST['quantity']) ? wc_stock_amount(wp_unslash($_POST['quantity'])) : $_product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
+                ]
+            );
 
-          do_action('woocommerce_after_add_to_cart_quantity');
-        ?>
+            do_action('woocommerce_after_add_to_cart_quantity');
+          ?>
         </div>
+        <?php endif; ?>
         <button class="singleProductForm-submitBtn" type="submit" name="add-to-cart"
           value="<?php echo esc_attr($_product->get_id()); ?>"
           class="single_add_to_cart_button button alt">カートに入れる</button>
