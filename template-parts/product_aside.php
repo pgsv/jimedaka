@@ -58,12 +58,48 @@
             </div>
             <div class="productsSort-body">
                 <ul>
-                    <li><a class="productsSort-body-link" href="#">〜1,000円</a></li>
-                    <li><a class="productsSort-body-link" href="#">1,000円～1,500円</a></li>
-                    <li><a class="productsSort-body-link" href="#">1,500円〜2,000円</a></li>
-                    <li><a class="productsSort-body-link" href="#">2,000円〜3,000円</a></li>
-                    <li><a class="productsSort-body-link" href="#">3,000円〜4,000円</a></li>
-                    <li><a class="productsSort-body-link" href="#">4,000円〜</a></li>
+                    <li>
+                        <form name="formSort" method="get"
+                            action="<?php echo $url_str ?>">
+                            <input type="hidden" name="sort" value="0_1000">
+                            <a class="productsSort-body-link" href="javascript:formSort[3].submit()">〜1,000円</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="formSort" method="get"
+                            action="<?php echo $url_str ?>">
+                            <input type="hidden" name="sort" value="1000_1500">
+                            <a class="productsSort-body-link" href="javascript:formSort[4].submit()">1,000円～1,500円</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="formSort" method="get"
+                            action="<?php echo $url_str ?>">
+                            <input type="hidden" name="sort" value="1500_2000">
+                            <a class="productsSort-body-link" href="javascript:formSort[5].submit()">1,500円〜2,000円</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="formSort" method="get"
+                            action="<?php echo $url_str ?>">
+                            <input type="hidden" name="sort" value="2000_3000">
+                            <a class="productsSort-body-link" href="javascript:formSort[6].submit()">2,000円〜3,000円</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="formSort" method="get"
+                            action="<?php echo $url_str ?>">
+                            <input type="hidden" name="sort" value="3000_4000">
+                            <a class="productsSort-body-link" href="javascript:formSort[7].submit()">3,000円〜4,000円</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="formSort" method="get"
+                            action="<?php echo $url_str ?>">
+                            <input type="hidden" name="sort" value="4000_100000">
+                            <a class="productsSort-body-link" href="javascript:formSort[8].submit()">4,000円〜</a>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>

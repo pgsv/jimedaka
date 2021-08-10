@@ -21,6 +21,9 @@
         case ('expensive'):
             $product_ids = get_product_ids_by_price('desc');
             break;
+        default:
+            $array_price = explode("_", $sortset);
+            $product_ids = get_product_ids_between_price($array_price[0], $array_price[1]);
     endswitch;
     ?>
 
