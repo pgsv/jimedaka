@@ -96,6 +96,44 @@
   }
 }
 
+@mixin search_form($w: 265px) {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border: 1px solid $grey_e;
+  padding-left: 18px;
+  margin-right: 16px;
+  height: 38px;
+  width: $w;
+  overflow: hidden;
+  & input[type="text"] {
+    border: none;
+    color: $grey_b;
+    font-family: "kyokasho";
+    font-size: 14px;
+    padding: 0;
+    width: calc(100% - 50px);
+    &:focus {
+      outline: 0;
+      color: $black;
+    }
+  }
+  & input[type="submit"] {
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 38px;
+    background: $white;
+    color: $black;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
 //都道府県のセレクトフォーム
 @mixin custom_type_of_select_input {
   .select2-container .select2-selection--single {
