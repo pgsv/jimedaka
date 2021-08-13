@@ -37,9 +37,6 @@
       border-bottom: solid 1px $grey-b;
       padding: 16px 0;
     }
-    tr td:last-of-type {
-      border-bottom: none;
-    }
     tr {
       td.product-remove {
       }
@@ -118,6 +115,9 @@
       width: 140px;
       height: 140px;
     }
+    tbody tr:last-of-type {
+      display: none;
+    }
   }
 
   .cart_totals {
@@ -126,12 +126,13 @@
     justify-content: flex-start;
     align-items: flex-end;
     h2 {
-      font-size: 24px;
-      margin-bottom: 12px;
+      font-size: 20px;
+      margin-top: 32px;
+      margin-bottom: 0px;
     }
     .wc-proceed-to-checkout {
-      width: 300px;
-      margin-top: 52px;
+      width: 400px;
+      margin-top: 42px;
       padding-bottom: 100px;
       a {
         @include red-fill-btn(100%, 42px);
@@ -139,7 +140,9 @@
     }
     table {
       width: 400px;
-      border-top: solid 1px $grey-7;
+      th {
+        display: none;
+      }
 
       td,
       th {
@@ -156,6 +159,7 @@
         font-size: 20px;
       }
       td {
+        font-size: 24px;
         text-align: end;
       }
     }

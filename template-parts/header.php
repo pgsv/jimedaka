@@ -7,12 +7,7 @@
         <img class='header-head-campany'
             src='<?php echo get_template_directory_uri(); ?>/assets/img/company_text.png'
             alt='会社名'>
-        <!-- <div class="header-head-campany">じめだか</div> -->
     </a>
-
-    <!-- <img class="separation"
-        src="<?php //echo get_template_directory_uri();?>/assets/img/separation.svg"
-    alt="区切り"> -->
 
     <nav class="header-body">
         <ul>
@@ -49,6 +44,7 @@
         <div class="item-text">ログイン</div> -->
         <?php //endif;?>
         <!-- </a> -->
+
         <a href="<?php echo esc_url(home_url().'/cart');?>"
             class="header-foot-item">
             <div class="headerCart">
@@ -60,6 +56,29 @@
                 </div>
             </div>
         </a>
+        <img class='header-foot-hamburgerMenu'
+            src='<?php echo get_template_directory_uri(); ?>/assets/img/menu.svg'
+            alt='ハンバーガーメニュー'>
     </div>
-
 </header>
+
+<div class="smHeader">
+    <nav class="smHeader-body">
+        <ul>
+            <li><a href="<?php echo esc_url(home_url()); ?>">ホーム</a>
+            </li>
+            <li><a
+                    href="<?php echo esc_url(home_url().'/products'); ?>">メダカ一覧</a>
+            </li>
+            <li><a
+                    href="<?php echo esc_url(home_url().'/contact'); ?>">お問い合わせ</a>
+            </li>
+            <li><a
+                    href="<?php echo esc_url(home_url().'/guide'); ?>">ご利用案内</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="smHeader-foot">
+        <?php get_search_form(); ?>
+    </div>
+</div>

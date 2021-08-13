@@ -76,5 +76,7 @@
 }
 
 .numberInput {
+  display: flex;
+  align-items: center;
   @include type_of_number_input($white);
 }
