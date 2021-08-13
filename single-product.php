@@ -1,3 +1,10 @@
+<style>
+  * {
+    min-height: 0;
+    min-width: 0;
+  }
+</style>
+
 <?php get_header(); ?>
 <div class="singleProduct">
   <?php include('template-parts/product_aside.php'); ?>
