@@ -1811,6 +1811,10 @@ header .separation {
   text-align: end;
 }
 
+.footer-body-right .footerNav {
+  text-align: left;
+}
+
 .footer-body-right .footerNav:first-child {
   margin-right: 100px;
 }
@@ -2357,6 +2361,7 @@ header .separation {
 
 .products-aside {
   width: 235px;
+  min-width: 235px;
   border-right: solid 3px rgba(180, 170, 152, 0.5);
   background-color: #f7f3ec;
   color: #333333;
@@ -3120,6 +3125,25 @@ header .separation {
   font-size: 17px;
   word-break: break-all;
   line-height: 200%;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.slider, .thumb {
+  display: none;
+}
+
+.slider.slick-initialized, .thumb.slick-initialized {
+  display: block;
+  /*slick-initializedが付与されたら表示*/
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
 }
 
 .privacy {

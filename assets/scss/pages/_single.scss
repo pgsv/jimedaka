@@ -18,3 +18,18 @@
         line-height: 200%;
     }
 }
+
+* {
+    min-height: 0;
+    min-width : 0;
+}
+.slider,.thumb{
+    display: none;
+}
+.slider.slick-initialized , .thumb.slick-initialized{
+    display: block; /*slick-initializedが付与されたら表示*/
+} 
+.slick-prev:before,
+.slick-next:before{
+    color: #000;
+}

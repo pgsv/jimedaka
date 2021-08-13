@@ -4,6 +4,7 @@
 
   &-aside {
     width: 235px;
+    min-width: 235px; 
     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-right: solid 3px rgba(#b4aa98, 0.5);
     background-color: $light_beige;
