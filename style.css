@@ -148,7 +148,7 @@ select {
   font-size: inherit;
   color: inherit;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 .dselect {
@@ -373,7 +373,7 @@ li {
 
 .border-box {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .align-baseline {
@@ -732,7 +732,7 @@ li {
 .col,
 .col-right {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .col-right {
@@ -795,12 +795,12 @@ li {
   .sm-col {
     float: left;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
   .sm-col-right {
     float: right;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
   .sm-col-1 {
     width: 8.33333%;
@@ -847,12 +847,12 @@ li {
   .md-col {
     float: left;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
   .md-col-right {
     float: right;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
   .md-col-1 {
     width: 8.33333%;
@@ -896,12 +896,12 @@ li {
   .lg-col {
     float: left;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
   .lg-col-right {
     float: right;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
   .lg-col-1 {
     width: 8.33333%;
@@ -1048,7 +1048,7 @@ li {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
-  align-self: center;
+      align-self: center;
 }
 
 .self-baseline {
@@ -1061,7 +1061,7 @@ li {
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   -ms-grid-row-align: stretch;
-  align-self: stretch;
+      align-self: stretch;
 }
 
 .justify-start {
@@ -1322,6 +1322,22 @@ li {
   display: none !important;
 }
 
+.slider,
+.thumb {
+  display: none;
+}
+
+.slider.slick-initialized,
+.thumb.slick-initialized {
+  display: block;
+  /*slick-initializedが付与されたら表示*/
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+}
+
 .btn_stroke_beige {
   border: solid 1px #bda366;
   padding: 12px 32px;
@@ -1334,16 +1350,16 @@ li {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   white-space: nowrap;
 }
 
@@ -1355,16 +1371,16 @@ form p label {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 16px;
 }
 
 form.wpcf7-form p:nth-last-of-type(2) label {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 form.wpcf7-form p:nth-last-of-type(2) label .label {
@@ -1382,12 +1398,12 @@ form.wpcf7-form input[type="submit"] {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: "kyokasho";
   cursor: pointer;
   -webkit-transition: 0.2s;
@@ -1412,14 +1428,14 @@ form.wpcf7-form input[type="submit"]:hover {
 
 span.wpcf7-form-control-wrap {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
 }
 
 textarea.wpcf7-form-control,
 input.wpcf7-form-control {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
   background-color: #fafafa;
   height: 56px;
@@ -1519,8 +1535,8 @@ a:hover {
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .wrap main {
@@ -1545,12 +1561,12 @@ header {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 5%;
   height: 80px;
   border-bottom: solid 1px #e5e5e5;
@@ -1561,7 +1577,7 @@ header {
   background-color: #ffffff;
   width: 100%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 header .separation {
@@ -1577,8 +1593,8 @@ header .header-head {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
 }
 
@@ -1625,8 +1641,8 @@ header .header-foot {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .header-foot a {
@@ -1647,12 +1663,12 @@ header .header-foot-item {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 8px;
 }
 
@@ -1676,12 +1692,12 @@ header .header-foot-item .headerCart-alert {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 992px) {
@@ -1707,15 +1723,15 @@ header .header-foot-item .headerCart-img {
 
 header .header-foot-searchForm {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid #e5e5e5;
   padding-left: 18px;
   margin-right: 16px;
@@ -1816,15 +1832,15 @@ header .header-foot-hamburgerMenu:hover {
 
 .smHeader-foot .header-foot-searchForm {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid #e5e5e5;
   padding-left: 18px;
   margin-right: 16px;
@@ -1876,8 +1892,8 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer-body-left {
@@ -1896,12 +1912,12 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer-body-left .footerLogo-image {
@@ -1911,7 +1927,7 @@ header .header-foot-hamburgerMenu:hover {
 .footer-body-left .footerLogo-text {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
+          writing-mode: vertical-rl;
   color: #ffffff;
   font-size: 24px;
   margin-top: 4px;
@@ -1987,12 +2003,12 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer-foot .share {
@@ -2033,7 +2049,7 @@ header .header-foot-hamburgerMenu:hover {
 .top-categories-head {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
+          writing-mode: vertical-rl;
   margin-right: 20px;
   margin-left: 16px;
   font-size: 16px;
@@ -2057,7 +2073,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .top-categories-body li::before {
@@ -2083,7 +2099,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   -webkit-transform: translate(-2px, 0);
-  transform: translate(-2px, 0);
+          transform: translate(-2px, 0);
 }
 
 .top-categories-body li .categoryItem {
@@ -2113,7 +2129,7 @@ header .header-foot-hamburgerMenu:hover {
   top: 50%;
   right: 20px;
   -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+          transform: translate(0, -50%);
   color: #333333;
   -webkit-text-stroke-width: 0.5px;
   font-size: 16px;
@@ -2121,7 +2137,7 @@ header .header-foot-hamburgerMenu:hover {
   border-radius: 100px;
   background-color: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.75);
-  box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.75);
+          box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.75);
 }
 
 .top-right {
@@ -2162,11 +2178,11 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   overflow: scroll;
   width: 100%;
 }
@@ -2208,20 +2224,20 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: start;
   -webkit-align-items: start;
-  -ms-flex-align: start;
-  align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .recommend-head {
   -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   font-size: 32px;
   color: #333333;
   -webkit-text-stroke-width: 0.5px;
@@ -2235,12 +2251,12 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
@@ -2252,16 +2268,16 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 33.33333%;
   padding-left: 25px;
 }
@@ -2282,9 +2298,9 @@ header .header-foot-hamburgerMenu:hover {
   width: 100%;
   border: solid 10px #f7f3ec;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-box-shadow: 0 2px 11px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 11px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 11px 2px rgba(0, 0, 0, 0.1);
   opacity: 0.8;
 }
 
@@ -2293,8 +2309,8 @@ header .header-foot-hamburgerMenu:hover {
   top: 10px;
   right: 10px;
   -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   background-color: #cc2926;
   color: #ffffff;
   font-size: 14px;
@@ -2305,8 +2321,8 @@ header .header-foot-hamburgerMenu:hover {
 .recommend-body .recommendItem-body {
   height: 220px;
   -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   font-family: "kyokasho-vertical";
   text-orientation: upright;
   display: -webkit-box;
@@ -2316,16 +2332,16 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-right: 8px;
 }
 
@@ -2380,8 +2396,8 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
   -webkit-flex-flow: row-reverse;
-  -ms-flex-flow: row-reverse;
-  flex-flow: row-reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
 }
 
 .deliveryflow-right-head,
@@ -2392,12 +2408,12 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 25%;
   margin-left: 1px;
   background-image: -webkit-linear-gradient(292deg, #e9dfd6, #f7f3ec);
@@ -2406,8 +2422,8 @@ header .header-foot-hamburgerMenu:hover {
 
 .deliveryflow-right-head {
   -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   font-size: 32px;
 }
 
@@ -2420,16 +2436,16 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .deliveryflow-right .deliveryflowItem-img {
@@ -2448,34 +2464,34 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-flex-flow: row-reverse;
-  -ms-flex-flow: row-reverse;
-  flex-flow: row-reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
   height: 250px;
 }
 
 .deliveryflow-right .deliveryflowItem-wrapper-title {
   -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   font-size: 22px;
   padding-left: 14px;
 }
 
 .deliveryflow-right .deliveryflowItem-wrapper-desc {
   -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   font-size: 14px;
   padding-top: 26px;
   line-height: 18px;
@@ -2507,8 +2523,7 @@ header .header-foot-hamburgerMenu:hover {
   border-top: 1px solid #e5e5e5;
 }
 
-.products-aside-all,
-.products-aside-recommend {
+.products-aside-all, .products-aside-recommend {
   font-size: 16px;
   display: block;
   -webkit-text-stroke-width: 0.5px;
@@ -2565,8 +2580,8 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -2580,23 +2595,9 @@ header .header-foot-hamburgerMenu:hover {
   content: "";
   width: 100%;
   height: 50%;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(1%, rgba(0, 0, 0, 0)),
-    color-stop(97%, rgba(0, 0, 0, 0.7))
-  );
-  background-image: -webkit-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0) 1%,
-    rgba(0, 0, 0, 0.7) 97%
-  );
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 1%,
-    rgba(0, 0, 0, 0.7) 97%
-  );
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(0, 0, 0, 0)), color-stop(97%, rgba(0, 0, 0, 0.7)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.7) 97%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.7) 97%);
 }
 
 .products-list-category {
@@ -2618,8 +2619,7 @@ header .header-foot-hamburgerMenu:hover {
   padding: 14px 24px;
 }
 
-.products-list-name,
-.products-list-price {
+.products-list-name, .products-list-price {
   text-align: end;
   white-space: nowrap;
 }
@@ -2655,7 +2655,7 @@ header .header-foot-hamburgerMenu:hover {
 .woocommerce-MyAccount-navigation-link {
   width: 197px;
   font-size: 1.3rem;
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid #C4C4C4;
   padding: 16px 0px;
 }
 
@@ -2665,8 +2665,8 @@ header .header-foot-hamburgerMenu:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   width: 50%;
   margin: 43px;
 }
@@ -2711,8 +2711,8 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-right: 48px;
 }
 
@@ -2740,12 +2740,12 @@ header .header-foot-hamburgerMenu:hover {
   width: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .singleProduct-left-subImg li {
@@ -2798,8 +2798,8 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .singleProduct-right .singleProductForm-submitBtn {
@@ -2814,12 +2814,12 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: "kyokasho";
   cursor: pointer;
   -webkit-transition: 0.2s;
@@ -2842,8 +2842,8 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .numberInput-label {
@@ -2972,8 +2972,8 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cart-head-title {
@@ -3030,11 +3030,7 @@ header .header-foot-hamburgerMenu:hover {
   padding-right: 10px;
 }
 
-.cart
-  table.woocommerce-cart-form__contents
-  tr
-  td.product-name
-  .product-desc::after {
+.cart table.woocommerce-cart-form__contents tr td.product-name .product-desc::after {
   content: "...";
   position: absolute;
   right: 0;
@@ -3063,11 +3059,7 @@ header .header-foot-hamburgerMenu:hover {
   white-space: nowrap;
 }
 
-.cart
-  table.woocommerce-cart-form__contents
-  tr
-  td.product-quantity
-  input[type="number"] {
+.cart table.woocommerce-cart-form__contents tr td.product-quantity input[type="number"] {
   padding: 16px 20px;
   font-size: 14px;
   background-color: #f7f3ec;
@@ -3098,12 +3090,12 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: "kyokasho";
   cursor: pointer;
   -webkit-transition: 0.2s;
@@ -3125,22 +3117,13 @@ header .header-foot-hamburgerMenu:hover {
   margin-left: 6px;
 }
 
-.cart
-  table.woocommerce-cart-form__contents
-  tr
-  td.actions
-  button[aria-disabled="true"] {
+.cart table.woocommerce-cart-form__contents tr td.actions button[aria-disabled="true"] {
   color: #b5b5b5;
   border: solid 1px #b5b5b5;
   cursor: default;
 }
 
-.cart
-  table.woocommerce-cart-form__contents
-  tr
-  td.actions
-  button[aria-disabled="true"]
-  .reloadImg {
+.cart table.woocommerce-cart-form__contents tr td.actions button[aria-disabled="true"] .reloadImg {
   opacity: 0.2;
 }
 
@@ -3161,16 +3144,16 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .cart .cart_totals h2 {
@@ -3196,12 +3179,12 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: "kyokasho";
   cursor: pointer;
   -webkit-transition: 0.2s;
@@ -3253,7 +3236,7 @@ header .header-foot-hamburgerMenu:hover {
   background: #fff;
   margin: 20px 0;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
 }
 
 .cart .restore-item {
@@ -3302,9 +3285,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .privacy {
-  font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝",
-    YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL",
-    "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
@@ -3358,9 +3339,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .terms {
-  font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝",
-    YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL",
-    "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
@@ -3419,7 +3398,7 @@ header .header-foot-hamburgerMenu:hover {
   width: 100%;
   padding: 64px 10%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .purchase .purchaseWrapper {
@@ -3459,7 +3438,7 @@ header .header-foot-hamburgerMenu:hover {
   width: 100%;
   background-color: white;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .customFormWrapper {
@@ -3500,7 +3479,7 @@ header .header-foot-hamburgerMenu:hover {
   border: solid 1px #e5e5e5;
   width: 100%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 15px;
   letter-spacing: 0.5px;
 }
@@ -3509,25 +3488,20 @@ header .header-foot-hamburgerMenu:hover {
   height: 48px !important;
 }
 
-.customForm
-  .select2-container--default
-  .select2-selection--single
-  .select2-selection__rendered {
+.customForm .select2-container--default
+.select2-selection--single
+.select2-selection__rendered {
   line-height: 48px !important;
 }
 
-.customForm
-  .select2-container--default
-  .select2-selection--single
-  .select2-selection__arrow {
+.customForm .select2-container--default
+.select2-selection--single
+.select2-selection__arrow {
   height: 48px !important;
   width: 48px !important;
 }
 
-.customForm
-  .select2-container
-  .select2-selection--single
-  .select2-selection__rendered {
+.customForm .select2-container .select2-selection--single .select2-selection__rendered {
   padding-left: 22px !important;
 }
 
@@ -3536,8 +3510,7 @@ header .header-foot-hamburgerMenu:hover {
   border-radius: 0 !important;
 }
 
-.customForm:nth-last-child(2),
-.customForm:nth-last-child(1) {
+.customForm:nth-last-child(2), .customForm:nth-last-child(1) {
   border-bottom: none;
   padding-bottom: 0;
 }
@@ -3573,8 +3546,8 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
 }
 
@@ -3590,8 +3563,8 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 
@@ -3661,7 +3634,7 @@ header .header-foot-hamburgerMenu:hover {
   border: solid 1px #e5e5e5;
   width: 100%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 15px;
   letter-spacing: 0.5px;
   cursor: pointer;
@@ -3698,7 +3671,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .shipping_order-comment #order_comments_field {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3717,8 +3690,8 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding-top: 20px;
 }
 
@@ -3740,7 +3713,7 @@ header .header-foot-hamburgerMenu:hover {
 .shipping_order-comment #order_comments_field span textarea {
   width: 100%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   height: 180px;
   padding: 14px 20px;
   border: solid 1px #e5e5e5;
@@ -3797,7 +3770,7 @@ header .header-foot-hamburgerMenu:hover {
   width: 10px;
   height: 20px;
   -webkit-transform: rotate(40deg);
-  transform: rotate(40deg);
+          transform: rotate(40deg);
   border-bottom: 4px solid #cc2926;
   border-right: 4px solid #cc2926;
 }
@@ -3935,8 +3908,8 @@ header .header-foot-hamburgerMenu:hover {
   display: inline-flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: calc(100% - 30px);
   cursor: pointer;
   -webkit-text-stroke-width: 0.2px;
@@ -3962,20 +3935,12 @@ header .header-foot-hamburgerMenu:hover {
   border-top: solid 1px #e5e5e5;
 }
 
-#payment
-  ul
-  li.payment_method_square_credit_card
-  div.payment_method_square_credit_card
-  p {
+#payment ul li.payment_method_square_credit_card div.payment_method_square_credit_card p {
   margin-bottom: 24px;
   font-size: 18px;
 }
 
-#payment
-  ul
-  li.payment_method_square_credit_card
-  div.payment_method_square_credit_card
-  div.wc-square-credit-card-hosted-field-parent {
+#payment ul li.payment_method_square_credit_card div.payment_method_square_credit_card div.wc-square-credit-card-hosted-field-parent {
   margin-bottom: 12px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3983,16 +3948,11 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#payment
-  ul
-  li.payment_method_square_credit_card
-  div.payment_method_square_credit_card
-  div.wc-square-credit-card-hosted-field-parent
-  label {
+#payment ul li.payment_method_square_credit_card div.payment_method_square_credit_card div.wc-square-credit-card-hosted-field-parent label {
   width: 240px;
 }
 
@@ -4048,12 +4008,12 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: "kyokasho";
   cursor: pointer;
   -webkit-transition: 0.2s;
@@ -4102,8 +4062,8 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .thankyou .account_info strong {

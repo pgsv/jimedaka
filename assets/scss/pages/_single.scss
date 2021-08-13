@@ -1,35 +1,33 @@
 .singleNews {
-    margin-top: $header_height;
-    background-color: $light_beige;
-    padding: 36px 8%;
-    &-wrapper {
-        background-color: white;
-        border-top: solid 6px $dark_beige;
-        padding: 64px 8%;
-    }
-    &-title {
-        font-size: 32px;
-        margin-bottom: 64px;
-    }
-    &-contents {
-        min-height: 100vh;
-        font-size: 17px;
-        word-break: break-all; 
-        line-height: 200%;
-    }
+  margin-top: $header_height;
+  background-color: $light_beige;
+  padding: 36px 8%;
+  &-wrapper {
+    background-color: white;
+    border-top: solid 6px $dark_beige;
+    padding: 64px 8%;
+  }
+  &-title {
+    font-size: 32px;
+    margin-bottom: 64px;
+  }
+  &-contents {
+    min-height: 100vh;
+    font-size: 17px;
+    word-break: break-all;
+    line-height: 200%;
+  }
 }
 
-* {
-    min-height: 0;
-    min-width : 0;
+.slider,
+.thumb {
+  display: none;
 }
-.slider,.thumb{
-    display: none;
+.slider.slick-initialized,
+.thumb.slick-initialized {
+  display: block; /*slick-initializedが付与されたら表示*/
 }
-.slider.slick-initialized , .thumb.slick-initialized{
-    display: block; /*slick-initializedが付与されたら表示*/
-} 
 .slick-prev:before,
-.slick-next:before{
-    color: #000;
+.slick-next:before {
+  color: #000;
 }
