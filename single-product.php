@@ -6,10 +6,27 @@
     <div class="singleProduct-left col-4">
       <?php if (have_posts()): while (have_posts()):the_post(); ?>
       <?php $_product = wc_get_product(get_the_ID()); ?>
-      <div class="singleProduct-left-img"
-        style="background-image: url('<?php echo wp_get_attachment_thumb_url($_product->image_id, 'thumbnail');?>')">
-      </div>
-      <ul class="singleProduct-left-subImg">
+      <ul class="singleProduct-left-subImg slider">
+        <li>
+          <div
+            style="background-image: url('<?php echo wp_get_attachment_thumb_url($_product->image_id, 'thumbnail');?>')">
+          </div>
+        </li>
+        <?php foreach ($_product->gallery_image_ids as $galleyId):
+        $galleryThumbUrl = wp_get_attachment_thumb_url($galleyId); ?>
+        <li>
+          <div
+            style="background-image: url('<?php echo $galleryThumbUrl; ?>')">
+          </div>
+        </li>
+        <?php endforeach; ?>
+      </ul>
+      <ul class="singleProduct-left-subImg thumb">
+        <li>
+          <div
+            style="background-image: url('<?php echo wp_get_attachment_thumb_url($_product->image_id, 'thumbnail');?>')">
+          </div>
+        </li>
         <?php foreach ($_product->gallery_image_ids as $galleyId):
         $galleryThumbUrl = wp_get_attachment_thumb_url($galleyId); ?>
         <li>
@@ -45,7 +62,8 @@
         action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $_product->get_permalink())); ?>"
         method="post" enctype='multipart/form-data'>
         <?php do_action('woocommerce_before_add_to_cart_button'); ?>
-        <?php if ($_product->is_sold_individually()): ?>
+        <!--  個別販売の時は非表示 -->
+        <?php if (! $_product->is_sold_individually()): ?>
         <div class="numberInput">
           <div class="numberInput-label">数量</div>
           <?php
