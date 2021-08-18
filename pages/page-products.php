@@ -4,8 +4,8 @@
 
     <?php
     $sortset = (string) filter_input(INPUT_GET, 'sort');
-    if ($sortset === "") {
-        $sortset = "category";
+    if ($sortset === '') {
+        $sortset = 'category';
     } else {
         $sortset = (string) filter_input(INPUT_GET, 'sort');
     }
@@ -22,7 +22,7 @@
             $product_ids = get_product_ids_by_price('desc');
             break;
         default:
-            $array_price = explode("_", $sortset);
+            $array_price = explode('_', $sortset);
             $product_ids = get_product_ids_between_price($array_price[0], $array_price[1]);
     endswitch;
     ?>
@@ -34,7 +34,7 @@
             $_product = wc_get_product($product_id);
             if ($_product->is_in_stock()) :
             ?>
-            <li class="sm-col sm-col-6 md-col-3 lg-col-3 pr2 pb2">
+            <li class="products-list-item">
                 <?php the_product_link_html($product_id); ?>
             </li>
             <?php endif; endforeach; endif; ?>

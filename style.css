@@ -2743,6 +2743,15 @@ header .header-foot-hamburgerMenu:hover {
   display: -ms-flexbox;
   display: flex;
   margin-top: 80px;
+  position: relative;
+}
+
+.products .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .products-aside {
@@ -2752,6 +2761,13 @@ header .header-foot-hamburgerMenu:hover {
   background-color: #f7f3ec;
   color: #333333;
   z-index: 2;
+}
+
+@media screen and (max-width: 992px) {
+  .products-aside {
+    position: absolute;
+    left: -238px;
+  }
 }
 
 .products-aside .productsItem {
@@ -2808,6 +2824,59 @@ header .header-foot-hamburgerMenu:hover {
 .products-list {
   padding: 30px 70px;
   background-color: #f7f3ec;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .products-list {
+    padding: 30px 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .products-list {
+    padding: 30px 20px;
+    padding-top: 60px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .products-list {
+    padding: 30px 10px;
+    padding-top: 60px;
+  }
+}
+
+.products-list ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.products-list ul li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  width: 25%;
+}
+
+@media screen and (max-width: 992px) {
+  .products-list ul li {
+    width: 33.333333333%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .products-list ul li {
+    width: 50%;
+  }
 }
 
 .products-list-img {
@@ -2863,6 +2932,12 @@ header .header-foot-hamburgerMenu:hover {
   white-space: nowrap;
 }
 
+@media screen and (max-width: 992px) {
+  .products-list-name, .products-list-price {
+    opacity: 0.8;
+  }
+}
+
 .products-list-price {
   font-size: 12px;
   padding-bottom: 8px;
@@ -2870,6 +2945,31 @@ header .header-foot-hamburgerMenu:hover {
 
 .products-list-name {
   font-size: 16px;
+}
+
+@media screen and (max-width: 576px) {
+  .products-list-name {
+    font-size: 14px;
+  }
+}
+
+.products-search {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 10px;
+  background-color: #f7f3ec;
+  border: solid 1px #b5b5b5;
+  color: #333333;
+  width: 200px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .products-search {
+    display: block;
+  }
 }
 
 .myaccount-title {
