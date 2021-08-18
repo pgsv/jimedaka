@@ -3509,6 +3509,10 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 16px;
 }
 
+.guide-list-body li {
+  list-style-type: disc;
+}
+
 .guide-list::before {
   content: "";
   width: 100%;
