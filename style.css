@@ -2341,6 +2341,17 @@ header .header-foot-hamburgerMenu:hover {
           box-sizing: border-box;
 }
 
+@media screen and (max-width: 992px) {
+  .recommend {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 55px 8%;
+  }
+}
+
 .recommend-head {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
@@ -2349,6 +2360,17 @@ header .header-foot-hamburgerMenu:hover {
   color: #333333;
   -webkit-text-stroke-width: 0.5px;
   margin-right: 32px;
+}
+
+@media screen and (max-width: 992px) {
+  .recommend-head {
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .recommend-body {
@@ -2365,6 +2387,18 @@ header .header-foot-hamburgerMenu:hover {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .recommend-body .recommendItem {
@@ -2387,6 +2421,13 @@ header .header-foot-hamburgerMenu:hover {
           justify-content: center;
   width: 33.33333%;
   padding-left: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-body .recommendItem {
+    width: 100%;
+    padding-left: 0;
+  }
 }
 
 .recommend-body .recommendItem:first-child {
@@ -2425,6 +2466,15 @@ header .header-foot-hamburgerMenu:hover {
   letter-spacing: 1.2px;
 }
 
+@media screen and (max-width: 768px) {
+  .recommend-body .recommendItem-head-label {
+    font-family: "kyokasho";
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+  }
+}
+
 .recommend-body .recommendItem-body {
   height: 220px;
   -webkit-writing-mode: vertical-rl;
@@ -2452,6 +2502,38 @@ header .header-foot-hamburgerMenu:hover {
   margin-right: 8px;
 }
 
+@media screen and (max-width: 1200px) {
+  .recommend-body .recommendItem-body {
+    height: 270px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .recommend-body .recommendItem-body {
+    height: 270px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-body .recommendItem-body {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-body .recommendItem-body {
+    font-family: "kyokasho";
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-right: 0px;
+  }
+}
+
 .recommend-body .recommendItem-body-name {
   -webkit-text-stroke-width: 0.5px;
   font-size: 22px;
@@ -2466,6 +2548,14 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-text-stroke-width: 0.5px;
 }
 
+@media screen and (max-width: 768px) {
+  .recommend-body .recommendItem-body-price {
+    padding-top: 6px;
+    margin-bottom: 12px;
+    line-height: 16px;
+  }
+}
+
 .recommend-body .recommendItem-body-desc {
   font-size: 14px;
   line-height: 18px;
@@ -2473,6 +2563,13 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-text-stroke-width: 0.2px;
   line-height: 1.6em;
   letter-spacing: 1.2px;
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-body .recommendItem-body-desc {
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
 }
 
 .deliveryflow {
