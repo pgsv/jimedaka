@@ -2,6 +2,9 @@
   background-image: url("./assets/img/washi.jpg");
   padding: 16px 4%;
   margin-top: $header_height;
+  @include md {
+    flex-direction: column-reverse;
+  }
   &-categories {
     display: flex;
     color: $white;
@@ -22,8 +25,14 @@
         width: 2px;
         height: 180px;
       }
+      @include md {
+        display: none;
+      }
     }
     &-body {
+      @include md {
+        width: 100%;
+      }
       li {
         margin-bottom: 10px;
         position: relative;
@@ -65,6 +74,9 @@
             height: 70px;
             background-position: center;
             background-size: cover;
+            @include md {
+              width: 100%;
+            }
           }
           &-text {
             position: absolute;
@@ -88,12 +100,18 @@
   &-right {
     padding-left: 20px;
     width: 100%;
+    @include md {
+      padding-left: 0;
+    }
     &-slider {
       width: 100%;
     }
 
     .news {
       width: 100%;
+      @include md {
+        margin-bottom: 40px;
+      }
       &-head {
         color: $white;
         -webkit-text-stroke-width: 0.5px;
@@ -105,7 +123,7 @@
         position: relative;
         width: 100%;
         &::-webkit-scrollbar {
-          display:none;
+          display: none;
         }
         dl {
           display: flex;
@@ -114,7 +132,7 @@
           overflow: scroll;
           width: 100%;
           &::-webkit-scrollbar {
-            display:none;
+            display: none;
           }
           dt {
             width: 100%;

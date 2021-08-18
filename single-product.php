@@ -10,7 +10,17 @@
   <?php include('template-parts/product_aside.php'); ?>
 
   <main class="singleProduct-wrapper">
-    <div class="singleProduct-left col-4">
+
+    <div class="singleProduct-left">
+      <div class="smProductTitle">
+        <h1 class="singleProduct-right-head">
+          <?php the_title(); ?>
+        </h1>
+        <div class="singleProduct-right-price">
+          ￥<?php echo get_product_taxPrice(get_the_ID(), false); ?>円
+          <span class="red">（税込）</span>
+        </div>
+      </div>
       <?php if (have_posts()): while (have_posts()):the_post(); ?>
       <?php $_product = wc_get_product(get_the_ID()); ?>
       <ul class="singleProduct-left-subImg slider">
@@ -45,13 +55,15 @@
       </ul>
     </div>
 
-    <div class="singleProduct-right col-8">
-      <h1 class="singleProduct-right-head">
-        <?php the_title(); ?>
-      </h1>
-      <div class="singleProduct-right-price">
-        ￥<?php echo get_product_taxPrice(get_the_ID(), false); ?>円
-        <span class="red">（税込）</span>
+    <div class="singleProduct-right">
+      <div class="lgProductTitle">
+        <h1 class="singleProduct-right-head">
+          <?php the_title(); ?>
+        </h1>
+        <div class="singleProduct-right-price">
+          ￥<?php echo get_product_taxPrice(get_the_ID(), false); ?>円
+          <span class="red">（税込）</span>
+        </div>
       </div>
       <div class="singleProduct-right-desc">
         <?php echo wc_get_product(get_the_ID())->description;?>

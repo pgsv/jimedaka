@@ -5,10 +5,17 @@
   &-body {
     display: flex;
     justify-content: space-between;
-
+    @include md() {
+      flex-direction: column;
+      justify-content: center;
+    }
     &-left {
       display: flex;
       -webkit-text-stroke-width: 0.5px;
+      @include md {
+        margin-bottom: 40px;
+        justify-content: center;
+      }
       .footerLogo {
         display: flex;
         flex-direction: column;
@@ -42,12 +49,25 @@
     &-right {
       color: $white;
       display: flex;
-      text-align: end;
+
+      @include md {
+        margin-bottom: 40px;
+        justify-content: center;
+      }
+      @include ms {
+        flex-direction: column;
+      }
 
       .footerNav {
-        text-align: left;
+        text-align: right;
+        @include ms {
+          text-align: left;
+        }
         &:first-child {
           margin-right: 100px;
+          @include ms {
+            margin-bottom: 40px;
+          }
         }
         &-head {
           font-size: 20px;
@@ -63,6 +83,9 @@
             height: calc(120%);
             right: -16px;
             top: -4px;
+            @include ms {
+              display: none;
+            }
           }
           li {
             margin-bottom: 16px;
@@ -70,6 +93,9 @@
               font-size: 16px;
               color: $grey-b;
               -webkit-text-stroke-width: 0.5px;
+              @include ms {
+                font-size: 14px;
+              }
             }
           }
         }
