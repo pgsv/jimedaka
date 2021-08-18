@@ -1,14 +1,36 @@
 .singleProduct {
   margin-top: $header_height;
   display: flex;
+
   &-wrapper {
-    padding: 80px 50px;
     display: flex;
+    @include sm {
+      flex-direction: column;
+    }
   }
   &-left {
+    padding: 80px 50px;
+    padding-right: 10px;
     display: flex;
     flex-direction: column;
-    margin-right: 48px;
+    width: 40%;
+    box-sizing: border-box;
+    @include sm {
+      width: 100%;
+      padding: 20px 0;
+      padding-left: 0;
+      margin-right: 0;
+    }
+    .smProductTitle {
+      display: none;
+      padding: 16px 30px;
+      padding-bottom: 16px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      @include sm {
+        display: block;
+      }
+    }
     &-img {
       width: 100%;
       padding-top: 100%;
@@ -21,21 +43,34 @@
         transition: 0.2s;
       }
     }
+    ul.thumb li {
+      margin-top: 28px;
+    }
     &-subImg {
       display: flex;
       width: 100%;
       justify-content: center;
       align-items: center;
+
       li {
-        margin-top: 28px;
         width: 20%;
         margin-right: 20px;
         cursor: pointer;
         transition: 0.2s;
+
         &:hover {
           opacity: 0.8;
           transition: 0.2s;
         }
+      }
+      li.slick-slide {
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+      div.slick-track {
+        display: flex;
+        justify-content: center;
       }
       li div {
         width: 100%;
@@ -46,6 +81,22 @@
     }
   }
   &-right {
+    padding: 80px 50px;
+    padding-left: 10px;
+    width: 60%;
+    box-sizing: border-box;
+    @include sm {
+      width: 100%;
+      padding: 10px 8%;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .lgProductTitle {
+      display: block;
+      @include sm {
+        display: none;
+      }
+    }
     &-head {
       font-size: 32px;
       margin-bottom: 20px;
@@ -61,12 +112,19 @@
       font-size: 18px;
       line-height: 30px;
       letter-spacing: auto;
+      @include sm {
+        padding-bottom: 100px;
+      }
     }
 
     .singleProductForm {
       margin-top: 36px;
       display: flex;
       align-items: center;
+      @include sm {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
       &-submitBtn {
         margin-left: 50px;
         @include red-fill-btn();
