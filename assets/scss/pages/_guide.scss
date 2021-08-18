@@ -2,6 +2,9 @@
   margin-top: $header_height;
   background-color: $light_beige;
   padding: 36px 8%;
+  @include sm {
+    padding: 36px 0;
+  }
 
   &-wrapper {
     background-color: white;
@@ -22,10 +25,16 @@
     line-height: 26px;
     margin-bottom: 50px;
     position: relative;
+    @include sm {
+      flex-direction: column;
+    }
     &-head {
       white-space: nowrap;
       width: 300px;
       font-size: 18px;
+      @include sm {
+        margin-bottom: 8px;
+      }
     }
     &-body {
       width: 100%;
