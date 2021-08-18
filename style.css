@@ -2105,6 +2105,16 @@ header .header-foot-hamburgerMenu:hover {
   margin-top: 80px;
 }
 
+@media screen and (max-width: 992px) {
+  .top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
 .top-categories {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2132,6 +2142,18 @@ header .header-foot-hamburgerMenu:hover {
   right: -8px;
   width: 2px;
   height: 180px;
+}
+
+@media screen and (max-width: 992px) {
+  .top-categories-head {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .top-categories-body {
+    width: 100%;
+  }
 }
 
 .top-categories-body li {
@@ -2191,6 +2213,12 @@ header .header-foot-hamburgerMenu:hover {
   background-size: cover;
 }
 
+@media screen and (max-width: 992px) {
+  .top-categories-body li .categoryItem-image {
+    width: 100%;
+  }
+}
+
 .top-categories-body li .categoryItem-text {
   position: absolute;
   top: 50%;
@@ -2212,12 +2240,24 @@ header .header-foot-hamburgerMenu:hover {
   width: 100%;
 }
 
+@media screen and (max-width: 992px) {
+  .top-right {
+    padding-left: 0;
+  }
+}
+
 .top-right-slider {
   width: 100%;
 }
 
 .top-right .news {
   width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .top-right .news {
+    margin-bottom: 40px;
+  }
 }
 
 .top-right .news-head {
