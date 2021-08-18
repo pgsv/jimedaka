@@ -1896,12 +1896,36 @@ header .header-foot-hamburgerMenu:hover {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 992px) {
+  .footer-body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .footer-body-left {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-text-stroke-width: 0.5px;
+}
+
+@media screen and (max-width: 992px) {
+  .footer-body-left {
+    margin-bottom: 40px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .footer-body-left .footerLogo {
@@ -1955,15 +1979,46 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  text-align: end;
+}
+
+@media screen and (max-width: 992px) {
+  .footer-body-right {
+    margin-bottom: 40px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-body-right {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .footer-body-right .footerNav {
-  text-align: left;
+  text-align: right;
+}
+
+@media screen and (max-width: 576px) {
+  .footer-body-right .footerNav {
+    text-align: left;
+  }
 }
 
 .footer-body-right .footerNav:first-child {
   margin-right: 100px;
+}
+
+@media screen and (max-width: 576px) {
+  .footer-body-right .footerNav:first-child {
+    margin-bottom: 40px;
+  }
 }
 
 .footer-body-right .footerNav-head {
@@ -1985,6 +2040,12 @@ header .header-foot-hamburgerMenu:hover {
   top: -4px;
 }
 
+@media screen and (max-width: 576px) {
+  .footer-body-right .footerNav-body .footerSeparation {
+    display: none;
+  }
+}
+
 .footer-body-right .footerNav-body li {
   margin-bottom: 16px;
 }
@@ -1993,6 +2054,12 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 16px;
   color: #b5b5b5;
   -webkit-text-stroke-width: 0.5px;
+}
+
+@media screen and (max-width: 576px) {
+  .footer-body-right .footerNav-body li a {
+    font-size: 14px;
+  }
 }
 
 .footer-foot {
