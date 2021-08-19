@@ -26,6 +26,10 @@
     font-size: 14px;
     background-color: $bg;
     border: solid 1px $grey-7;
+    @include ms {
+      padding: 10px 12px;
+      width: 35px;
+    }
   }
 }
 
