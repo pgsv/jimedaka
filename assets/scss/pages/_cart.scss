@@ -1,9 +1,23 @@
+.lgForm {
+  display: block;
+  @include md {
+    display: none;
+  }
+}
+.smForm {
+  display: none;
+  @include md {
+    display: block;
+  }
+}
+
 .cart {
   margin-top: $header_height;
   background-color: $light_beige;
-  padding: 46px 8%;
 
   &-head {
+    padding: 46px 8%;
+    padding-bottom: 0;
     display: flex;
     align-items: center;
     &-title {
@@ -18,11 +32,18 @@
       }
     }
   }
+  .woocommerce {
+    padding: 46px 8%;
+    padding-top: 0;
+    @include ms {
+      padding: 46px 3%;
+      padding-top: 0;
+    }
+  }
 
   table.woocommerce-cart-form__contents {
     width: 100%;
     margin-top: 52px;
-
     tr th {
       text-align: start;
       font-size: 18px;
@@ -37,11 +58,23 @@
       border-bottom: solid 1px $grey-b;
       padding: 16px 0;
     }
+    @include md {
+      tr:nth-child(odd) td {
+        border-bottom: solid 1px $grey-e;
+      }
+    }
     tr {
       td.product-remove {
+        @include ms {
+          width: 30px;
+          text-align: right;
+        }
       }
       td.product-thumbnail {
         width: 170px;
+        @include ms {
+          width: 100px;
+        }
       }
       td.product-name {
         font-size: 18px;
@@ -65,6 +98,14 @@
           }
         }
       }
+      td.product-price,
+      td.product-subtotal {
+        @include ms {
+          text-align: right;
+          white-space: nowrap;
+          font-size: 16px !important;
+        }
+      }
       td.product-price {
         font-size: 18px;
         -webkit-text-stroke-width: 0.2px;
@@ -80,6 +121,13 @@
         }
       }
       td.product-quantity {
+        @include md {
+          display: flex;
+          align-items: center;
+          .product-quantity-label {
+            margin-right: 4px;
+          }
+        }
         @include type_of_number_input($light_beige);
       }
       td.product-subtotal {
@@ -87,6 +135,9 @@
         -webkit-text-stroke-width: 0.2px;
         width: 140px;
         color: $red;
+        @include ms {
+          width: 100px;
+        }
       }
       td.actions {
         padding-bottom: 0;
@@ -114,6 +165,10 @@
     img {
       width: 140px;
       height: 140px;
+      @include ms {
+        width: 80px;
+        height: 80px;
+      }
     }
     tbody tr:last-of-type {
       display: none;
@@ -134,6 +189,9 @@
       width: 400px;
       margin-top: 42px;
       padding-bottom: 100px;
+      @include ms {
+        width: 100%;
+      }
       a {
         @include red-fill-btn(100%, 42px);
       }

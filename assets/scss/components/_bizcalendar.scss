@@ -5,8 +5,10 @@
     font-family: "kyokasho";
     font-size: 18px;
     color: $black;
-
     position: relative;
+    @include md {
+      padding-left: 0;
+    }
     &::before {
       position: absolute;
       right: 0;

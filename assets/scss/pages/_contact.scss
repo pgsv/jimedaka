@@ -5,7 +5,9 @@
   margin-top: $header_height;
   background-color: $light_beige;
   padding: 36px 8%;
-
+  @include sm {
+    padding: 36px 0;
+  }
   &-wrapper {
     background-color: white;
     border-top: solid 6px $dark_beige;
@@ -13,7 +15,17 @@
     &-head {
       display: flex;
       margin-bottom: 48px;
+      @include md {
+        flex-direction: column;
+      }
+      .contactCalender {
+        width: 50%;
+        @include md {
+          margin-bottom: 20px;
+        }
+      }
       .contactInfo {
+        width: 50%;
         &-head {
           font-size: 32px;
           margin-bottom: 64px;
@@ -26,6 +38,12 @@
           font-size: 14px;
           line-height: 1.64;
           letter-spacing: 1.6px;
+        }
+      }
+      @include md {
+        .contactCalender,
+        .contactInfo {
+          width: 100%;
         }
       }
     }

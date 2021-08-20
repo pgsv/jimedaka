@@ -28,13 +28,13 @@ add_filter('woocommerce_account_menu_items', function ($menus) {
     //var_dump($menus);
 
     // メニュー情報を変更
-    $menus = array(
+    $menus = [
         'orders'             => '購入履歴',
         'edit-address'       => '住所',
         'edit-account'       => 'お客様情報',
         'payment-methods'    => '決済方法',
         'customer-logout'    => 'ログアウト',
-    );
+    ];
     return $menus;
 });
 

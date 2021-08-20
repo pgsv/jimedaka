@@ -1380,6 +1380,32 @@ form p label {
   margin-bottom: 16px;
 }
 
+@media screen and (max-width: 576px) {
+  form p label {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+form p label .label {
+  white-space: nowrap;
+  width: 240px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 992px) {
+  form p label .label {
+    margin-bottom: 6px;
+  }
+}
+
 form.wpcf7-form p:nth-last-of-type(2) label {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
@@ -1424,10 +1450,37 @@ form.wpcf7-form input[type="submit"]:hover {
   transition: 0.2s;
 }
 
-.label {
-  white-space: nowrap;
-  width: 240px;
-  font-size: 16px;
+@media screen and (max-width: 576px) {
+  form.wpcf7-form input[type="submit"] {
+    width: 100%;
+    height: 64px !important;
+    font-size: 18px;
+    padding: 12px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-family: "kyokasho";
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+  }
+  form.wpcf7-form input[type="submit"]:hover {
+    opacity: 0.8;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
 }
 
 span.wpcf7-form-control-wrap {
@@ -1461,6 +1514,12 @@ textarea.wpcf7-form-control {
   font-size: 18px;
   color: #333333;
   position: relative;
+}
+
+@media screen and (max-width: 992px) {
+  .contactCalender #biz_calendar {
+    padding-left: 0;
+  }
 }
 
 .contactCalender #biz_calendar::before {
@@ -3216,8 +3275,8 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .singleProduct-right-desc {
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 28px;
   letter-spacing: auto;
 }
 
@@ -3303,10 +3362,23 @@ header .header-foot-hamburgerMenu:hover {
   border: solid 1px #767676;
 }
 
+@media screen and (max-width: 576px) {
+  .numberInput input[type="number"] {
+    padding: 10px 12px;
+    width: 35px;
+  }
+}
+
 .contact {
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 36px 0;
+  }
 }
 
 .contact-wrapper {
@@ -3321,6 +3393,30 @@ header .header-foot-hamburgerMenu:hover {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 48px;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-wrapper-head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.contact-wrapper-head .contactCalender {
+  width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-wrapper-head .contactCalender {
+    margin-bottom: 20px;
+  }
+}
+
+.contact-wrapper-head .contactInfo {
+  width: 50%;
 }
 
 .contact-wrapper-head .contactInfo-head {
@@ -3339,10 +3435,23 @@ header .header-foot-hamburgerMenu:hover {
   letter-spacing: 1.6px;
 }
 
+@media screen and (max-width: 992px) {
+  .contact-wrapper-head .contactCalender,
+  .contact-wrapper-head .contactInfo {
+    width: 100%;
+  }
+}
+
 .guide {
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
+}
+
+@media screen and (max-width: 768px) {
+  .guide {
+    padding: 36px 0;
+  }
 }
 
 .guide-wrapper {
@@ -3372,10 +3481,26 @@ header .header-foot-hamburgerMenu:hover {
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  .guide-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .guide-list-head {
   white-space: nowrap;
   width: 300px;
   font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .guide-list-head {
+    margin-bottom: 8px;
+  }
 }
 
 .guide-list-body {
@@ -3403,13 +3528,34 @@ header .header-foot-hamburgerMenu:hover {
   margin-top: 80px;
 }
 
+.lgForm {
+  display: block;
+}
+
+@media screen and (max-width: 992px) {
+  .lgForm {
+    display: none;
+  }
+}
+
+.smForm {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .smForm {
+    display: block;
+  }
+}
+
 .cart {
   margin-top: 80px;
   background-color: #f7f3ec;
-  padding: 46px 8%;
 }
 
 .cart-head {
+  padding: 46px 8%;
+  padding-bottom: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3434,6 +3580,18 @@ header .header-foot-hamburgerMenu:hover {
   color: #767676;
 }
 
+.cart .woocommerce {
+  padding: 46px 8%;
+  padding-top: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .cart .woocommerce {
+    padding: 46px 3%;
+    padding-top: 0;
+  }
+}
+
 .cart table.woocommerce-cart-form__contents {
   width: 100%;
   margin-top: 52px;
@@ -3452,8 +3610,27 @@ header .header-foot-hamburgerMenu:hover {
   padding: 16px 0;
 }
 
+@media screen and (max-width: 992px) {
+  .cart table.woocommerce-cart-form__contents tr:nth-child(odd) td {
+    border-bottom: solid 1px #e5e5e5;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cart table.woocommerce-cart-form__contents tr td.product-remove {
+    width: 30px;
+    text-align: right;
+  }
+}
+
 .cart table.woocommerce-cart-form__contents tr td.product-thumbnail {
   width: 170px;
+}
+
+@media screen and (max-width: 576px) {
+  .cart table.woocommerce-cart-form__contents tr td.product-thumbnail {
+    width: 100px;
+  }
 }
 
 .cart table.woocommerce-cart-form__contents tr td.product-name {
@@ -3481,6 +3658,15 @@ header .header-foot-hamburgerMenu:hover {
   bottom: 0;
 }
 
+@media screen and (max-width: 576px) {
+  .cart table.woocommerce-cart-form__contents tr td.product-price,
+  .cart table.woocommerce-cart-form__contents tr td.product-subtotal {
+    text-align: right;
+    white-space: nowrap;
+    font-size: 16px !important;
+  }
+}
+
 .cart table.woocommerce-cart-form__contents tr td.product-price {
   font-size: 18px;
   -webkit-text-stroke-width: 0.2px;
@@ -3497,6 +3683,22 @@ header .header-foot-hamburgerMenu:hover {
   padding-top: 8px;
 }
 
+@media screen and (max-width: 992px) {
+  .cart table.woocommerce-cart-form__contents tr td.product-quantity {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cart table.woocommerce-cart-form__contents tr td.product-quantity .product-quantity-label {
+    margin-right: 4px;
+  }
+}
+
 .cart table.woocommerce-cart-form__contents tr td.product-quantity-label {
   font-size: 18px;
   margin-right: 14px;
@@ -3510,11 +3712,24 @@ header .header-foot-hamburgerMenu:hover {
   border: solid 1px #767676;
 }
 
+@media screen and (max-width: 576px) {
+  .cart table.woocommerce-cart-form__contents tr td.product-quantity input[type="number"] {
+    padding: 10px 12px;
+    width: 35px;
+  }
+}
+
 .cart table.woocommerce-cart-form__contents tr td.product-subtotal {
   font-size: 18px;
   -webkit-text-stroke-width: 0.2px;
   width: 140px;
   color: #8b1c2a;
+}
+
+@media screen and (max-width: 576px) {
+  .cart table.woocommerce-cart-form__contents tr td.product-subtotal {
+    width: 100px;
+  }
 }
 
 .cart table.woocommerce-cart-form__contents tr td.actions {
@@ -3576,6 +3791,13 @@ header .header-foot-hamburgerMenu:hover {
   height: 140px;
 }
 
+@media screen and (max-width: 576px) {
+  .cart table.woocommerce-cart-form__contents img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 .cart table.woocommerce-cart-form__contents tbody tr:last-of-type {
   display: none;
 }
@@ -3610,6 +3832,12 @@ header .header-foot-hamburgerMenu:hover {
   width: 400px;
   margin-top: 42px;
   padding-bottom: 100px;
+}
+
+@media screen and (max-width: 576px) {
+  .cart .cart_totals .wc-proceed-to-checkout {
+    width: 100%;
+  }
 }
 
 .cart .cart_totals .wc-proceed-to-checkout a {
@@ -3843,6 +4071,41 @@ header .header-foot-hamburgerMenu:hover {
   padding: 64px 10%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .purchase {
+    padding: 64px 0;
+  }
+}
+
+.purchase .purchaseWrapper,
+.purchase .woocommerce {
+  width: 890px;
+}
+
+@media screen and (max-width: 992px) {
+  .purchase .purchaseWrapper,
+  .purchase .woocommerce {
+    width: 100%;
+  }
 }
 
 .purchase .purchaseWrapper {
@@ -3850,6 +4113,12 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .purchase .purchaseWrapper {
+    width: 80%;
+  }
 }
 
 .purchase-head {
@@ -3862,6 +4131,12 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 16px;
   padding-top: 12px;
   color: #767676;
+}
+
+@media screen and (max-width: 576px) {
+  .purchase-foot {
+    display: none;
+  }
 }
 
 .purchase-foot a {
@@ -3879,7 +4154,6 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .purchase form.checkout {
-  width: 100%;
   background-color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3954,14 +4228,24 @@ header .header-foot-hamburgerMenu:hover {
   border-radius: 0 !important;
 }
 
+@media screen and (max-width: 576px) {
+  .customForm {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+
 .customForm:nth-last-child(2), .customForm:nth-last-child(1) {
   border-bottom: none;
   padding-bottom: 0;
 }
 
 .customForm-head {
-  width: 30%;
-  max-width: 300px;
+  width: 230px;
   font-size: 20px;
   padding-top: 36px;
   position: relative;
@@ -3976,6 +4260,30 @@ header .header-foot-hamburgerMenu:hover {
   padding: 10px 10px;
   color: #ffffff;
   background-color: #cc2926;
+}
+
+@media screen and (max-width: 576px) {
+  .customForm-head::after {
+    content: "*必須";
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 6px;
+    color: #ffffff;
+    background-color: #cc2926;
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .customForm-head {
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .customForm-body {
@@ -4037,7 +4345,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .shipping_order h3 {
-  width: 30%;
+  width: 230px;
   max-width: 300px;
   font-size: 20px;
   padding-top: 36px;
@@ -4056,11 +4364,40 @@ header .header-foot-hamburgerMenu:hover {
   background-color: #8dba12;
 }
 
+@media screen and (max-width: 576px) {
+  .shipping_order h3::after {
+    content: "*任意";
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 6px;
+    color: #ffffff;
+    background-color: #8dba12;
+    margin-left: 16px;
+  }
+}
+
 .shipping_order-date {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-date {
+    display: block;
+  }
+  .shipping_order-date h3 {
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .shipping_order-date p {
@@ -4101,12 +4438,26 @@ header .header-foot-hamburgerMenu:hover {
   width: 0;
 }
 
+@media screen and (max-width: 576px) {
+  .shipping_order-date p {
+    width: 48%;
+    float: left;
+  }
+}
+
 .shipping_order-date #order_delivery_date_field {
   margin-right: 10px;
 }
 
 .shipping_order-comment {
   margin-top: 40px;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment {
+    clear: both;
+    margin-top: 120px;
+  }
 }
 
 .shipping_order-comment .optional {
@@ -4125,7 +4476,7 @@ header .header-foot-hamburgerMenu:hover {
 .shipping_order-comment #order_comments_field label {
   font-size: 20px;
   margin-bottom: 6px;
-  width: 30%;
+  width: 230px;
   max-width: 300px;
   position: relative;
   display: -webkit-box;
@@ -4142,7 +4493,7 @@ header .header-foot-hamburgerMenu:hover {
 .shipping_order-comment #order_comments_field label::after {
   content: "任意";
   position: absolute;
-  top: 26px;
+  top: 13px;
   right: 12px;
   font-size: 16px;
   padding: 10px 10px;
@@ -4150,8 +4501,43 @@ header .header-foot-hamburgerMenu:hover {
   background-color: #8dba12;
 }
 
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field label::after {
+    content: "*任意";
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 6px;
+    color: #ffffff;
+    background-color: #8dba12;
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field label {
+    margin-bottom: 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .shipping_order-comment #order_comments_field span {
   width: 70%;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field span {
+    width: 100%;
+  }
 }
 
 .shipping_order-comment #order_comments_field span textarea {
@@ -4161,6 +4547,16 @@ header .header-foot-hamburgerMenu:hover {
   height: 180px;
   padding: 14px 20px;
   border: solid 1px #e5e5e5;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #ship-to-different-address {
@@ -4242,6 +4638,17 @@ header .header-foot-hamburgerMenu:hover {
   padding: 10px 0;
 }
 
+@media screen and (max-width: 576px) {
+  .reviewOrder th,
+  .reviewOrder td {
+    font-size: 14px;
+  }
+}
+
+.reviewOrder th {
+  font-size: 18px;
+}
+
 .reviewOrder .product-name {
   text-align: left;
   padding-left: 12px;
@@ -4250,6 +4657,13 @@ header .header-foot-hamburgerMenu:hover {
 .reviewOrder .product-total {
   text-align: right;
   padding-right: 12px;
+}
+
+@media screen and (max-width: 576px) {
+  .reviewOrder .product-total {
+    white-space: nowrap;
+    padding-left: 20px;
+  }
 }
 
 .reviewOrder thead {
@@ -4279,6 +4693,17 @@ header .header-foot-hamburgerMenu:hover {
 
 .reviewOrder tfoot .includes_tax {
   font-size: 18px;
+}
+
+@media screen and (max-width: 576px) {
+  .reviewOrder tfoot .includes_tax {
+    white-space: nowrap;
+    padding-left: 20px;
+  }
+}
+
+.reviewOrder tfoot strong {
+  display: block;
 }
 
 .reviewOrder tfoot th {
@@ -4428,6 +4853,18 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 18px;
 }
 
+#payment .validate-required label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 #payment .validate-required input,
 #payment .validate-required .woocommerce-terms-and-conditions-checkbox-text {
   cursor: pointer;
@@ -4471,6 +4908,27 @@ header .header-foot-hamburgerMenu:hover {
   opacity: 0.8;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+@media screen and (max-width: 992px) {
+  #payment #place_order {
+    max-width: 100%;
+  }
+}
+
+.thankyou {
+  background-color: #ffffff;
+  width: 890px;
+  padding: 40px 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .thankyou {
+    width: 100%;
+    padding: 40px 4%;
+  }
 }
 
 .thankyou-head,

@@ -1,4 +1,12 @@
 .thankyou {
+  background-color: $white;
+  width: 890px;
+  padding: 40px 10%;
+  box-sizing: border-box;
+  @include sm {
+    width: 100%;
+    padding: 40px 4%;
+  }
   &-head,
   h2 {
     padding: 40px 0;
