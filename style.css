@@ -4071,6 +4071,41 @@ header .header-foot-hamburgerMenu:hover {
   padding: 64px 10%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .purchase {
+    padding: 64px 0;
+  }
+}
+
+.purchase .purchaseWrapper,
+.purchase .woocommerce {
+  width: 890px;
+}
+
+@media screen and (max-width: 992px) {
+  .purchase .purchaseWrapper,
+  .purchase .woocommerce {
+    width: 100%;
+  }
 }
 
 .purchase .purchaseWrapper {
@@ -4078,6 +4113,12 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .purchase .purchaseWrapper {
+    width: 80%;
+  }
 }
 
 .purchase-head {
@@ -4090,6 +4131,12 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 16px;
   padding-top: 12px;
   color: #767676;
+}
+
+@media screen and (max-width: 576px) {
+  .purchase-foot {
+    display: none;
+  }
 }
 
 .purchase-foot a {
@@ -4107,7 +4154,6 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .purchase form.checkout {
-  width: 100%;
   background-color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -4182,14 +4228,24 @@ header .header-foot-hamburgerMenu:hover {
   border-radius: 0 !important;
 }
 
+@media screen and (max-width: 576px) {
+  .customForm {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+
 .customForm:nth-last-child(2), .customForm:nth-last-child(1) {
   border-bottom: none;
   padding-bottom: 0;
 }
 
 .customForm-head {
-  width: 30%;
-  max-width: 300px;
+  width: 230px;
   font-size: 20px;
   padding-top: 36px;
   position: relative;
@@ -4204,6 +4260,30 @@ header .header-foot-hamburgerMenu:hover {
   padding: 10px 10px;
   color: #ffffff;
   background-color: #cc2926;
+}
+
+@media screen and (max-width: 576px) {
+  .customForm-head::after {
+    content: "*必須";
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 6px;
+    color: #ffffff;
+    background-color: #cc2926;
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .customForm-head {
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .customForm-body {
@@ -4265,7 +4345,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .shipping_order h3 {
-  width: 30%;
+  width: 230px;
   max-width: 300px;
   font-size: 20px;
   padding-top: 36px;
@@ -4284,11 +4364,40 @@ header .header-foot-hamburgerMenu:hover {
   background-color: #8dba12;
 }
 
+@media screen and (max-width: 576px) {
+  .shipping_order h3::after {
+    content: "*任意";
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 6px;
+    color: #ffffff;
+    background-color: #8dba12;
+    margin-left: 16px;
+  }
+}
+
 .shipping_order-date {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-date {
+    display: block;
+  }
+  .shipping_order-date h3 {
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .shipping_order-date p {
@@ -4329,12 +4438,26 @@ header .header-foot-hamburgerMenu:hover {
   width: 0;
 }
 
+@media screen and (max-width: 576px) {
+  .shipping_order-date p {
+    width: 48%;
+    float: left;
+  }
+}
+
 .shipping_order-date #order_delivery_date_field {
   margin-right: 10px;
 }
 
 .shipping_order-comment {
   margin-top: 40px;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment {
+    clear: both;
+    margin-top: 120px;
+  }
 }
 
 .shipping_order-comment .optional {
@@ -4353,7 +4476,7 @@ header .header-foot-hamburgerMenu:hover {
 .shipping_order-comment #order_comments_field label {
   font-size: 20px;
   margin-bottom: 6px;
-  width: 30%;
+  width: 230px;
   max-width: 300px;
   position: relative;
   display: -webkit-box;
@@ -4370,7 +4493,7 @@ header .header-foot-hamburgerMenu:hover {
 .shipping_order-comment #order_comments_field label::after {
   content: "任意";
   position: absolute;
-  top: 26px;
+  top: 13px;
   right: 12px;
   font-size: 16px;
   padding: 10px 10px;
@@ -4378,8 +4501,43 @@ header .header-foot-hamburgerMenu:hover {
   background-color: #8dba12;
 }
 
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field label::after {
+    content: "*任意";
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 6px;
+    color: #ffffff;
+    background-color: #8dba12;
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field label {
+    margin-bottom: 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .shipping_order-comment #order_comments_field span {
   width: 70%;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field span {
+    width: 100%;
+  }
 }
 
 .shipping_order-comment #order_comments_field span textarea {
@@ -4389,6 +4547,16 @@ header .header-foot-hamburgerMenu:hover {
   height: 180px;
   padding: 14px 20px;
   border: solid 1px #e5e5e5;
+}
+
+@media screen and (max-width: 576px) {
+  .shipping_order-comment #order_comments_field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #ship-to-different-address {
@@ -4470,6 +4638,17 @@ header .header-foot-hamburgerMenu:hover {
   padding: 10px 0;
 }
 
+@media screen and (max-width: 576px) {
+  .reviewOrder th,
+  .reviewOrder td {
+    font-size: 14px;
+  }
+}
+
+.reviewOrder th {
+  font-size: 18px;
+}
+
 .reviewOrder .product-name {
   text-align: left;
   padding-left: 12px;
@@ -4478,6 +4657,13 @@ header .header-foot-hamburgerMenu:hover {
 .reviewOrder .product-total {
   text-align: right;
   padding-right: 12px;
+}
+
+@media screen and (max-width: 576px) {
+  .reviewOrder .product-total {
+    white-space: nowrap;
+    padding-left: 20px;
+  }
 }
 
 .reviewOrder thead {
@@ -4507,6 +4693,17 @@ header .header-foot-hamburgerMenu:hover {
 
 .reviewOrder tfoot .includes_tax {
   font-size: 18px;
+}
+
+@media screen and (max-width: 576px) {
+  .reviewOrder tfoot .includes_tax {
+    white-space: nowrap;
+    padding-left: 20px;
+  }
+}
+
+.reviewOrder tfoot strong {
+  display: block;
 }
 
 .reviewOrder tfoot th {
@@ -4656,6 +4853,18 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 18px;
 }
 
+#payment .validate-required label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 #payment .validate-required input,
 #payment .validate-required .woocommerce-terms-and-conditions-checkbox-text {
   cursor: pointer;
@@ -4699,6 +4908,27 @@ header .header-foot-hamburgerMenu:hover {
   opacity: 0.8;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+@media screen and (max-width: 992px) {
+  #payment #place_order {
+    max-width: 100%;
+  }
+}
+
+.thankyou {
+  background-color: #ffffff;
+  width: 890px;
+  padding: 40px 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .thankyou {
+    width: 100%;
+    padding: 40px 4%;
+  }
 }
 
 .thankyou-head,

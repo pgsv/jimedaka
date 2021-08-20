@@ -80,16 +80,24 @@
   label {
     font-size: 20px;
     margin-bottom: 6px;
-    width: 30%;
+    width: 230px;
     max-width: 300px;
     position: relative;
     display: flex;
     align-items: flex-start;
     padding-top: 20px;
-    @include optional_label();
+    @include optional_label(13px);
+    @include ms {
+      margin-bottom: 20px;
+      flex-direction: row;
+      align-items: center;
+    }
   }
   span {
     width: 70%;
+    @include ms {
+      width: 100%;
+    }
     textarea {
       width: 100%;
       box-sizing: border-box;
@@ -207,19 +215,45 @@
     color: $white;
     background-color: $light_red;
   }
+  @include ms {
+    &::after {
+      content: "*必須";
+      position: relative;
+      top: 0;
+      right: 0;
+      font-size: 12px;
+      padding: 5px 6px;
+      color: $white;
+      background-color: $light_red;
+      margin-left: 16px;
+    }
+  }
 }
 
 //任意ラベル
-@mixin optional_label {
+@mixin optional_label($top: 26px) {
   &::after {
     content: "任意";
     position: absolute;
-    top: 26px;
+    top: $top;
     right: 12px;
     font-size: 16px;
     padding: 10px 10px;
     color: $white;
     background-color: $green;
+  }
+  @include ms {
+    &::after {
+      content: "*任意";
+      position: relative;
+      top: 0;
+      right: 0;
+      font-size: 12px;
+      padding: 5px 6px;
+      color: $white;
+      background-color: $green;
+      margin-left: 16px;
+    }
   }
 }
 
