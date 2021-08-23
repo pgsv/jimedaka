@@ -42,3 +42,16 @@ function add_user_script()
     );
 }
 add_action('wp_enqueue_scripts', 'add_user_script');
+
+
+/*
+* 商品詳細のスラッグをIDで採番
+*/
+function custom_auto_post_slug($slug, $post_ID, $post_status, $post_type)
+{
+    if ($post_type == 'product') {
+        $slug = $post_ID;
+    }
+    return $slug;
+}
+  add_filter('wp_unique_post_slug', 'custom_auto_post_slug', 10, 4);
