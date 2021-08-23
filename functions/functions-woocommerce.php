@@ -180,3 +180,17 @@ function custom_override_checkout_fields($fields)
     return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields', 12);
+
+
+/**
+ * 個別販売のチェックを自動化
+ */
+function my_woocommerce_product_options_sold_individually()
+{
+    ?>
+<script>
+    jQuery("#_sold_individually").prop("checked", true);
+</script>
+<?php
+}
+add_action('woocommerce_product_options_sold_individually', 'my_woocommerce_product_options_sold_individually', 5);
