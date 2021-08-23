@@ -193,4 +193,31 @@ function my_woocommerce_product_options_sold_individually()
 </script>
 <?php
 }
-add_action('woocommerce_product_options_sold_individually', 'my_woocommerce_product_options_sold_individually', 5);
+add_action('woocommerce_product_options_sold_individually', 'my_woocommerce_product_options_sold_individually');
+
+/**
+ * 在庫管理のチェックをデフォルトでTrue
+ */
+function my_woocommerce_product_options_stock()
+{
+    ?>
+<script>
+    jQuery("#_manage_stock").prop("checked", true);
+</script>
+<?php
+}
+add_action('woocommerce_product_options_stock', 'my_woocommerce_product_options_stock');
+
+
+/**
+ * 在庫数の初期値を「１」に設定
+ */
+function my_woocommerce_product_options_stock_fields()
+{
+    ?>
+<script>
+    jQuery("#_stock").val(1);
+</script>
+<?php
+}
+add_action('woocommerce_product_options_stock_fields', 'my_woocommerce_product_options_stock_fields');
