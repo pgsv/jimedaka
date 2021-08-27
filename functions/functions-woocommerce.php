@@ -183,6 +183,16 @@ add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields', 12)
 
 
 /**
+ * 注文画面にカナを表示
+ */
+function my_custom_checkout_field_display_admin_order_meta($order)
+{
+    echo '<p><strong>'.__('姓カナ').':</strong> ' . get_post_meta($order->get_id(), '_billing_kana_first_name', true) . '</p>';
+}
+add_action('woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1);
+
+
+/**
  * 個別販売のチェックを自動化
  */
 function my_woocommerce_product_options_sold_individually()
@@ -221,3 +231,29 @@ function my_woocommerce_product_options_stock_fields()
 <?php
 }
 add_action('woocommerce_product_options_stock_fields', 'my_woocommerce_product_options_stock_fields');
+
+/**
+ * 発送完了メールの追跡番号を追加
+ */
+function add_email_tracking_number()
+{
+    $tracking_number = get_field("j_tracking_number");
+    $track_url = 'https://jizen.kuronekoyamato.co.jp/jizen/servlet/crjz.b.NQ0010?id=';  //ヤマト運輸のURL
+    $company = get_field("j_tracking_company");
+    echo '<h2>発送について</h2>
+           <p>追跡番号：<a href="'. $track_url . $tracking_number.'">' . $tracking_number . '</a></p>
+           <p>配送会社：' . $company . '</p>';
+}
+add_action('woocommerce_email_order_meta', 'add_email_tracking_number');
+
+
+/**
+ * 注文メールの画像を表示
+ */
+function show_email_order_items_image($args)
+{
+    $args['show_image'] = true;
+    $args['image_size'] = array( 32, 32 );
+    return $args;
+}
+add_filter('woocommerce_email_order_items_args', 'show_email_order_items_image');
