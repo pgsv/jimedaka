@@ -55,3 +55,16 @@ function custom_auto_post_slug($slug, $post_ID, $post_status, $post_type)
     return $slug;
 }
   add_filter('wp_unique_post_slug', 'custom_auto_post_slug', 10, 4);
+
+/**
+ * 通知メッセージを管理者のみに表示
+ */
+function update_message_admin_only()
+{
+    if (!current_user_can('level_10')) {
+        add_filter('pre_site_transient_update_core', '__return_zero');
+        remove_action('wp_version_check', 'wp_version_check');
+        remove_action('admin_init', '_maybe_update_core');
+    }
+}
+add_action('admin_init', 'update_message_admin_only');
