@@ -5,13 +5,13 @@
                 買い物カゴ
             </div>
             <div class="productsCart-body">
-                <div>※ 現在カート内に商品はございません。</div>
+                <div>※ 現在お買い物カゴ内に商品はございません。</div>
             </div>
             <a href="<?php echo home_url(); ?>/cart"
         class="productsCart-foot btn_stroke_beige">
         <img src='<?php echo get_template_directory_uri(); ?>/assets/img/cart_beige.svg'
-            alt='カート'>
-        カートの詳細
+            alt='お買い物カゴ'>
+        お買い物カゴの詳細
         </a>
     </div> -->
 

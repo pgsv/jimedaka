@@ -15,7 +15,7 @@ add_action('after_setup_theme', 'woocommerce_support');
 add_filter('woocommerce_enqueue_styles', '__return_false');
 
 /**
- * WooCommerce商品一覧のカートボタンを非表示
+ * WooCommerce商品一覧のお買い物カゴボタンを非表示
  */
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 
@@ -84,7 +84,7 @@ function get_wc_thumb_url($term_id)
 function my_gettext($translated_text, $text, $domain)
 {
     if ($translated_text =='お買い物カゴを更新' && $domain == 'woocommerce') {
-        $translated_text = 'カートを更新';
+        $translated_text = 'お買い物カゴを更新';
     }
     if ($translated_text =='お買い物カゴの合計' && $domain == 'woocommerce') {
         $translated_text = 'ご請求金額';
@@ -100,7 +100,7 @@ function my_gettext($translated_text, $text, $domain)
 add_filter('gettext', 'my_gettext', 10, 3);
 
 /**
- * カートページの送料表記を非表示
+ * お買い物カゴページの送料表記を非表示
  */
 function disable_shipping_calc_on_cart($show_shipping)
 {
