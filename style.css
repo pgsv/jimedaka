@@ -1741,8 +1741,8 @@ header .header-foot-item .headerCart {
 
 header .header-foot-item .headerCart-alert {
   position: absolute;
-  top: -2px;
-  right: -2px;
+  top: 8px;
+  right: 6px;
   width: 16px;
   height: 16px;
   font-size: 9px;
@@ -1765,21 +1765,21 @@ header .header-foot-item .headerCart-alert {
 
 @media screen and (max-width: 992px) {
   header .header-foot-item .headerCart-alert {
-    right: 18px;
+    right: 26px;
     width: 14px;
     height: 14px;
   }
 }
 
 header .header-foot-item .headerCart-img {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
 }
 
 @media screen and (max-width: 992px) {
   header .header-foot-item .headerCart-img {
-    width: 34px;
-    height: 34px;
+    width: 50px;
+    height: 50px;
     padding-right: 20px;
   }
 }
