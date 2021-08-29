@@ -185,7 +185,8 @@ text-shadow: 0 1px 0 <?php echo esc_attr($base_lighter_20); ?>;
 }
 
 h2 {
-color: <?php echo esc_attr($batext_lighter_40); ?>;
+<!-- color: <?php echo esc_attr($base); ?>; -->
+color: <?php echo esc_attr($link_color); ?>;
 display: block;
 font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 font-size: 18px;
