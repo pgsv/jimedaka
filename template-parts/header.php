@@ -50,7 +50,7 @@
             <div class="headerCart">
                 <img class="headerCart-img"
                     src="<?php echo esc_url(get_template_directory_uri().'/assets/img/cart-btn.svg'); ?>"
-                    alt="カート">
+                    alt="お買い物カゴ">
                 <div class="headerCart-alert">
                     <?php echo WC()->cart->get_cart_contents_count(); ?>
                 </div>

@@ -101,7 +101,7 @@
         <?php endif; ?>
         <button class="singleProductForm-submitBtn" type="submit" name="add-to-cart"
           value="<?php echo esc_attr($_product->get_id()); ?>"
-          class="single_add_to_cart_button button alt">カートに入れる</button>
+          class="single_add_to_cart_button button alt">お買い物カゴに入れる</button>
         <?php do_action('woocommerce_after_add_to_cart_button'); ?>
       </form>
       <?php do_action('woocommerce_after_add_to_cart_form'); ?>

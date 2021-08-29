@@ -168,6 +168,9 @@ function get_product_taxPrice($product_id, $convert_kanji=true)
 {
     $_product = wc_get_product($product_id);
     $taxPrice = wc_get_price_including_tax($_product);
+    if (!$taxPrice) {
+        $taxPrice = 0;
+    }
     if ($convert_kanji) {
         $format_price = str_split(number_format($taxPrice));
         return implode(array_map('num_to_kanji', $format_price));

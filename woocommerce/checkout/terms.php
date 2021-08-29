@@ -22,7 +22,7 @@ if (apply_filters('woocommerce_checkout_show_terms', true) && function_exists('w
          */
         do_action('woocommerce_checkout_terms_and_conditions'); ?>
 	<p class="confirmation_request">
-		※『注文を確定する』ボタンをクリックすると、この画面に表示されている内容で注文が確定しますのでご注意ください。注文内容を変更したい場合は、ブラウザの戻るボタンにてショッピングカート画面にお戻りください。</p>
+		※『注文を確定する』ボタンをクリックすると、この画面に表示されている内容で注文が確定しますのでご注意ください。注文内容を変更したい場合は、ブラウザの戻るボタンにてお買い物カゴ画面にお戻りください。</p>
 	<?php if (wc_terms_and_conditions_checkbox_enabled()) : ?>
 	<p class="form-row validate-required">
 		<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">

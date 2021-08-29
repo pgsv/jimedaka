@@ -91,7 +91,7 @@
         <div class="deliveryflow-left">
             <img class='deliveryflow-left-img'
                 src='<?php echo get_template_directory_uri(); ?>/assets/img/deliveryflow.jpg'
-                alt='カートページ画面の映ったスマsートフォン'>
+                alt='お買い物カゴページ画面の映ったスマsートフォン'>
         </div>
         <div class="deliveryflow-right">
             <div class="deliveryflow-right-head">
@@ -100,15 +100,15 @@
             <div class="deliveryflowItem">
                 <div class="deliveryflowItem-wrapper">
                     <div class="deliveryflowItem-wrapper-title">
-                        一、カートに入れる
+                        一、お買い物カゴに入れる
                     </div>
                     <div class="deliveryflowItem-wrapper-desc">
-                        購入される商品をカートに<br>入れます。
+                        購入される商品をお買い物カゴに<br>入れます。
                     </div>
                 </div>
                 <img class='deliveryflowItem-img deliveryflowItem-cart'
                     src='<?php echo get_template_directory_uri(); ?>/assets/img/cart.svg'
-                    alt='カート'>
+                    alt='お買い物カゴ'>
             </div>
             <div class="deliveryflowItem">
                 <div class="deliveryflowItem-wrapper">

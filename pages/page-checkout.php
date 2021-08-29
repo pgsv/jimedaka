@@ -10,7 +10,7 @@
         <div class="purchase-foot">
             <a href="<?php echo home_url(); ?>">ホーム</a> <span
                 class="right_arrow">></span> <a
-                href="<?php echo home_url(); ?>/cart">カート</a> <span
+                href="<?php echo home_url(); ?>/cart">お買い物カゴ</a> <span
                 class="right_arrow">></span> 購入手続き
         </div>
     </div>
