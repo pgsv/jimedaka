@@ -39,12 +39,12 @@ defined('ABSPATH') || exit;
 				<div class="customForm-head">お名前</div>
 				<div class="customForm-body flex-col">
 					<div class="flex-row">
-						<?php woocommerce_form_field('shipping_first_name', $fields['shipping_first_name'], $checkout->get_value('shipping_first_name')); ?>
 						<?php woocommerce_form_field('shipping_last_name', $fields['shipping_last_name'], $checkout->get_value('shipping_last_name')); ?>
+						<?php woocommerce_form_field('shipping_first_name', $fields['shipping_first_name'], $checkout->get_value('shipping_first_name')); ?>
 					</div>
 					<div class="flex-row kana_first_name">
-						<?php woocommerce_form_field('shipping_kana_first_name', $fields['shipping_kana_first_name'], $checkout->get_value('shipping_kana_first_name')); ?>
 						<?php woocommerce_form_field('shipping_kana_last_name', $fields['shipping_kana_last_name'], $checkout->get_value('shipping_kana_last_name')); ?>
+						<?php woocommerce_form_field('shipping_kana_first_name', $fields['shipping_kana_first_name'], $checkout->get_value('shipping_kana_first_name')); ?>
 					</div>
 				</div>
 			</div>

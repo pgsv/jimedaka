@@ -134,13 +134,13 @@ function custom_override_checkout_fields($fields)
     $fields['billing']['billing_phone']['placeholder'] = '000-000-0000';
 
     //入力フォームの追加
-    $fields['billing']['billing_kana_first_name'] = [
+    $fields['billing']['billing_kana_last_name'] = [
     'label'     => __('セイ', 'woocommerce'),
     'placeholder'   => _x('ヤマダ', 'placeholder', 'woocommerce'),
     'required'  => true,
     'class'     => ['col', 'col-6'],
     'clear'     => true];
-    $fields['billing']['billing_kana_last_name'] = [
+    $fields['billing']['billing_kana_first_name'] = [
     'label'     => __('ナマエ', 'woocommerce'),
     'placeholder'   => _x('タロウ', 'placeholder', 'woocommerce'),
     'required'  => true,
@@ -163,19 +163,18 @@ function custom_override_checkout_fields($fields)
     $fields['shipping']['shipping_email']['placeholder'] = 'tarou@gmail.com';
 
     //入力フォームの追加
-    $fields['shipping']['shipping_kana_first_name'] = [
+    $fields['shipping']['shipping_kana_last_name'] = [
     'label'     => __('セイ', 'woocommerce'),
     'placeholder'   => _x('ヤマダ', 'placeholder', 'woocommerce'),
     'required'  => true,
     'class'     => ['col', 'col-6'],
     'clear'     => true];
-    $fields['shipping']['shipping_kana_last_name'] = [
+    $fields['shipping']['shipping_kana_first_name'] = [
     'label'     => __('ナマエ', 'woocommerce'),
     'placeholder'   => _x('タロウ', 'placeholder', 'woocommerce'),
     'required'  => true,
     'class'     => ['col', 'col-6'],
     'clear'     => true];
-
 
     return $fields;
 }

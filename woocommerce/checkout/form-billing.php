@@ -29,12 +29,12 @@ defined('ABSPATH') || exit;
 			<div class="customForm-head">お名前</div>
 			<div class="customForm-body flex-col">
 				<div class="flex-row">
-					<?php woocommerce_form_field('billing_first_name', $fields['billing_first_name'], $checkout->get_value('billing_first_name')); ?>
 					<?php woocommerce_form_field('billing_last_name', $fields['billing_last_name'], $checkout->get_value('billing_last_name')); ?>
+					<?php woocommerce_form_field('billing_first_name', $fields['billing_first_name'], $checkout->get_value('billing_first_name')); ?>
 				</div>
 				<div class="flex-row kana_first_name">
-					<?php woocommerce_form_field('billing_kana_first_name', $fields['billing_kana_first_name'], $checkout->get_value('billing_kana_first_name')); ?>
 					<?php woocommerce_form_field('billing_kana_last_name', $fields['billing_kana_last_name'], $checkout->get_value('billing_kana_last_name')); ?>
+					<?php woocommerce_form_field('billing_kana_first_name', $fields['billing_kana_first_name'], $checkout->get_value('billing_kana_first_name')); ?>
 				</div>
 			</div>
 		</div>
