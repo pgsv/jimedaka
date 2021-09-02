@@ -3985,7 +3985,7 @@ header .header-foot-hamburgerMenu:hover {
   line-height: 200%;
 }
 
-.privacy-contents h4 {
+.privacy-contents h2 {
   padding-top: 40px;
   padding-bottom: 5px;
 }
@@ -4065,6 +4065,60 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .terms-contents li {
+  margin-left: 50px;
+}
+
+.tokushoho {
+  font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
+}
+
+.tokushoho-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 64px 8%;
+}
+
+.tokushoho-title {
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+.tokushoho-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
+}
+
+.tokushoho-contents h2 {
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+
+.tokushoho-contents p {
+  padding-left: 8px;
+}
+
+.tokushoho-contents ol {
+  margin-top: 30px;
+}
+
+.tokushoho-contents ol li {
+  list-style: decimal;
+}
+
+.tokushoho-contents ul {
+  margin-top: 30px;
+}
+
+.tokushoho-contents ul li {
+  list-style: disc;
+}
+
+.tokushoho-contents li {
   margin-left: 50px;
 }
 
