@@ -1,9 +1,6 @@
 .tokushoho {
     @include documents;
     tr {
-        &:first-child {
-            // border-top: solid 1px;
-        }
         height: 60px;
         text-align: left;
         border-bottom: solid 1px;
