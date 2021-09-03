@@ -4122,6 +4122,32 @@ header .header-foot-hamburgerMenu:hover {
   margin-left: 50px;
 }
 
+.tokushoho tr {
+  height: 60px;
+  text-align: left;
+  border-bottom: solid 1px;
+}
+
+.tokushoho tr th, .tokushoho tr td {
+  vertical-align: middle;
+}
+
+.tokushoho tr th {
+  width: 210px;
+}
+
+.tokushoho tr td {
+  padding-left: 20px;
+}
+
+.tokushoho .wp-block-table.is-style-stripes {
+  border-collapse: collapse;
+}
+
+.tokushoho .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+  background-color: initial;
+}
+
 .purchase {
   margin-top: 80px;
   background-color: #fafafa;

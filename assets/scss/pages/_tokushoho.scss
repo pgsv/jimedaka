@@ -1,3 +1,27 @@
 .tokushoho {
     @include documents;
+    tr {
+        &:first-child {
+            // border-top: solid 1px;
+        }
+        height: 60px;
+        text-align: left;
+        border-bottom: solid 1px;
+        th, td {
+            vertical-align: middle;
+        }
+        th {
+            width: 210px;
+        }
+        td {
+            padding-left: 20px;
+        }
+    }
+    .wp-block-table.is-style-stripes {
+        border-collapse: collapse;
+
+        tbody tr:nth-child(odd) {
+            background-color: initial;
+        }
+    }
 }
