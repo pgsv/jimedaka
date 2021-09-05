@@ -44,6 +44,9 @@
   &-title {
       font-size: 32px;
       margin-bottom: 64px;
+      @include ms {
+        font-size: 22px;
+      }
   }
   &-contents {
       min-height: 100vh;

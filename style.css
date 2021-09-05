@@ -3978,6 +3978,12 @@ header .header-foot-hamburgerMenu:hover {
   margin-bottom: 64px;
 }
 
+@media screen and (max-width: 576px) {
+  .privacy-title {
+    font-size: 22px;
+  }
+}
+
 .privacy-contents {
   min-height: 100vh;
   font-size: 17px;
@@ -4030,6 +4036,12 @@ header .header-foot-hamburgerMenu:hover {
 .terms-title {
   font-size: 32px;
   margin-bottom: 64px;
+}
+
+@media screen and (max-width: 576px) {
+  .terms-title {
+    font-size: 22px;
+  }
 }
 
 .terms-contents {
@@ -4086,6 +4098,12 @@ header .header-foot-hamburgerMenu:hover {
   margin-bottom: 64px;
 }
 
+@media screen and (max-width: 576px) {
+  .tokushoho-title {
+    font-size: 22px;
+  }
+}
+
 .tokushoho-contents {
   min-height: 100vh;
   font-size: 17px;
@@ -4128,8 +4146,21 @@ header .header-foot-hamburgerMenu:hover {
   border-bottom: solid 1px;
 }
 
+@media screen and (max-width: 768px) {
+  .tokushoho tr {
+    height: initial;
+    display: block;
+  }
+}
+
 .tokushoho tr th, .tokushoho tr td {
   vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+  .tokushoho tr th, .tokushoho tr td {
+    display: block;
+  }
 }
 
 .tokushoho tr th {
@@ -4138,6 +4169,12 @@ header .header-foot-hamburgerMenu:hover {
 
 .tokushoho tr td {
   padding-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .tokushoho tr td {
+    padding-left: 0;
+  }
 }
 
 .tokushoho .wp-block-table.is-style-stripes {
