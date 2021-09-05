@@ -99,6 +99,7 @@ function my_gettext($translated_text, $text, $domain)
 }
 add_filter('gettext', 'my_gettext', 10, 3);
 
+
 /**
  * お買い物カゴページの送料表記を非表示
  */
@@ -110,6 +111,7 @@ function disable_shipping_calc_on_cart($show_shipping)
     return $show_shipping;
 }
 add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);
+
 
 // woocomerceの注文フォームのplaceholder, class名の変更と
 // 必要な入力フォーム（名前のフリガナ）の追加
@@ -204,6 +206,7 @@ function my_woocommerce_product_options_sold_individually()
 }
 add_action('woocommerce_product_options_sold_individually', 'my_woocommerce_product_options_sold_individually');
 
+
 /**
  * 在庫管理のチェックをデフォルトでTrue
  */
@@ -230,6 +233,7 @@ function my_woocommerce_product_options_stock_fields()
 <?php
 }
 add_action('woocommerce_product_options_stock_fields', 'my_woocommerce_product_options_stock_fields');
+
 
 /**
  * 発送完了メールの追跡番号を追加
@@ -258,6 +262,9 @@ function show_email_order_items_image($args)
 add_filter('woocommerce_email_order_items_args', 'show_email_order_items_image');
 
 
+/**
+ * 管理注文画面の請求先編集フォームに氏名カナを追加
+ */
 function add_woocommerce_admin_billing_fields($fields)
 {
     $fields = array(

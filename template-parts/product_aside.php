@@ -15,7 +15,8 @@
         </a>
     </div> -->
 
-    <a href="#" class="products-aside-all productsItem">
+    <a href="<?php echo esc_url(home_url().'/products'); ?>"
+        class="products-aside-all productsItem">
         全商品から探す
     </a>
     <!-- <a href="#" class="products-aside-recommend productsItem">
