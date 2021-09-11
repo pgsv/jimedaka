@@ -36,6 +36,9 @@
   margin-top: $header_height;
   background-color: $light_beige;
   padding: 36px 8%;
+  @include ms {
+    padding: 0;
+  }
   &-wrapper {
       background-color: white;
       border-top: solid 6px $dark_beige;
@@ -46,6 +49,7 @@
       margin-bottom: 64px;
       @include ms {
         font-size: 22px;
+        margin-bottom: 32px;
       }
   }
   &-contents {
@@ -53,29 +57,36 @@
       font-size: 17px;
       word-break: break-all; 
       line-height: 200%;
+      @include ms {
+        font-size: 13px;
+      }
 
       h2 {
-          padding-top: 40px;
-          padding-bottom: 5px;
+        font-size: 20px;
+        margin-top: 34px;
+        margin-bottom: 5px;
+        @include ms {
+          font-size: 15px;
+          margin-top: 20px;
+        }
       }
       p {
-          padding-left: 8px;
+        margin-left: 8px;
       }
-      ol {
-          margin-top: 30px;
-          li {
-              list-style: decimal;
-          }
+      ol, ul {
+        margin-left: 28px;
+        @include ms {
+          margin-left: 24px;
+        } 
+      }
+      ol li {
+        list-style: decimal;
       } 
-      ul {
-          margin-top: 30px;
-          li {
-              list-style: disc;
-          }
+      ul li {
+        list-style: disc;
       } 
-      li {
-          margin-left: 50px;
-
+      li ol > li {
+        list-style-type: lower-latin;
       }
   }
 }

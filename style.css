@@ -3967,6 +3967,12 @@ header .header-foot-hamburgerMenu:hover {
   padding: 36px 8%;
 }
 
+@media screen and (max-width: 576px) {
+  .privacy {
+    padding: 0;
+  }
+}
+
 .privacy-wrapper {
   background-color: white;
   border-top: solid 6px #b4aa98;
@@ -3981,6 +3987,7 @@ header .header-foot-hamburgerMenu:hover {
 @media screen and (max-width: 576px) {
   .privacy-title {
     font-size: 22px;
+    margin-bottom: 32px;
   }
 }
 
@@ -3991,33 +3998,49 @@ header .header-foot-hamburgerMenu:hover {
   line-height: 200%;
 }
 
+@media screen and (max-width: 576px) {
+  .privacy-contents {
+    font-size: 13px;
+  }
+}
+
 .privacy-contents h2 {
-  padding-top: 40px;
-  padding-bottom: 5px;
+  font-size: 20px;
+  margin-top: 34px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .privacy-contents h2 {
+    font-size: 15px;
+    margin-top: 20px;
+  }
 }
 
 .privacy-contents p {
-  padding-left: 8px;
+  margin-left: 8px;
 }
 
-.privacy-contents ol {
-  margin-top: 30px;
+.privacy-contents ol, .privacy-contents ul {
+  margin-left: 28px;
+}
+
+@media screen and (max-width: 576px) {
+  .privacy-contents ol, .privacy-contents ul {
+    margin-left: 24px;
+  }
 }
 
 .privacy-contents ol li {
   list-style: decimal;
 }
 
-.privacy-contents ul {
-  margin-top: 30px;
-}
-
 .privacy-contents ul li {
   list-style: disc;
 }
 
-.privacy-contents li {
-  margin-left: 50px;
+.privacy-contents li ol > li {
+  list-style-type: lower-latin;
 }
 
 .terms {
@@ -4025,6 +4048,12 @@ header .header-foot-hamburgerMenu:hover {
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
+}
+
+@media screen and (max-width: 576px) {
+  .terms {
+    padding: 0;
+  }
 }
 
 .terms-wrapper {
@@ -4041,6 +4070,7 @@ header .header-foot-hamburgerMenu:hover {
 @media screen and (max-width: 576px) {
   .terms-title {
     font-size: 22px;
+    margin-bottom: 32px;
   }
 }
 
@@ -4051,33 +4081,49 @@ header .header-foot-hamburgerMenu:hover {
   line-height: 200%;
 }
 
+@media screen and (max-width: 576px) {
+  .terms-contents {
+    font-size: 13px;
+  }
+}
+
 .terms-contents h2 {
-  padding-top: 40px;
-  padding-bottom: 5px;
+  font-size: 20px;
+  margin-top: 34px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .terms-contents h2 {
+    font-size: 15px;
+    margin-top: 20px;
+  }
 }
 
 .terms-contents p {
-  padding-left: 8px;
+  margin-left: 8px;
 }
 
-.terms-contents ol {
-  margin-top: 30px;
+.terms-contents ol, .terms-contents ul {
+  margin-left: 28px;
+}
+
+@media screen and (max-width: 576px) {
+  .terms-contents ol, .terms-contents ul {
+    margin-left: 24px;
+  }
 }
 
 .terms-contents ol li {
   list-style: decimal;
 }
 
-.terms-contents ul {
-  margin-top: 30px;
-}
-
 .terms-contents ul li {
   list-style: disc;
 }
 
-.terms-contents li {
-  margin-left: 50px;
+.terms-contents li ol > li {
+  list-style-type: lower-latin;
 }
 
 .tokushoho {
@@ -4085,6 +4131,12 @@ header .header-foot-hamburgerMenu:hover {
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
+}
+
+@media screen and (max-width: 576px) {
+  .tokushoho {
+    padding: 0;
+  }
 }
 
 .tokushoho-wrapper {
@@ -4101,6 +4153,7 @@ header .header-foot-hamburgerMenu:hover {
 @media screen and (max-width: 576px) {
   .tokushoho-title {
     font-size: 22px;
+    margin-bottom: 32px;
   }
 }
 
@@ -4111,33 +4164,49 @@ header .header-foot-hamburgerMenu:hover {
   line-height: 200%;
 }
 
+@media screen and (max-width: 576px) {
+  .tokushoho-contents {
+    font-size: 13px;
+  }
+}
+
 .tokushoho-contents h2 {
-  padding-top: 40px;
-  padding-bottom: 5px;
+  font-size: 20px;
+  margin-top: 34px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .tokushoho-contents h2 {
+    font-size: 15px;
+    margin-top: 20px;
+  }
 }
 
 .tokushoho-contents p {
-  padding-left: 8px;
+  margin-left: 8px;
 }
 
-.tokushoho-contents ol {
-  margin-top: 30px;
+.tokushoho-contents ol, .tokushoho-contents ul {
+  margin-left: 28px;
+}
+
+@media screen and (max-width: 576px) {
+  .tokushoho-contents ol, .tokushoho-contents ul {
+    margin-left: 24px;
+  }
 }
 
 .tokushoho-contents ol li {
   list-style: decimal;
 }
 
-.tokushoho-contents ul {
-  margin-top: 30px;
-}
-
 .tokushoho-contents ul li {
   list-style: disc;
 }
 
-.tokushoho-contents li {
-  margin-left: 50px;
+.tokushoho-contents li ol > li {
+  list-style-type: lower-latin;
 }
 
 .tokushoho tr {
