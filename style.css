@@ -2779,7 +2779,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-flex-flow: row-reverse;
       -ms-flex-flow: row-reverse;
           flex-flow: row-reverse;
-  height: 250px;
+  height: 280px;
 }
 
 .deliveryflow-right .deliveryflowItem-wrapper-title {

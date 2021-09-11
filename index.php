@@ -103,7 +103,7 @@
                         一、お買い物カゴに入れる
                     </div>
                     <div class="deliveryflowItem-wrapper-desc">
-                        購入される商品をお買い物カゴに<br>入れます。
+                        購入される商品をお買い物カゴに入れます。
                     </div>
                 </div>
                 <img class='deliveryflowItem-img deliveryflowItem-cart'
@@ -116,7 +116,7 @@
                         二、商品購入の確定
                     </div>
                     <div class="deliveryflowItem-wrapper-desc">
-                        オンライン決済で商品の購入<br>の確定します。
+                        オンライン決済で商品の購入の確定します。
                     </div>
                 </div>
                 <img class='deliveryflowItem-img order'
@@ -129,7 +129,7 @@
                         三、商品の配送
                     </div>
                     <div class="deliveryflowItem-wrapper-desc">
-                        購入後、２〜3日ほどで<br>商品が届きます。
+                        購入後、２〜3日ほどで商品が届きます。
                     </div>
                 </div>
                 <img class='deliveryflowItem-img track'
