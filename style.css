@@ -1552,6 +1552,12 @@ textarea.wpcf7-form-control {
   font-weight: normal;
 }
 
+@media screen and (max-width: 768px) {
+  .contactCalender #biz_calendar .bizcal .calmonth {
+    font-size: 24px;
+  }
+}
+
 .contactCalender #biz_calendar .bizcal th {
   background-color: white;
   color: #888;
@@ -3427,6 +3433,12 @@ header .header-foot-hamburgerMenu:hover {
 .contact-wrapper-head .contactInfo-body {
   font-size: 26px;
   margin-bottom: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-wrapper-head .contactInfo-body {
+    font-size: 22px;
+  }
 }
 
 .contact-wrapper-head .contactInfo-foot {

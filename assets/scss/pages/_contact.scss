@@ -33,6 +33,9 @@
         &-body {
           font-size: 26px;
           margin-bottom: 32px;
+          @include sm {
+            font-size: 22px;
+          }
         }
         &-foot {
           font-size: 14px;
