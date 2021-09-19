@@ -121,7 +121,7 @@
   & input[type="text"] {
     border: none;
     color: $grey_b;
-    font-family: "kyokasho";
+    font-family: $font_document;
     font-size: 14px;
     padding: 0;
     width: calc(100% - 50px);

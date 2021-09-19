@@ -3,6 +3,7 @@
   display: flex;
 
   &-wrapper {
+    font-family: $font_document;
     display: flex;
     @include sm {
       flex-direction: column;
