@@ -8,6 +8,7 @@ $item = [
     'cart' => 'お買い物カゴ',
     'tokushoho' => '特定商取引法に基づく表記',
     'privacy' => 'プライバシーポリシー',
+    'terms' => '利用規約',
 ];
 ?>
 <footer class="footer">
