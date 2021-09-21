@@ -1671,6 +1671,14 @@ header .header-head-campany {
   height: 22px;
 }
 
+header .header-head-mark {
+  display: block;
+  position: absolute;
+  margin-bottom: 56px;
+  color: blueviolet;
+  font-size: 14px;
+}
+
 header .header-body {
   margin-right: auto;
   padding-left: 12px;

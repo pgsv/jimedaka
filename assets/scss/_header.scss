@@ -31,6 +31,13 @@ header {
       margin-left: 6px;
       height: 22px;
     }
+    &-mark {
+      display: block;
+      position: absolute;
+      margin-bottom: 56px;
+      color: blueviolet;
+      font-size: 14px;
+    }
   }
 
   .header-body {
