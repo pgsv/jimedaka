@@ -34,6 +34,9 @@
       .calmonth {
         font-size: 26px;
         font-weight: normal;
+        @include sm {
+          font-size: 24px;
+        }
       }
       th {
         background-color: white;
