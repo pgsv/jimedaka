@@ -15,7 +15,7 @@
     writing-mode: vertical-rl;
     font-size: 32px;
     color: $black;
-    -webkit-text-stroke-width: 0.5px;
+    font-weight: bold;
     margin-right: 32px;
     @include md {
       writing-mode: horizontal-tb;
@@ -73,7 +73,7 @@
           padding: 10px 4px;
           letter-spacing: 1.2px;
           @include sm {
-            font-family: "kyokasho";
+            font-family: $font_document;
             writing-mode: horizontal-tb;
           }
         }
@@ -81,7 +81,7 @@
       &-body {
         height: 220px;
         writing-mode: vertical-rl;
-        font-family: "kyokasho-vertical";
+        font-family: $font_document;
         text-orientation: upright;
         display: flex;
         flex-direction: column;
@@ -98,13 +98,13 @@
           height: auto;
         }
         @include sm {
-          font-family: "kyokasho";
+          font-family: $font_document;
           writing-mode: horizontal-tb;
           justify-content: flex-start;
           margin-right: 0px;
         }
         &-name {
-          -webkit-text-stroke-width: 0.5px;
+          font-weight: bold;
           font-size: 22px;
           margin-left: 12px;
         }
@@ -113,7 +113,7 @@
           padding-top: 28%;
           margin-left: 20px;
           font-size: 14px;
-          -webkit-text-stroke-width: 0.5px;
+          font-weight: bold;
           @include sm {
             padding-top: 6px;
             margin-bottom: 12px;
@@ -124,7 +124,7 @@
           font-size: 14px;
           line-height: 18px;
           text-align: start;
-          -webkit-text-stroke-width: 0.2px;
+          font-weight: bold;
           line-height: 1.6em;
           letter-spacing: 1.2px;
           @include sm {

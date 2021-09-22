@@ -78,7 +78,7 @@
       }
       td.product-name {
         font-size: 18px;
-        -webkit-text-stroke-width: 0.2px;
+        font-weight: bold;
         .product-desc {
           max-width: 240px;
           max-height: 64px;
@@ -108,7 +108,7 @@
       }
       td.product-price {
         font-size: 18px;
-        -webkit-text-stroke-width: 0.2px;
+        font-weight: bold;
         &::before {
           content: "1匹";
           padding-right: 8px;
@@ -132,7 +132,7 @@
       }
       td.product-subtotal {
         font-size: 18px;
-        -webkit-text-stroke-width: 0.2px;
+        font-weight: bold;
         width: 140px;
         color: $red;
         @include ms {

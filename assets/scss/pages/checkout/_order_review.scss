@@ -35,7 +35,7 @@
   }
 
   thead {
-    -webkit-text-stroke-width: 0.5px;
+    font-weight: bold;
     .product-name {
       padding-left: 24px;
     }
@@ -89,7 +89,7 @@
     tr:last-child th {
       padding-top: 25px;
       font-size: 24px;
-      -webkit-text-stroke-width: 0.5px;
+      font-weight: bold;
     }
     tr:last-child td {
       color: $light-red;
@@ -138,7 +138,7 @@
         &:hover {
           opacity: 0.8;
         }
-        -webkit-text-stroke-width: 0.2px;
+        font-weight: bold;
       }
       .payment_box,
       .payment_method_cod {

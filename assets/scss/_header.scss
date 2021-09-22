@@ -28,8 +28,6 @@ header {
       height: auto;
     }
     &-campany {
-      font-size: 24px;
-      -webkit-text-stroke-width: 1px;
       margin-left: 6px;
       height: 22px;
     }
@@ -44,7 +42,7 @@ header {
       li {
         font-size: 16px;
         margin-left: 16px;
-        -webkit-text-stroke-width: 0.3px;
+        font-weight: bold;
       }
     }
     @include md {

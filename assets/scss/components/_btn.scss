@@ -2,7 +2,7 @@
   border: solid 1px $beige;
   padding: 12px 32px;
   color: $beige;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "kyokasho";
+  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   transition: 0.2s;
   &:hover {

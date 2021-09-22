@@ -177,16 +177,6 @@ li {
   color: #8b1c2a;
 }
 
-@font-face {
-  font-family: "kyokasho";
-  src: url("./assets/font/kyokasho.ttc") format("opentype");
-}
-
-@font-face {
-  font-family: "kyokasho-vertical";
-  src: url("./assets/font/kyokasho-vertical.ttc") format("opentype");
-}
-
 /*! Basscss | http://basscss.com | MIT License */
 .h1 {
   font-size: 2rem;
@@ -1346,7 +1336,7 @@ ul.slick-slider {
   border: solid 1px #bda366;
   padding: 12px 32px;
   color: #bda366;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1434,7 +1424,7 @@ form.wpcf7-form input[type="submit"] {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "kyokasho";
+  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -1468,7 +1458,7 @@ form.wpcf7-form input[type="submit"]:hover {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    font-family: "kyokasho";
+    font-afamily: "New Tegomin", serif;
     cursor: pointer;
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -1510,7 +1500,7 @@ textarea.wpcf7-form-control {
 .contactCalender #biz_calendar {
   max-width: 500px;
   padding-left: 32px;
-  font-family: "kyokasho";
+  font-family: "Klee One", cursive;
   font-size: 18px;
   color: #333333;
   position: relative;
@@ -1583,7 +1573,7 @@ textarea.wpcf7-form-control {
 body {
   margin: 0;
   padding: 0;
-  font-family: "kyokasho";
+  font-family: "Klee One", cursive;
   color: #333333;
 }
 
@@ -1594,6 +1584,10 @@ a {
 
 a:hover {
   opacity: 0.8;
+}
+
+button {
+  font-family: "Klee One", cursive;
 }
 
 .wrap {
@@ -1673,8 +1667,6 @@ header .header-head-logo {
 }
 
 header .header-head-campany {
-  font-size: 24px;
-  -webkit-text-stroke-width: 1px;
   margin-left: 6px;
   height: 22px;
 }
@@ -1694,7 +1686,7 @@ header .header-body ul {
 header .header-body ul li {
   font-size: 16px;
   margin-left: 16px;
-  -webkit-text-stroke-width: 0.3px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 992px) {
@@ -1812,7 +1804,7 @@ header .header-foot-searchForm {
 header .header-foot-searchForm input[type="text"] {
   border: none;
   color: #b5b5b5;
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
   font-size: 14px;
   padding: 0;
   width: calc(100% - 50px);
@@ -1921,7 +1913,7 @@ header .header-foot-hamburgerMenu:hover {
 .smHeader-foot .header-foot-searchForm input[type="text"] {
   border: none;
   color: #b5b5b5;
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
   font-size: 14px;
   padding: 0;
   width: calc(100% - 50px);
@@ -1984,7 +1976,7 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 992px) {
@@ -2093,7 +2085,7 @@ header .header-foot-hamburgerMenu:hover {
 .footer-body-right .footerNav-head {
   font-size: 20px;
   margin-bottom: 28px;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   -webkit-text-stroke-color: #ffffff;
 }
 
@@ -2122,7 +2114,7 @@ header .header-foot-hamburgerMenu:hover {
 .footer-body-right .footerNav-body li a {
   font-size: 16px;
   color: #b5b5b5;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 576px) {
@@ -2295,7 +2287,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   color: #333333;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   font-size: 16px;
   z-index: 2;
   border-radius: 100px;
@@ -2331,7 +2323,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .top-right .news-head {
   color: #ffffff;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   font-size: 24px;
   margin: 20px 0;
 }
@@ -2427,7 +2419,7 @@ header .header-foot-hamburgerMenu:hover {
           writing-mode: vertical-rl;
   font-size: 32px;
   color: #333333;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   margin-right: 32px;
 }
 
@@ -2537,7 +2529,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 768px) {
   .recommend-body .recommendItem-head-label {
-    font-family: "kyokasho";
+    font-family: "Klee One", cursive;
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
             writing-mode: horizontal-tb;
@@ -2549,7 +2541,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  font-family: "kyokasho-vertical";
+  font-family: "Klee One", cursive;
   text-orientation: upright;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2591,7 +2583,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 768px) {
   .recommend-body .recommendItem-body {
-    font-family: "kyokasho";
+    font-family: "Klee One", cursive;
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
             writing-mode: horizontal-tb;
@@ -2604,7 +2596,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .recommend-body .recommendItem-body-name {
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   font-size: 22px;
   margin-left: 12px;
 }
@@ -2614,7 +2606,7 @@ header .header-foot-hamburgerMenu:hover {
   padding-top: 28%;
   margin-left: 20px;
   font-size: 14px;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
@@ -2629,7 +2621,7 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 14px;
   line-height: 18px;
   text-align: start;
-  -webkit-text-stroke-width: 0.2px;
+  font-weight: bold;
   line-height: 1.6em;
   letter-spacing: 1.2px;
 }
@@ -2647,7 +2639,7 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-family: "kyokasho-vertical";
+  font-family: "Klee One", cursive;
   text-orientation: upright;
 }
 
@@ -2850,7 +2842,7 @@ header .header-foot-hamburgerMenu:hover {
 .products-aside-all, .products-aside-recommend {
   font-size: 16px;
   display: block;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 .products-aside .productsCart-head {
@@ -2858,7 +2850,7 @@ header .header-foot-hamburgerMenu:hover {
   border: solid 1px #b5b5b5;
   border-radius: 4px 4px 0 0;
   padding: 14px 16px;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 .products-aside .productsCart-body {
@@ -2877,7 +2869,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .products-aside .productsSort-head {
   font-size: 16px;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   margin-bottom: 36px;
 }
 
@@ -2983,7 +2975,7 @@ header .header-foot-hamburgerMenu:hover {
   left: 0;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 0 100px 100px 0;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
   font-size: 12px;
   padding: 10px 20px;
 }
@@ -3104,7 +3096,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .singleProduct-wrapper {
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3330,7 +3322,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "kyokasho";
+  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -3468,7 +3460,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .guide-wrapper {
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
   background-color: white;
   border-top: solid 6px #b4aa98;
   padding: 64px 8%;
@@ -3477,7 +3469,7 @@ header .header-foot-hamburgerMenu:hover {
 .guide-head {
   font-size: 32px;
   margin-bottom: 64px;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 .guide-subHead {
@@ -3569,7 +3561,7 @@ header .header-foot-hamburgerMenu:hover {
 .cart {
   margin-top: 80px;
   background-color: #f7f3ec;
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
 }
 
 .cart-head {
@@ -3654,7 +3646,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .cart table.woocommerce-cart-form__contents tr td.product-name {
   font-size: 18px;
-  -webkit-text-stroke-width: 0.2px;
+  font-weight: bold;
 }
 
 .cart table.woocommerce-cart-form__contents tr td.product-name .product-desc {
@@ -3688,7 +3680,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .cart table.woocommerce-cart-form__contents tr td.product-price {
   font-size: 18px;
-  -webkit-text-stroke-width: 0.2px;
+  font-weight: bold;
 }
 
 .cart table.woocommerce-cart-form__contents tr td.product-price::before {
@@ -3740,7 +3732,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .cart table.woocommerce-cart-form__contents tr td.product-subtotal {
   font-size: 18px;
-  -webkit-text-stroke-width: 0.2px;
+  font-weight: bold;
   width: 140px;
   color: #8b1c2a;
 }
@@ -3774,7 +3766,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "kyokasho";
+  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -3876,7 +3868,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "kyokasho";
+  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -3942,7 +3934,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .singleNews-wrapper {
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
   background-color: white;
   border-top: solid 6px #b4aa98;
   padding: 64px 8%;
@@ -3977,7 +3969,11 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .privacy {
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
+  margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
+  font-family: "Klee One", cursive;
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
@@ -4059,8 +4055,55 @@ header .header-foot-hamburgerMenu:hover {
   list-style-type: lower-latin;
 }
 
+.privacy-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 64px 8%;
+}
+
+.privacy-title {
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+.privacy-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
+}
+
+.privacy-contents h4 {
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+
+.privacy-contents p {
+  padding-left: 8px;
+}
+
+.privacy-contents ol {
+  margin-top: 30px;
+}
+
+.privacy-contents ol li {
+  list-style: decimal;
+}
+
+.privacy-contents ul {
+  margin-top: 30px;
+}
+
+.privacy-contents ul li {
+  list-style: disc;
+}
+
+.privacy-contents li {
+  margin-left: 50px;
+}
+
 .terms {
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
@@ -4143,7 +4186,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .tokushoho {
-  font-family: YakuHanJP, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", YuGothic, "游ゴシック体", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Klee One", cursive;
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
@@ -4873,7 +4916,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .reviewOrder thead {
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 .reviewOrder thead .product-name {
@@ -4937,7 +4980,7 @@ header .header-foot-hamburgerMenu:hover {
 .reviewOrder tfoot tr:last-child th {
   padding-top: 25px;
   font-size: 24px;
-  -webkit-text-stroke-width: 0.5px;
+  font-weight: bold;
 }
 
 .reviewOrder tfoot tr:last-child td {
@@ -4987,7 +5030,7 @@ header .header-foot-hamburgerMenu:hover {
           align-items: center;
   width: calc(100% - 30px);
   cursor: pointer;
-  -webkit-text-stroke-width: 0.2px;
+  font-weight: bold;
 }
 
 #payment ul li label:hover {
@@ -5101,7 +5144,7 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "kyokasho";
+  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;

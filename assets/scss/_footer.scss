@@ -11,7 +11,7 @@
     }
     &-left {
       display: flex;
-      -webkit-text-stroke-width: 0.5px;
+      font-weight: bold;
       @include md {
         margin-bottom: 40px;
         justify-content: center;
@@ -72,7 +72,7 @@
         &-head {
           font-size: 20px;
           margin-bottom: 28px;
-          -webkit-text-stroke-width: 0.5px;
+          font-weight: bold;
           -webkit-text-stroke-color: $white;
         }
         &-body {
@@ -92,7 +92,7 @@
             a {
               font-size: 16px;
               color: $grey-b;
-              -webkit-text-stroke-width: 0.5px;
+              font-weight: bold;
               @include ms {
                 font-size: 14px;
               }

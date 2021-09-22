@@ -9,6 +9,9 @@
         href="<?php echo esc_url(get_template_directory_uri().'/style.css'); ?>">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
         href="<?php echo esc_url(get_template_directory_uri().'/assets/slick/slick.css'); ?>"
         media="screen" />
