@@ -68,3 +68,15 @@ function update_message_admin_only()
     }
 }
 add_action('admin_init', 'update_message_admin_only');
+
+/**
+ * ?author=ID からユーザー名が見れるため、強制的にホーム画面にリダイレクトする
+ */
+function theme_slug_redirect_author_archive()
+{
+    if (is_author()) {
+        wp_redirect(home_url());
+        exit;
+    }
+}
+add_action('template_redirect', 'theme_slug_redirect_author_archive');
