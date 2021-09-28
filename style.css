@@ -3455,92 +3455,6 @@ header .header-foot-hamburgerMenu:hover {
   }
 }
 
-.guide {
-  margin-top: 80px;
-  background-color: #f7f3ec;
-  padding: 36px 8%;
-}
-
-@media screen and (max-width: 768px) {
-  .guide {
-    padding: 36px 0;
-  }
-}
-
-.guide-wrapper {
-  font-family: "Klee One", cursive;
-  background-color: white;
-  border-top: solid 6px #b4aa98;
-  padding: 64px 8%;
-}
-
-.guide-head {
-  font-size: 32px;
-  margin-bottom: 64px;
-  font-weight: bold;
-}
-
-.guide-subHead {
-  font-size: 24px;
-  margin-bottom: 44px;
-}
-
-.guide-list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  line-height: 26px;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-@media screen and (max-width: 768px) {
-  .guide-list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.guide-list-head {
-  white-space: nowrap;
-  width: 300px;
-  font-size: 18px;
-}
-
-@media screen and (max-width: 768px) {
-  .guide-list-head {
-    margin-bottom: 8px;
-  }
-}
-
-.guide-list-body {
-  width: 100%;
-  line-height: 26px;
-  font-size: 16px;
-}
-
-.guide-list-body li {
-  list-style-type: disc;
-}
-
-.guide-list::before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #e5e5e5;
-  position: absolute;
-  bottom: -25px;
-  left: 0;
-}
-
-.guide-list:last-of-type::before {
-  display: none;
-}
-
 .searchResult {
   padding: 16px 4%;
   margin-top: 80px;
@@ -3976,11 +3890,7 @@ header .header-foot-hamburgerMenu:hover {
   color: #000;
 }
 
-.privacy {
-  font-family: "Klee One", cursive;
-  margin-top: 80px;
-  background-color: #f7f3ec;
-  padding: 36px 8%;
+.privacy, .terms, .tokushoho, .guide {
   font-family: "Klee One", cursive;
   margin-top: 80px;
   background-color: #f7f3ec;
@@ -3988,30 +3898,30 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 @media screen and (max-width: 576px) {
-  .privacy {
+  .privacy, .terms, .tokushoho, .guide {
     padding: 0;
   }
 }
 
-.privacy-wrapper {
+.privacy-wrapper, .terms-wrapper, .tokushoho-wrapper, .guide-wrapper {
   background-color: white;
   border-top: solid 6px #b4aa98;
   padding: 64px 8%;
 }
 
-.privacy-title {
+.privacy-title, .terms-title, .tokushoho-title, .guide-title {
   font-size: 32px;
   margin-bottom: 64px;
 }
 
 @media screen and (max-width: 576px) {
-  .privacy-title {
+  .privacy-title, .terms-title, .tokushoho-title, .guide-title {
     font-size: 22px;
     margin-bottom: 32px;
   }
 }
 
-.privacy-contents {
+.privacy-contents, .terms-contents, .tokushoho-contents, .guide-contents {
   min-height: 100vh;
   font-size: 17px;
   word-break: break-all;
@@ -4019,260 +3929,47 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 @media screen and (max-width: 576px) {
-  .privacy-contents {
+  .privacy-contents, .terms-contents, .tokushoho-contents, .guide-contents {
     font-size: 13px;
   }
 }
 
-.privacy-contents h2 {
+.privacy-contents h2, .terms-contents h2, .tokushoho-contents h2, .guide-contents h2 {
   font-size: 20px;
   margin-top: 34px;
   margin-bottom: 5px;
 }
 
 @media screen and (max-width: 576px) {
-  .privacy-contents h2 {
+  .privacy-contents h2, .terms-contents h2, .tokushoho-contents h2, .guide-contents h2 {
     font-size: 15px;
     margin-top: 20px;
   }
 }
 
-.privacy-contents p {
+.privacy-contents p, .terms-contents p, .tokushoho-contents p, .guide-contents p {
   margin-left: 8px;
 }
 
-.privacy-contents ol, .privacy-contents ul {
+.privacy-contents ol, .privacy-contents ul, .terms-contents ol, .terms-contents ul, .tokushoho-contents ol, .tokushoho-contents ul, .guide-contents ol, .guide-contents ul {
   margin-left: 28px;
 }
 
 @media screen and (max-width: 576px) {
-  .privacy-contents ol, .privacy-contents ul {
+  .privacy-contents ol, .privacy-contents ul, .terms-contents ol, .terms-contents ul, .tokushoho-contents ol, .tokushoho-contents ul, .guide-contents ol, .guide-contents ul {
     margin-left: 24px;
   }
 }
 
-.privacy-contents ol li {
+.privacy-contents ol li, .terms-contents ol li, .tokushoho-contents ol li, .guide-contents ol li {
   list-style: decimal;
 }
 
-.privacy-contents ul li {
+.privacy-contents ul li, .terms-contents ul li, .tokushoho-contents ul li, .guide-contents ul li {
   list-style: disc;
 }
 
-.privacy-contents li ol > li {
-  list-style-type: lower-latin;
-}
-
-.privacy-wrapper {
-  background-color: white;
-  border-top: solid 6px #b4aa98;
-  padding: 64px 8%;
-}
-
-.privacy-title {
-  font-size: 32px;
-  margin-bottom: 64px;
-}
-
-.privacy-contents {
-  min-height: 100vh;
-  font-size: 17px;
-  word-break: break-all;
-  line-height: 200%;
-}
-
-.privacy-contents h4 {
-  padding-top: 40px;
-  padding-bottom: 5px;
-}
-
-.privacy-contents p {
-  padding-left: 8px;
-}
-
-.privacy-contents ol {
-  margin-top: 30px;
-}
-
-.privacy-contents ol li {
-  list-style: decimal;
-}
-
-.privacy-contents ul {
-  margin-top: 30px;
-}
-
-.privacy-contents ul li {
-  list-style: disc;
-}
-
-.privacy-contents li {
-  margin-left: 50px;
-}
-
-.terms {
-  font-family: "Klee One", cursive;
-  margin-top: 80px;
-  background-color: #f7f3ec;
-  padding: 36px 8%;
-}
-
-@media screen and (max-width: 576px) {
-  .terms {
-    padding: 0;
-  }
-}
-
-.terms-wrapper {
-  background-color: white;
-  border-top: solid 6px #b4aa98;
-  padding: 64px 8%;
-}
-
-.terms-title {
-  font-size: 32px;
-  margin-bottom: 64px;
-}
-
-@media screen and (max-width: 576px) {
-  .terms-title {
-    font-size: 22px;
-    margin-bottom: 32px;
-  }
-}
-
-.terms-contents {
-  min-height: 100vh;
-  font-size: 17px;
-  word-break: break-all;
-  line-height: 200%;
-}
-
-@media screen and (max-width: 576px) {
-  .terms-contents {
-    font-size: 13px;
-  }
-}
-
-.terms-contents h2 {
-  font-size: 20px;
-  margin-top: 34px;
-  margin-bottom: 5px;
-}
-
-@media screen and (max-width: 576px) {
-  .terms-contents h2 {
-    font-size: 15px;
-    margin-top: 20px;
-  }
-}
-
-.terms-contents p {
-  margin-left: 8px;
-}
-
-.terms-contents ol, .terms-contents ul {
-  margin-left: 28px;
-}
-
-@media screen and (max-width: 576px) {
-  .terms-contents ol, .terms-contents ul {
-    margin-left: 24px;
-  }
-}
-
-.terms-contents ol li {
-  list-style: decimal;
-}
-
-.terms-contents ul li {
-  list-style: disc;
-}
-
-.terms-contents li ol > li {
-  list-style-type: lower-latin;
-}
-
-.tokushoho {
-  font-family: "Klee One", cursive;
-  margin-top: 80px;
-  background-color: #f7f3ec;
-  padding: 36px 8%;
-}
-
-@media screen and (max-width: 576px) {
-  .tokushoho {
-    padding: 0;
-  }
-}
-
-.tokushoho-wrapper {
-  background-color: white;
-  border-top: solid 6px #b4aa98;
-  padding: 64px 8%;
-}
-
-.tokushoho-title {
-  font-size: 32px;
-  margin-bottom: 64px;
-}
-
-@media screen and (max-width: 576px) {
-  .tokushoho-title {
-    font-size: 22px;
-    margin-bottom: 32px;
-  }
-}
-
-.tokushoho-contents {
-  min-height: 100vh;
-  font-size: 17px;
-  word-break: break-all;
-  line-height: 200%;
-}
-
-@media screen and (max-width: 576px) {
-  .tokushoho-contents {
-    font-size: 13px;
-  }
-}
-
-.tokushoho-contents h2 {
-  font-size: 20px;
-  margin-top: 34px;
-  margin-bottom: 5px;
-}
-
-@media screen and (max-width: 576px) {
-  .tokushoho-contents h2 {
-    font-size: 15px;
-    margin-top: 20px;
-  }
-}
-
-.tokushoho-contents p {
-  margin-left: 8px;
-}
-
-.tokushoho-contents ol, .tokushoho-contents ul {
-  margin-left: 28px;
-}
-
-@media screen and (max-width: 576px) {
-  .tokushoho-contents ol, .tokushoho-contents ul {
-    margin-left: 24px;
-  }
-}
-
-.tokushoho-contents ol li {
-  list-style: decimal;
-}
-
-.tokushoho-contents ul li {
-  list-style: disc;
-}
-
-.tokushoho-contents li ol > li {
+.privacy-contents li ol > li, .terms-contents li ol > li, .tokushoho-contents li ol > li, .guide-contents li ol > li {
   list-style-type: lower-latin;
 }
 
@@ -4319,6 +4016,29 @@ header .header-foot-hamburgerMenu:hover {
 
 .tokushoho .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
   background-color: initial;
+}
+
+.guide .wp-block-table table {
+  width: 46%;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .guide .wp-block-table table {
+    width: 60%;
+  }
+}
+
+.guide .wp-block-table table tr {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: solid 1px;
 }
 
 .purchase {

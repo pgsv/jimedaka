@@ -1,12 +1,15 @@
+<?php $slug = get_post(get_the_ID())->post_name;?>
+
 <?php get_header(); ?>
-<main>
-    <?php if (have_posts()): while (have_posts()):the_post(); ?>
-    <h1><?php the_title(); ?>
-    </h1>
-    <time
-        datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
-    <p><?php the_content(); ?>
-    </p>
-    <?php endwhile; endif; ?>
-</main>
+<div class="<?php echo $slug;?>">
+    <main class="<?php echo $slug;?>-wrapper">
+        <h1 class="<?php echo $slug;?>-title"><?php the_title(); ?>
+        </h1>
+        <?php if (have_posts()): while (have_posts()):the_post(); ?>
+        <div class="<?php echo $slug;?>-contents">
+            <?php the_content(); ?>
+        </div>
+        <?php endwhile;endif; ?>
+    </main>
+</div>
 <?php get_footer();

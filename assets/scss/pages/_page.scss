@@ -1,0 +1,113 @@
+@mixin documents() {
+    // font-family: "教科書ICA R", "Kyoukasho ICA Regular", "Noto Serif JP", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "リュウミン R-KL", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    font-family: $font_document;
+    margin-top: $header_height;
+    background-color: $light_beige;
+    padding: 36px 8%;
+    @include ms {
+        padding: 0;
+    }
+    &-wrapper {
+        background-color: white;
+        border-top: solid 6px $dark_beige;
+        padding: 64px 8%;
+    }
+    &-title {
+        font-size: 32px;
+        margin-bottom: 64px;
+        @include ms {
+            font-size: 22px;
+            margin-bottom: 32px;
+        }
+    }
+    &-contents {
+        min-height: 100vh;
+        font-size: 17px;
+        word-break: break-all; 
+        line-height: 200%;
+        @include ms {
+            font-size: 13px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 34px;
+            margin-bottom: 5px;
+            @include ms {
+            font-size: 15px;
+            margin-top: 20px;
+            }
+        }
+        p {
+            margin-left: 8px;
+        }
+        ol, ul {
+            margin-left: 28px;
+            @include ms {
+            margin-left: 24px;
+            } 
+        }
+        ol li {
+            list-style: decimal;
+        } 
+        ul li {
+            list-style: disc;
+        } 
+        li ol > li {
+            list-style-type: lower-latin;
+        }
+    }
+}
+
+.privacy, .terms, .tokushoho, .guide {
+    @include documents();
+}
+
+.tokushoho {
+    tr {
+        height: 60px;
+        text-align: left;
+        border-bottom: solid 1px;
+        @include sm {
+            height: initial;
+            display: block;
+        }
+        th, td {
+            vertical-align: middle;
+            @include sm {
+                display: block;
+            }
+        }
+        th {
+            width: 210px;
+        }
+        td {
+            padding-left: 20px;
+            @include sm {
+                padding-left: 0;
+            }
+        }
+    }
+    .wp-block-table.is-style-stripes {
+        border-collapse: collapse;
+
+        tbody tr:nth-child(odd) {
+            background-color: initial;
+        }
+    }
+}
+
+.guide {
+    .wp-block-table table {
+      width: 46%;
+      margin-left: 30px;
+      @include ms {
+        width: 60%;
+      }
+      tr {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px;
+      }
+    }
+  }
