@@ -10,11 +10,12 @@
         <div class="header-head-mark">
             <?php
             $domain = $_SERVER['SERVER_NAME'];
+            clog('domain=>'.$domain);
             switch ($domain) :
                 case ('medakashopping.local'):
                     echo 'テスト環境';
                     break;
-                case ('https://xs537807.xsrv.jp/'):
+                case ('xs537807.xsrv.jp'):
                     echo 'ステージング環境';
                     break;
                 default:
