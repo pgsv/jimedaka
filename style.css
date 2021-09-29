@@ -4041,6 +4041,11 @@ header .header-foot-hamburgerMenu:hover {
   border-bottom: solid 1px;
 }
 
+.guide a {
+  color: #337ab7;
+  text-decoration: underline;
+}
+
 .purchase {
   margin-top: 80px;
   background-color: #fafafa;
