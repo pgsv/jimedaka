@@ -80,3 +80,13 @@ function theme_slug_redirect_author_archive()
     }
 }
 add_action('template_redirect', 'theme_slug_redirect_author_archive');
+
+/**
+ * パンくずリストを表示
+ */
+function get_bread_crumbs()
+{
+    if (function_exists('yoast_breadcrumb')) {
+        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    }
+}
