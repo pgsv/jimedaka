@@ -13,12 +13,7 @@
         padding: 64px 8%;
     }
     &-title {
-        font-size: 32px;
-        margin-bottom: 64px;
-        @include ms {
-            font-size: 22px;
-            margin-bottom: 32px;
-        }
+        @include pageTitle;
     }
     &-contents {
         min-height: 100vh;

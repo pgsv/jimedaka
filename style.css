@@ -1617,6 +1617,11 @@ button {
   text-align: center;
 }
 
+#breadcrumbs {
+  text-align: right;
+  margin-right: 30px;
+}
+
 header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2847,6 +2852,10 @@ header .header-foot-hamburgerMenu:hover {
   border-top: 1px solid #e5e5e5;
 }
 
+.products-aside .productsItem .selectedLink {
+  color: red;
+}
+
 .products-aside-all, .products-aside-recommend {
   font-size: 16px;
   display: block;
@@ -2888,6 +2897,18 @@ header .header-foot-hamburgerMenu:hover {
 .products-aside .productsSort ul li .productsSort-body-link {
   font-size: 14px;
   display: block;
+}
+
+.products-title {
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+@media screen and (max-width: 576px) {
+  .products-title {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
 }
 
 .products-list {
@@ -3431,6 +3452,13 @@ header .header-foot-hamburgerMenu:hover {
   margin-bottom: 64px;
 }
 
+@media screen and (max-width: 576px) {
+  .contact-wrapper-head .contactInfo-head {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
+}
+
 .contact-wrapper-head .contactInfo-body {
   font-size: 26px;
   margin-bottom: 32px;
@@ -3865,6 +3893,13 @@ header .header-foot-hamburgerMenu:hover {
 .singleNews-title {
   font-size: 32px;
   margin-bottom: 64px;
+}
+
+@media screen and (max-width: 576px) {
+  .singleNews-title {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
 }
 
 .singleNews-contents {

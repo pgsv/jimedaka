@@ -27,8 +27,7 @@
       .contactInfo {
         width: 50%;
         &-head {
-          font-size: 32px;
-          margin-bottom: 64px;
+          @include pageTitle;
         }
         &-body {
           font-size: 26px;

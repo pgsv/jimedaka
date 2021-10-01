@@ -31,3 +31,11 @@
     }
   }
 }
+@mixin pageTitle {
+  font-size: 32px;
+  margin-bottom: 64px;
+  @include ms {
+      font-size: 22px;
+      margin-bottom: 32px;
+  }
+}
