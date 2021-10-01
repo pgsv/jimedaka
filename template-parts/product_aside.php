@@ -1,6 +1,6 @@
 <aside class="products-aside">
-    <div class="products-aside-cart">
-        <!-- <div class="productsCart productsItem">
+    <!-- <div class="products-aside-cart">
+        <div class="productsCart productsItem">
             <div class="productsCart-head">
                 買い物カゴ
             </div>
@@ -8,11 +8,12 @@
                 <div>※ 現在お買い物カゴ内に商品はございません。</div>
             </div>
             <a href="<?php echo home_url(); ?>/cart"
-        class="productsCart-foot btn_stroke_beige">
-        <img src='<?php echo get_template_directory_uri(); ?>/assets/img/cart_beige.svg'
-            alt='お買い物カゴ'>
-        お買い物カゴの詳細
-        </a>
+    class="productsCart-foot btn_stroke_beige">
+    <img src='<?php echo get_template_directory_uri(); ?>/assets/img/cart_beige.svg'
+        alt='お買い物カゴ'>
+    お買い物カゴの詳細
+    </a>
+    </div>
     </div> -->
 
     <a href="<?php echo esc_url(home_url().'/products'); ?>"
@@ -22,89 +23,55 @@
     <!-- <a href="#" class="products-aside-recommend productsItem">
             おすすめ商品
         </a> -->
+    <?php
+    $list1 = [
+        ['category', 'カテゴリー順'],
+        ['cheap', '安い順'],
+        ['expensive', '高い順'],
+    ];
+    $list2 = [
+        ['0_1000', '〜1,000円'],
+        ['1000_1500','1,000円～1,500円'],
+        ['1500_2000','1,500円～2,000円'],
+        ['2000_3000','2,000円～3,000円'],
+        ['3000_4000','3,000円～4,000円'],
+        ['4000_100000','4,000円～'],
+    ];
+    $sort_list = [$list1, $list2];
+?>
+    <?php
+        $url_str = esc_url(home_url('/'). 'products/');
+        $form_cnt = 0;?>
+    <?php for ($i=0; $i<2; $i++): ?>
     <div class="productsSort productsItem">
         <div class="productsSort-head">
-            並び替え
-        </div>
-        <?php $url_str = esc_url(home_url('/'). 'products/'); ?>
-        <div class="productsSort-body">
-            <ul>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="category">
-                        <a class="productsSort-body-link" href="javascript:formSort[0].submit()">カテゴリー順</a>
-                    </form>
-                </li>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="cheap">
-                        <a class="productsSort-body-link" href="javascript:formSort[1].submit()">安い順</a>
-                    </form>
-                </li>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="expensive">
-                        <a class="productsSort-body-link" href="javascript:formSort[2].submit()">高い順</a>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="productsSort productsItem">
-        <div class="productsSort-head">
-            価格帯
+            <?php
+            if ($i==0) {
+                echo '並び替え';
+            } else {
+                echo '価格帯';
+            }
+            ?>
         </div>
         <div class="productsSort-body">
             <ul>
+                <?php foreach ($sort_list[$i] as $value) : ?>
                 <li>
                     <form name="formSort" method="get"
                         action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="0_1000">
-                        <a class="productsSort-body-link" href="javascript:formSort[3].submit()">〜1,000円</a>
+                        <input type="hidden" name="sort"
+                            value="<?php echo $value[0]; ?>">
+                        <a id="<?php echo $value[0]; ?>"
+                            class="productsSort-body-link"
+                            href="javascript:formSort[<?php echo $form_cnt; ?>].submit()"><?php echo $value[1]; ?></a>
                     </form>
                 </li>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="1000_1500">
-                        <a class="productsSort-body-link" href="javascript:formSort[4].submit()">1,000円～1,500円</a>
-                    </form>
-                </li>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="1500_2000">
-                        <a class="productsSort-body-link" href="javascript:formSort[5].submit()">1,500円〜2,000円</a>
-                    </form>
-                </li>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="2000_3000">
-                        <a class="productsSort-body-link" href="javascript:formSort[6].submit()">2,000円〜3,000円</a>
-                    </form>
-                </li>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="3000_4000">
-                        <a class="productsSort-body-link" href="javascript:formSort[7].submit()">3,000円〜4,000円</a>
-                    </form>
-                </li>
-                <li>
-                    <form name="formSort" method="get"
-                        action="<?php echo $url_str ?>">
-                        <input type="hidden" name="sort" value="4000_100000">
-                        <a class="productsSort-body-link" href="javascript:formSort[8].submit()">4,000円〜</a>
-                    </form>
-                </li>
+                <?php $form_cnt++;?>
+                <?php endforeach;?>
             </ul>
         </div>
     </div>
-    </div>
+    <?php endfor;?>
 </aside>
 
 <button class="products-search">
