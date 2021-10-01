@@ -238,16 +238,20 @@ add_action('woocommerce_product_options_stock_fields', 'my_woocommerce_product_o
 /**
  * 発送完了メールの追跡番号を追加
  */
-function add_email_tracking_number()
+function add_email_tracking_number($order)
 {
-    $tracking_number = get_field("j_tracking_number");
-    $track_url = 'https://jizen.kuronekoyamato.co.jp/jizen/servlet/crjz.b.NQ0010?id=';  //ヤマト運輸のURL
-    $company = get_field("j_tracking_company");
-    echo '<h2>発送について</h2>
-           <p>追跡番号：<a href="'. $track_url . $tracking_number.'">' . $tracking_number . '</a></p>
-           <p>配送会社：' . $company . '</p>';
+    $order_data = $order->get_data();
+    if ($order_data['status'] == 'completed') {
+        $tracking_number = get_field("j_tracking_number");
+        // $track_url = 'https://jizen.kuronekoyamato.co.jp/jizen/servlet/crjz.b.NQ0010?id=';  //ヤマト運輸のURL
+        $track_url = 'https://trackings.post.japanpost.jp/services/srv/search/direct?locale=ja&reqCodeNo1='; //ゆうパックの追跡URL
+        $company = get_field("j_tracking_company");
+        echo '<h2>発送について</h2>
+               <p>追跡番号：<a href="'. $track_url . $tracking_number.'">' . $tracking_number . '</a></p>
+               <p>配送会社：' . $company . '</p>';
+    }
 }
-add_action('woocommerce_email_order_meta', 'add_email_tracking_number');
+add_action('woocommerce_email_order_meta', 'add_email_tracking_number', 10, 1);
 
 
 /**
