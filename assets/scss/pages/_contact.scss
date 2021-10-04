@@ -1,53 +1,39 @@
-// カレンダーのスタイルは
-// components>_bizcalendar.scssを参照
-
+// // カレンダーのスタイルは
+// // components>_bizcalendar.scssを参照
 .contact {
-  margin-top: $header_height;
-  background-color: $light_beige;
-  padding: 36px 8%;
-  @include sm {
-    padding: 36px 0;
-  }
-  &-wrapper {
-    background-color: white;
-    border-top: solid 6px $dark_beige;
-    padding: 64px 8%;
-    &-head {
-      display: flex;
-      margin-bottom: 48px;
-      @include md {
-        flex-direction: column;
-      }
-      .contactCalender {
-        width: 50%;
-        @include md {
-          margin-bottom: 20px;
+  @include basic();
+  .contact-info {
+    display: flex;
+    margin-bottom: 48px;
+    @include md {
+      flex-direction: column;
+    }
+    .contactDesc {
+      width: 50%;
+      h2 {
+        font-size: 26px;
+        margin-bottom: 32px;
+        @include sm {
+          font-size: 22px;
         }
       }
-      .contactInfo {
-        width: 50%;
-        &-head {
-          @include pageTitle;
-        }
-        &-body {
-          font-size: 26px;
-          margin-bottom: 32px;
-          @include sm {
-            font-size: 22px;
-          }
-        }
-        &-foot {
-          font-size: 14px;
-          line-height: 1.64;
-          letter-spacing: 1.6px;
-        }
-      }
-      @include md {
-        .contactCalender,
-        .contactInfo {
-          width: 100%;
-        }
+      p {
+        font-size: 14px;
+        line-height: 1.64;
+        letter-spacing: 1.6px;
       }
     }
-  }
+    .contactCalender {
+      width: 50%;
+      @include md {
+        margin-bottom: 20px;
+      }
+    }
+    @include md {
+      .contactCalender,
+      .contactDesc {
+        width: 100%;
+      }
+    }
+  }   
 }

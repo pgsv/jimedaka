@@ -10,7 +10,6 @@
   <?php include('template-parts/product_aside.php'); ?>
 
   <main class="singleProduct-wrapper">
-
     <div class="singleProduct-left">
       <div class="smProductTitle">
         <h1 class="singleProduct-right-head">
@@ -56,6 +55,7 @@
     </div>
 
     <div class="singleProduct-right">
+      <?php get_breadcrumbs(); ?>
       <div class="lgProductTitle">
         <h1 class="singleProduct-right-head">
           <?php the_title(); ?>
