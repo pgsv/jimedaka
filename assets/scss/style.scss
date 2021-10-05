@@ -13,6 +13,7 @@ Theme Name : MyTemplate
 @import "common";
 @import "header";
 @import "footer";
+@import "sidebar";
 @import "pages/home/top";
 @import "pages/home/recommend";
 @import "pages/home/deliveryflow";
@@ -20,13 +21,10 @@ Theme Name : MyTemplate
 @import "pages/myaccount";
 @import "pages/singleproduct";
 @import "pages/contact";
-@import "pages/guide";
 @import "pages/search";
 @import "pages/cart";
 @import "pages/single";
-@import "pages/privacy";
-@import "pages/terms";
-@import "pages/tokushoho";
+@import "pages/page";
 @import "pages/checkout/main";
 @import "pages/checkout/customform";
 @import "pages/checkout/shipping";

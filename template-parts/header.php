@@ -7,6 +7,21 @@
         <img class='header-head-campany'
             src='<?php echo get_template_directory_uri(); ?>/assets/img/company_text.png'
             alt='会社名'>
+        <div class="header-head-mark">
+            <?php
+            $domain = $_SERVER['SERVER_NAME'];
+            clog('domain=>'.$domain);
+            switch ($domain) :
+                case ('medakashopping.local'):
+                    echo 'テスト環境';
+                    break;
+                case ('xs537807.xsrv.jp'):
+                    echo 'ステージング環境';
+                    break;
+                default:
+            endswitch;
+            ?>
+        </div>
     </a>
 
     <nav class="header-body">

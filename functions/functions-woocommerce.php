@@ -99,6 +99,51 @@ function my_gettext($translated_text, $text, $domain)
 }
 add_filter('gettext', 'my_gettext', 10, 3);
 
+/**
+ * squareプラグイン読み込み時（？）に「注文する」ボタンのテキストを変更　
+ * ※注）一般的なやり方だと、一時的に変更されるが、squareの情報を読み込む段階でもとに戻ってしまう
+ */
+function custom_available_payment_gateways($payment) {
+    if ($payment) {
+        // var_dump($payment);
+        $payment['square_credit_card']->order_button_text = '注文を確定する';
+    } else {
+        // echo 'empty';
+    }
+    return $payment;
+}
+add_filter('woocommerce_available_payment_gateways', 'custom_available_payment_gateways', 100);
+
+
+//------------------- これまでの試行錯誤（忘備録） ---------------------
+// function my_custom_place_order_text( $input ) {
+//     $my_custom_text = "Custom Text";
+//     return $my_custom_text;
+// }
+// add_filter( 'woocommerce_order_button_text', 'my_custom_place_order_text', 10, 2 );
+// add_filter( 'wc_payment_gateway_square_credit_card_order_button_text', 'my_custom_place_order_text', 10, 2 );
+
+// add_action('wp_enqueue_scripts', 'override_woo_frontend_scripts');
+// function override_woo_frontend_scripts() {
+//     wp_deregister_script('wc-checkout');
+//     wp_enqueue_script('wc-checkout', get_template_directory_uri() . '/../storefront-child-theme-master/woocommerce/checkout.js', array('jquery', 'woocommerce', 'wc-country-select', 'wc-address-i18n'), null, true);
+// }  
+
+// function my_woocommerce_order_button_html($order_button_html)
+// {
+//     $order_button_html = '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="注文を確定する" data-value="注文を確定する">注文を確定する</button>';
+//     return $order_button_html;
+// }
+// add_filter('woocommerce_order_button_html', 'my_woocommerce_order_button_html');
+
+// function my_woocommerce_order_button_text($order_button_text)
+// {
+//     $order_button_text = '注文を確定する';
+//     return $order_button_text;
+// }
+// add_filter('woocommerce_order_button_text', 'my_woocommerce_order_button_text');
+// -----------------------------------------------------------------------------------------------------------------
+
 
 /**
  * お買い物カゴページの送料表記を非表示
@@ -238,16 +283,20 @@ add_action('woocommerce_product_options_stock_fields', 'my_woocommerce_product_o
 /**
  * 発送完了メールの追跡番号を追加
  */
-function add_email_tracking_number()
+function add_email_tracking_number($order)
 {
-    $tracking_number = get_field("j_tracking_number");
-    $track_url = 'https://jizen.kuronekoyamato.co.jp/jizen/servlet/crjz.b.NQ0010?id=';  //ヤマト運輸のURL
-    $company = get_field("j_tracking_company");
-    echo '<h2>発送について</h2>
-           <p>追跡番号：<a href="'. $track_url . $tracking_number.'">' . $tracking_number . '</a></p>
-           <p>配送会社：' . $company . '</p>';
+    $order_data = $order->get_data();
+    if ($order_data['status'] == 'completed') {
+        $tracking_number = get_field("j_tracking_number");
+        // $track_url = 'https://jizen.kuronekoyamato.co.jp/jizen/servlet/crjz.b.NQ0010?id=';  //ヤマト運輸のURL
+        $track_url = 'https://trackings.post.japanpost.jp/services/srv/search/direct?locale=ja&reqCodeNo1='; //ゆうパックの追跡URL
+        $company = get_field("j_tracking_company");
+        echo '<h2>発送について</h2>
+               <p>追跡番号：<a href="'. $track_url . $tracking_number.'">' . $tracking_number . '</a></p>
+               <p>配送会社：' . $company . '</p>';
+    }
 }
-add_action('woocommerce_email_order_meta', 'add_email_tracking_number');
+add_action('woocommerce_email_order_meta', 'add_email_tracking_number', 10, 1);
 
 
 /**
@@ -329,7 +378,9 @@ function add_woocommerce_admin_billing_fields($fields)
 }
 add_filter('woocommerce_admin_billing_fields', 'add_woocommerce_admin_billing_fields');
 
-
+/**
+ * 注文画面のお客様情報のクラスを追加
+ */
 function add_class_admin_billing_fields()
 {
     ?>

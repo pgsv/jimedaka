@@ -1,20 +1,24 @@
 .singleProduct {
   margin-top: $header_height;
   display: flex;
-
-  &-wrapper {
+  #breadcrumbs {
+    margin-top: 30px;
+  }
+  &-contents {
     font-family: $font_document;
     display: flex;
     @include sm {
       flex-direction: column;
     }
+    padding-top: 30px;
+    padding-bottom: 80px;
   }
   &-left {
-    padding: 80px 50px;
+    padding: 0px 50px;
     padding-right: 10px;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     box-sizing: border-box;
     @include sm {
       width: 100%;
@@ -78,13 +82,14 @@
         padding-top: 100%;
         background-position: center center;
         background-size: cover;
+        border-radius: 2px;
       }
     }
   }
   &-right {
-    padding: 80px 50px;
+    padding: 0px 50px;
     padding-left: 10px;
-    width: 60%;
+    width: 50%;
     box-sizing: border-box;
     @include sm {
       width: 100%;
@@ -128,6 +133,9 @@
       }
       &-submitBtn {
         margin-left: 50px;
+        max-width: 400px;
+        margin-left: auto;
+        border-radius: 3px;
         @include red-fill-btn();
       }
     }

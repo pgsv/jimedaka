@@ -9,8 +9,7 @@
     padding: 64px 8%;
   }
   &-title {
-    font-size: 32px;
-    margin-bottom: 64px;
+    @include pageTitle;
   }
   &-contents {
     min-height: 100vh;

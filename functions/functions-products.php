@@ -1,59 +1,114 @@
 <?php
 
-function get_product_ids_by_cat()
+/**
+ * カテゴリー順の商品配列を取得
+ */
+function get_product_args_by_cat()
 {
-    $categories = get_medaka_categories();
-    $product_ids = array();
-    foreach ($categories as $cat) {
-        $args = [
-        'post_type'   => 'product',
-        'order'       => 'ASC',
-        'product_cat' => $cat->slug,
-        ];
-        $products = get_posts($args);
-        if ($products) {
-            foreach ($products as $product) {
-                array_push($product_ids, $product->ID);
-            }
-        }
-    }
-    return $product_ids;
-}
-
-function get_product_ids_by_price($order)
-{
+    // $cat_ids = get_term_children('51', 'product_cat');
+    // var_dump($cat_ids);
     $args = [
-    'post_type'     => 'product',
-    'numberposts'   => -1,
-    'orderby'       => 'meta_value_num',
-    'order'         => $order,
-    'meta_key'      => '_price',
-    'post_status'   => 'publish',
-    'fields'        => 'ids',
-    ];
-    return get_posts($args);
-}
-
-function get_product_ids_between_price($min_price, $max_price)
-{
-    $args = [
-    'post_type'     => 'product',
-    'numberposts'   => -1,
-    'orderby'       => 'meta_value_num',
-    'order'         => 'asc',
-    'post_status'   => 'publish',
-    'fields'        => 'ids',
-    'meta_query'	=> array(
-        'relation'		=> 'AND',
-        array(
-            'key'		=> '_price',
-            'value'		=> array( $min_price, $max_price ),
-            'type'		=> 'numeric',
-            'compare'	=> 'BETWEEN',
+        'post_type'     => 'product',
+        'orderby'       => 'title',     //実はタイトル順
+        'order'         => 'asc',
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'product_cat',
+                // 'field'    => 'term_id',
+                // 'terms'         => array(49,63),
+                'terms'    => 'medaka',
+                // 'orderby'  => 'type',
+            'include_children'=>true,
+            )
+        ),
+        'meta_query' => array(
+            array(
+                'key' => '_stock_status',
+                'value' => 'instock',
+                'compare' => '=',
+            )
         )
-    )
     ];
-    return get_posts($args);
+
+    // $categories = get_medaka_categories();
+    // $product_ids = array();
+    // foreach ($categories as $cat) {
+    //     $args = [
+    //         'post_type'      => 'product',
+    //         'order'          => 'ASC',
+    //         'product_cat'    => $cat->slug,
+    //         'paged'          => $paged,
+    //         'posts_per_page' => 3, // 表示件数
+    //         'meta_query' => array(
+    //             array(
+    //                 'key' => '_stock_status',
+    //                 'value' => 'instock',
+    //                 'compare' => '=',
+    //             )
+    //         )
+    //     ];
+    //     $products = get_posts($args);
+    //     if ($products) {
+    //         foreach ($products as $product) {
+    //             array_push($product_ids, $product->ID);
+    //         }
+    //     }
+    // }
+    return $args;
+}
+
+
+/**
+ * 価格順の商品条件の配列を取得
+ */
+function get_product_args_by_price($order)
+{
+    $args = [
+        'post_type'     => 'product',
+        'orderby'       => 'meta_value_num',
+        'order'         => $order,
+        'meta_key'      => '_price',
+        'post_status'   => 'publish',
+        // 'fields'        => 'ids',
+        'meta_query' => array(
+            array(
+                'key' => '_stock_status',
+                'value' => 'instock',
+                'compare' => '=',
+            )
+        )
+    ];
+    return $args;
+}
+
+/**
+ * 価格範囲の商品条件の配列を取得
+ */
+function get_product_args_between_price($min_price, $max_price)
+{
+    $args = [
+        'post_type'         => 'product',
+        'meta_key'          => '_price',
+        'orderby'           => 'meta_value_num',
+        'order'             => 'asc',
+        'post_status'       => 'publish',
+        // 'fields'        => 'ids',
+        'meta_query' => array(
+            array(
+                'key'       => '_stock_status',
+                'value'     => 'instock',
+                'compare'   => '=',
+            ),
+            array(
+                'key'		=> '_price',
+                'value'		=> array( $min_price, $max_price ),
+                'type'		=> 'numeric',
+                'compare'	=> 'BETWEEN',
+            ),
+            'relation'		=> 'AND'
+        ),
+    ];
+    return $args;
 }
 
 function get_star_rating()
@@ -113,7 +168,9 @@ function the_product_html($product_id)
 }
 
 
-
+/**
+ * 商品のリンクHTMLを表示
+ */
 function the_product_link_html($product_id)
 {
     $wc_product = wc_get_product($product_id);
@@ -164,6 +221,9 @@ function num_to_kanji($num)
     }
 }
 
+/**
+ * 税込み価格を取得
+ */
 function get_product_taxPrice($product_id, $convert_kanji=true)
 {
     $_product = wc_get_product($product_id);
