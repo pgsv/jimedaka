@@ -134,6 +134,9 @@
             margin-right: 4px;
           }
         }
+        @include ms {
+          display: table-cell;
+        }
         @include type_of_number_input($light_beige);
       }
       td.product-subtotal {
