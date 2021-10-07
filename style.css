@@ -4119,6 +4119,14 @@ header .header-foot-hamburgerMenu:hover {
   }
 }
 
+.tokushoho tr td a {
+  color: #23abdd;
+}
+
+.tokushoho tr td a:hover {
+  text-decoration: underline;
+}
+
 .tokushoho .wp-block-table.is-style-stripes {
   border-collapse: collapse;
 }
