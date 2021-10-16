@@ -100,10 +100,11 @@ function my_gettext($translated_text, $text, $domain)
 add_filter('gettext', 'my_gettext', 10, 3);
 
 /**
- * squareプラグイン読み込み時（？）に「注文する」ボタンのテキストを変更　
+ * squareプラグイン読み込み時（？）に「注文する」ボタンのテキストを変更
  * ※注）一般的なやり方だと、一時的に変更されるが、squareの情報を読み込む段階でもとに戻ってしまう
  */
-function custom_available_payment_gateways($payment) {
+function custom_available_payment_gateways($payment)
+{
     if ($payment) {
         // var_dump($payment);
         $payment['square_credit_card']->order_button_text = '注文を確定する';
@@ -127,7 +128,7 @@ add_filter('woocommerce_available_payment_gateways', 'custom_available_payment_g
 // function override_woo_frontend_scripts() {
 //     wp_deregister_script('wc-checkout');
 //     wp_enqueue_script('wc-checkout', get_template_directory_uri() . '/../storefront-child-theme-master/woocommerce/checkout.js', array('jquery', 'woocommerce', 'wc-country-select', 'wc-address-i18n'), null, true);
-// }  
+// }
 
 // function my_woocommerce_order_button_html($order_button_html)
 // {
@@ -245,7 +246,7 @@ function my_woocommerce_product_options_sold_individually()
 {
     ?>
 <script>
-    jQuery("#_sold_individually").prop("checked", true);
+    // jQuery("#_sold_individually").prop("checked", true);
 </script>
 <?php
 }
@@ -259,7 +260,7 @@ function my_woocommerce_product_options_stock()
 {
     ?>
 <script>
-    jQuery("#_manage_stock").prop("checked", true);
+    // jQuery("#_manage_stock").prop("checked", true);
 </script>
 <?php
 }
@@ -273,7 +274,13 @@ function my_woocommerce_product_options_stock_fields()
 {
     ?>
 <script>
-    jQuery("#_stock").val(1);
+    jQuery(function($) {
+                var stock = $("#_stock").val();
+                console.log('stock=>' + stock);
+                if (stock == 0) {
+                    $("#_stock").val(1);
+                }
+            }
 </script>
 <?php
 }
@@ -419,3 +426,14 @@ function custom_woocommerce_get_order_address($data)
     return $data;
 }
 add_filter('woocommerce_get_order_address', 'custom_woocommerce_get_order_address');
+
+
+function my_woocommerce_after_cart()
+{
+    ?>
+<script>
+    jQuery('th.product-name').attr('colspan', 2);
+</script>
+<?php
+}
+add_action('woocommerce_after_cart', 'my_woocommerce_after_cart');

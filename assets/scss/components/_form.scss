@@ -26,8 +26,9 @@
     font-size: 14px;
     background-color: $bg;
     border: solid 1px $grey-7;
+    margin-right: 20px;
     @include ms {
-      padding: 10px 12px;
+      padding: 7px 12px;
       width: 35px;
     }
   }

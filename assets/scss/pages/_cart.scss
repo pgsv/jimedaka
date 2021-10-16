@@ -1,189 +1,203 @@
-.lgForm {
-  display: block;
-  @include md {
-    display: none;
-  }
-}
-.smForm {
-  display: none;
-  @include md {
-    display: block;
-  }
-}
-
 .cart {
-  margin-top: $header_height;
-  background-color: $light_beige;
-  font-family: $font_document;
+  @include outside(false);
+  padding: 35px 10%;
+  @include md {
+    padding: 6px 6%;
+  }
+  &-wrapper{
+    max-width: 1000px;
+  }
   &-title {
-    // @include pageTitle();
-    padding: 46px 8%;
-    padding-bottom: 0;
-    display: flex;
-    align-items: center;
-    font-size: 32px;
-    margin-right: auto;
+    @include pageTitle();
   }
-  &-head {
-    // padding: 46px 8%;
-    // padding-bottom: 0;
-    // display: flex;
-    // align-items: center;
-    // &-title {
-    //   font-size: 32px;
-    //   margin-right: auto;
-    // }
-    &-link {
-      font-size: 12px;
-      color: $grey-7;
-      a {
-        color: $grey-7;
-      }
-    }
-  }
-  .woocommerce {
-    padding: 46px 8%;
-    padding-top: 0;
-    @include ms {
-      padding: 46px 3%;
-      padding-top: 0;
-    }
-  }
-
   table.woocommerce-cart-form__contents {
     width: 100%;
     margin-top: 52px;
-    tr th {
-      text-align: start;
-      font-size: 18px;
-      border-bottom: solid 1px $grey-b;
-      padding-bottom: 12px;
-    }
-    tr td {
-      vertical-align: middle;
-      border-bottom: solid 1px $grey-b;
-      padding: 16px 0;
-    }
-    @include md {
-      tr:nth-child(odd) td {
-        border-bottom: solid 1px $grey-e;
-      }
-    }
-    tr {
-      td.product-remove {
-        @include ms {
-          width: 30px;
-          text-align: right;
-        }
-      }
-      td.product-thumbnail {
-        width: 170px;
-        @include ms {
-          width: 100px;
-        }
-      }
-      td.product-name {
-        font-size: 18px;
-        font-weight: bold;
-        .product-desc {
-          max-width: 240px;
-          max-height: 64px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 13px;
-          color: $grey-7;
-          padding-top: 12px;
-          line-height: 22px;
-          position: relative;
-          padding-right: 10px;
-          &::after {
-            content: "...";
-            position: absolute;
-            right: 0;
-            bottom: 0;
-          }
-        }
-      }
-      td.product-price,
+    @include ms {
       td.product-subtotal {
-        @include ms {
-          text-align: right;
-          white-space: nowrap;
-          font-size: 16px !important;
-        }
+        border-bottom: 0;
       }
-      td.product-price {
+      margin-top: 32px;
+    }
+    thead {
+      @include md {
+        display: none;
+      }
+      th {
+        text-align: start;
         font-size: 18px;
-        font-weight: bold;
+        border-bottom: solid 1px $grey-b;
+        padding-bottom: 12px;
+        white-space: nowrap;
+      }
+      th.product-price,
+      th.product-quantity,
+      th.product-subtotal {
+        width: 150px;
+      }
+      th.product-thumbnail {
+        display: none;
+      }
+      th.product-price {
+        font-size: 0;
         &::before {
-          content: "1匹";
-          padding-right: 8px;
+          font-size: 18px;
+          content: "単価（税込）";
         }
+      }
+      th.product-subtotal {
         &::after {
-          content: "(税込)";
-          display: block;
-
-          padding-top: 8px;
-        }
-      }
-      td.product-quantity {
-        @include md {
-          display: flex;
-          align-items: center;
-          .product-quantity-label {
-            margin-right: 4px;
-          }
-        }
-        @include ms {
-          display: table-cell;
-        }
-        @include type_of_number_input($light_beige);
-      }
-      td.product-subtotal {
-        font-size: 18px;
-        font-weight: bold;
-        width: 140px;
-        color: $red;
-        @include ms {
-          width: 100px;
-        }
-      }
-      td.actions {
-        padding-bottom: 0;
-        button {
-          margin-left: auto;
-          margin-right: auto;
-          @include black-stroke-btn(160px, 42px, 14px);
-          .reloadImg {
-            width: 12px;
-            height: 12px;
-            margin-left: 6px;
-          }
-          &[aria-disabled="true"] {
-            color: $grey-b;
-            border: solid 1px $grey-b;
-            cursor: default;
-            .reloadImg {
-              opacity: 0.2;
-            }
-          }
+          content: "（税込）";
         }
       }
     }
-
-    img {
-      width: 140px;
-      height: 140px;
+    tr,
+    tr:first-child {
       @include ms {
-        width: 80px;
-        height: 80px;
+        border-bottom: 1px solid $grey-e;
+      }
+    }
+    td {
+      vertical-align: middle;
+      border-bottom: solid 1px $grey-e;
+      padding: 16px 0;
+      @include ms {
+        padding: 5px 0;
+        margin-left: 12px;
+      }
+    }
+    td.product-name,
+    td.product-price,
+    td.product-quantity,
+    td.product-subtotal {
+      font-size: 18px;
+      font-weight: bold;
+      white-space: nowrap;
+      @include md {
+        display: block;
+        width: 60%;
+        font-size: 18px;
+        margin-left: 30px;
+        &::before {
+          margin-right: 6px;
+        }
+      }
+      @include ms {
+        font-size: 14px;
+      }
+    }
+
+    td.product-remove,
+    td.product-thumbnail,
+    td.product-subtotal {
+      @include ms {
+        border: none;
+      }
+    }
+
+    td.product-remove {
+      width: 5%;
+      font-size: 11px;
+      text-align: center;
+      @include ms {
+        width: 24px;
+      }
+      a {
+        border-radius: 2px;
+        font-size: 16px;
+      }
+    }
+    td.product-thumbnail {
+      width: 20%;
+      @include md {
+        width: 40%;
+      }
+      a {
+        display: inline-block;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        min-width: 100px;
+        max-width: 300px;
+        @include ms {
+        }
+      }
+    }
+    td.product-name {
+      font-size: 22px;
+      width: 30%;
+      @include md {
+        font-size: 18px;
+      }
+      a {
+        padding-left: 20px;
+        @include md {
+          padding-left: 0;
+        }
+      }
+    }
+    td.product-price {
+      width: 15%;
+      @include md {
+        &::before {
+          content: "単価(税込):";
+        }
+      }
+    }
+    td.product-quantity {
+      width: 10%;
+      @include md {
+        display: flex;
+        align-items: center;
+        &::before {
+          content: "数量:";
+        }
+        .product-quantity-label {
+          margin-right: 4px;
+        }
+      }
+      @include type_of_number_input($light_beige);
+    }
+    td.product-subtotal {
+      width: 20%;
+      color: $red;
+      @include md {
+        width: 100px;
+        padding-bottom: 24px;
+        &::before {
+          content: "小計(税込):";
+        }
+      }
+      small.tax_label {
+        display: none;
+      }
+    }
+    td.actions {
+      padding-bottom: 0;
+      button {
+        margin-left: auto;
+        margin-right: auto;
+        @include black-stroke-btn(160px, 42px, 14px);
+        .reloadImg {
+          width: 12px;
+          height: 12px;
+          margin-left: 6px;
+        }
+        &[aria-disabled="true"] {
+          color: $grey-b;
+          border: solid 1px $grey-b;
+          cursor: default;
+          .reloadImg {
+            opacity: 0.2;
+          }
+        }
       }
     }
     tbody tr:last-of-type {
       display: none;
     }
   }
-
   .cart_totals {
     display: flex;
     flex-direction: column;
@@ -193,20 +207,29 @@
       font-size: 20px;
       margin-top: 32px;
       margin-bottom: 0px;
+      @include ms {
+        margin-right: 20px;
+      }
     }
     .wc-proceed-to-checkout {
       width: 400px;
       margin-top: 42px;
       padding-bottom: 100px;
       @include ms {
-        width: 100%;
+        width: 80%;
+        max-width: 300px;
+        margin: 42px auto;
       }
       a {
         @include red-fill-btn(100%, 42px);
+        white-space: nowrap;
       }
     }
     table {
       width: 400px;
+      @include ms {
+        margin-right: 20px;
+      }
       th {
         display: none;
       }
@@ -228,6 +251,9 @@
       td {
         font-size: 24px;
         text-align: end;
+        @include ms {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -242,3 +268,434 @@
     text-decoration: underline;
   }
 }
+
+
+
+// .lgForm {
+//   display: block;
+//   @include md {
+//     display: none;
+//   }
+// }
+// .smForm {
+//   display: none;
+//   @include md {
+//     display: block;
+//   }
+// }
+
+// .cart {
+//   margin-top: $header_height;
+//   background-color: $light_beige;
+//   font-family: $font_document;
+//   &-title {
+//     // @include pageTitle();
+//     padding: 46px 8%;
+//     padding-bottom: 0;
+//     display: flex;
+//     align-items: center;
+//     font-size: 32px;
+//     margin-right: auto;
+//   }
+//   &-head {
+//     // padding: 46px 8%;
+//     // padding-bottom: 0;
+//     // display: flex;
+//     // align-items: center;
+//     // &-title {
+//     //   font-size: 32px;
+//     //   margin-right: auto;
+//     // }
+//     &-link {
+//       font-size: 12px;
+//       color: $grey-7;
+//       a {
+//         color: $grey-7;
+//       }
+//     }
+//   }
+//   .woocommerce {
+//     padding: 46px 8%;
+//     padding-top: 0;
+//     @include ms {
+//       padding: 46px 3%;
+//       padding-top: 0;
+//     }
+//   }
+
+//   table.woocommerce-cart-form__contents {
+//     width: 100%;
+//     margin-top: 52px;
+//     thead {
+//       @include ms {
+//         display: none;
+//       }
+//     }
+//     tr th {
+//       text-align: start;
+//       font-size: 18px;
+//       border-bottom: solid 1px $grey-b;
+//       padding-bottom: 12px;
+//     }
+//     tr td {
+//       vertical-align: middle;
+//       border-bottom: solid 1px $grey-b;
+//       padding: 16px 0;
+//     }
+//     @include md {
+//       tr:nth-child(odd) td {
+//         border-bottom: solid 1px $grey-e;
+//       }
+//     }
+//     tr {
+//       td.product-remove {
+//         @include ms {
+//           width: 30px;
+//           text-align: right;
+//         }
+//       }
+//       td.product-thumbnail {
+//         width: 170px;
+//         @include ms {
+//           width: 100px;
+//         }
+//       }
+//       td.product-name {
+//         font-size: 18px;
+//         font-weight: bold;
+//         @include ms {
+//           display: block;
+//         }
+//         .product-desc {
+//           max-width: 240px;
+//           max-height: 64px;
+//           overflow: hidden;
+//           text-overflow: ellipsis;
+//           font-size: 13px;
+//           color: $grey-7;
+//           padding-top: 12px;
+//           line-height: 22px;
+//           position: relative;
+//           padding-right: 10px;
+//           &::after {
+//             content: "...";
+//             position: absolute;
+//             right: 0;
+//             bottom: 0;
+//           }
+//         }
+//       }
+//       td.product-price,
+//       td.product-subtotal {
+//         @include ms {
+//           display: block;
+//           text-align: right;
+//           white-space: nowrap;
+//           font-size: 16px !important;
+//         }
+//       }
+//       td.product-price {
+//         font-size: 18px;
+//         font-weight: bold;
+//         &::before {
+//           content: "1匹";
+//           padding-right: 8px;
+//         }
+//         &::after {
+//           content: "(税込)";
+//           display: block;
+
+//           padding-top: 8px;
+//         }
+//       }
+//       td.product-quantity {
+//         @include md {
+//           display: flex;
+//           align-items: center;
+//           .product-quantity-label {
+//             margin-right: 4px;
+//           }
+//         }
+//         @include ms {
+//           // display: table-cell;
+//           display: block
+//         }
+//         @include type_of_number_input($light_beige);
+//       }
+//       td.product-subtotal {
+//         font-size: 18px;
+//         font-weight: bold;
+//         width: 140px;
+//         color: $red;
+//         @include ms {
+//           width: 100px;
+//         }
+//       }
+//       td.actions {
+//         padding-bottom: 0;
+//         button {
+//           margin-left: auto;
+//           margin-right: auto;
+//           @include black-stroke-btn(160px, 42px, 14px);
+//           .reloadImg {
+//             width: 12px;
+//             height: 12px;
+//             margin-left: 6px;
+//           }
+//           &[aria-disabled="true"] {
+//             color: $grey-b;
+//             border: solid 1px $grey-b;
+//             cursor: default;
+//             .reloadImg {
+//               opacity: 0.2;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     img {
+//       width: 140px;
+//       height: 140px;
+//       @include ms {
+//         width: 80px;
+//         height: 80px;
+//       }
+//     }
+//     tbody tr:last-of-type {
+//       display: none;
+//     }
+//   }
+
+//   .cart_totals {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: flex-end;
+//     h2 {
+//       font-size: 20px;
+//       margin-top: 32px;
+//       margin-bottom: 0px;
+//     }
+//     .wc-proceed-to-checkout {
+//       width: 400px;
+//       margin-top: 42px;
+//       padding-bottom: 100px;
+//       @include ms {
+//         width: 100%;
+//       }
+//       a {
+//         @include red-fill-btn(100%, 42px);
+//       }
+//     }
+//     table {
+//       width: 400px;
+//       th {
+//         display: none;
+//       }
+
+//       td,
+//       th {
+//         padding-top: 16px;
+//       }
+//       .woocommerce-Price-amount {
+//         color: $red;
+//       }
+//       .cart-subtotal {
+//         font-size: 16px;
+//         display: none;
+//       }
+//       .order-total {
+//         font-size: 20px;
+//       }
+//       td {
+//         font-size: 24px;
+//         text-align: end;
+//       }
+//     }
+//   }
+//   .woocommerce-message {
+//     padding: 20px;
+//     background: #fff;
+//     margin: 20px 0;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
+//   }
+//   .restore-item {
+//     color: $red;
+//     text-decoration: underline;
+//   }
+// }
+
+
+
+
+
+// /* START Make the WooCommerce Cart Table Responsive  for Mobile */
+// /* CSS published in http://www.jeremycarter.com.au/optimising-woocommerce-checkout-for-mobile/ */
+
+// @media screen and (max-width: 600px) {
+
+//   /* Force table to not be like tables anymore */
+//   .woocommerce-page table.shop_table, 
+//   .woocommerce-page table.shop_table thead, 
+//   .woocommerce-page table.shop_table tbody, 
+//   .woocommerce-page table.shop_table th, 
+//   .woocommerce-page table.shop_table td, 
+//   .woocommerce-page table.shop_table tr { 
+//     display: block; 
+//   }
+  
+//   /* Hide table headers (but not display: none;, for accessibility) */
+//   .woocommerce-page table.shop_table thead tr { 
+//     position: absolute;
+//     top: -9999px;
+//     left: -9999px;
+//   }
+  
+//   .woocommerce-page table.shop_table tr { 
+//     /*border: 1px solid #d2d3d3; */
+//   }
+  
+//   .woocommerce-page table.shop_table td { 
+//     /* Behave  like a "row" */
+//     border: 1px solid #d2d3d3; 
+//     position: relative;
+//     padding-left: 30% !important; 
+//   }
+  
+//   .woocommerce-page table.shop_table {
+//     border: none;
+//   }
+  
+//   .woocommerce-page table.shop_table td.product-spacer {
+//     border-color: #FFF;
+//     height: 10px;
+//   }
+  
+//   .woocommerce-page table.shop_table td:before { 
+//     /* Now like a table header */
+//     position: absolute;
+//     /* Top/left values mimic padding */
+//     top: 6px;
+//     left: 6px;
+//     width: 45%; 
+//     padding-right: 10px; 
+//     white-space: nowrap;
+//   }
+// }
+  
+//   /*
+//   Label the data
+//   */
+//   .woocommerce-page table.shop_table td.product-remove:before {
+//     content: "DELETE";
+//   }
+  
+//   .woocommerce-page table.shop_table td.product-thumbnail:before {
+//     content: "IMAGE";
+//   }
+  
+//   .woocommerce-page table.shop_table td.product-name:before {
+//     content: "PRODUCT";
+//   }
+  
+//   .woocommerce-page table.shop_table td.product-price:before {
+//     content: "PRICE";
+//   }
+  
+//   .woocommerce-page table.shop_table td.product-quantity:before {
+//     content: "QUANTITY";
+//   }
+  
+//   .woocommerce-page table.shop_table td.product-subtotal:before {
+//     content: "SUBTOTAL";
+//   }
+  
+//   .woocommerce-page table.shop_table td.product-total:before {
+//     content: "TOTAL";
+//   }
+  
+//   .woocommerce .quantity, 
+//   .woocommerce #content .quantity, 
+//   .woocommerce-page .quantity, 
+//   .woocommerce-page #content .quantity {
+//     margin: 0;
+//   }
+  
+//   .woocommerce-page table.cart td.actions, 
+//   .woocommerce-page #content table.cart td.actions {
+//     text-align: left;
+//     border:0;
+//     padding-left: 6px !important;
+//   }
+  
+//   .woocommerce-page table.cart td.actions .button.alt, 
+//   .woocommerce-page #content table.cart td.actions .button.alt {
+//     float: left;
+//     margin-top: 10px;
+//   }
+  
+//   .woocommerce-page table.cart td.actions div, 
+//   .woocommerce-page #content table.cart td.actions div,
+//   .woocommerce-page table.cart td.actions input, 
+//   .woocommerce-page #content table.cart td.actions input {
+//     margin-bottom: 10px;
+//   }
+  
+//   .woocommerce-page .cart-collaterals .cart_totals {
+//     float: left;
+//     width: 100%;
+//     text-align: left;
+//   }
+  
+//   .woocommerce-page .cart-collaterals .cart_totals th, 
+//   .woocommerce-page .cart-collaterals .cart_totals td {
+//     border:0 !important;
+//   }
+  
+//   .woocommerce-page .cart-collaterals .cart_totals table tr.cart-subtotal td,
+//   .woocommerce-page .cart-collaterals .cart_totals table tr.shipping td,
+//   .woocommerce-page .cart-collaterals .cart_totals table tr.total td {
+//     padding-left: 6px !important;
+//   }
+  
+//   .woocommerce-page table.shop_table tr.cart-subtotal td,
+//   .woocommerce-page table.shop_table tr.shipping td,
+//   .woocommerce-page table.shop_table tr.total td,
+//   .woocommerce-page table.shop_table.order_details tfoot th,
+//   .woocommerce-page table.shop_table.order_details tfoot td {
+//     padding-left: 6px !important;
+//     border:0 !important;
+//   }
+  
+//   .woocommerce-page table.shop_table tbody {
+//     padding-top: 10px;
+//   }
+  
+//   .woocommerce .col2-set .col-1, 
+//   .woocommerce-page .col2-set .col-1,
+//   .woocommerce .col2-set .col-2, 
+//   .woocommerce-page .col2-set .col-2,
+//   .woocommerce form .form-row-first, 
+//   .woocommerce form .form-row-last, 
+//   .woocommerce-page form .form-row-first, 
+//   .woocommerce-page form .form-row-last {
+//     float: none;
+//     width: 100%;
+//   }
+  
+//   .woocommerce .order_details ul, 
+//   .woocommerce-page .order_details ul,
+//   .woocommerce .order_details, 
+//   .woocommerce-page .order_details {
+//     padding:0;
+//   }
+  
+//   .woocommerce .order_details li, 
+//   .woocommerce-page .order_details li {
+//     clear: left;
+//     margin-bottom: 10px;
+//     border:0;
+//   }
+  
+  
