@@ -10,7 +10,7 @@
   <?php include('template-parts/product_aside.php'); ?>
 
   <main class="singleProduct-wrapper">
-    <?php get_breadcrumbs(); ?>
+    <?php my_breadcrumbs(); ?>
     <div class="singleProduct-contents">
       <div class="singleProduct-left">
         <div class="smProductTitle">

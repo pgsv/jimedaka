@@ -13,6 +13,17 @@ function post_has_archive($args, $post_type)
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
+
+function change_admin_menu_label()
+{
+    global $menu;
+    global $submenu;
+    $name = 'お知らせ';
+    $menu[5][0] = $name;
+    $submenu['edit.php'][5][0] = $name.'一覧';
+}
+add_action('admin_menu', 'change_admin_menu_label');
+
 /**
  * カスタムフィールドを取得
  */
@@ -43,13 +54,24 @@ function add_user_script()
 }
 add_action('wp_enqueue_scripts', 'add_user_script');
 
+/**
+ * 404ページをホームにリダイレクト
+ */
+function is404_redirect_home()
+{
+    if (is_404()) {
+        wp_safe_redirect(home_url('/'));
+        exit();
+    }
+}
+//add_action( 'template_redirect', 'is404_redirect_home' );
 
 /*
 * 商品詳細のスラッグをIDで採番
 */
 function custom_auto_post_slug($slug, $post_ID, $post_status, $post_type)
 {
-    if ($post_type == 'product') {
+    if ($post_type == 'product' || $post_type == 'post') {
         $slug = $post_ID;
     }
     return $slug;
@@ -70,11 +92,14 @@ function update_message_admin_only()
 add_action('admin_init', 'update_message_admin_only');
 
 /**
- * ?author=ID からユーザー名が見れるため、強制的にホーム画面にリダイレクトする
+ * 特殊なURLをホーム画面にリダイレクトする
+ * （補足）
+ * ・is_author => ?author=ID からユーザー名が見れてしまう
+ * ・is_shop => 既存のショップページに飛んでしまう
  */
 function theme_slug_redirect_author_archive()
 {
-    if (is_author()) {
+    if (is_author() || is_shop()) {
         wp_redirect(home_url());
         exit;
     }
@@ -84,9 +109,54 @@ add_action('template_redirect', 'theme_slug_redirect_author_archive');
 /**
  * パンくずリストを表示
  */
-function get_breadcrumbs()
+// function get_breadcrumbs()
+// {
+//     if (function_exists('yoast_breadcrumb')) {
+//         yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+//     }
+// }
+
+function get_permalink_home()
 {
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    return '<a href="'.esc_url(home_url()).'">ホーム</a>';
+}
+
+/**
+ * メダカ一覧のパーマリンクを取得
+ */
+function get_permalink_products()
+{
+    return '<a href="'.esc_url(home_url().'/products').'">メダカ一覧</a>';
+}
+
+/**
+ * パンくずリストを表示
+ */
+function my_breadcrumbs()
+{
+    echo '<div id="breadcrumbs"><ul>';
+
+    $sep = '>';
+    $post_type = get_post_type(get_the_ID());
+    // echo $post_type;
+
+    switch ($post_type) {
+        case 'page':
+            $link_name = get_the_title();
+            break;
+
+        case 'product':
+            $link_name = get_permalink_products().$sep.get_the_title();
+            break;
+        
+        case 'post':
+            $link_name = '';
+            break;
+
+        default:
+            $link_name = '';
     }
+    
+    echo get_permalink_home().$sep.$link_name;
+    echo '</ul></div>';
 }

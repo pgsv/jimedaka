@@ -17,12 +17,10 @@ button {
 }
 
 .wrap {
-  // max-width: 1000px;
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
   main {
-    // width: 60%;
     padding: 0 20px;
   }
 }
@@ -35,4 +33,9 @@ button {
 #breadcrumbs {
   text-align: right;
   margin-right: 30px;
+  @include ms {
+    font-size: 11px;
+    margin-right: 10px;
+    margin-bottom: 20px
+  }
 }
