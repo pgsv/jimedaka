@@ -35,7 +35,7 @@
   font-size: 32px;
   margin-bottom: 64px;
   @include ms {
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 32px;
   }
 }
@@ -47,13 +47,16 @@
     padding: 36px 8%;
   }
   @include ms {
-      padding: 10px;
+      padding: 0;
   }
 }
 @mixin inside {
   background-color: white;
   border-top: solid 6px $dark_beige;
   padding: 64px 8%;
+  @include ms {
+    padding: 20px 6%;
+  }
 }
 @mixin contents {
   min-height: 100vh;
@@ -61,7 +64,7 @@
   word-break: break-all; 
   line-height: 200%;
   @include ms {
-      font-size: 13px;
+    font-size: 13px;
   }
 }
 @mixin basic {

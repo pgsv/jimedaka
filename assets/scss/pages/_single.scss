@@ -1,22 +1,5 @@
 .singleNews {
-  margin-top: $header_height;
-  background-color: $light_beige;
-  padding: 36px 8%;
-  &-wrapper {
-    font-family: $font_document;
-    background-color: white;
-    border-top: solid 6px $dark_beige;
-    padding: 64px 8%;
-  }
-  &-title {
-    @include pageTitle;
-  }
-  &-contents {
-    min-height: 100vh;
-    font-size: 17px;
-    word-break: break-all;
-    line-height: 200%;
-  }
+  @include basic();
 }
 
 .slider,
