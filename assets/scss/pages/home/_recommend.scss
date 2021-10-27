@@ -107,6 +107,10 @@
           font-weight: bold;
           font-size: 22px;
           margin-left: 12px;
+          white-space: nowrap;
+          @include sm {
+            margin-bottom: 10px;
+          }
         }
         &-price {
           text-align: center;
@@ -127,9 +131,10 @@
           font-weight: bold;
           line-height: 1.6em;
           letter-spacing: 1.2px;
+          word-break: break-word;
           @include sm {
             padding: 0 10px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
           }
         }
       }

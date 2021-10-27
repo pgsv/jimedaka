@@ -1619,7 +1619,6 @@ button {
 
 #breadcrumbs {
   text-align: right;
-  margin-right: 30px;
 }
 
 @media screen and (max-width: 576px) {
@@ -1708,6 +1707,7 @@ header .header-body ul li {
   font-size: 16px;
   margin-left: 16px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 992px) {
@@ -2061,6 +2061,7 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 992px) {
@@ -2084,13 +2085,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .footer-body-right .footerNav {
-  text-align: right;
-}
-
-@media screen and (max-width: 576px) {
-  .footer-body-right .footerNav {
-    text-align: left;
-  }
+  text-align: left;
 }
 
 .footer-body-right .footerNav:first-child {
@@ -2118,7 +2113,7 @@ header .header-foot-hamburgerMenu:hover {
   position: absolute;
   width: 3px;
   height: calc(120%);
-  right: -16px;
+  left: -16px;
   top: -4px;
 }
 
@@ -2165,6 +2160,10 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin-bottom: 10px;
 }
 
@@ -2174,6 +2173,11 @@ header .header-foot-hamburgerMenu:hover {
 
 .footer-foot .share li:first-child {
   margin-left: none;
+}
+
+.footer-foot .share li img {
+  display: block;
+  margin-left: 10px;
 }
 
 .footer-foot .copyright {
@@ -2376,6 +2380,7 @@ header .header-foot-hamburgerMenu:hover {
   position: absolute;
   top: 50%;
   right: 20px;
+  white-space: nowrap;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   color: #333333;
@@ -2462,6 +2467,12 @@ header .header-foot-hamburgerMenu:hover {
   color: #b5b5b5;
   font-size: 14px;
   width: 300%;
+}
+
+@media screen and (max-width: 576px) {
+  .top-right .news-body dl dt a {
+    font-size: 9px;
+  }
 }
 
 .top-right .news-body .separation {
@@ -2691,6 +2702,13 @@ header .header-foot-hamburgerMenu:hover {
   font-weight: bold;
   font-size: 22px;
   margin-left: 12px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-body .recommendItem-body-name {
+    margin-bottom: 10px;
+  }
 }
 
 .recommend-body .recommendItem-body-price {
@@ -2716,12 +2734,13 @@ header .header-foot-hamburgerMenu:hover {
   font-weight: bold;
   line-height: 1.6em;
   letter-spacing: 1.2px;
+  word-break: break-word;
 }
 
 @media screen and (max-width: 768px) {
   .recommend-body .recommendItem-body-desc {
     padding: 0 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -2915,7 +2934,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .products-title {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 32px;
   }
 }
@@ -2941,8 +2960,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .products-wrapper {
-    padding: 30px 10px;
-    padding-top: 60px;
+    padding: 20px 10px;
   }
 }
 
@@ -3016,6 +3034,7 @@ header .header-foot-hamburgerMenu:hover {
   font-weight: bold;
   font-size: 12px;
   padding: 10px 20px;
+  white-space: nowrap;
 }
 
 .products-contents .products-list-wrapper {
@@ -3056,7 +3075,7 @@ header .header-foot-hamburgerMenu:hover {
   display: none;
   position: absolute;
   right: 20px;
-  top: 10px;
+  top: 50px;
   padding: 10px;
   background-color: #f7f3ec;
   border: solid 1px #b5b5b5;
@@ -3179,8 +3198,21 @@ header .header-foot-hamburgerMenu:hover {
   display: flex;
 }
 
+.singleProduct-wrapper {
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
 .singleProduct #breadcrumbs {
-  margin-top: 30px;
+  margin-right: 160px;
+  margin-top: 20px;
+}
+
+.singleProduct .products-search {
+  display: none;
 }
 
 .singleProduct-contents {
@@ -3200,6 +3232,7 @@ header .header-foot-hamburgerMenu:hover {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 0;
   }
 }
 
@@ -3215,7 +3248,8 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  width: 40%;
+  max-width: 600px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -3223,8 +3257,9 @@ header .header-foot-hamburgerMenu:hover {
 @media screen and (max-width: 768px) {
   .singleProduct-left {
     width: 100%;
-    padding: 20px 0;
     padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 20px;
     margin-right: 0;
   }
 }
@@ -3293,6 +3328,10 @@ header .header-foot-hamburgerMenu:hover {
   transition: 0.2s;
 }
 
+.singleProduct-left-subImg li.slick-slide {
+  height: inherit;
+}
+
 .singleProduct-left-subImg li.slick-slide:last-of-type {
   margin-right: 0;
 }
@@ -3319,7 +3358,8 @@ header .header-foot-hamburgerMenu:hover {
 .singleProduct-right {
   padding: 0px 50px;
   padding-left: 10px;
-  width: 50%;
+  width: 60%;
+  max-width: 550px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -3474,7 +3514,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .contact {
-    padding: 10px;
+    padding: 0;
   }
 }
 
@@ -3484,6 +3524,12 @@ header .header-foot-hamburgerMenu:hover {
   padding: 64px 8%;
 }
 
+@media screen and (max-width: 576px) {
+  .contact-wrapper {
+    padding: 20px 6%;
+  }
+}
+
 .contact-title {
   font-size: 32px;
   margin-bottom: 64px;
@@ -3491,7 +3537,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .contact-title {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 32px;
   }
 }
@@ -3579,7 +3625,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .cart {
-    padding: 10px;
+    padding: 0;
   }
 }
 
@@ -3600,7 +3646,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .cart-title {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 32px;
   }
 }
@@ -4046,16 +4092,28 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .singleNews {
+  font-family: "Klee One", cursive;
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
 }
 
+@media screen and (max-width: 576px) {
+  .singleNews {
+    padding: 0;
+  }
+}
+
 .singleNews-wrapper {
-  font-family: "Klee One", cursive;
   background-color: white;
   border-top: solid 6px #b4aa98;
   padding: 64px 8%;
+}
+
+@media screen and (max-width: 576px) {
+  .singleNews-wrapper {
+    padding: 20px 6%;
+  }
 }
 
 .singleNews-title {
@@ -4065,7 +4123,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .singleNews-title {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 32px;
   }
 }
@@ -4075,6 +4133,12 @@ header .header-foot-hamburgerMenu:hover {
   font-size: 17px;
   word-break: break-all;
   line-height: 200%;
+}
+
+@media screen and (max-width: 576px) {
+  .singleNews-contents {
+    font-size: 13px;
+  }
 }
 
 .slider,
@@ -4102,7 +4166,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .privacy, .terms, .tokushoho, .guide {
-    padding: 10px;
+    padding: 0;
   }
 }
 
@@ -4112,6 +4176,12 @@ header .header-foot-hamburgerMenu:hover {
   padding: 64px 8%;
 }
 
+@media screen and (max-width: 576px) {
+  .privacy-wrapper, .terms-wrapper, .tokushoho-wrapper, .guide-wrapper {
+    padding: 20px 6%;
+  }
+}
+
 .privacy-title, .terms-title, .tokushoho-title, .guide-title {
   font-size: 32px;
   margin-bottom: 64px;
@@ -4119,7 +4189,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .privacy-title, .terms-title, .tokushoho-title, .guide-title {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 32px;
   }
 }
@@ -4322,7 +4392,7 @@ header .header-foot-hamburgerMenu:hover {
 
 @media screen and (max-width: 576px) {
   .checkout-title {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 32px;
   }
 }
