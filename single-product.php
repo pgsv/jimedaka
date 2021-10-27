@@ -1,4 +1,5 @@
 <style>
+  /* slick sliderの表示崩れを解消するための裏技 */
   * {
     min-height: 0;
     min-width: 0;

@@ -13,7 +13,9 @@ function post_has_archive($args, $post_type)
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
-
+/**
+ * 管理画面のお知らせラベルを変更
+ */
 function change_admin_menu_label()
 {
     global $menu;
@@ -64,7 +66,7 @@ function is404_redirect_home()
         exit();
     }
 }
-//add_action( 'template_redirect', 'is404_redirect_home' );
+add_action('template_redirect', 'is404_redirect_home');
 
 /*
 * 商品詳細のスラッグをIDで採番
@@ -76,7 +78,7 @@ function custom_auto_post_slug($slug, $post_ID, $post_status, $post_type)
     }
     return $slug;
 }
-  add_filter('wp_unique_post_slug', 'custom_auto_post_slug', 10, 4);
+add_filter('wp_unique_post_slug', 'custom_auto_post_slug', 10, 4);
 
 /**
  * 通知メッセージを管理者のみに表示
@@ -107,15 +109,8 @@ function theme_slug_redirect_author_archive()
 add_action('template_redirect', 'theme_slug_redirect_author_archive');
 
 /**
- * パンくずリストを表示
+ * ホームのパーマリンクを取得
  */
-// function get_breadcrumbs()
-// {
-//     if (function_exists('yoast_breadcrumb')) {
-//         yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-//     }
-// }
-
 function get_permalink_home()
 {
     return '<a href="'.esc_url(home_url()).'">ホーム</a>';
