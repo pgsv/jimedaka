@@ -37,19 +37,19 @@ do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain
 
 <div style="margin-bottom: 40px;">
 	<table class="td" cellspacing="0" cellpadding="6"
-		style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
+		style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border:0;">
 		<thead>
 			<tr>
 				<th class="td" scope="col"
-					style="text-align:<?php echo esc_attr($text_align); ?>;">
+					style="text-align:<?php echo esc_attr($text_align); ?>; border:0;">
 					<?php esc_html_e('Product', 'woocommerce'); ?>
 				</th>
 				<th class="td" scope="col"
-					style="text-align:<?php echo esc_attr($text_align); ?>;">
+					style="text-align:<?php echo esc_attr($text_align); ?>; border:0;">
 					<?php esc_html_e('Quantity', 'woocommerce'); ?>
 				</th>
 				<th class="td" scope="col"
-					style="text-align:<?php echo esc_attr($text_align); ?>;">
+					style="text-align:<?php echo esc_attr($text_align); ?>; border:0;">
 					<?php esc_html_e('Price', 'woocommerce'); ?>
 				</th>
 			</tr>
@@ -78,11 +78,11 @@ do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain
                     $i++; ?>
 			<tr>
 				<th class="td" scope="row" colspan="2"
-					style="text-align:<?php echo esc_attr($text_align); ?>; <?php echo (1 === $i) ? 'border-top-width: 4px;' : ''; ?>">
+					style="text-align:<?php echo esc_attr($text_align); ?>; <?php echo (1 === $i) ? 'border-top-width: 0px; border:0;' : 'border:0'; ?>">
 					<?php echo wp_kses_post($total['label']); ?>
 				</th>
 				<td class="td"
-					style="text-align:<?php echo esc_attr($text_align); ?>; <?php echo (1 === $i) ? 'border-top-width: 4px;' : ''; ?>">
+					style="text-align:<?php echo esc_attr($text_align); ?>; <?php echo (1 === $i) ? 'border-top-width: 0px; border:0;' : 'border:0'; ?>">
 					<?php echo wp_kses_post($total['value']); ?>
 				</td>
 			</tr>
@@ -93,11 +93,11 @@ do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain
                 ?>
 			<tr>
 				<th class="td" scope="row" colspan="2"
-					style="text-align:<?php echo esc_attr($text_align); ?>;">
+					style="text-align:<?php echo esc_attr($text_align); ?>; border:0;">
 					<?php esc_html_e('Note:', 'woocommerce'); ?>
 				</th>
 				<td class="td"
-					style="text-align:<?php echo esc_attr($text_align); ?>;">
+					style="text-align:<?php echo esc_attr($text_align); ?>; border:0;">
 					<?php echo wp_kses_post(nl2br(wptexturize($order->get_customer_note()))); ?>
 				</td>
 			</tr>
