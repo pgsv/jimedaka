@@ -137,11 +137,11 @@ function my_breadcrumbs()
 
     switch ($post_type) {
         case 'page':
-            $link_name = get_the_title();
+            $link_name = '<li>'.get_the_title().'</li>';
             break;
 
         case 'product':
-            $link_name = get_permalink_products().$sep.get_the_title();
+            $link_name = '<li>'.get_permalink_products().'</li><li>'.get_the_title().'</li>';
             break;
         
         case 'post':
@@ -152,6 +152,6 @@ function my_breadcrumbs()
             $link_name = '';
     }
     
-    echo get_permalink_home().$sep.$link_name;
+    echo '<li>'.get_permalink_home().'</li>'.$link_name;
     echo '</ul></div>';
 }

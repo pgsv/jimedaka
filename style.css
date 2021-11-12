@@ -1424,10 +1424,10 @@ form.wpcf7-form input[type="submit"] {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  white-space: nowrap;
   background-color: #333333;
   color: #ffffff;
   border: none;
@@ -1458,10 +1458,10 @@ form.wpcf7-form input[type="submit"]:hover {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    font-afamily: "New Tegomin", serif;
     cursor: pointer;
     -webkit-transition: 0.2s;
     transition: 0.2s;
+    white-space: nowrap;
     background-color: #333333;
     color: #ffffff;
     border: none;
@@ -1619,6 +1619,7 @@ button {
 
 #breadcrumbs {
   text-align: right;
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 576px) {
@@ -1627,6 +1628,31 @@ button {
     margin-right: 10px;
     margin-bottom: 20px;
   }
+}
+
+#breadcrumbs ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#breadcrumbs ul li {
+  list-style-type: none;
+}
+
+#breadcrumbs ul li:not(:last-child):after {
+  content: '>';
+  margin: 0 7px;
+}
+
+#breadcrumbs ul li a {
+  color: #418fdb;
+  text-decoration: none;
 }
 
 header {
@@ -2919,6 +2945,10 @@ header .header-foot-hamburgerMenu:hover {
   position: relative;
 }
 
+.products #breadcrumbs {
+  margin-bottom: 20px;
+}
+
 .products .cover {
   position: absolute;
   width: 100%;
@@ -2929,7 +2959,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .products-title {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
 }
 
 @media screen and (max-width: 576px) {
@@ -2940,20 +2970,21 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .products-wrapper {
-  padding: 30px 70px;
+  padding: 20px 70px;
+  padding-top: 20px;
   background-color: #f7f3ec;
   width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
   .products-wrapper {
-    padding: 30px 40px;
+    padding: 20px 40px;
   }
 }
 
 @media screen and (max-width: 992px) {
   .products-wrapper {
-    padding: 30px 20px;
+    padding: 20px 20px;
     padding-top: 60px;
   }
 }
@@ -3191,11 +3222,19 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .singleProduct {
+  font-family: "Klee One", cursive;
   margin-top: 80px;
+  background-color: #f7f3ec;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 576px) {
+  .singleProduct {
+    padding: 0;
+  }
 }
 
 .singleProduct-wrapper {
@@ -3204,11 +3243,27 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: start;
       -ms-flex-pack: start;
           justify-content: start;
+  padding-bottom: 64px;
 }
 
 .singleProduct #breadcrumbs {
-  margin-right: 160px;
-  margin-top: 20px;
+  margin-left: 45px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.singleProduct #breadcrumbs ul {
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media screen and (max-width: 992px) {
+  .singleProduct #breadcrumbs {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .singleProduct .products-search {
@@ -3237,8 +3292,9 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .singleProduct-left {
-  padding: 0px 50px;
-  padding-right: 10px;
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3257,102 +3313,10 @@ header .header-foot-hamburgerMenu:hover {
 @media screen and (max-width: 768px) {
   .singleProduct-left {
     width: 100%;
-    padding-left: 0;
-    padding-top: 0;
+    padding: 0;
     padding-bottom: 20px;
-    margin-right: 0;
+    margin: 0;
   }
-}
-
-.singleProduct-left .smProductTitle {
-  display: none;
-  padding: 16px 30px;
-  padding-bottom: 16px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .singleProduct-left .smProductTitle {
-    display: block;
-  }
-}
-
-.singleProduct-left-img {
-  width: 100%;
-  padding-top: 100%;
-  background-position: center center;
-  background-size: cover;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.singleProduct-left-img:hover {
-  opacity: 0.8;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.singleProduct-left ul.thumb li {
-  margin-top: 28px;
-}
-
-.singleProduct-left-subImg {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.singleProduct-left-subImg li {
-  width: 20%;
-  margin-right: 20px;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.singleProduct-left-subImg li:hover {
-  opacity: 0.8;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.singleProduct-left-subImg li.slick-slide {
-  height: inherit;
-}
-
-.singleProduct-left-subImg li.slick-slide:last-of-type {
-  margin-right: 0;
-}
-
-.singleProduct-left-subImg div.slick-track {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.singleProduct-left-subImg li div {
-  width: 100%;
-  padding-top: 100%;
-  background-position: center center;
-  background-size: cover;
-  border-radius: 2px;
 }
 
 .singleProduct-right {
@@ -3373,47 +3337,44 @@ header .header-foot-hamburgerMenu:hover {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -webkit-flex-direction: column-reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-.singleProduct-right .lgProductTitle {
-  display: block;
-}
-
-@media screen and (max-width: 768px) {
-  .singleProduct-right .lgProductTitle {
-    display: none;
-  }
-}
-
-.singleProduct-right-head {
+.singleProduct-right .product-title {
   font-size: 32px;
   margin-bottom: 20px;
 }
 
-.singleProduct-right-price {
+@media screen and (max-width: 576px) {
+  .singleProduct-right .product-title {
+    font-size: 26px;
+  }
+}
+
+.singleProduct-right .product-price {
   font-size: 24px;
   margin-bottom: 26px;
 }
 
-.singleProduct-right-price .red {
+@media screen and (max-width: 576px) {
+  .singleProduct-right .product-price {
+    font-size: 20px;
+  }
+}
+
+.singleProduct-right .product-price .red {
   font-size: 20px;
 }
 
-.singleProduct-right-desc {
+.singleProduct-right .product-desc {
   font-size: 16px;
   line-height: 28px;
   letter-spacing: auto;
-}
-
-@media screen and (max-width: 768px) {
-  .singleProduct-right-desc {
-    padding-bottom: 100px;
-  }
+  margin-bottom: 30px;
 }
 
 .singleProduct-right .singleProductForm {
@@ -3428,6 +3389,12 @@ header .header-foot-hamburgerMenu:hover {
           align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+  .singleProduct-right .singleProductForm {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .singleProduct-right .singleProductForm {
     margin-top: 0;
@@ -3436,9 +3403,7 @@ header .header-foot-hamburgerMenu:hover {
 }
 
 .singleProduct-right .singleProductForm-submitBtn {
-  margin-left: 50px;
-  max-width: 400px;
-  margin-left: auto;
+  max-width: 286px;
   border-radius: 3px;
   width: 100%;
   height: 64px !important;
@@ -3456,10 +3421,10 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  white-space: nowrap;
   background-color: #8b1c2a;
   color: #ffffff;
   border: none;
@@ -3471,6 +3436,21 @@ header .header-foot-hamburgerMenu:hover {
   transition: 0.2s;
 }
 
+@media screen and (max-width: 576px) {
+  .singleProduct-right .singleProductForm-submitBtn {
+    font-size: 16px;
+  }
+}
+
+.singleProduct-right .singleProductForm-submitBtn span {
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 .numberInput {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3480,29 +3460,96 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 10px;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 
 .numberInput-label {
   font-size: 18px;
-  margin-right: 14px;
+  margin-right: 10px;
   white-space: nowrap;
 }
 
 .numberInput input[type="number"] {
-  padding: 16px 20px;
+  max-width: 80px;
+  padding: 16px 10px;
   font-size: 14px;
   background-color: #ffffff;
   border: solid 1px #767676;
-  margin-right: 20px;
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 576px) {
   .numberInput input[type="number"] {
-    padding: 7px 12px;
-    width: 35px;
+    padding: 14px 12px;
   }
+}
+
+@media screen and (max-width: 576px) {
+  .numberInput {
+    margin-bottom: 20px;
+  }
+}
+
+ul.slick-slider {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul.slick-slider li {
+  width: 20%;
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+ul.slick-slider li:hover {
+  opacity: 0.8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+ul.slick-slider li div {
+  width: 100%;
+  padding-top: 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  border-radius: 3px;
+}
+
+ul.thumb li {
+  margin-top: 12px;
+}
+
+li.slick-slide {
+  height: inherit;
+}
+
+li.slick-slide:last-of-type {
+  margin-right: 0;
+}
+
+div.slick-track {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .contact {
@@ -3521,7 +3568,7 @@ header .header-foot-hamburgerMenu:hover {
 .contact-wrapper {
   background-color: white;
   border-top: solid 6px #b4aa98;
-  padding: 64px 8%;
+  padding: 24px 8%;
 }
 
 @media screen and (max-width: 576px) {
@@ -3532,7 +3579,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .contact-title {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
 }
 
 @media screen and (max-width: 576px) {
@@ -3641,7 +3688,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .cart-title {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
 }
 
 @media screen and (max-width: 576px) {
@@ -3860,22 +3907,22 @@ header .header-foot-hamburgerMenu:hover {
 
 .cart table.woocommerce-cart-form__contents td.product-quantity-label {
   font-size: 18px;
-  margin-right: 14px;
+  margin-right: 10px;
   white-space: nowrap;
 }
 
 .cart table.woocommerce-cart-form__contents td.product-quantity input[type="number"] {
-  padding: 16px 20px;
+  max-width: 80px;
+  padding: 16px 10px;
   font-size: 14px;
   background-color: #f7f3ec;
   border: solid 1px #767676;
-  margin-right: 20px;
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 576px) {
   .cart table.woocommerce-cart-form__contents td.product-quantity input[type="number"] {
-    padding: 7px 12px;
-    width: 35px;
+    padding: 14px 12px;
   }
 }
 
@@ -3921,10 +3968,10 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  white-space: nowrap;
   background-color: transparent;
   color: #333333;
   border: solid 1px #333333;
@@ -4019,10 +4066,10 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  white-space: nowrap;
   background-color: #8b1c2a;
   color: #ffffff;
   border: none;
@@ -4033,6 +4080,12 @@ header .header-foot-hamburgerMenu:hover {
   opacity: 0.8;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+@media screen and (max-width: 576px) {
+  .cart .cart_totals .wc-proceed-to-checkout a {
+    font-size: 16px;
+  }
 }
 
 .cart .cart_totals table {
@@ -4107,7 +4160,7 @@ header .header-foot-hamburgerMenu:hover {
 .singleNews-wrapper {
   background-color: white;
   border-top: solid 6px #b4aa98;
-  padding: 64px 8%;
+  padding: 24px 8%;
 }
 
 @media screen and (max-width: 576px) {
@@ -4118,7 +4171,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .singleNews-title {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
 }
 
 @media screen and (max-width: 576px) {
@@ -4173,7 +4226,7 @@ header .header-foot-hamburgerMenu:hover {
 .privacy-wrapper, .terms-wrapper, .tokushoho-wrapper, .guide-wrapper {
   background-color: white;
   border-top: solid 6px #b4aa98;
-  padding: 64px 8%;
+  padding: 24px 8%;
 }
 
 @media screen and (max-width: 576px) {
@@ -4184,7 +4237,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .privacy-title, .terms-title, .tokushoho-title, .guide-title {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
 }
 
 @media screen and (max-width: 576px) {
@@ -4386,7 +4439,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .checkout-title {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
   margin-left: 35px;
 }
 
@@ -5165,10 +5218,10 @@ header .header-foot-hamburgerMenu:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-afamily: "New Tegomin", serif;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  white-space: nowrap;
   background-color: #8b1c2a;
   color: #ffffff;
   border: none;
@@ -5178,6 +5231,12 @@ header .header-foot-hamburgerMenu:hover {
   opacity: 0.8;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+@media screen and (max-width: 576px) {
+  #payment #place_order {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 992px) {

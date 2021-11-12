@@ -33,7 +33,7 @@
 }
 @mixin pageTitle {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
   @include ms {
       font-size: 20px;
       margin-bottom: 32px;
@@ -53,7 +53,7 @@
 @mixin inside {
   background-color: white;
   border-top: solid 6px $dark_beige;
-  padding: 64px 8%;
+  padding: 24px 8%;
   @include ms {
     padding: 20px 6%;
   }
