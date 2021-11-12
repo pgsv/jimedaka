@@ -27,7 +27,8 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
 <?php /* translators: %s: Customer first name */ ?>
 <p><?php printf(esc_html__('Hi %s,', 'woocommerce'), esc_html($order->get_billing_last_name() .' '.$order->get_billing_first_name())); ?>
 </p>
-<p><?php esc_html_e('We have finished processing your order.', 'woocommerce'); ?>
+<p>この度は、当店をご利用いただきありがとうございました。<br>
+    本日、ご注文の商品を発送しましたので、お知らせいたします。
 </p>
 <?php
 

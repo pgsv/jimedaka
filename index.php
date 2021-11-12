@@ -55,37 +55,43 @@
         </div>
     </div>
     <div class="recommend">
-        <div class="recommend-head">注目のメダカ</div>
+        <div class="recommend-head">注目のメダカ種</div>
         <div class="recommend-body">
-            <?php for ($i = 1; $i <= 3; $i++) { ?>
+            <?php for ($i = 1; $i <= 3; $i++) {?>
             <div class="recommendItem">
                 <?php
-                    $field_medaka = get_custom_field('medaka_'.$i, 'custom-field');
-                    $field_desc = get_custom_field('description_'.$i, 'custom-field');
-                    $product_id = $field_medaka['value']->ID
+                    $term_id = get_custom_field('medaka_'.$i, 'recommend-products')['value'];
+                    $recommend_desc = get_custom_field('description_'.$i, 'recommend-products')['value'];
+                    //$product_id = $field_medaka['value']->ID
+                    // echo $term_id;
+                    // echo $recommend_desc;
+                    $term_object = get_term($term_id);
+                    $term_slug = $term_object->slug;
+                    $term_thumb_url = get_wc_thumb_url($term_id);
+                    // echo $term_slug;
                     ?>
                 <a class="recommendItem-head"
-                    href="<?php echo get_permalink($product_id); ?>">
+                    href="<?php echo get_medaka_cat_url($term_slug);?>">
                     <img class="recommendItem-head-img"
-                        src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
-                        alt="<?php echo $product->slug ?>">
-                    <span class="recommendItem-head-label">当店一番人気</span>
+                        src="<?php echo $term_thumb_url;?>"
+                        alt="<?php echo $term_slug?>">
+                    <span class="recommendItem-head-label">当店一押し</span>
                 </a>
                 <div class="recommendItem-body">
                     <div class="recommendItem-body-name">
-                        <?php echo get_the_title($product_id); ?>
+                        <?php echo $term_object->name;?>
                     </div>
-                    <div class="recommendItem-body-price">
-                        <?php echo get_product_taxPrice($product_id); ?>円<span
-                            class="light_red">（税込）</span>
-                    </div>
-                    <div class="recommendItem-body-desc">
-                        <?php echo $field_desc['value']; ?>
-                    </div>
+                    <!-- <div class="recommendItem-body-price">
+                        <?php //echo get_product_taxPrice($product_id);?>円<span
+                        class="light_red">（税込）</span>
+                </div> -->
+                <div class="recommendItem-body-desc">
+                    <?php echo $recommend_desc;?>
                 </div>
             </div>
-            <?php } ?>
         </div>
+        <?php }?>
+    </div>
     </div>
     <div class="deliveryflow">
         <div class="deliveryflow-left">

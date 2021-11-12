@@ -33,17 +33,19 @@
 }
 @mixin pageTitle {
   font-size: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 54px;
   @include ms {
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 32px;
   }
 }
-@mixin outside {
+@mixin outside($need_padding: true) {
   font-family: $font_document;
   margin-top: $header_height;
   background-color: $light_beige;
-  padding: 36px 8%;
+  @if $need_padding {
+    padding: 36px 8%;
+  }
   @include ms {
       padding: 0;
   }
@@ -51,7 +53,10 @@
 @mixin inside {
   background-color: white;
   border-top: solid 6px $dark_beige;
-  padding: 64px 8%;
+  padding: 24px 8%;
+  @include ms {
+    padding: 20px 6%;
+  }
 }
 @mixin contents {
   min-height: 100vh;
@@ -59,7 +64,7 @@
   word-break: break-all; 
   line-height: 200%;
   @include ms {
-      font-size: 13px;
+    font-size: 13px;
   }
 }
 @mixin basic {

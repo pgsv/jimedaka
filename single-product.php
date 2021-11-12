@@ -1,4 +1,5 @@
 <style>
+  /* slick sliderの表示崩れを解消するための裏技 */
   * {
     min-height: 0;
     min-width: 0;
@@ -10,10 +11,10 @@
   <?php include('template-parts/product_aside.php'); ?>
 
   <main class="singleProduct-wrapper">
-    <?php get_breadcrumbs(); ?>
+    <?php my_breadcrumbs(); ?>
     <div class="singleProduct-contents">
       <div class="singleProduct-left">
-        <div class="smProductTitle">
+        <!-- <div class="smProductTitle">
           <h1 class="singleProduct-right-head">
             <?php the_title(); ?>
           </h1>
@@ -21,7 +22,7 @@
             ￥<?php echo get_product_taxPrice(get_the_ID(), false); ?>円
             <span class="red">（税込）</span>
           </div>
-        </div>
+        </div> -->
         <?php if (have_posts()): while (have_posts()):the_post(); ?>
         <?php $_product = wc_get_product(get_the_ID()); ?>
         <ul class="singleProduct-left-subImg slider">
@@ -57,31 +58,28 @@
       </div>
 
       <div class="singleProduct-right">
-        <div class="lgProductTitle">
-          <h1 class="singleProduct-right-head">
-            <?php the_title(); ?>
-          </h1>
-          <div class="singleProduct-right-price">
-            ￥<?php echo get_product_taxPrice(get_the_ID(), false); ?>円
-            <span class="red">（税込）</span>
-          </div>
+        <div class="product-title">
+          <h1><?php the_title(); ?></h1>
         </div>
-        <div class="singleProduct-right-desc">
+        <div class="product-price">
+          ￥<?php echo get_product_taxPrice(get_the_ID(), false); ?>円
+          <span class="red">（税込）</span>
+        </div>
+        <div class="product-desc">
           <?php echo wc_get_product(get_the_ID())->description;?>
         </div>
 
         <?php
-      if (! $_product->is_purchasable()) {
-          return;
-      }
-      // 在庫の表示
-      // echo wc_get_stock_html($_product); // WPCS: XSS ok.
-      if ($_product->is_in_stock()) : ?>
+        if (! $_product->is_purchasable()) {
+            return;
+        }
+        // 在庫の表示
+        // echo wc_get_stock_html($_product); // WPCS: XSS ok.
+        if ($_product->is_in_stock()) : ?>
         <?php do_action('woocommerce_before_add_to_cart_form'); ?>
-        <form class="singleProductForm"
-          action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $_product->get_permalink())); ?>"
-          method="post" enctype='multipart/form-data'>
+        <form class="singleProductForm" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $_product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
           <?php do_action('woocommerce_before_add_to_cart_button'); ?>
+
           <!--  個別販売の時は非表示 -->
           <?php if (! $_product->is_sold_individually()): ?>
           <div class="numberInput">
@@ -100,9 +98,12 @@
             ?>
           </div>
           <?php endif; ?>
-          <button class="singleProductForm-submitBtn" type="submit" name="add-to-cart"
-            value="<?php echo esc_attr($_product->get_id()); ?>"
-            class="single_add_to_cart_button button alt">お買い物カゴに入れる</button>
+
+          <button class="singleProductForm-submitBtn single_add_to_cart_button button alt" type="submit" name="add-to-cart" value="<?php echo esc_attr($_product->get_id()); ?>">
+            <span style="background-image: url(<?php echo esc_url(get_template_directory_uri().'/assets/img/cart3.svg'); ?>)"></span>
+            お買い物カゴに入れる
+          </button>
+          
           <?php do_action('woocommerce_after_add_to_cart_button'); ?>
         </form>
         <?php do_action('woocommerce_after_add_to_cart_form'); ?>

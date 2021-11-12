@@ -17,12 +17,10 @@ button {
 }
 
 .wrap {
-  // max-width: 1000px;
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
   main {
-    // width: 60%;
     padding: 0 20px;
   }
 }
@@ -34,5 +32,26 @@ button {
 }
 #breadcrumbs {
   text-align: right;
-  margin-right: 30px;
+  // margin-right: 150px;
+  margin-bottom: 40px;
+  @include ms {
+    font-size: 11px;
+    margin-right: 10px;
+    margin-bottom: 20px
+  }
+  ul {
+    display: flex;
+    justify-content: end;
+    li {
+      list-style-type: none;
+      &:not(:last-child):after {
+        content: '>';
+        margin: 0 7px;
+      }
+      a {
+        color: #418fdb;
+        text-decoration: none;
+      }
+    }
+  }
 }
