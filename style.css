@@ -3167,58 +3167,173 @@ header .header-foot-hamburgerMenu:hover {
   margin: 0;
 }
 
-.myaccount-title {
-  margin: auto;
-  width: 780px;
-  font-size: 1.6em;
-  padding: 15px;
+.my-account {
+  font-family: "Klee One", cursive;
+  margin-top: 80px;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
 }
 
-.myAccount-contents > .woocommerce {
+@media screen and (max-width: 576px) {
+  .my-account {
+    padding: 0;
+  }
+}
+
+.my-account-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 24px 8%;
+}
+
+@media screen and (max-width: 576px) {
+  .my-account-wrapper {
+    padding: 20px 6%;
+  }
+}
+
+.my-account-title {
+  font-size: 32px;
+  margin-bottom: 54px;
+}
+
+@media screen and (max-width: 576px) {
+  .my-account-title {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+}
+
+.my-account-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
+}
+
+@media screen and (max-width: 576px) {
+  .my-account-contents {
+    font-size: 13px;
+  }
+}
+
+.my-account .woocommerce {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 160px;
 }
 
-.woocommerce-MyAccount-navigation {
-  max-width: 1200px;
+nav.woocommerce-MyAccount-navigation {
+  white-space: nowrap;
 }
 
-.woocommerce-MyAccount-navigation-link {
-  width: 197px;
-  font-size: 1.3rem;
-  border-bottom: 1px solid #C4C4C4;
-  padding: 16px 0px;
+nav.woocommerce-MyAccount-navigation li {
+  border-bottom: darkgray solid 1px;
+  padding: 12px;
 }
 
-.myAccount-contents-links {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  width: 50%;
-  margin: 43px;
+nav.woocommerce-MyAccount-navigation li.is-active {
+  background-color: #f5f5f5;
 }
 
-.myAccount-contents-links li {
-  font-size: 1.8em;
-  width: 220px;
-  height: 100px;
-  margin: 10px;
-  border: 1px solid #3333;
+a.woocommerce-MyAccount-navigation-link {
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.myAccount-contents-links li a {
-  display: block;
+div.woocommerce-MyAccount-content {
   width: 100%;
-  height: 100%;
-  text-align: center;
-  padding-top: 30px;
+  padding: 0 48px;
+}
+
+table.woocommerce-MyAccount-orders {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.woocommerce-MyAccount-orders th {
+  text-align: left;
+  padding: 12px;
+}
+
+table.woocommerce-MyAccount-orders td {
+  padding: 12px;
+}
+
+.woocommerce-MyAccount-content thead {
+  display: none;
+}
+
+.woocommerce-MyAccount-content td {
+  width: 100%;
+  vertical-align: top;
+}
+
+.woocommerce-MyAccount-content table.woocommerce-orders-table {
+  margin-bottom: 30px;
+  border: 1px #D5D9D9 solid;
+  border-top-color: #d5d9d9;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: #d5d9d9;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: #d5d9d9;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #d5d9d9;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row {
+  display: table-row;
+  width: 100%;
+  table-layout: fixed;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row td {
+  padding: 12px;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail {
+  display: table-row;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #e5e5e5;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail td {
+  padding: 7px;
+  vertical-align: middle;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail td img {
+  display: block;
+  border-radius: 3px;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail td.woocommerce-orders-table__cell-order-name {
+  font-size: 17px;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail td.woocommerce-orders-table__cell-order-name a {
+  color: #418fdb;
+}
+
+.woocommerce-MyAccount-content td.woocommerce-orders-table__cell-order-thumbnail img {
+  width: 100%;
+  height: auto;
+  padding: 0;
 }
 
 .singleProduct {

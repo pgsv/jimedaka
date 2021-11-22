@@ -1,6 +1,22 @@
 <?php
 
 /**
+ * WooCommerce商品一覧のお買い物カゴボタンを非表示
+ */
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+
+/**
+ * WooCommerceのサムネ画像を取得
+ */
+function get_wc_thumb_url($term_id)
+{
+    $thumb_id = get_woocommerce_term_meta($term_id, 'thumbnail_id', true);
+    return wp_get_attachment_thumb_url($thumb_id);
+}
+
+
+/**
  * カテゴリー順の商品配列を取得
  */
 function get_product_args_by_cat()
