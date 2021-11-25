@@ -3262,13 +3262,8 @@ table.woocommerce-MyAccount-orders td {
   padding: 12px;
 }
 
-.woocommerce-MyAccount-content thead {
-  display: none;
-}
-
 .woocommerce-MyAccount-content td {
-  width: 100%;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .woocommerce-MyAccount-content table.woocommerce-orders-table {
@@ -3302,7 +3297,18 @@ table.woocommerce-MyAccount-orders td {
 }
 
 .woocommerce-MyAccount-content tr.woocommerce-orders-table__row td {
-  padding: 12px;
+  padding: 10px;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row .order-number,
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row .order-date {
+  font-size: 15px;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row .order-comment,
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row .order-total {
+  text-align: right;
+  padding-right: 30px;
 }
 
 .woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail {
@@ -3314,7 +3320,6 @@ table.woocommerce-MyAccount-orders td {
 
 .woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail td {
   padding: 7px;
-  vertical-align: middle;
 }
 
 .woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail td img {
@@ -3330,10 +3335,68 @@ table.woocommerce-MyAccount-orders td {
   color: #418fdb;
 }
 
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail .order-status span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e56b81eb;
+  color: #ed2f49;
+  font-size: 12px;
+  font-weight: bold;
+  width: 70px;
+  height: 23px;
+  margin-bottom: 30px;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail div.order-actions a.view {
+  width: 120px;
+  color: #ffffff !important;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+  padding: 5x 0 5px;
+  background: #8b9ea7;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.woocommerce-MyAccount-content tr.woocommerce-orders-table__row-order-detail div.order-actions a.view:hover {
+  background: #8b9ea7;
+}
+
 .woocommerce-MyAccount-content td.woocommerce-orders-table__cell-order-thumbnail img {
   width: 100%;
   height: auto;
   padding: 0;
+}
+
+.woocommerce-column--billing-address,
+.woocommerce-column--shipping-address {
+  width: 100%;
+}
+
+.woocommerce-column--billing-address table,
+.woocommerce-column--shipping-address table {
+  width: 100%;
+}
+
+.woocommerce-column--billing-address table td,
+.woocommerce-column--shipping-address table td {
+  width: 100%;
+  padding: 10px;
 }
 
 .singleProduct {

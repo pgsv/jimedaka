@@ -99,7 +99,10 @@ function add_order_details_after_order_table_row($order)
 
         if ( ! empty( $actions ) ) {
             foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-                echo '<td><a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a></td>';
+                echo '<td class="woocommerce-orders-table__cell-order-actions">
+                <div class="order-title">' . esc_html( wc_get_order_status_name( $order->get_status() ) ) . '</div>
+                <div><a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a></div>
+                </td>';
             }
         }
         echo '</tr>';
@@ -107,8 +110,67 @@ function add_order_details_after_order_table_row($order)
 }
 add_action('woocommerce_order_details_after_order_table_row', 'add_order_details_after_order_table_row');
 
-function remove_my_account_my_orders_column_order_actions()
-{
-    // 何もしない
-}
-add_action('woocommerce_my_account_my_orders_column_order-actions', 'remove_my_account_my_orders_column_order_actions');
+// function remove_my_account_my_orders_column_order_actions()
+// {
+//     // 何もしない
+// }
+// add_action('woocommerce_my_account_my_orders_column_order-actions', 'remove_my_account_my_orders_column_order_actions');
+
+
+// function remove_my_account_my_orders_column_order_status()
+// {
+//     // 何もしない
+// }
+// add_action('woocommerce_my_account_my_orders_column_order-status', 'remove_my_account_my_orders_column_order_status');
+
+
+// function remove_my_account_my_orders_column_order_date()
+// {
+//     // 何もしない
+// }
+// add_action('woocommerce_my_account_my_orders_column_order-date', 'remove_my_account_my_orders_column_order_date');
+
+/**
+ * 注文履歴ページの注文番号の表示
+ */
+// function custom_my_account_my_orders_column_order_number( $order )
+// {
+//     echo '<td><a href="' . esc_url( $order->get_view_order_url() ) . '">
+//              <div>注文番号：' . esc_html( $order->get_order_number() ) . '</div>
+//              <div>注文日：<time datetime="' . esc_attr( $order->get_date_created()->date( 'c' ) ) . '">' . esc_html( wc_format_datetime( $order->get_date_created() ) ) . '</time></div>
+//         </a></td>';
+// }
+// add_action('woocommerce_my_account_my_orders_column_order-number', 'custom_my_account_my_orders_column_order_number');
+
+
+/**
+ * 注文履歴ページの注文日時の表示
+ */
+// function custom_my_account_my_orders_column_order_date( $order )
+// {
+//     echo '<div>注文日：<time datetime="' . esc_attr( $order->get_date_created()->date( 'c' ) ) . '">' . esc_html( wc_format_datetime( $order->get_date_created() ) ) . '</time></div>';
+// }
+// add_action('woocommerce_my_account_my_orders_column_order-date', 'custom_my_account_my_orders_column_order_date');
+
+
+/**
+ * 注文履歴ページの注文ステータスの表示
+ */
+// function custom_my_account_my_orders_column_order_status( $order )
+// {
+//     echo '<div class="order-title">注文状況</div>' . esc_html( wc_get_order_status_name( $order->get_status() ) );
+// }
+// add_action('woocommerce_my_account_my_orders_column_order-status', 'custom_my_account_my_orders_column_order_status');
+
+
+/**
+ * 注文履歴ページの注文金額の表示
+ */
+// function custom_my_account_my_orders_column_order_total( $order )
+// {
+//     $item_count = $order->get_item_count() - $order->get_item_count_refunded();
+
+//     /* translators: 1: formatted order total 2: total order items */
+//     echo '<div>合計：' . wp_kses_post( sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ) ) . '</div>';
+// }
+// add_action('woocommerce_my_account_my_orders_column_order-total', 'custom_my_account_my_orders_column_order_total');

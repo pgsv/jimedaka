@@ -31,46 +31,60 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 		<table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
 			<tbody>
 				<tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?> order">
-					<?php foreach ( wc_get_account_orders_columns() as $column_id => $column_name ) : ?>
-						<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-<?php echo esc_attr( $column_id ); ?>" data-title="<?php echo esc_attr( $column_name ); ?>">
-							<?php if ( has_action( 'woocommerce_my_account_my_orders_column_' . $column_id ) ) : ?>
-								<?php do_action( 'woocommerce_my_account_my_orders_column_' . $column_id, $order ); ?>
-
-							<?php elseif ( 'order-number' === $column_id ) : ?>
-								<a href="<?php echo esc_url( $order->get_view_order_url() ); ?>">
-									<?php echo esc_html( _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_order_number() ); ?>
-								</a>
-
-							<?php elseif ( 'order-date' === $column_id ) : ?>
-								<time datetime="<?php echo esc_attr( $order->get_date_created()->date( 'c' ) ); ?>"><?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></time>
-
-							<?php elseif ( 'order-status' === $column_id ) : ?>
-								<?php echo esc_html( wc_get_order_status_name( $order->get_status() ) ); ?>
-
-							<?php elseif ( 'order-total' === $column_id ) : ?>
-								<?php
-								/* translators: 1: formatted order total 2: total order items */
-								echo wp_kses_post( sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ) );
-								?>
-
-							<?php elseif ( 'order-actions' === $column_id ) : ?>
-								<?php
-								$actions = wc_get_account_orders_actions( $order );
-
-								if ( ! empty( $actions ) ) {
-									foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-										echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
-									}
-								}
-								?>
-							<?php endif; ?>
-						</td>
-					<?php endforeach; ?>
+				<td colspan="2">
+					<a href="' . esc_url( $order->get_view_order_url() ) . '">
+						<div class="order-number">注文番号：<?php echo esc_html( $order->get_order_number() ); ?></div>
+						<div class="order-date">注文日：<time datetime="' . esc_attr( $order->get_date_created()->date( 'c' ) ) . '"> <?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></time></div>
+					</a>
+				</td>
+				<td colspan="2">
+					<div class="order-comment">（送料込み）</div>
+					<div class="order-total">合計：<?php echo wp_kses_post( sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ) ); ?></div>
 				</tr>
 				<?php
 				// ここに商品情報を追加
-				do_action( 'woocommerce_order_details_after_order_table_row', $order );
-			?>
+				// do_action( 'woocommerce_order_details_after_order_table_row', $order );
+				$items = $order->get_items();
+				foreach ( $items as $item ) {
+					$product_name = $item['name'];
+					$product_id = $item['product_id'];
+					$product_variation_id = $item['variation_id'];
+					$product_quantity = $item['qty'];
+					$product_price = $item['line_total'];
+					$product_tax = $item['line_tax'];
+					$product_shipping = $item['line_total'];
+					$product_shipping_tax = $item['line_tax'];
+					$product_total = $item['line_total'] + $item['line_tax'];
+					$product_image = wp_get_attachment_image_src( get_post_thumbnail_id($product_id), 'full' );
+					$product_image_url = $product_image[0];
+					$product_url = get_permalink($product_id);
+					?>
+					<tr class="woocommerce-orders-table__row-order-detail">
+						<td class="woocommerce-orders-table__cell-order-thumbnail"><img src="<?php echo $product_image_url; ?>"></div>
+						<td class="woocommerce-orders-table__cell-order-name"><a href="<?php echo $product_url; ?>"> <?php echo $product_name; ?></a></div>
+						<td class="woocommerce-orders-table__cell-order-price">￥<?php echo $product_price; ?> × <?php echo $product_quantity; ?></td>
+						<td>
+							<div class="order-status"><span><?php echo esc_html( wc_get_order_status_name( $order->get_status() ) ); ?></span></div>
+							<?php
+							$actions = wc_get_account_orders_actions( $order );
+
+							if ( ! empty( $actions ) ) {
+								foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+									?>
+									<div class="order-actions">
+										<a href="<?php echo esc_url( $action['url'] ); ?>" class="woocommerce-button button <?php echo sanitize_html_class( $key ); ?>">
+											<?php echo esc_html( $action['name'] ); ?>
+										</a>
+									</div>
+								<?php
+								}
+							}
+							?>
+						</td>
+					</tr>
+					<?php
+				}
+				?>
 			</tbody>
 		</table>
 		<?php
