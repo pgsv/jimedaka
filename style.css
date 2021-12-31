@@ -1357,7 +1357,7 @@ ul.slick-slider {
   white-space: nowrap;
 }
 
-form p label {
+.contact-wrapper form p label {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1371,7 +1371,7 @@ form p label {
 }
 
 @media screen and (max-width: 576px) {
-  form p label {
+  .contact-wrapper form p label {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -1384,14 +1384,14 @@ form p label {
   }
 }
 
-form p label .label {
+.contact-wrapper form p label .label {
   white-space: nowrap;
   width: 240px;
   font-size: 16px;
 }
 
 @media screen and (max-width: 992px) {
-  form p label .label {
+  .contact-wrapper form p label .label {
     margin-bottom: 6px;
   }
 }
@@ -3172,6 +3172,7 @@ header .header-foot-hamburgerMenu:hover {
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
+  padding: 24px 5%;
 }
 
 @media screen and (max-width: 576px) {
@@ -3226,11 +3227,13 @@ header .header-foot-hamburgerMenu:hover {
 
 nav.woocommerce-MyAccount-navigation {
   white-space: nowrap;
+  margin-right: 30px;
 }
 
 nav.woocommerce-MyAccount-navigation li {
   border-bottom: darkgray solid 1px;
-  padding: 12px;
+  padding: 28px;
+  font-size: 20px;
 }
 
 nav.woocommerce-MyAccount-navigation li.is-active {
@@ -3245,7 +3248,7 @@ a.woocommerce-MyAccount-navigation-link {
 
 div.woocommerce-MyAccount-content {
   width: 100%;
-  padding: 0 48px;
+  padding: 0 68px;
 }
 
 table.woocommerce-MyAccount-orders {
@@ -3383,20 +3386,108 @@ table.woocommerce-MyAccount-orders td {
   padding: 0;
 }
 
-.woocommerce-column--billing-address,
-.woocommerce-column--shipping-address {
+section.woocommerce-order-details,
+section.woocommerce-customer-details {
+  background-color: #f0f0f0;
+  padding: 30px;
+  line-height: 150%;
+}
+
+section.woocommerce-order-details .reviewOrder tbody,
+section.woocommerce-customer-details .reviewOrder tbody {
+  border-color: #b5b5b5 !important;
+}
+
+section.woocommerce-order-details th,
+section.woocommerce-order-details td,
+section.woocommerce-customer-details th,
+section.woocommerce-customer-details td {
+  text-align: left !important;
+  vertical-align: middle !important;
+  padding: 5px !important;
+}
+
+section.woocommerce-order-details th,
+section.woocommerce-customer-details th {
+  width: 25% !important;
+  font-size: 16px;
+  font-weight: bold;
+  color: dimgray;
+}
+
+section.woocommerce-order-details td,
+section.woocommerce-customer-details td {
+  width: 75% !important;
+  font-size: 16px;
+  color: #000;
+}
+
+section.woocommerce-order-details h2,
+section.woocommerce-customer-details h2 {
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+
+section.woocommerce-order-details tr.order-details__order_status,
+section.woocommerce-customer-details tr.order-details__order_status {
+  border-bottom: 1px solid #b5b5b5;
+}
+
+section.woocommerce-order-details tr.woocommerce-table__line-item td,
+section.woocommerce-customer-details tr.woocommerce-table__line-item td {
+  border-bottom: 1px solid #b5b5b5;
+}
+
+section.woocommerce-order-details tr.woocommerce-table__line-item td:last-child,
+section.woocommerce-customer-details tr.woocommerce-table__line-item td:last-child {
+  padding-top: 10px !important;
+}
+
+section.woocommerce-order-details tr.woocommerce-table__line-item div.order-detail__product-thumbnail,
+section.woocommerce-customer-details tr.woocommerce-table__line-item div.order-detail__product-thumbnail {
+  position: relative;
+  width: 25%;
+  float: left;
+  margin-right: 10px;
+  line-height: 0;
+  padding: 5px;
+}
+
+section.woocommerce-order-details tr.woocommerce-table__line-item div.order-detail__product-thumbnail img,
+section.woocommerce-customer-details tr.woocommerce-table__line-item div.order-detail__product-thumbnail img {
+  width: 90%;
+  height: auto;
+  padding: 0;
+  border-radius: 3px;
+}
+
+section.woocommerce-customer-details {
+  margin-top: 60px;
+}
+
+section.woocommerce-customer-details table tbody {
+  border-top: 1px solid #b5b5b5;
+}
+
+section.woocommerce-customer-details table tr:not(:last-child) {
+  border-bottom: 1px solid #b5b5b5;
+}
+
+section.woocommerce-customer-details table td {
+  padding-left: 15px !important;
+  font-size: 15px;
+}
+
+section.woocommerce-customer-details table td address {
+  font-size: 14px;
+}
+
+.woocommerce-MyAccount-content div.woocommerce-Address {
   width: 100%;
 }
 
-.woocommerce-column--billing-address table,
-.woocommerce-column--shipping-address table {
-  width: 100%;
-}
-
-.woocommerce-column--billing-address table td,
-.woocommerce-column--shipping-address table td {
-  width: 100%;
-  padding: 10px;
+.woocommerce-EditAccountForm input {
+  padding: 7px;
 }
 
 .singleProduct {

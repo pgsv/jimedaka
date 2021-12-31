@@ -46,21 +46,27 @@ if ($show_downloads) {
 	</h2>
 
 	<table class="reviewOrder woocommerce-table woocommerce-table--order-details shop_table order_details">
-
-		<thead>
-			<tr>
-				<th class="woocommerce-table__product-name product-name"><?php esc_html_e('Product', 'woocommerce'); ?>
-				</th>
-				<th class="woocommerce-table__product-table product-total"><?php esc_html_e('Total', 'woocommerce'); ?>
-				</th>
-			</tr>
-		</thead>
-
 		<tbody>
+			<tr class="order-details__order_number">
+				<th>注文番号</th>
+				<td><?php echo $order->get_order_number(); ?></td>
+			</tr>
+			<tr class="order-details__order_date">
+				<th>注文日</th>
+				<td><?php echo wc_format_datetime( $order->get_date_created() ); ?></td>
+			</tr>
+			<tr class="order-details__order_status">
+				<th>注文状況</th>
+				<td><?php echo wc_get_order_status_name( $order->get_status() ); ?></td>
+			</tr>
 			<?php
             do_action('woocommerce_order_details_before_order_table_items', $order);
+			
+			$item_cnt = count($order_items);
+			$index_item = 0;
 
-            foreach ($order_items as $item_id => $item) {
+			foreach ($order_items as $item_id => $item) {
+				++$index_item;
                 $product = $item->get_product();
 
                 wc_get_template(
@@ -72,6 +78,8 @@ if ($show_downloads) {
                         'show_purchase_note' => $show_purchase_note,
                         'purchase_note'      => $product ? $product->get_purchase_note() : '',
                         'product'            => $product,
+						'index_item'		 => $index_item,
+						'item_cnt'		 	 => $item_cnt,
                     ]
                 );
             }
@@ -93,18 +101,10 @@ if ($show_downloads) {
 			<?php
             }
             ?>
-			<?php if ($order->get_customer_note()) : ?>
-			<tr>
-				<th><?php esc_html_e('Note:', 'woocommerce'); ?>
-				</th>
-				<td><?php echo wp_kses_post(nl2br(wptexturize($order->get_customer_note()))); ?>
-				</td>
-			</tr>
-			<?php endif; ?>
 		</tfoot>
 	</table>
 
-	<?php do_action('woocommerce_order_details_after_order_table', $order); ?>
+	<?php //do_action('woocommerce_order_details_after_order_table', $order); ?>
 </section>
 
 <?php

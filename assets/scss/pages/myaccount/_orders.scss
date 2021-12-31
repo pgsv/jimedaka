@@ -1,9 +1,9 @@
+
+$border_color: #b5b5b5;
+$orders_border_color: #e5e5e5;
+
 .woocommerce-MyAccount-content {
-    // thead {
-    //     display: none;
-    // }
     td {
-        // width: 100%;
         vertical-align: middle;
     }
     table.woocommerce-orders-table {
@@ -101,20 +101,7 @@
             }
         }
     }
-    // td.woocommerce-orders-table__cell-order-number,
-    // td.woocommerce-orders-table__cell-order-name,
-    // td.woocommerce-orders-table__cell-order-date,
-    // td.woocommerce-orders-table__cell-order-status,
-    // td.woocommerce-orders-table__cell-order-total,
-    // td.woocommerce-orders-table__cell-order-actions {
-    //     // display: block;
-    //     // white-space: nowrap;
-    // }
     td.woocommerce-orders-table__cell-order-thumbnail {
-        // width: 250px;
-        // height: auto;
-        // padding: 0;
-        
         img {
             width: 100%;
             height: auto;
@@ -123,14 +110,79 @@
     }
 }
 
-.woocommerce-column--billing-address,
-.woocommerce-column--shipping-address {
-    width: 100%;
-    table {
-        width: 100%;
+// ------------------------------ 注文履歴の詳細ページ ------------------------------
+section.woocommerce-order-details,
+section.woocommerce-customer-details {
+    background-color: #f0f0f0;
+    padding: 30px;
+    line-height: 150%;
+
+    .reviewOrder tbody {
+        border-color: #b5b5b5 !important;
+    }
+    th,
+    td {
+        text-align: left !important;
+        vertical-align: middle !important;
+        padding: 5px !important;
+    }
+    th {
+        width: 25% !important;
+        font-size: 16px;
+        font-weight: bold;
+        color: dimgray;
+    }
+    td {
+        width: 75% !important;
+        font-size: 16px;
+        color: #000;
+    }
+    h2 {
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+    tr.order-details__order_status {
+        border-bottom: 1px solid #b5b5b5;
+    }
+    tr.woocommerce-table__line-item {
         td {
-            width: 100%;
-            padding: 10px;
+            border-bottom: 1px solid #b5b5b5;
+            &:last-child {
+                padding-top: 10px !important;
+            }
+        }
+        div.order-detail__product-thumbnail {
+            position: relative;
+            width: 25%;
+            float: left;
+            margin-right: 10px;
+            line-height: 0;
+            padding: 5px;
+            img {
+                width: 90%;
+                height: auto;
+                padding: 0;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+section.woocommerce-customer-details {
+    margin-top: 60px;
+    table {
+        tbody {
+            border-top: 1px solid #b5b5b5;
+        }
+        tr:not(:last-child) {
+            border-bottom: 1px solid #b5b5b5;
+        }
+        td {
+            padding-left: 15px !important;
+            font-size: 15px;
+            address {
+                font-size: 14px;
+            }
         }
     }
 }

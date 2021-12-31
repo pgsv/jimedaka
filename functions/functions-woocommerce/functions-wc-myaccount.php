@@ -110,6 +110,16 @@ function add_order_details_after_order_table_row($order)
 }
 add_action('woocommerce_order_details_after_order_table_row', 'add_order_details_after_order_table_row');
 
+
+/**
+ * デフォルトの注文詳細ページの指定配達日時の出力を削除
+ */
+// function remove_frontend_order_timedate(){
+//     remove_action( 'woocommerce_order_details_after_order_table', array( 'JP4WC_Delivery', 'frontend_order_timedate' ) );
+// }
+// add_action( 'woocommerce_order_details_after_order_table', 'remove_frontend_order_timedate', 20 );
+
+
 // function remove_my_account_my_orders_column_order_actions()
 // {
 //     // 何もしない
@@ -174,3 +184,38 @@ add_action('woocommerce_order_details_after_order_table_row', 'add_order_details
 //     echo '<div>合計：' . wp_kses_post( sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ) ) . '</div>';
 // }
 // add_action('woocommerce_my_account_my_orders_column_order-total', 'custom_my_account_my_orders_column_order_total');
+
+
+/**
+* @snippet       Merge Two "My Account" Tabs @ WooCommerce Account
+* @how-to        Get CustomizeWoo.com FREE
+* @author        Rodolfo Melogli
+* @compatible    WooCommerce 5.0
+* @donate $9     https://businessbloomer.com/bloomer-armada/
+*/
+ 
+// -------------------------------
+// 1. First, hide the tab that needs to be merged/moved (edit-address in this case)
+ 
+add_filter( 'woocommerce_account_menu_items', 'bbloomer_remove_address_my_account', 999 );
+ 
+function bbloomer_remove_address_my_account( $items ) {
+   unset( $items['edit-address'] );
+   return $items;
+}
+ 
+// -------------------------------
+// 2. Second, print the ex tab content (woocommerce_account_edit_address) into an existing tab (woocommerce_account_edit-account_endpoint). See notes below!
+ 
+add_action( 'woocommerce_account_edit-account_endpoint', 'woocommerce_account_edit_address' );
+ 
+// NOTES
+// 1. to select a given tab, use 'woocommerce_account_ENDPOINTSLUG_endpoint' hook
+// 2. to print a given tab content, use any of these:
+// 'woocommerce_account_orders'
+// 'woocommerce_account_view_order'
+// 'woocommerce_account_downloads'
+// 'woocommerce_account_edit_address'
+// 'woocommerce_account_payment_methods'
+// 'woocommerce_account_add_payment_method'
+// 'woocommerce_account_edit_account'

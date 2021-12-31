@@ -31,6 +31,14 @@
     }
   }
 }
+@mixin background_img($per_size: 100%) {
+  width: 100%;
+  padding-top: $per_size;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  border-radius: 3px;
+}
 @mixin pageTitle {
   font-size: 32px;
   margin-bottom: 54px;

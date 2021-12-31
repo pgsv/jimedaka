@@ -142,12 +142,7 @@ ul.slick-slider {
       transition: 0.2s;
     }
     div {
-      width: 100%;
-      padding-top: 70%;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      border-radius: 3px;
+      @include background_img(70%);
     }
   }
 }
