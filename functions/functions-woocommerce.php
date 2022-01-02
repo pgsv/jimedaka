@@ -309,13 +309,13 @@ add_action('woocommerce_email_order_meta', 'add_email_tracking_number', 10, 1);
 /**
  * 注文メールの画像を表示
  */
-function show_email_order_items_image($args)
-{
-    $args['show_image'] = true;
-    $args['image_size'] = array( 80, 80 );
-    return $args;
-}
-add_filter('woocommerce_email_order_items_args', 'show_email_order_items_image');
+// function show_email_order_items_image($args)
+// {
+//     $args['show_image'] = true;
+//     $args['image_size'] = array( 100, 80 );
+//     return $args;
+// }
+// add_filter('woocommerce_email_order_items_args', 'show_email_order_items_image');
 
 
 /**
@@ -497,3 +497,11 @@ function add_woocommerce_email_order_item_quantity_thead($qty_display, $item)
     return $qty_display;
 }
 add_filter('woocommerce_email_order_item_quantity', 'add_woocommerce_email_order_item_quantity_thead', 10, 2);
+
+/**
+ * 注文メールのヘッダーを削除
+ */
+// function remove_woocommerce_email_header(){
+//     remove_action( 'woocommerce_email_header', array( WC()->mailer(), 'email_header' ) );
+// }
+// add_action( 'init', 'remove_woocommerce_email_header' );
