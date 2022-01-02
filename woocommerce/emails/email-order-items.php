@@ -38,16 +38,16 @@ foreach ($items as $item_id => $item) :
 
     ?>
     <tr class="<?php echo esc_attr(apply_filters('woocommerce_order_item_class', 'order_item', $item, $order)); ?>" style="border-bottom:1px solid #e9e9e9">
-        <td">
+        <!-- <td>
             <?php
 
             // Show title/image etc.
-            if ($show_image) {
-                echo wp_kses_post(apply_filters('woocommerce_order_item_thumbnail', $image, $item));
-            }
+            // if ($show_image) {
+            //     echo wp_kses_post(apply_filters('woocommerce_order_item_thumbnail', $image, $item));
+            // }
             ?>
-        </td>
-        <td colspan="2" style="font-size: 14px;">
+        </td> -->
+        <td style="font-size: 14px;">
             <?php
 
             // Product name.
@@ -73,7 +73,7 @@ foreach ($items as $item_id => $item) :
 
             ?>
         </td>
-        <td style="padding: 0;">
+        <td  style="font-size: 14px;">
             <?php
                 $qty          = $item->get_quantity();
                 $refunded_qty = $order->get_qty_refunded_for_item($item_id);

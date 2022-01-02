@@ -112,11 +112,11 @@ padding: 48px 48px 32px;
 }
 
 #body_content table td td {
-padding: 12px;
+padding: 7px;
 }
 
 #body_content table td th {
-padding: 12px;
+padding: 7px;
 }
 
 #body_content td ul.wc-item-meta {
@@ -169,7 +169,8 @@ color: <?php echo esc_attr($link_color); ?>;
 }
 
 #header_wrapper {
-padding: 36px 48px;
+padding: 36px 48px 15px 48px;
+}
 display: block;
 }
 

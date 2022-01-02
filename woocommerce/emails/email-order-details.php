@@ -21,44 +21,40 @@ $text_align = is_rtl() ? 'right' : 'left';
 
 do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email); ?>
 
-<h2>
-	<?php
-    if ($sent_to_admin) {
-        $before = '<a class="link" href="' . esc_url($order->get_edit_order_url()) . '">';
-        $after  = '</a>';
-    } else {
-        $before = '';
-        $after  = '';
-    }
-    /* translators: %s: Order ID. */
-    echo wp_kses_post($before . sprintf(__('[Order #%s]', 'woocommerce') . $after . ' (<time datetime="%s">%s</time>)', $order->get_order_number(), $order->get_date_created()->format('c'), wc_format_datetime($order->get_date_created())));
-    ?>
-</h2>
+<h2 style="margin-top: 60px;">ご注文内容</h2>
+<?php
+if ($sent_to_admin) {
+	$before = '<a class="link" href="' . esc_url($order->get_edit_order_url()) . '">';
+	$after  = '</a>';
+} else {
+	$before = '';
+	$after  = '';
+}
+/* translators: %s: Order ID. */
+// echo wp_kses_post($before . sprintf(__('[Order #%s]', 'woocommerce') . $after . ' (<time datetime="%s">%s</time>)', $order->get_order_number(), $order->get_date_created()->format('c'), wc_format_datetime($order->get_date_created())));
+$order_number = wp_kses_post($before . $order->get_order_number() . $after);
+$order_date = wp_kses_post(wc_format_datetime($order->get_date_created()));
+?>
+<div style="font-size: 15px; padding: 5px;">注文番号：<?php echo wp_kses_post($order_number); ?></div>
+<div style="font-size: 15px; padding: 5px; margin-bottom: 20px;">注文日時：<?php echo wp_kses_post($order_date); ?></div>
+
 
 <div style="margin-bottom: 40px;">
 	<table class="td" cellspacing="0" cellpadding="6"
 		style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border:0;border-collapse:collapse;">
-		<!-- <thead>
-			<tr>
-				<th class="td" scope="col" style="text-align:<?php //echo esc_attr($text_align);?>;border:0;">
-					<?php //esc_html_e('Product', 'woocommerce');?>
-				</th>
-				<th class="td" scope="col" style="text-align:<?php //echo esc_attr($text_align);?>; border:0;">
-					<?php //esc_html_e('Quantity', 'woocommerce');?>
-				</th>
-				<th class="td" scope="col" style="text-align:<?php //echo esc_attr($text_align);?>; border:0;">
-					<?php //esc_html_e('Price', 'woocommerce');?>
-				</th>
-			</tr>
-		</thead> -->
-		<colgroup>
+		<!-- <colgroup>
 			<col style="width: 20%;" />
 			<col style="width: 20%;" />
 			<col style="width: 20%;" />
 			<col style="width: 15%;" />
 			<col style="width: 25%;" />
+  		</colgroup> -->
+		<colgroup>
+			<col style="width: 60%;" />
+			<col style="width: 20%;" />
+			<col style="width: 20%;" />
   		</colgroup>
-		<tbody style="font-size: 16px;">
+		<tbody style="font-size: 16px; border-top: 1px solid #e9e9e9;">
 			<?php
             echo wc_get_email_order_items( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 $order,
@@ -81,10 +77,10 @@ do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain
                 foreach ($item_totals as $total) {
                     $i++; ?>
 						<tr>
-							<th scope="row" colspan="4" style="text-align: right;">
+							<th scope="row" colspan="2" style="text-align: right; padding: 5px;">
 								<?php echo wp_kses_post($total['label']); ?>
 							</th>
-							<td style="text-align: right;<?php if($i===3) echo "font-size: 12px;";?>">
+							<td style="text-align: right;<?php if($i===3) echo "font-size: 12px; padding: 5px;";?>">
 								<?php echo wp_kses_post($total['value']); ?>
 							</td>
 						</tr>
@@ -93,14 +89,14 @@ do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain
             }
             if ($order->get_customer_note()) {
                 ?>
-				<tr>
+				<!-- <tr>
 					<th scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-						<?php esc_html_e('Note:', 'woocommerce'); ?>
+						<?php //esc_html_e('Note:', 'woocommerce'); ?>
 					</th>
-					<td colspan="4" style="text-align:<?php echo esc_attr($text_align); ?>;">
-						<?php echo wp_kses_post(nl2br(wptexturize($order->get_customer_note()))); ?>
+					<td colspan="2" style="text-align:<?php echo esc_attr($text_align); ?>;">
+						<?php //echo wp_kses_post(nl2br(wptexturize($order->get_customer_note()))); ?>
 					</td>
-				</tr>
+				</tr> -->
 			<?php
             }
             ?>
