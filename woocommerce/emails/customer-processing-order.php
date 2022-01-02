@@ -25,7 +25,7 @@ if (! defined('ABSPATH')) {
 do_action('woocommerce_email_header', $email_heading, $email); ?>
 
 <?php /* translators: %s: Customer first name */ ?>
-<p><?php printf(esc_html__('Hi %s,', 'woocommerce'), esc_html($order->get_billing_last_name() .' '.$order->get_billing_first_name())); ?>
+<p><?php printf(esc_html__('Hi %s,', 'woocommerce'), esc_html($order->get_billing_last_name())); ?>
 </p>
 <?php /* translators: %s: Order number */ ?>
 <p>この度は、当店をご利用いただきありがとうございます。<br>
