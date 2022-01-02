@@ -90,11 +90,11 @@ defined('ABSPATH') || exit;
 
 	<?php endif; ?>
 
-	<div class="shipping_order-comment woocommerce-additional-fields__field-wrapper">
-		<?php foreach ($checkout->get_checkout_fields('order') as $key => $field) : ?>
-		<?php  woocommerce_form_field($key, $field, $checkout->get_value($key)); ?>
-		<?php endforeach; ?>
-	</div>
+	<!-- <div class="shipping_order-comment woocommerce-additional-fields__field-wrapper">
+		<?php //foreach ($checkout->get_checkout_fields('order') as $key => $field) : ?>
+		<?php  //woocommerce_form_field($key, $field, $checkout->get_value($key)); ?>
+		<?php //endforeach; ?>
+	</div> -->
 
 	<?php endif; ?>
 
