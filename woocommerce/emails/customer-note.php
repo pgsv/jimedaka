@@ -49,7 +49,7 @@ do_action('woocommerce_email_order_details', $order, $sent_to_admin, $plain_text
 /*
  * @hooked WC_Emails::order_meta() Shows order meta data.
  */
-do_action('woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $email);
+// do_action('woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $email);
 
 /*
  * @hooked WC_Emails::customer_details() Shows customer details
