@@ -99,3 +99,30 @@ add_filter('woocommerce_email_order_item_quantity', 'add_woocommerce_email_order
 //     return $fields;
 // }
 // add_filter('woocommerce_default_address_fields', 'misha_remove_fields');
+
+/**
+ * 注文メールのデフォルトの配達日時を非表示
+ */
+// function remove_woocommerce_email_header(){
+//     remove_action( 'woocommerce_email_order_meta','email_order_delivery_details' , 10 ,4);
+// }
+// add_action( 'woocommerce_email_order_meta', 'remove_woocommerce_email_header',20 );
+// remove_filter('woocommerce_email_order_meta', array( WC()->JP4WC_Delivery(), 'email_order_delivery_details' ), 10, 4);
+// remove_filter('woocommerce_email_order_meta', 'email_order_delivery_details', 10, 4);
+
+// function add_email_delivery_date_time($order)
+// {
+//     $delivery_date = get_post_meta($order->get_id(), 'wc4jp-delivery-date', true);
+//     $delivery_time = get_post_meta($order->get_id(), 'wc4jp-delivery-time-zone', true);
+//     $delivery_date_time = $delivery_date . ' ' . $delivery_time;
+//     // echo '<th>配達予定日時：</th><td>' . $delivery_date_time . '</td>';
+// }
+// add_action('woocommerce_email_order_meta', 'add_email_delivery_date_time', 10, 1);
+
+/**
+ * 注文メールのヘッダーを削除
+ */
+// function remove_woocommerce_email_header(){
+//     remove_action( 'woocommerce_email_header', array( WC()->mailer(), 'email_header' ) );
+// }
+// add_action( 'init', 'remove_woocommerce_email_header' );
