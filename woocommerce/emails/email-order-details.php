@@ -50,9 +50,9 @@ $order_date = wp_kses_post(wc_format_datetime($order->get_date_created()));
 			<col style="width: 25%;" />
   		</colgroup> -->
 		<colgroup>
-			<col style="width: 60%;" />
-			<col style="width: 20%;" />
-			<col style="width: 20%;" />
+			<col style="width: 50%;" />
+			<col style="width: 25%;" />
+			<col style="width: 25%;" />
   		</colgroup>
 		<tbody style="font-size: 16px; border-top: 1px solid #e9e9e9;">
 			<?php
@@ -90,10 +90,10 @@ $order_date = wp_kses_post(wc_format_datetime($order->get_date_created()));
             if ($order->get_customer_note()) {
                 ?>
 				<!-- <tr>
-					<th scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
+					<th scope="row" style="text-align:<?php //echo esc_attr($text_align); ?>;">
 						<?php //esc_html_e('Note:', 'woocommerce'); ?>
 					</th>
-					<td colspan="2" style="text-align:<?php echo esc_attr($text_align); ?>;">
+					<td colspan="2" style="text-align:<?php //echo esc_attr($text_align); ?>;">
 						<?php //echo wp_kses_post(nl2br(wptexturize($order->get_customer_note()))); ?>
 					</td>
 				</tr> -->
