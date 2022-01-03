@@ -21,7 +21,7 @@ $text_align = is_rtl() ? 'right' : 'left';
 
 do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email); ?>
 
-<h2 style="margin-top: 60px;">ご注文内容</h2>
+<h2 style="margin-top: 60px; color: #636363">ご注文内容</h2>
 <?php
 if ($sent_to_admin) {
 	$before = '<a class="link" href="' . esc_url($order->get_edit_order_url()) . '">';
