@@ -25,6 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 		<title><?php echo get_bloginfo( 'name', 'display' ); ?></title>
+		<style type="text/css">
+        .im {
+           color: #636363 !important;
+        }
+    </style>
 	</head>
 	<body <?php echo is_rtl() ? 'rightmargin' : 'leftmargin'; ?>="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
 		<div id="wrapper" dir="<?php echo is_rtl() ? 'rtl' : 'ltr'; ?>">
