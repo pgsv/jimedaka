@@ -39,10 +39,10 @@ if ($order_data['status'] == 'completed') {
     $company = get_field("j_tracking_company", $order_data['id']);
 }
 ?>
-    <h2 style="margin-top: 60px; color: #636363;">発送内容</h2>
+    <h2 style="margin-top: 50px; color: #636363;">発送内容</h2>
     <div style="font-size: 15px; padding: 5px;">追跡番号：<a href="<?php echo $track_url . $tracking_number; ?>"><?php echo $tracking_number; ?></a></div>
     <div style="font-size: 15px; padding: 5px;">配送会社：<?php echo $company; ?></div>
-    <p>※配送状況は、追跡番号リンクをクリックすることで、ゆうパックのサイトから確認することが可能です。</p>
+    <p>※配送状況は、追跡番号リンクをクリックすることで、配送会社のサイトから確認することが可能です。</p>
 <?php
 
 /*
