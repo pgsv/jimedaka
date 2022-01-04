@@ -192,7 +192,7 @@ font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 font-size: 18px;
 font-weight: bold;
 line-height: 130%;
-margin: 0 0 18px;
+margin: 0 0 12px;
 text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 

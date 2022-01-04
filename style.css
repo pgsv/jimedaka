@@ -4649,35 +4649,53 @@ div.slick-track {
   text-decoration: underline;
 }
 
-.checkout:not(form.checkout) {
+.checkout {
+  font-family: "Klee One", cursive;
   margin-top: 80px;
-  background-color: #fafafa;
-  width: 100%;
-  padding: 64px 10%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background-color: #f7f3ec;
+  padding: 36px 8%;
 }
 
-@media screen and (max-width: 992px) {
-  .checkout:not(form.checkout) {
-    padding: 64px 0;
+@media screen and (max-width: 576px) {
+  .checkout {
+    padding: 0;
+  }
+}
+
+.checkout-wrapper {
+  background-color: white;
+  border-top: solid 6px #b4aa98;
+  padding: 24px 8%;
+}
+
+@media screen and (max-width: 576px) {
+  .checkout-wrapper {
+    padding: 20px 6%;
+  }
+}
+
+.checkout-title {
+  font-size: 32px;
+  margin-bottom: 54px;
+}
+
+@media screen and (max-width: 576px) {
+  .checkout-title {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+}
+
+.checkout-contents {
+  min-height: 100vh;
+  font-size: 17px;
+  word-break: break-all;
+  line-height: 200%;
+}
+
+@media screen and (max-width: 576px) {
+  .checkout-contents {
+    font-size: 13px;
   }
 }
 
@@ -4749,10 +4767,12 @@ div.slick-track {
   background-color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .customFormWrapper {
-  padding: 40px 10%;
+  padding: 20px 10%;
   padding-bottom: 0;
 }
 
@@ -5372,12 +5392,19 @@ div.slick-track {
       -ms-flex-align: center;
           align-items: center;
   width: calc(100% - 30px);
+  white-space: nowrap;
   cursor: pointer;
   font-weight: bold;
 }
 
 #payment ul li label:hover {
   opacity: 0.8;
+}
+
+@media screen and (max-width: 576px) {
+  #payment ul li label {
+    display: block;
+  }
 }
 
 #payment ul li .payment_box,
@@ -5413,8 +5440,24 @@ div.slick-track {
           align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+  #payment ul li.payment_method_square_credit_card div.payment_method_square_credit_card div.wc-square-credit-card-hosted-field-parent {
+    display: block;
+  }
+}
+
 #payment ul li.payment_method_square_credit_card div.payment_method_square_credit_card div.wc-square-credit-card-hosted-field-parent label {
   width: 240px;
+}
+
+@media screen and (max-width: 576px) {
+  #payment ul li.payment_method_square_credit_card div.payment_method_square_credit_card div.wc-square-credit-card-hosted-field-parent label {
+    width: 100%;
+  }
+}
+
+#payment ul li.payment_method_square_credit_card div.payment_method_square_credit_card .wc-square-credit-card-hosted-field-card-number {
+  padding-right: 5px;
 }
 
 #payment .woocommerce-privacy-policy-text {
@@ -5465,6 +5508,13 @@ div.slick-track {
 #payment .validate-required a {
   opacity: 0.8s;
   color: #2688cc;
+}
+
+#payment .validate-required .woocommerce-form__label-for-checkbox {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #payment #place_order {

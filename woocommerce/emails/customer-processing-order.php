@@ -28,7 +28,7 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
 <p><?php printf(esc_html__('Hi %s,', 'woocommerce'), esc_html($order->get_billing_last_name())); ?>
 </p>
 <?php /* translators: %s: Order number */ ?>
-<p>この度は、当店をご利用いただきありがとうございます。<br>
+<p>この度は、「じめだか」をご利用いただきありがとうございます。<br>
     下記の内容で、ご注文を承りました。<br><br>
     なお、発送手続きが完了次第、メールにてお知らせいたしますので、今しばらくお待ちください。
 </p>

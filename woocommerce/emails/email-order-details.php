@@ -35,7 +35,7 @@ if ($sent_to_admin) {
 $order_number = wp_kses_post($before . $order->get_order_number() . $after);
 $order_date = wp_kses_post(wc_format_datetime($order->get_date_created()));
 ?>
-<div style="font-size: 15px; padding: 5px;">注文番号：<?php echo wp_kses_post($order_number); ?></div>
+<div style="font-size: 15px; padding: 5px;">注文番号：#<?php echo wp_kses_post($order_number); ?></div>
 <div style="font-size: 15px; padding: 5px; margin-bottom: 20px;">注文日時：<?php echo wp_kses_post($order_date); ?></div>
 
 
@@ -68,7 +68,7 @@ $order_date = wp_kses_post(wc_format_datetime($order->get_date_created()));
     		);
             ?>
 		</tbody>
-		<tfoot style="font-size: 18px;">
+		<tfoot style="font-size: 16px;">
 			<?php
             $item_totals = $order->get_order_item_totals();
 
@@ -77,7 +77,7 @@ $order_date = wp_kses_post(wc_format_datetime($order->get_date_created()));
                 foreach ($item_totals as $total) {
                     $i++; ?>
 						<tr>
-							<th scope="row" colspan="2" style="text-align: right; padding: 5px;">
+							<th scope="row" colspan="2" style="text-align: right; padding: 5px;font-weight: initial;">
 								<?php echo wp_kses_post($total['label']); ?>
 							</th>
 							<td style="text-align: right;<?php if($i===3) echo "font-size: 12px; padding: 5px;";?>">
