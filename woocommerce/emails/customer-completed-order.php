@@ -31,18 +31,21 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
     本日、ご注文の商品を発送しましたので、お知らせいたします。
 </p>
 <?php
-$order_data = $order->get_data();
-if ($order_data['status'] == 'completed') {
-    $tracking_number = get_field("j_tracking_number", $order_data['id']);
+// $order_data = $order->get_data();
+// if ($order_data['status'] == 'completed') {
+    // $tracking_number = get_field("j_tracking_number", $order_data['id']);
+    $tracking_number = get_post_meta( $order->id, "j_tracking_number", true );
     // $track_url = 'https://jizen.kuronekoyamato.co.jp/jizen/servlet/crjz.b.NQ0010?id=';  //ヤマト運輸のURL
     $track_url = 'https://trackings.post.japanpost.jp/services/srv/search/direct?locale=ja&reqCodeNo1='; //ゆうパックの追跡URL
-    $company = get_field("j_tracking_company", $order_data['id']);
-}
-?>
+    // $company = get_field("j_tracking_company", $order_data['id']);
+    $company = get_post_meta( $order->id, "j_tracking_company", true );
+    ?>
     <h2 style="margin-top: 50px; color: #636363;">発送内容</h2>
     <div style="font-size: 15px; padding: 5px;">追跡番号：<a href="<?php echo $track_url . $tracking_number; ?>"><?php echo $tracking_number; ?></a></div>
     <div style="font-size: 15px; padding: 5px;">配送会社：<?php echo $company; ?></div>
     <p>※配送状況は、追跡番号リンクをクリックすることで、配送会社のサイトから確認することが可能です。</p>
+    <?php 
+// } ?>
 <?php
 
 /*
