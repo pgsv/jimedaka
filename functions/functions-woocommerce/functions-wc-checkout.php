@@ -7,10 +7,10 @@
 function custom_available_payment_gateways($payment)
 {
     if ($payment) {
-        // var_dump($payment);
-        $payment['square_credit_card']->order_button_text = '注文を確定する';
-    } else {
-        // echo 'empty';
+        if ($payment['square_credit_card']) {
+            // var_dump($payment);
+            $payment['square_credit_card']->order_button_text = '注文を確定する';
+        }
     }
     return $payment;
 }
@@ -115,3 +115,30 @@ function custom_override_checkout_fields($fields)
     return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields', 12);
+
+/**
+ * ご注文完了ページのメッセージを変更
+ */
+add_filter( 'woocommerce_thankyou_order_received_text', 'custom_thankyou_order_received_msg' );
+
+    function custom_thankyou_order_received_msg ( $thank_you_msg ) {
+
+        $thank_you_msg =  'ご注文いただき、ありがとうございます。'
+                            . '<br>確認のため、お客様宛てにメールをお送りしましたので、ご注文内容に間違いがないかご確認をお願いいたします。'
+                            . '<br>万が一メールが届かない場合は、お手数ですが、お問合せメールにてご連絡ください。';
+
+    return $thank_you_msg;
+}
+
+add_filter( 'the_title', 'woo_title_order_received', 10, 2 );
+
+/**
+ * 「購入手続き」から「ご注文完了」タイトルに変更する
+ */
+function woo_title_order_received( $title, $id ) {
+	if ( function_exists( 'is_order_received_page' ) && 
+	     is_order_received_page() && get_the_ID() === $id ) {
+		$title = "ご注文完了";
+	}
+	return $title;
+}

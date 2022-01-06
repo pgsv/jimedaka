@@ -1,9 +1,10 @@
 #order_review_heading {
   padding: 40px 0;
-  padding-top: 40px;
-  padding-top: 20px;
   font-size: 24px;
   font-weight: normal;
+  @include ms {
+    margin-top: 130px;
+  }
 }
 
 .reviewOrder {
@@ -13,8 +14,8 @@
     font-size: 18px;
     font-weight: normal;
     padding: 10px 0;
-    @include ms {
-      font-size: 14px;
+    @include sm {
+      font-size: 16px;
     }
   }
   th {
@@ -58,10 +59,11 @@
 
   tfoot {
     .includes_tax {
-      font-size: 18px;
+      font-size: 16px;
       @include ms {
         white-space: nowrap;
-        padding-left: 20px;
+        padding-left: 10px;
+        font-size: 12px;
       }
     }
     strong {
@@ -130,13 +132,20 @@
       padding: 28px 30px;
       font-size: 18px;
       position: relative;
+      @include ms {
+        padding: 10px 20px;
+      }
       label {
         display: inline-flex;
         align-items: center;
         width: calc(100% - 30px);
+        white-space: nowrap;
         cursor: pointer;
         &:hover {
           opacity: 0.8;
+        }
+        @include ms {
+          display: block;
         }
         font-weight: bold;
       }
@@ -166,14 +175,23 @@
           margin-bottom: 12px;
           display: flex;
           align-items: center;
+          @include ms {
+            display: block;
+          }
           label {
             width: 240px;
+            @include ms {
+              width: 100%;
+            }
           }
           //iframeは本番環境でしか表示されない。
           //よって、位置を確認するために、borderを適応する。
           //   iframe {
           //     border: solid 1px black;
           //   }
+        }
+        .wc-square-credit-card-hosted-field-card-number {
+          padding-right: 5px;
         }
       }
     }
@@ -210,13 +228,16 @@
     input,
     .woocommerce-terms-and-conditions-checkbox-text {
       cursor: pointer;
+      @include ms {
+        font-size: 14px;
+      }
     }
     a {
       opacity: 0.8s;
       color: $blue;
     }
-    input#terms {
-      //   margin-left: auto;
+    .woocommerce-form__label-for-checkbox {
+      align-items: center;
     }
   }
   #place_order {

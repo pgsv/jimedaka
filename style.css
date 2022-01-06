@@ -4654,6 +4654,7 @@ div.slick-track {
   margin-top: 80px;
   background-color: #f7f3ec;
   padding: 36px 8%;
+  padding: 36px 15%;
 }
 
 @media screen and (max-width: 576px) {
@@ -4701,7 +4702,7 @@ div.slick-track {
 
 .checkout .purchaseWrapper,
 .checkout .woocommerce {
-  width: 890px;
+  width: 100%;
 }
 
 @media screen and (max-width: 992px) {
@@ -4734,6 +4735,13 @@ div.slick-track {
   .checkout-title {
     font-size: 20px;
     margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .checkout-title {
+    margin-left: 0;
+    font-size: 24px;
   }
 }
 
@@ -4776,10 +4784,25 @@ div.slick-track {
   padding-bottom: 0;
 }
 
+@media screen and (max-width: 576px) {
+  .customFormWrapper {
+    padding: 0;
+  }
+}
+
 .customFormWrapper-title {
   padding: 40px 0;
-  padding-top: 20px;
+  margin-top: 54px;
+  margin-bottom: 20px;
   font-size: 24px;
+}
+
+@media screen and (max-width: 576px) {
+  .customFormWrapper-title {
+    padding: 0;
+    padding-top: 20px;
+    font-size: 22px;
+  }
 }
 
 .customFormWrapper abbr.required,
@@ -4812,6 +4835,14 @@ div.slick-track {
           box-sizing: border-box;
   font-size: 15px;
   letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 576px) {
+  .customForm input[type="text"],
+  .customForm input[type="tel"],
+  .customForm input[type="email"] {
+    padding: 10px;
+  }
 }
 
 .customForm .select2-container .select2-selection--single {
@@ -4866,10 +4897,9 @@ div.slick-track {
 .customForm-head::after {
   content: "必須";
   position: absolute;
-  top: 26px;
   right: 12px;
-  font-size: 16px;
-  padding: 10px 10px;
+  font-size: 15px;
+  padding: 5px 12px;
   color: #ffffff;
   background-color: #cc2926;
 }
@@ -4880,8 +4910,8 @@ div.slick-track {
     position: relative;
     top: 0;
     right: 0;
-    font-size: 12px;
-    padding: 5px 6px;
+    font-size: 10px;
+    padding: 0px 6px;
     color: #ffffff;
     background-color: #cc2926;
     margin-left: 16px;
@@ -5233,10 +5263,14 @@ div.slick-track {
 
 #order_review_heading {
   padding: 40px 0;
-  padding-top: 40px;
-  padding-top: 20px;
   font-size: 24px;
   font-weight: normal;
+}
+
+@media screen and (max-width: 576px) {
+  #order_review_heading {
+    margin-top: 130px;
+  }
 }
 
 .reviewOrder {
@@ -5250,10 +5284,10 @@ div.slick-track {
   padding: 10px 0;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .reviewOrder th,
   .reviewOrder td {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -5304,13 +5338,14 @@ div.slick-track {
 }
 
 .reviewOrder tfoot .includes_tax {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 576px) {
   .reviewOrder tfoot .includes_tax {
     white-space: nowrap;
-    padding-left: 20px;
+    padding-left: 10px;
+    font-size: 12px;
   }
 }
 
@@ -5380,6 +5415,12 @@ div.slick-track {
 
 #payment ul li:last-of-type {
   border-bottom: solid 1px #e5e5e5;
+}
+
+@media screen and (max-width: 576px) {
+  #payment ul li {
+    padding: 10px 20px;
+  }
 }
 
 #payment ul li label {
@@ -5505,6 +5546,13 @@ div.slick-track {
   cursor: pointer;
 }
 
+@media screen and (max-width: 576px) {
+  #payment .validate-required input,
+  #payment .validate-required .woocommerce-terms-and-conditions-checkbox-text {
+    font-size: 14px;
+  }
+}
+
 #payment .validate-required a {
   opacity: 0.8s;
   color: #2688cc;
@@ -5567,7 +5615,8 @@ div.slick-track {
 .thankyou {
   background-color: #ffffff;
   width: 890px;
-  padding: 40px 10%;
+  padding: 30px 10%;
+  padding-top: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -5575,16 +5624,15 @@ div.slick-track {
 @media screen and (max-width: 768px) {
   .thankyou {
     width: 100%;
-    padding: 40px 4%;
+    padding: 20px 4%;
   }
 }
 
 .thankyou-head,
 .thankyou h2 {
   padding: 40px 0;
-  padding-top: 40px;
-  padding-top: 20px;
-  font-size: 24px;
+  padding-top: 0;
+  font-size: 18px;
   font-weight: normal;
 }
 

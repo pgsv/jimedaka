@@ -45,7 +45,7 @@ defined('ABSPATH') || exit;
 	<p class="thankyou-head woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters('woocommerce_thankyou_order_received_text', esc_html__('Thank you. Your order has been received.', 'woocommerce'), $order); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
 	</p>
 
-	<ul class="thankyou-body woocommerce-order-overview woocommerce-thankyou-order-details order_details">
+	<!-- <ul class="thankyou-body woocommerce-order-overview woocommerce-thankyou-order-details order_details">
 
 		<li class="woocommerce-order-overview__order order">
 			<div class="thankyou-body-title">
@@ -96,7 +96,7 @@ defined('ABSPATH') || exit;
 		</li>
 		<?php endif; ?>
 
-	</ul>
+	</ul> -->
 
 	<?php endif; ?>
 

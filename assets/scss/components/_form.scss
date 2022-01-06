@@ -12,6 +12,9 @@
     box-sizing: border-box;
     font-size: 15px;
     letter-spacing: 0.5px;
+    @include ms {
+      padding: 10px
+    }
   }
 }
 
@@ -209,10 +212,10 @@
   &::after {
     content: "必須";
     position: absolute;
-    top: 26px;
+    // top: 26px;
     right: 12px;
-    font-size: 16px;
-    padding: 10px 10px;
+    font-size: 15px;
+    padding: 5px 12px;
     color: $white;
     background-color: $light_red;
   }
@@ -222,8 +225,8 @@
       position: relative;
       top: 0;
       right: 0;
-      font-size: 12px;
-      padding: 5px 6px;
+      font-size: 10px;
+      padding: 0px 6px;
       color: $white;
       background-color: $light_red;
       margin-left: 16px;

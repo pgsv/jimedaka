@@ -1,18 +1,18 @@
 .thankyou {
   background-color: $white;
   width: 890px;
-  padding: 40px 10%;
+  padding: 30px 10%;
+  padding-top: 0;
   box-sizing: border-box;
   @include sm {
     width: 100%;
-    padding: 40px 4%;
+    padding: 20px 4%;
   }
   &-head,
   h2 {
     padding: 40px 0;
-    padding-top: 40px;
-    padding-top: 20px;
-    font-size: 24px;
+    padding-top: 0;
+    font-size: 18px;
     font-weight: normal;
   }
   &-body {

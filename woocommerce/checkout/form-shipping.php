@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
 	<?php if (true === WC()->cart->needs_shipping_address()) : ?>
 
 	<div class="customFormWrapper shippingForm">
-		<div class="customFormWrapper-title">お支払いについて</div>
+		<div class="customFormWrapper-title">お届け先について</div>
 		<h3 id="ship-to-different-address">
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
 				<input id="ship-to-different-address-checkbox"
