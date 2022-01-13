@@ -31,8 +31,9 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 					// echo wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) );
 					$billing_address = wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) );  
 					$billing_address = explode('<br />', $billing_address);
-					echo $billing_address[3] . '<br />';
-					echo $billing_address[0] . ' ' . $billing_address[1] . ' ' . $billing_address[2] . '<br />';
+					// var_dump($billing_address);
+					echo $billing_address[4] . '<br />';
+					echo $billing_address[0] . ' ' . $billing_address[1] . ' ' . $billing_address[2] . '<br />' . $billing_address[5] . '<br />';
 					?>
 
 					<?php if ( $order->get_billing_phone() ) : ?>
@@ -54,8 +55,8 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 						// echo wp_kses_post( $order->get_formatted_shipping_address( esc_html__( 'N/A', 'woocommerce' ) ) ); 
 						$shipping_address = wp_kses_post( $order->get_formatted_shipping_address( esc_html__( 'N/A', 'woocommerce' ) ) );
 						$shipping_address = explode('<br />', $shipping_address);
-						echo $shipping_address[3] . '<br />';
-						echo $shipping_address[0] . ' ' . $shipping_address[1] . ' ' . $shipping_address[2] . '<br />';
+						echo $shipping_address[4] . '<br />';
+						echo $shipping_address[0] . ' ' . $shipping_address[1] . ' ' . $shipping_address[2] . '<br />'  . $shipping_address[5] . '<br />';
 						?>
 
 						<?php if ( $order->get_shipping_phone() ) : ?>

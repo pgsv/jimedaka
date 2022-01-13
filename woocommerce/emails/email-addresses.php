@@ -37,7 +37,8 @@ $shipping   = $order->get_formatted_shipping_address();
 				<?php
 				$billing_address = wp_kses_post($address ? $address : esc_html__('N/A', 'woocommerce'));  
 				$billing_address = explode('<br />', $billing_address);
-				echo $billing_address[3] . '<br />';
+				// var_dump($billing_address);
+				echo $billing_address[4] . '<br />';
 				echo $billing_address[0] . ' ' . $billing_address[1] . ' ' . $billing_address[2];
 				?>
 				<?php if ($order->get_billing_phone()) : ?>
@@ -61,7 +62,7 @@ $shipping   = $order->get_formatted_shipping_address();
 				<?php
 				$shipping_address = wp_kses_post($shipping);
 				$shipping_address = explode('<br />', $shipping_address);
-				echo $shipping_address[3] . '<br />';
+				echo $shipping_address[4] . '<br />';
 				echo $shipping_address[0] . ' ' . $shipping_address[1] . ' ' . $shipping_address[2];
 				?>
 				<?php if ($order->get_shipping_phone()) : ?>

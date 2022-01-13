@@ -43,8 +43,10 @@ defined('ABSPATH') || exit;
 						<?php woocommerce_form_field('shipping_first_name', $fields['shipping_first_name'], $checkout->get_value('shipping_first_name')); ?>
 					</div>
 					<div class="flex-row kana_first_name">
-						<?php woocommerce_form_field('shipping_kana_last_name', $fields['shipping_kana_last_name'], $checkout->get_value('shipping_kana_last_name')); ?>
-						<?php woocommerce_form_field('shipping_kana_first_name', $fields['shipping_kana_first_name'], $checkout->get_value('shipping_kana_first_name')); ?>
+						<?php //woocommerce_form_field('shipping_kana_last_name', $fields['shipping_kana_last_name'], $checkout->get_value('shipping_kana_last_name')); ?>
+						<?php //woocommerce_form_field('shipping_kana_first_name', $fields['shipping_kana_first_name'], $checkout->get_value('shipping_kana_first_name')); ?>
+						<?php woocommerce_form_field('shipping_yomigana_last_name', $fields['shipping_yomigana_last_name'], $checkout->get_value('shipping_yomigana_last_name')); ?>
+						<?php woocommerce_form_field('shipping_yomigana_first_name', $fields['shipping_yomigana_first_name'], $checkout->get_value('shipping_yomigana_first_name')); ?>
 					</div>
 				</div>
 			</div>

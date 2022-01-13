@@ -33,8 +33,10 @@ defined('ABSPATH') || exit;
 					<?php woocommerce_form_field('billing_first_name', $fields['billing_first_name'], $checkout->get_value('billing_first_name')); ?>
 				</div>
 				<div class="flex-row kana_first_name">
-					<?php woocommerce_form_field('billing_kana_last_name', $fields['billing_kana_last_name'], $checkout->get_value('billing_kana_last_name')); ?>
-					<?php woocommerce_form_field('billing_kana_first_name', $fields['billing_kana_first_name'], $checkout->get_value('billing_kana_first_name')); ?>
+					<?php //woocommerce_form_field('billing_kana_last_name', $fields['billing_kana_last_name'], $checkout->get_value('billing_kana_last_name')); ?>
+					<?php //woocommerce_form_field('billing_kana_first_name', $fields['billing_kana_first_name'], $checkout->get_value('billing_kana_first_name')); ?>
+					<?php woocommerce_form_field('billing_yomigana_last_name', $fields['billing_yomigana_last_name'], $checkout->get_value('billing_yomigana_last_name')); ?>
+					<?php woocommerce_form_field('billing_yomigana_first_name', $fields['billing_yomigana_first_name'], $checkout->get_value('billing_yomigana_first_name')); ?>
 				</div>
 			</div>
 		</div>
