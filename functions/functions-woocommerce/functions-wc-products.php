@@ -27,16 +27,19 @@ function get_product_args_by_cat()
         'post_type'     => 'product',
         'orderby'       => 'title',     //実はタイトル順
         'order'         => 'asc',
-        'tax_query'      => array(
-            array(
-                'taxonomy' => 'product_cat',
-                // 'field'    => 'term_id',
-                // 'terms'         => array(49,63),
-                'terms'    => 'medaka',
-                // 'orderby'  => 'type',
-            'include_children'=>true,
-            )
-        ),
+        // 'tax_query'      => array(
+        //     array(
+        //         'taxonomy' => 'product_cat',
+        //         // ---------------------------------
+        //         // 元々使ってない
+        //         // 'field'    => 'term_id',
+        //         // 'terms'         => array(49,63),
+        //         // 'orderby'  => 'type',
+        //         // ----------------------------------
+        //         'terms'    => 'medaka',
+        //     'include_children'=>true,
+        //     )
+        // ),
         'meta_query' => array(
             array(
                 'key' => '_stock_status',
