@@ -1,12 +1,17 @@
 .thankyou {
   background-color: $white;
-  width: 890px;
+  // width: 890px;
   padding: 30px 10%;
   padding-top: 0;
   box-sizing: border-box;
   @include sm {
     width: 100%;
     padding: 20px 4%;
+  }
+  .thankyou-head {
+    @include ms {
+      font-size: 14px;
+    }
   }
   &-head,
   h2 {
@@ -33,5 +38,23 @@
     strong {
       margin-bottom: 20px;
     }
+  }
+}
+
+.large-only {
+  @include ms {
+    display: none;
+  }
+}
+.large-only {
+  display: table-cell;
+  @include ms {
+    display: none;
+  }
+}
+.order-details-items__td {
+  display: none;
+  @include ms {
+    display: table-cell;
   }
 }
