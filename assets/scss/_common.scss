@@ -41,7 +41,7 @@ button {
   }
   ul {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     li {
       list-style-type: none;
       &:not(:last-child):after {
