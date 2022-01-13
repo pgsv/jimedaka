@@ -1,5 +1,17 @@
 <?php
 
+/* 送信メールの差出人名を変更 */
+function custom_mail_from_name( $email_from ) {
+    return 'じめだか';
+}
+add_filter( 'wp_mail_from_name', 'custom_mail_from_name' );
+
+/* 差出人のメールアドレスを変更 */
+function custom_mail_from( $email ) {
+    return 'noreply@jimedaka.com';
+}
+add_filter( 'wp_mail_from', 'custom_mail_from' );
+
 /**
  * 発送完了メールの追跡番号を追加
  */
