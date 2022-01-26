@@ -282,11 +282,27 @@
       }
     }
   }
+  .label-acceptance {
+    text-align: right;
+    @include ms {
+      text-align: left;
+    }
+    label {
+      .wpcf7-list-item-label {
+        margin-left: 5px;
+      }
+      @include ms {
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;  
+      }
+    }
+  }
 }
 
 form.wpcf7-form {
   p:nth-last-of-type(2) label {
-    align-items: flex-start;
+    // align-items: flex-start;
     .label {
       padding-top: 12px;
     }

@@ -198,30 +198,30 @@ function the_product_link_html($product_id)
     }
     $product_data = $wc_product->get_data();
     $category_id = $product_data['category_ids'][0];
-    $product_cat = get_term_by('id', $category_id, 'product_cat'); ?>
-<a href="<?php echo get_permalink($product_id); ?>">
-    <div class="products-list-img"
-        style="background-image : url(<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>)"
-        alt="<?php echo get_post($product_id)->post_name; ?>">
+    $product_cat = get_term_by('id', $category_id, 'product_cat'); 
+    ?>
 
-        <div class="products-list-category">
-            <div id="<?php echo $product_cat->slug; ?>"
-                class="products-list-head">
-                <?php echo $product_cat->name; ?>
+    <a href="<?php echo get_permalink($product_id); ?>">
+        <div class="products-list-img"
+            style="background-image : url(<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>)"
+            alt="<?php echo get_post($product_id)->post_name; ?>">
+
+            <div class="products-list-category">
+                <div id="<?php echo $product_cat->slug; ?>" class="products-list-head">
+                    <?php echo $product_cat->name; ?>
+                </div>
+            </div>
+
+            <div class="products-list-wrapper">
+                <div class="products-list-price">
+                    ￥<?php echo get_product_taxPrice($product_id, false); ?>円（税込）
+                </div>
+                <div class="products-list-name">
+                    <?php echo get_the_title($product_id); ?>
+                </div>
             </div>
         </div>
-
-        <div class="products-list-wrapper">
-            <div class="products-list-price">
-                ￥<?php echo get_product_taxPrice($product_id, false); ?>円（税込）
-            </div>
-            <div class="products-list-name">
-                <?php echo get_the_title($product_id); ?>
-            </div>
-
-        </div>
-    </div>
-</a>
+    </a>
 <?php
 }
 

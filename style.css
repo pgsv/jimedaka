@@ -1396,11 +1396,33 @@ ul.slick-slider {
   }
 }
 
-form.wpcf7-form p:nth-last-of-type(2) label {
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+.contact-wrapper .label-acceptance {
+  text-align: right;
+}
+
+@media screen and (max-width: 576px) {
+  .contact-wrapper .label-acceptance {
+    text-align: left;
+  }
+}
+
+.contact-wrapper .label-acceptance label .wpcf7-list-item-label {
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .contact-wrapper .label-acceptance label {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 14px;
+  }
 }
 
 form.wpcf7-form p:nth-last-of-type(2) label .label {
@@ -5751,3 +5773,4 @@ div.slick-track {
     display: table-cell;
   }
 }
+/*# sourceMappingURL=style.css.map */
