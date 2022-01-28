@@ -19,15 +19,15 @@
                 if (have_posts() && get_post_type() === 'product'): 
                     ?>
                     <ul class="clearfix">
-                        <?php while (have_posts()): the_post(); ?>
                         <?php 
-                        $wc_product = wc_get_product(get_the_ID()); 
-                        if ( $wc_product->is_in_stock() ):
+                        while (have_posts()) { 
+                            the_post(); 
+                            $wc_product = wc_get_product(get_the_ID()); 
+                            if ( $wc_product->is_in_stock() ){
+                                the_product_link_html(get_the_ID());
+                            }
+                        }
                         ?>
-                        <li class="products-list-item">
-                            <?php the_product_link_html(get_the_ID()); ?>
-                        </li>
-                        <?php endif; endwhile; ?>
                     </ul>
                     <?php 
                 else: 

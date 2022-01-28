@@ -200,28 +200,20 @@ function the_product_link_html($product_id)
     $category_id = $product_data['category_ids'][0];
     $product_cat = get_term_by('id', $category_id, 'product_cat'); 
     ?>
-
-    <a href="<?php echo get_permalink($product_id); ?>">
-        <div class="products-list-img"
-            style="background-image : url(<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>)"
-            alt="<?php echo get_post($product_id)->post_name; ?>">
-
-            <div class="products-list-category">
-                <div id="<?php echo $product_cat->slug; ?>" class="products-list-head">
-                    <?php echo $product_cat->name; ?>
-                </div>
+    <li class="prod-item">
+        <a href="<?php echo get_permalink($product_id); ?>">
+            <div class="prod-item-img"
+                style="background-image : url(<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>)"
+                alt="<?php echo get_post($product_id)->post_name; ?>">
             </div>
-
-            <div class="products-list-wrapper">
-                <div class="products-list-price">
-                    ￥<?php echo get_product_taxPrice($product_id, false); ?>円（税込）
-                </div>
-                <div class="products-list-name">
-                    <?php echo get_the_title($product_id); ?>
-                </div>
+            <div class="prod-item-name">
+                <?php echo get_the_title($product_id); ?>
             </div>
-        </div>
-    </a>
+            <div class="prod-item-price">
+                ￥<?php echo get_product_taxPrice($product_id, false); ?>円（税込）
+            </div>
+        </a>
+    </li>
 <?php
 }
 

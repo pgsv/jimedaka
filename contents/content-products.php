@@ -35,24 +35,22 @@ endswitch;
     
     $the_query = new WP_Query($args);
     // var_dump($the_query);
-    $pages_cnt = $the_query->max_num_pages; ?>
-    <?php if ($the_query->have_posts()) :  ?>
-        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-            <?php
-                // $wc_product = wc_get_product(get_the_ID());
-                // var_dump($wc_product);
-            ?>
-            <li class="products-list-item">
-                <?php the_product_link_html(get_the_ID()); ?>
-            </li>
-
-        <?php endwhile; ?>
-    <?php else: ?>
+    $pages_cnt = $the_query->max_num_pages; 
+    if ($the_query->have_posts()) : 
+        while ($the_query->have_posts()) : $the_query->the_post();
+            // $wc_product = wc_get_product(get_the_ID());
+            // var_dump($wc_product);
+            the_product_link_html(get_the_ID());
+        endwhile; 
+    else: 
+        ?>
         <div>
             <p>申し訳ございません。お探しの商品はありませんでした。</p>
         </div>
-    <?php endif; ?>
-    <?php wp_reset_postdata(); ?>
+        <?php 
+    endif;
+    wp_reset_postdata();
+    ?>
 </ul>
 
 
