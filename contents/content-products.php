@@ -55,7 +55,7 @@ endswitch;
     <?php wp_reset_postdata(); ?>
 </ul>
 
-test
+
 <div class="pagination">
     <?php //ページリスト表示処理
 global $wp_rewrite;
