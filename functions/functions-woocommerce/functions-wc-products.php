@@ -119,12 +119,12 @@ function get_product_args_between_price($min_price, $max_price)
                 'compare'   => '=',
             ),
             array(
-                'key'		=> '_price',
-                'value'		=> array( $min_price, $max_price ),
-                'type'		=> 'numeric',
-                'compare'	=> 'BETWEEN',
+                'key'        => '_price',
+                'value'        => array($min_price, $max_price),
+                'type'        => 'numeric',
+                'compare'    => 'BETWEEN',
             ),
-            'relation'		=> 'AND'
+            'relation'        => 'AND'
         ),
     ];
     return $args;
@@ -138,12 +138,12 @@ function get_star_rating()
     $review_count = $product->get_review_count();
 
     return '<div class="star-rating">
-                <span style="width:'.(($average / 5) * 100) . '%" title="'.
-                  $average.'">
-                    <strong itemprop="ratingValue" class="rating">'.$average.'</strong> '.__('out of 5', 'woocommerce').
-                '</span>                    
-            </div>'.'
-            <a href="#reviews" class="woocommerce-review-link" rel="nofollow">( ' . $review_count .' )</a>';
+                <span style="width:' . (($average / 5) * 100) . '%" title="' .
+        $average . '">
+                    <strong itemprop="ratingValue" class="rating">' . $average . '</strong> ' . __('out of 5', 'woocommerce') .
+        '</span>                    
+            </div>' . '
+            <a href="#reviews" class="woocommerce-review-link" rel="nofollow">( ' . $review_count . ' )</a>';
 }
 
 /**
@@ -166,7 +166,7 @@ function get_medaka_categories()
  */
 function get_medaka_cat_url($cat_slug)
 {
-    return  esc_url(home_url().'/products/#'.$cat_slug);
+    return  esc_url(home_url() . '/products/#' . $cat_slug);
 }
 
 /**
@@ -174,15 +174,13 @@ function get_medaka_cat_url($cat_slug)
  */
 function the_product_html($product_id)
 {
-    ?>
-<a class="prodLink" href="<?php echo get_permalink($product_id); ?>">
-    <div class="prodImg"><img
-            src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>"
-            alt="<?php echo $product->slug ?>"></div>
-    <div class="prodTitl"><?php echo get_the_title($product_id); ?>
-    </div>
-    <div class="prodPrice">￥<?php echo get_product_taxPrice($product_id); ?>円（税込）</div>
-</a>
+?>
+    <a class="prodLink" href="<?php echo get_permalink($product_id); ?>">
+        <div class="prodImg"><img src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>" alt="<?php echo $product->slug ?>"></div>
+        <div class="prodTitl"><?php echo get_the_title($product_id); ?>
+        </div>
+        <div class="prodPrice">￥<?php echo get_product_taxPrice($product_id); ?>円（税込）</div>
+    </a>
 <?php
 }
 
@@ -197,20 +195,31 @@ function the_product_link_html($product_id)
         return;
     }
     $product_data = $wc_product->get_data();
+    // var_dump($product_data);
+    $sale_price = $product_data['sale_price'];
+    $product_desc = $product_data['description'];
     $category_id = $product_data['category_ids'][0];
-    $product_cat = get_term_by('id', $category_id, 'product_cat'); 
-    ?>
+    $product_cat = get_term_by('id', $category_id, 'product_cat');
+?>
     <li class="prod-item">
         <a href="<?php echo get_permalink($product_id); ?>">
-            <div class="prod-item-img"
-                style="background-image : url(<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>)"
-                alt="<?php echo get_post($product_id)->post_name; ?>">
+            <div class="prod-item-img" style="background-image : url(<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>)" alt="<?php echo get_post($product_id)->post_name; ?>">
+                <div class="prod-item-tag <?php echo ($sale_price ? 'sale-tag' : 'regular-tag'); ?>">
+                    <?php //echo ($sale_price ? 'SALE' : '');
+                    ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sale.svg" alt="sale">
+                </div>
             </div>
             <div class="prod-item-name">
                 <?php echo get_the_title($product_id); ?>
             </div>
-            <div class="prod-item-price">
-                ￥<?php echo get_product_taxPrice($product_id, false); ?>円（税込）
+            <div class="prod-item-desc">
+                <?php echo $product_desc; ?>
+            </div>
+            <div class="prod-item-price <?php echo ($sale_price ? 'sale-price' : 'regular-price'); ?>">
+                <?php
+                echo '￥' . get_product_taxPrice($product_id, false) . '円（税込）';
+                ?>
             </div>
         </a>
     </li>
@@ -221,7 +230,7 @@ function the_product_link_html($product_id)
 /**
  * 商品価格を取得
  */
-$num_to_kanji_dict = ['〇','一','二','三','四','五','六','七','八','九'];
+$num_to_kanji_dict = ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
 function num_to_kanji($num)
 {
     global $num_to_kanji_dict;
@@ -235,7 +244,7 @@ function num_to_kanji($num)
 /**
  * 税込み価格を取得
  */
-function get_product_taxPrice($product_id, $convert_kanji=true)
+function get_product_taxPrice($product_id, $convert_kanji = true)
 {
     $_product = wc_get_product($product_id);
     $taxPrice = wc_get_price_including_tax($_product);
