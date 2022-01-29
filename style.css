@@ -2945,8 +2945,8 @@ header .header-foot-hamburgerMenu:hover {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 1px;
+  left: -2px;
   z-index: 1;
   width: 50px;
   color: #ffffff;

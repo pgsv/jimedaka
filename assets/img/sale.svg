@@ -1,9 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" viewBox="0 0 52 12">
-  <g id="SALE" transform="translate(0 0.377)">
-    <g id="フレーム" transform="translate(0 -0.377)" fill="#d34a4a" stroke="#eee" stroke-width="1">
-      <rect width="52" height="12" stroke="none"/>
-      <rect x="0.5" y="0.5" width="51" height="11" fill="none"/>
-    </g>
-    <text id="SALE-2" data-name="SALE" transform="translate(26 8.623)" fill="#d34a4a" stroke="#eee" stroke-width="1" font-size="8" font-family="HiraginoSans-W3, Hiragino Sans"><tspan x="-10.656" y="0">SALE</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="12" viewBox="0 0 46 12">
+  <g id="SALE" transform="translate(-3 3.052)">
+    <rect id="フレーム" width="46" height="12" rx="1" transform="translate(3 -3.052)" fill="#d34a4a"/>
+    <text id="SALE-2" data-name="SALE" transform="translate(26 5.948)" fill="#d34a4a" stroke="#eee" stroke-width="1" font-size="8" font-family="HiraginoSans-W3, Hiragino Sans"><tspan x="-10.656" y="0">SALE</tspan></text>
   </g>
 </svg>
