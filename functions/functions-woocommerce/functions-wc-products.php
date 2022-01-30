@@ -200,15 +200,15 @@ function the_product_link_html($product_id)
     $product_desc = $product_data['description'];
     $category_id = $product_data['category_ids'][0];
     $product_cat = get_term_by('id', $category_id, 'product_cat');
+
+    $before_price = wc_get_price_including_tax($wc_product, array('price' => $wc_product->get_regular_price()));
+    $before_format_price = number_format($before_price);
 ?>
     <li class="prod-item">
         <a href="<?php echo get_permalink($product_id); ?>">
-            <div class="prod-item-img" style="background-image : url(<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>)" alt="<?php echo get_post($product_id)->post_name; ?>">
-                <div class="prod-item-tag <?php echo ($sale_price ? 'sale-tag' : 'regular-tag'); ?>">
-                    <?php //echo ($sale_price ? 'SALE' : '');
-                    ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sale.svg" alt="sale">
-                </div>
+            <div class="prod-item-thumb">
+                <div class="prod-item-thumb__image"><img src="<?php echo get_the_post_thumbnail_url($product_id, 'medium'); ?>" alt=""></div>
+                <span class="prod-item-thumb__tag <?php echo ($sale_price ? 'sale-tag' : 'regular-tag'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/sale.svg" alt="sale"></span>
             </div>
             <div class="prod-item-name">
                 <?php echo get_the_title($product_id); ?>
@@ -216,10 +216,32 @@ function the_product_link_html($product_id)
             <div class="prod-item-desc">
                 <?php echo $product_desc; ?>
             </div>
-            <div class="prod-item-price <?php echo ($sale_price ? 'sale-price' : 'regular-price'); ?>">
-                <?php
-                echo '￥' . get_product_taxPrice($product_id, false) . '円（税込）';
-                ?>
+            <div class="prod-item-price">
+                <div class="<?php echo ($sale_price ? 'sale-tag' : 'regular-tag'); ?>">
+                    <strike>
+                        <span class="prod-item-price__before">
+                            <?php
+                            echo '¥' . $before_format_price;
+                            ?>
+                        </span>
+                        <span class="prod-item-price__tax">
+                            (税込)
+                        </span>
+                    </strike>
+                </div>
+                <div class="prod-item-price__arrow <?php echo ($sale_price ? 'sale-tag' : 'regular-tag'); ?>">
+                    →
+                </div>
+                <div>
+                    <span class="prod-item-price__after <?php echo ($sale_price ? 'sale-price' : 'regular-price'); ?>">
+                        <?php
+                        echo '￥' . get_product_taxPrice($product_id, false);
+                        ?>
+                    </span>
+                    <span class="prod-item-price__tax">
+                        (税込)
+                    </span>
+                </div>
             </div>
         </a>
     </li>
