@@ -3588,7 +3588,7 @@ section.woocommerce-customer-details table td address {
 
 .singleProduct-right .product-title {
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 @media screen and (max-width: 576px) {
@@ -3597,19 +3597,66 @@ section.woocommerce-customer-details table td address {
   }
 }
 
-.singleProduct-right .product-price {
-  font-size: 24px;
-  margin-bottom: 26px;
+.singleProduct-right .sale-tag {
+  display: inline-block;
+}
+
+.singleProduct-right .regular-tag {
+  display: none;
+}
+
+.singleProduct-right .prod-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-bottom: 20px;
+  line-height: 100%;
+}
+
+.singleProduct-right .prod-price .prod-price__before {
+  padding: 5px;
+  text-decoration: line-through;
+}
+
+.singleProduct-right .prod-price .prod-price__after {
+  padding: 5px;
+}
+
+.singleProduct-right .price-arrow {
+  font-size: 16px;
+}
+
+.singleProduct-right .price-sale {
+  color: #d34a4a;
+  font-weight: bold;
+}
+
+.singleProduct-right .price-regular {
+  color: #393c41;
+  font-size: 15px;
+}
+
+.singleProduct-right .price-after {
+  font-size: 30px;
 }
 
 @media screen and (max-width: 576px) {
-  .singleProduct-right .product-price {
-    font-size: 20px;
+  .singleProduct-right .price-after {
+    font-size: 24px;
   }
 }
 
-.singleProduct-right .product-price .red {
-  font-size: 20px;
+.singleProduct-right .price-before {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 576px) {
+  .singleProduct-right .price-before {
+    font-size: 16px;
+  }
 }
 
 .singleProduct-right .product-desc {
@@ -3617,6 +3664,12 @@ section.woocommerce-customer-details table td address {
   line-height: 28px;
   letter-spacing: auto;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .singleProduct-right .product-desc {
+    font-size: 14px;
+  }
 }
 
 .singleProduct-right .singleProductForm {
