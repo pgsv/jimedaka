@@ -224,9 +224,6 @@ function the_product_link_html($product_id)
                             echo '¥' . $before_format_price;
                             ?>
                         </span>
-                        <span class="prod-item-price__tax">
-                            (税込)
-                        </span>
                     </strike>
                 </div>
                 <div class="prod-item-price__arrow <?php echo ($sale_price ? 'sale-tag' : 'regular-tag'); ?>">

@@ -2987,9 +2987,6 @@ header .header-foot-hamburgerMenu:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2997,7 +2994,6 @@ header .header-foot-hamburgerMenu:hover {
   white-space: nowrap;
   font-weight: bold;
   padding: 5px;
-  padding-right: 20px;
 }
 
 @media screen and (max-width: 992px) {
@@ -3019,6 +3015,7 @@ header .header-foot-hamburgerMenu:hover {
 
 .products-contents li.prod-item .prod-item-price .prod-item-price__arrow {
   font-size: 12px;
+  margin: 0 5px;
 }
 
 @media screen and (max-width: 992px) {
